@@ -15,5 +15,14 @@ namespace CineFrontEnd
         {
 
         }
+
+        private void cboxContrasenia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cboxContrasenia.Checked)
+            {
+                txtContrasenia.PasswordChar = char.MinValue;
+            }
+            else { txtContrasenia.PasswordChar = char.Parse("*"); }
+        }
     }
 }

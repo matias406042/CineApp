@@ -18,3 +18,4 @@ D:\Facu\Programacion\TP_Integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows
 D:\Facu\Programacion\TP_Integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.pdb
 D:\Facu\Programacion\TP_Integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.genruntimeconfig.cache
 D:\Facu\Programacion\TP_Integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\ref\CineFrontEnd.dll
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.frmMenu.resources

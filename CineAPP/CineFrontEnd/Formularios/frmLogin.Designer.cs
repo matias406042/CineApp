@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cboxContrasenia = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -82,22 +82,23 @@
             this.btnLogin.Text = "Ingresar";
             this.btnLogin.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cboxContrasenia
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(23, 112);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(128, 19);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Mostrar contraseña";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cboxContrasenia.AutoSize = true;
+            this.cboxContrasenia.Location = new System.Drawing.Point(23, 112);
+            this.cboxContrasenia.Name = "cboxContrasenia";
+            this.cboxContrasenia.Size = new System.Drawing.Size(128, 19);
+            this.cboxContrasenia.TabIndex = 5;
+            this.cboxContrasenia.Text = "Mostrar contraseña";
+            this.cboxContrasenia.UseVisualStyleBackColor = true;
+            this.cboxContrasenia.CheckedChanged += new System.EventHandler(this.cboxContrasenia_CheckedChanged);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 145);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cboxContrasenia);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -118,6 +119,6 @@
         private Label label1;
         private Label label2;
         private Button btnLogin;
-        private CheckBox checkBox1;
+        private CheckBox cboxContrasenia;
     }
 }
