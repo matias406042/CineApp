@@ -1,0 +1,12 @@
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.deps.json
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.dll
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.pdb
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.AssemblyReference.cache
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfoInputs.cache
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfo.cs
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.dll
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\refint\CineBackEnd.dll
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.pdb
+D:\Facu\Programacion\TP_Integrador\CineAPP\CineBackEnd\obj\Debug\net6.0\ref\CineBackEnd.dll

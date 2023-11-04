@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CineFrontEnd/1.0.0": {
+        "dependencies": {
+          "CineBackEnd": "1.0.0"
+        },
+        "runtime": {
+          "CineFrontEnd.dll": {}
+        }
+      },
+      "CineBackEnd/1.0.0": {
+        "runtime": {
+          "CineBackEnd.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CineFrontEnd/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CineBackEnd/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
