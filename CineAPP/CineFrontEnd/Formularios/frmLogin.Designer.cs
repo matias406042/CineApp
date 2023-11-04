@@ -28,88 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtContrasenia = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.cboxContrasenia = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
+            txtUsuario = new TextBox();
+            txtContrasenia = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            btnLogin = new Button();
+            cboxContrasenia = new CheckBox();
+            SuspendLayout();
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsuario.Location = new System.Drawing.Point(133, 27);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(217, 26);
-            this.txtUsuario.TabIndex = 0;
+            txtUsuario.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsuario.Location = new Point(152, 36);
+            txtUsuario.Margin = new Padding(3, 4, 3, 4);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(247, 30);
+            txtUsuario.TabIndex = 0;
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtContrasenia.Location = new System.Drawing.Point(133, 73);
-            this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.PasswordChar = '*';
-            this.txtContrasenia.Size = new System.Drawing.Size(217, 26);
-            this.txtContrasenia.TabIndex = 1;
+            txtContrasenia.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContrasenia.Location = new Point(152, 97);
+            txtContrasenia.Margin = new Padding(3, 4, 3, 4);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(247, 30);
+            txtContrasenia.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(23, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(26, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 23);
+            label1.TabIndex = 2;
+            label1.Text = "Usuario";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(23, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña";
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(26, 101);
+            label2.Name = "label2";
+            label2.Size = new Size(112, 23);
+            label2.TabIndex = 3;
+            label2.Text = "Contraseña";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(256, 110);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(94, 23);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Ingresar";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Location = new Point(293, 147);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(107, 31);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Ingresar";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // cboxContrasenia
             // 
-            this.cboxContrasenia.AutoSize = true;
-            this.cboxContrasenia.Location = new System.Drawing.Point(23, 112);
-            this.cboxContrasenia.Name = "cboxContrasenia";
-            this.cboxContrasenia.Size = new System.Drawing.Size(128, 19);
-            this.cboxContrasenia.TabIndex = 5;
-            this.cboxContrasenia.Text = "Mostrar contraseña";
-            this.cboxContrasenia.UseVisualStyleBackColor = true;
-            this.cboxContrasenia.CheckedChanged += new System.EventHandler(this.cboxContrasenia_CheckedChanged);
+            cboxContrasenia.AutoSize = true;
+            cboxContrasenia.Location = new Point(26, 149);
+            cboxContrasenia.Margin = new Padding(3, 4, 3, 4);
+            cboxContrasenia.Name = "cboxContrasenia";
+            cboxContrasenia.Size = new Size(158, 24);
+            cboxContrasenia.TabIndex = 5;
+            cboxContrasenia.Text = "Mostrar contraseña";
+            cboxContrasenia.UseVisualStyleBackColor = true;
+            cboxContrasenia.CheckedChanged += cboxContrasenia_CheckedChanged;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 145);
-            this.Controls.Add(this.cboxContrasenia);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtContrasenia);
-            this.Controls.Add(this.txtUsuario);
-            this.Name = "frmLogin";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.frnPrincipal_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(450, 193);
+            Controls.Add(cboxContrasenia);
+            Controls.Add(btnLogin);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txtContrasenia);
+            Controls.Add(txtUsuario);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "frmLogin";
+            Text = "Login";
+            Load += frnPrincipal_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -24,5 +24,10 @@ namespace CineFrontEnd
             }
             else { txtContrasenia.PasswordChar = char.Parse("*"); }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
