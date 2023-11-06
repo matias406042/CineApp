@@ -13,16 +13,17 @@ namespace CineFrontEnd.Formularios
     public partial class FrmFuncion : Form
     {
         int idModificar;
-        string accion;
+        bool editar;
+       
         public FrmFuncion()
         {
             InitializeComponent();
         }
-        public FrmFuncion(int id, string acc)
+        public FrmFuncion(int id)
         {
             InitializeComponent();
             idModificar = id;
-            accion = acc.ToLower();
+            
         }
 
 
@@ -40,6 +41,11 @@ namespace CineFrontEnd.Formularios
 
         private void FrmFuncion_Load(object sender, EventArgs e)
         {
+            if(idModificar>-1) 
+            { 
+             editar = true;
+                btnInsert.Text = "EDITAR";
+            }
 
         }
     }

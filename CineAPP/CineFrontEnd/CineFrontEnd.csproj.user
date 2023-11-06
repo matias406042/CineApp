@@ -13,5 +13,11 @@
     <Compile Update="Formularios\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\FrmPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Formularios\FrmPeliculasSeleccionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

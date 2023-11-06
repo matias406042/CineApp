@@ -1,3 +1,4 @@
+using CineFrontEnd.Formularios;
 using CineFrontEnd.Servicios;
 using CineFrontEnd.Servicios.Interfaz;
 
@@ -27,7 +28,7 @@ namespace CineFrontEnd
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

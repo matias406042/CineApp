@@ -38,7 +38,8 @@ namespace CineFrontEnd.Formularios
 
                 if (DialogResult == DialogResult.OK || DialogResult == DialogResult.Yes)
                 {
-                    FrmFuncion x = new FrmFuncion(id, "editar");
+                    FrmFuncion f = new FrmFuncion(id);
+                    f.ShowDialog();
                 }
             }
         }
@@ -53,9 +54,26 @@ namespace CineFrontEnd.Formularios
 
                 if (DialogResult == DialogResult.OK || DialogResult == DialogResult.Yes)
                 {
-                   
+
                 }
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmFuncion f = new FrmFuncion();
+            f.ShowDialog();
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

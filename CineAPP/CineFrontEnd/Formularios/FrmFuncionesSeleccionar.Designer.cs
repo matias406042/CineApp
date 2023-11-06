@@ -40,6 +40,7 @@
             ColumnTipo = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             dataGridView1 = new DataGridView();
+            btnAdd = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -89,6 +90,7 @@
             btnExit.TabIndex = 5;
             btnExit.Text = "CLOSE";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // ColumnPelicula
             // 
@@ -140,6 +142,7 @@
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             groupBox1.Text = "Busqueda Por Fecha";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // dataGridView1
             // 
@@ -151,11 +154,22 @@
             dataGridView1.Size = new Size(781, 300);
             dataGridView1.TabIndex = 1;
             // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(268, 411);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(99, 29);
+            btnAdd.TabIndex = 7;
+            btnAdd.Text = "ADD";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // FrmFuncionesSeleccionar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnAdd);
             Controls.Add(dtpFuncionesBuscar);
             Controls.Add(groupBox1);
             Controls.Add(btnExit);
@@ -183,5 +197,6 @@
         private DataGridViewTextBoxColumn ColumnTipo;
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
+        private Button btnAdd;
     }
 }
