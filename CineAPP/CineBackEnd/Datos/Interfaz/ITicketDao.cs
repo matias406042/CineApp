@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineBackEnd.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,16 @@ namespace CineBackEnd.Datos.Interfaz
 {
     public interface ITicketDao
     {
+
+        List<Pelicula> GetTickets();
+
+        List<Butaca> GetButacaList();
+
+        bool Crear(Ticket t);
+        bool Actualizar(Ticket t);
+        bool Borrar(int id);
+
+
+
     }
 }

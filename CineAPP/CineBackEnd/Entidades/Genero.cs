@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Entidades
 {
-    internal class Genero
+    public class Genero
     {
+
+
+
+
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
+
+
+        public Genero()
+        {
+            
+        }
     }
 }

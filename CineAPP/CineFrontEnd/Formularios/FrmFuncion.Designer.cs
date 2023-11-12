@@ -44,8 +44,10 @@
             lblSALA = new Label();
             cboSala = new ComboBox();
             lblTipo = new Label();
-            cboTipo = new ComboBox();
             btnBuscar = new Button();
+            textBox2 = new TextBox();
+            label1 = new Label();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(526, 21);
+            lblFecha.Location = new Point(511, 26);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(54, 20);
             lblFecha.TabIndex = 2;
@@ -96,7 +98,7 @@
             // lblPelicula
             // 
             lblPelicula.AutoSize = true;
-            lblPelicula.Location = new Point(26, 182);
+            lblPelicula.Location = new Point(24, 142);
             lblPelicula.Name = "lblPelicula";
             lblPelicula.Size = new Size(72, 20);
             lblPelicula.TabIndex = 5;
@@ -105,16 +107,16 @@
             // lblHorario
             // 
             lblHorario.AutoSize = true;
-            lblHorario.Location = new Point(653, 21);
+            lblHorario.Location = new Point(631, 26);
             lblHorario.Name = "lblHorario";
-            lblHorario.Size = new Size(74, 20);
+            lblHorario.Size = new Size(121, 20);
             lblHorario.TabIndex = 6;
-            lblHorario.Text = "HORARIO";
+            lblHorario.Text = "HORARIO INICIO";
             // 
             // lblGenero
             // 
             lblGenero.AutoSize = true;
-            lblGenero.Location = new Point(336, 138);
+            lblGenero.Location = new Point(331, 156);
             lblGenero.Name = "lblGenero";
             lblGenero.Size = new Size(66, 20);
             lblGenero.TabIndex = 7;
@@ -130,11 +132,11 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new Point(145, 138);
+            lblNombre.Location = new Point(151, 156);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(70, 20);
+            lblNombre.Size = new Size(56, 20);
             lblNombre.TabIndex = 9;
-            lblNombre.Text = "NOMBRE";
+            lblNombre.Text = "TITULO";
             // 
             // dataGridView1
             // 
@@ -178,19 +180,11 @@
             // lblTipo
             // 
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(245, 21);
+            lblTipo.Location = new Point(25, 64);
             lblTipo.Name = "lblTipo";
-            lblTipo.Size = new Size(40, 20);
+            lblTipo.Size = new Size(135, 20);
             lblTipo.TabIndex = 14;
-            lblTipo.Text = "TIPO";
-            // 
-            // cboTipo
-            // 
-            cboTipo.FormattingEnabled = true;
-            cboTipo.Location = new Point(291, 18);
-            cboTipo.Name = "cboTipo";
-            cboTipo.Size = new Size(151, 28);
-            cboTipo.TabIndex = 15;
+            lblTipo.Text = "Tipo de Dimensión";
             // 
             // btnBuscar
             // 
@@ -201,13 +195,39 @@
             btnBuscar.Text = "BUSCAR";
             btnBuscar.UseVisualStyleBackColor = true;
             // 
+            // textBox2
+            // 
+            textBox2.Enabled = false;
+            textBox2.Location = new Point(616, 135);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(151, 27);
+            textBox2.TabIndex = 17;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(643, 112);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 20);
+            label1.TabIndex = 18;
+            label1.Text = "HORARIO FIN";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(166, 59);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(59, 27);
+            textBox3.TabIndex = 19;
+            // 
             // FrmFuncion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox3);
+            Controls.Add(label1);
+            Controls.Add(textBox2);
             Controls.Add(btnBuscar);
-            Controls.Add(cboTipo);
             Controls.Add(lblTipo);
             Controls.Add(cboSala);
             Controls.Add(lblSALA);
@@ -249,10 +269,12 @@
         private Label lblSALA;
         private ComboBox cboSala;
         private Label lblTipo;
-        private ComboBox cboTipo;
         private Button btnBuscar;
         private Button btnUpdate;
         private Button btnDelete;
         private System.CodeDom.CodeTypeReference button1;
+        private TextBox textBox2;
+        private Label label1;
+        private TextBox textBox3;
     }
 }

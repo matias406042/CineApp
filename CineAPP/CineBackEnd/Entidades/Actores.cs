@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Entidades
 {
-    internal class Actores
+    public class Actores
     {
+        public int Id { get; set; }
+
+        public string Nombre { get; set; }
+
+        public int Apellido { get; set; }
+
+
+
+        public Actores() { }
+
     }
 }

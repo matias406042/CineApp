@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Entidades
 {
-    internal class Productora
+    public class Productora
     {
+
+        public int Id { get; set; }
+
+        public string Nombre { get; set; }
+        
+        public Pais Pais { get; set; }
+        public Productora()
+        {
+                Pais = new Pais();
+        }
     }
 }

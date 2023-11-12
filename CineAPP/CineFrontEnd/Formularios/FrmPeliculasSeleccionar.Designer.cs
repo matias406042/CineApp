@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvPelicula = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -45,20 +45,20 @@
             dtpEstreno = new DateTimePicker();
             groupBox1 = new GroupBox();
             cmbGenero = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPelicula).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvPelicula
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dataGridView1.Location = new Point(312, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(476, 426);
-            dataGridView1.TabIndex = 4;
+            dgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPelicula.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvPelicula.Location = new Point(312, 12);
+            dgvPelicula.Name = "dgvPelicula";
+            dgvPelicula.RowHeadersWidth = 51;
+            dgvPelicula.RowTemplate.Height = 29;
+            dgvPelicula.Size = new Size(476, 426);
+            dgvPelicula.TabIndex = 4;
             // 
             // Column1
             // 
@@ -218,18 +218,18 @@
             Controls.Add(btnDelete);
             Controls.Add(btnClose);
             Controls.Add(btnUpdate);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPelicula);
             Name = "FrmPeliculasSeleccionar";
             Text = "Seleccion de Peliculas";
             Load += FrmPeliculasSeleccionar_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPelicula).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private DataGridView dataGridView1;
+        private DataGridView dgvPelicula;
         private Button btnUpdate;
         private Button btnClose;
         private Button btnDelete;

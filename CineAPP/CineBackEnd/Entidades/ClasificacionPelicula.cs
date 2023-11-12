@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Entidades
 {
-    internal class ClasificacionPelicula
+    public class ClasificacionPelicula
     {
+        public int Id { get; set; }
+
+        public int EdadMinima { get; set; }
+
+        public ClasificacionPelicula()
+        {
+            
+        }
+
     }
 }
