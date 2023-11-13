@@ -34,6 +34,11 @@ namespace CineBackEnd.Entidades
             Productora = new Productora();        
             Reparto = new List<Actores>();
         }
+        public Pelicula(string titulo, string genero)
+        {
+            Genero = new Genero(genero);
+            Titulo = titulo;
+        }
 
     }
 }

@@ -15,10 +15,13 @@ namespace CineBackEnd.Entidades
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-
         public Genero()
         {
-            
+
+        }
+        public Genero(string genero)
+        {
+            Descripcion = genero;
         }
     }
 }

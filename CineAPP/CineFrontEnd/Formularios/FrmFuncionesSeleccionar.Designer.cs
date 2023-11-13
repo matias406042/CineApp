@@ -28,159 +28,213 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnBuscar = new Button();
-            btnEditar = new Button();
-            btnDelete = new Button();
-            dtpFuncionesBuscar = new DateTimePicker();
-            btnExit = new Button();
-            ColumnPelicula = new DataGridViewTextBoxColumn();
-            ColumnFecha = new DataGridViewTextBoxColumn();
-            ColumnHora = new DataGridViewTextBoxColumn();
-            ColumnSala = new DataGridViewTextBoxColumn();
-            ColumnTipo = new DataGridViewTextBoxColumn();
-            groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            btnAdd = new Button();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.dtpFuncionesBuscar = new System.Windows.Forms.DateTimePicker();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.ColumnPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(241, 24);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(94, 29);
-            btnBuscar.TabIndex = 0;
-            btnBuscar.Text = "Search";
-            btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(211, 18);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(82, 22);
+            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.Text = "Search";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(12, 411);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(99, 29);
-            btnEditar.TabIndex = 2;
-            btnEditar.Text = "UPDATE";
-            btnEditar.UseVisualStyleBackColor = true;
-            btnEditar.Click += btnEditar_Click;
+            this.btnEditar.Location = new System.Drawing.Point(10, 308);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(87, 22);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "UPDATE";
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(131, 411);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(99, 29);
-            btnDelete.TabIndex = 3;
-            btnDelete.Text = "DELETE";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.Location = new System.Drawing.Point(115, 308);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(87, 22);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // dtpFuncionesBuscar
             // 
-            dtpFuncionesBuscar.Format = DateTimePickerFormat.Short;
-            dtpFuncionesBuscar.Location = new Point(16, 46);
-            dtpFuncionesBuscar.Name = "dtpFuncionesBuscar";
-            dtpFuncionesBuscar.Size = new Size(218, 27);
-            dtpFuncionesBuscar.TabIndex = 4;
+            this.dtpFuncionesBuscar.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFuncionesBuscar.Location = new System.Drawing.Point(14, 34);
+            this.dtpFuncionesBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFuncionesBuscar.Name = "dtpFuncionesBuscar";
+            this.dtpFuncionesBuscar.Size = new System.Drawing.Size(191, 23);
+            this.dtpFuncionesBuscar.TabIndex = 4;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(694, 411);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(94, 29);
-            btnExit.TabIndex = 5;
-            btnExit.Text = "CLOSE";
-            btnExit.UseVisualStyleBackColor = true;
-            btnExit.Click += btnExit_Click;
+            this.btnExit.Location = new System.Drawing.Point(607, 308);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(82, 22);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "CLOSE";
+            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // ColumnPelicula
             // 
-            ColumnPelicula.Frozen = true;
-            ColumnPelicula.HeaderText = "Pelicula";
-            ColumnPelicula.MinimumWidth = 6;
-            ColumnPelicula.Name = "ColumnPelicula";
-            ColumnPelicula.Width = 125;
+            this.ColumnPelicula.Frozen = true;
+            this.ColumnPelicula.HeaderText = "Pelicula";
+            this.ColumnPelicula.MinimumWidth = 6;
+            this.ColumnPelicula.Name = "ColumnPelicula";
+            this.ColumnPelicula.Width = 125;
             // 
             // ColumnFecha
             // 
-            ColumnFecha.Frozen = true;
-            ColumnFecha.HeaderText = "FECHA";
-            ColumnFecha.MinimumWidth = 6;
-            ColumnFecha.Name = "ColumnFecha";
-            ColumnFecha.Width = 125;
+            this.ColumnFecha.Frozen = true;
+            this.ColumnFecha.HeaderText = "FECHA";
+            this.ColumnFecha.MinimumWidth = 6;
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.Width = 125;
             // 
             // ColumnHora
             // 
-            ColumnHora.Frozen = true;
-            ColumnHora.HeaderText = "Horario";
-            ColumnHora.MinimumWidth = 6;
-            ColumnHora.Name = "ColumnHora";
-            ColumnHora.Width = 125;
+            this.ColumnHora.Frozen = true;
+            this.ColumnHora.HeaderText = "Horario";
+            this.ColumnHora.MinimumWidth = 6;
+            this.ColumnHora.Name = "ColumnHora";
+            this.ColumnHora.Width = 125;
             // 
             // ColumnSala
             // 
-            ColumnSala.Frozen = true;
-            ColumnSala.HeaderText = "SALA";
-            ColumnSala.MinimumWidth = 6;
-            ColumnSala.Name = "ColumnSala";
-            ColumnSala.Width = 125;
+            this.ColumnSala.Frozen = true;
+            this.ColumnSala.HeaderText = "SALA";
+            this.ColumnSala.MinimumWidth = 6;
+            this.ColumnSala.Name = "ColumnSala";
+            this.ColumnSala.Width = 125;
             // 
             // ColumnTipo
             // 
-            ColumnTipo.Frozen = true;
-            ColumnTipo.HeaderText = "TIPO";
-            ColumnTipo.MinimumWidth = 6;
-            ColumnTipo.Name = "ColumnTipo";
-            ColumnTipo.Width = 125;
+            this.ColumnTipo.Frozen = true;
+            this.ColumnTipo.HeaderText = "TIPO";
+            this.ColumnTipo.MinimumWidth = 6;
+            this.ColumnTipo.Name = "ColumnTipo";
+            this.ColumnTipo.Width = 125;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(btnBuscar);
-            groupBox1.Location = new Point(10, 20);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(781, 391);
-            groupBox1.TabIndex = 6;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Busqueda Por Fecha";
-            groupBox1.Enter += groupBox1_Enter;
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Location = new System.Drawing.Point(9, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(679, 293);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Busqueda Por Fecha";
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 79);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(781, 300);
-            dataGridView1.TabIndex = 1;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTitulo,
+            this.colGenero,
+            this.colInicio,
+            this.colFin,
+            this.colSala});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 59);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(683, 225);
+            this.dataGridView1.TabIndex = 1;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(268, 411);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(99, 29);
-            btnAdd.TabIndex = 7;
-            btnAdd.Text = "ADD";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
+            this.btnAdd.Location = new System.Drawing.Point(234, 308);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 22);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // colTitulo
+            // 
+            this.colTitulo.HeaderText = "Titulo";
+            this.colTitulo.Name = "colTitulo";
+            this.colTitulo.ReadOnly = true;
+            this.colTitulo.Width = 175;
+            // 
+            // colGenero
+            // 
+            this.colGenero.HeaderText = "Genero";
+            this.colGenero.Name = "colGenero";
+            this.colGenero.ReadOnly = true;
+            this.colGenero.Width = 120;
+            // 
+            // colInicio
+            // 
+            this.colInicio.HeaderText = "Inicio";
+            this.colInicio.Name = "colInicio";
+            this.colInicio.ReadOnly = true;
+            this.colInicio.Width = 120;
+            // 
+            // colFin
+            // 
+            this.colFin.HeaderText = "Fin";
+            this.colFin.Name = "colFin";
+            this.colFin.ReadOnly = true;
+            this.colFin.Width = 120;
+            // 
+            // colSala
+            // 
+            this.colSala.HeaderText = "Sala";
+            this.colSala.Name = "colSala";
+            this.colSala.ReadOnly = true;
+            this.colSala.Width = 90;
             // 
             // FrmFuncionesSeleccionar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnAdd);
-            Controls.Add(dtpFuncionesBuscar);
-            Controls.Add(groupBox1);
-            Controls.Add(btnExit);
-            Controls.Add(btnDelete);
-            Controls.Add(btnEditar);
-            Name = "FrmFuncionesSeleccionar";
-            Text = "Funciones";
-            Load += FrmFuncionesSeleccionar_Load;
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dtpFuncionesBuscar);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEditar);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FrmFuncionesSeleccionar";
+            this.Text = "Funciones";
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -198,5 +252,10 @@
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
         private Button btnAdd;
+        private DataGridViewTextBoxColumn colTitulo;
+        private DataGridViewTextBoxColumn colGenero;
+        private DataGridViewTextBoxColumn colInicio;
+        private DataGridViewTextBoxColumn colFin;
+        private DataGridViewTextBoxColumn colSala;
     }
 }

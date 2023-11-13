@@ -9,7 +9,7 @@ namespace CineBackEnd.Datos.Interfaz
 {
     public interface IFuncionDao
     {
-        List<Funcion> GetFunciones();
+        List<Funcion> GetFunciones(DateTime fecha);
 
         List<Pelicula> Peliculas( );
 

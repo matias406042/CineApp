@@ -44,3 +44,20 @@ D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncionesSeleccionar.resources
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPelicula.resources
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPeliculasSeleccionar.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.AssemblyReference.cache
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmComprobante.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncion.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncionesSeleccionar.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.frmLogin.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.frmMenu.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPelicula.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPeliculasSeleccionar.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmTicket.resources
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.GenerateResource.cache
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.AssemblyInfoInputs.cache
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.AssemblyInfo.cs
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.dll
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\refint\CineFrontEnd.dll
+D:\Facu\Programacion\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.pdb
