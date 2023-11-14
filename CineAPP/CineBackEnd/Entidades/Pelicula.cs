@@ -15,7 +15,7 @@ namespace CineBackEnd.Entidades
 
         public DateTime FechaEstreno { get; set; }
 
-        public DateTime Duracion { get; set; }
+        public int Duracion { get; set; }
 
 
         public Genero Genero { get; set; }
