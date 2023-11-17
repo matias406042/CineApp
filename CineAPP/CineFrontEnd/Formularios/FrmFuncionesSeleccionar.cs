@@ -17,6 +17,7 @@ namespace CineFrontEnd.Formularios
     {
         int id = -1;
         IFuncionDao funcionDao;
+        List<Funcion> listaFunciones;
         public FrmFuncionesSeleccionar()
         {
             InitializeComponent();
@@ -33,21 +34,7 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            //if (id != -1)
-            //{
 
-
-            //    DialogResult = MessageBox.Show("¿Seguro desea editar la funcion?");
-
-            //    if (DialogResult == DialogResult.OK || DialogResult == DialogResult.Yes)
-            //    {
-            //        FrmFuncion f = new FrmFuncion();
-            //        f.ShowDialog();
-            //    }
-            //}
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -77,12 +64,56 @@ namespace CineFrontEnd.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            List<Funcion> listaFunciones = funcionDao.GetFunciones(dtpFecha.Value);
+            listaFunciones = funcionDao.GetFunciones(dtpFecha.Value);
             dgvFunciones.Rows.Clear();
             foreach (Funcion f in listaFunciones)
             {
                 dgvFunciones.Rows.Add(new object[] {f.Id,f.Pelicula.Titulo,f.Pelicula.Genero.Descripcion,f.HorarioInicio,f.HorarioFin,f.Sala.Descripcion });
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Funcion ff = new Funcion();
+            foreach (Funcion fun in listaFunciones)
+            {
+                if(fun.Id == Convert.ToInt32(dgvFunciones.CurrentRow.Cells["colIdFuncion"].Value)) 
+                {
+                    ff = fun;
+                    break;
+                }
+            }
+            FrmFuncion f = new FrmFuncion(ff);
+            f.ShowDialog();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Esta seguro de borrar esta funcion", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+            {
+                Funcion ff = new Funcion();
+                foreach (Funcion fun in listaFunciones)
+                {
+                    if (fun.Id == Convert.ToInt32(dgvFunciones.CurrentRow.Cells["colIdFuncion"].Value))
+                    {
+                        ff = fun;
+                        break;
+                    }
+                }
+                if (funcionDao.Borrar(ff))
+                {
+                    MessageBox.Show("Se elimino la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Eliminacion cancelada","Cancelar",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+           
         }
     }
 }

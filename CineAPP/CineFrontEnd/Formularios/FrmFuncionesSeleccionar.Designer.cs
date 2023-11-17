@@ -40,13 +40,13 @@
             this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.colIdFuncion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -81,6 +82,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // dtpFecha
             // 
@@ -176,17 +178,6 @@
             this.dgvFunciones.Size = new System.Drawing.Size(683, 225);
             this.dgvFunciones.TabIndex = 1;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(234, 308);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 22);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
-            // 
             // colIdFuncion
             // 
             this.colIdFuncion.HeaderText = "ID";
@@ -228,6 +219,17 @@
             this.colSala.Name = "colSala";
             this.colSala.ReadOnly = true;
             this.colSala.Width = 90;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(234, 308);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 22);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // FrmFuncionesSeleccionar
             // 

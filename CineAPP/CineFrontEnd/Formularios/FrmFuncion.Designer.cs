@@ -68,6 +68,7 @@
             this.btnInsert.TabIndex = 0;
             this.btnInsert.Text = "AGREGAR";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // lblFecha
             // 

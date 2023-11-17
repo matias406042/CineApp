@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos.Interfaz
         List<Genero> GetGeneros();
         List<Sala> GetSalas();        
         bool Crear(Funcion f);
-        bool Borrar(int id);
-        bool Actualizar(Funcion f, Pelicula p, Sala s, TimeOnly desde, TimeOnly hasta, DateTime fecha);
+        bool Borrar(Funcion f);
+        bool Actualizar(Funcion f);
     }
 }

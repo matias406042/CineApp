@@ -18,9 +18,9 @@ namespace CineBackEnd.Entidades
 
         public DateTime Fecha { get; set; }
 
-        public TimeOnly HorarioInicio{ get; set; }
+        public DateTime HorarioInicio{ get; set; }
 
-        public TimeOnly HorarioFin   { get; set; }
+        public DateTime HorarioFin   { get; set; }
 
         public List <Butaca> Butacas { get; set; }
 

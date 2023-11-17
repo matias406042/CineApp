@@ -12,26 +12,26 @@ namespace CineBackEnd.Datos.Implementacion
 {
     public class FuncionDao : IFuncionDao
     {
-        public bool Actualizar(Funcion f, Pelicula p, Sala s, TimeOnly desde, TimeOnly hasta, DateTime fecha)
+        public bool Actualizar(Funcion f)
         {
             string sp = "SP_UPDATE_FUNCION";
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@id_funcion", f.Id));
-            parametros.Add(new SqlParameter("@id_pelicula", p.Id));
-            parametros.Add(new SqlParameter("@id_sala", s.Id));
-            parametros.Add(new SqlParameter("@horario_inicio", desde));
-            parametros.Add(new SqlParameter("@horario_fin", hasta));
-            parametros.Add(new SqlParameter("@fecha", fecha));
+            parametros.Add(new SqlParameter("@id_pelicula", f.Pelicula.Id));
+            parametros.Add(new SqlParameter("@id_sala", f.Sala.Id));
+            parametros.Add(new SqlParameter("@horario_inicio", f.HorarioInicio));
+            parametros.Add(new SqlParameter("@horario_fin", f.HorarioFin));
+            parametros.Add(new SqlParameter("@fecha", f.Fecha));
             if (HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp, parametros) <= 0)
                 return false;
             else
                 return true;
         }
-        public bool Borrar(int id)
+        public bool Borrar(Funcion f)
         {
             string sp = "SP_BORRAR_FUNCION";
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@id_funcion",id));
+            parametros.Add(new SqlParameter("@id_funcion",f.Id));
             if(HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp,parametros) <= 0)
                 return false;
             else
@@ -43,7 +43,6 @@ namespace CineBackEnd.Datos.Implementacion
         {
             string sp = "SP_CREAR_FUNCION";
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@id_funcion",f.Id));
             parametros.Add(new SqlParameter("@id_pelicula",f.Pelicula.Id));
             parametros.Add(new SqlParameter("@id_sala",f.Sala.Id));
             parametros.Add(new SqlParameter("@horario_inicio", f.HorarioInicio));
@@ -122,10 +121,11 @@ namespace CineBackEnd.Datos.Implementacion
                     p.Productora = prod;
                 SalaTipo st = new SalaTipo(int.Parse(fila["Id_Tipo_Sala"].ToString()), fila["Tipo_Sala"].ToString());
                 Funcion f = new Funcion();
+                    f.Id = int.Parse(fila["Id_Funcion"].ToString());
                     f.Pelicula = p;
                     f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(), int.Parse(fila["Capacidad"].ToString()), st);
-                    f.HorarioInicio = TimeOnly.Parse(fila["Inicio"].ToString());
-                    f.HorarioFin = TimeOnly.Parse(fila["Fin"].ToString());
+                    f.HorarioInicio = DateTime.Parse(fila["Inicio"].ToString());
+                    f.HorarioFin = DateTime.Parse(fila["Fin"].ToString());
                     f.Fecha = fecha;
                 lstFunciones.Add(f);
             }
