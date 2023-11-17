@@ -32,3 +32,9 @@ D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\obj\Debug\net6.0\CineApi.pdb
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\obj\Debug\net6.0\CineApi.genruntimeconfig.cache
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\obj\Debug\net6.0\ref\CineApi.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

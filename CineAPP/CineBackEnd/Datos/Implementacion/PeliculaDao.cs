@@ -26,8 +26,16 @@ namespace CineBackEnd.Datos.Implementacion
         {
            List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IdGenero", p.Genero.Id));
-            parameters.Add(new SqlParameter("@"))
-            return
+            parameters.Add(new SqlParameter("@IdClasificacion",p.Clasificacion.Id));
+            parameters.Add(new SqlParameter("@IdProductora", p.Productora.Id));
+            parameters.Add(new SqlParameter("@IdDirecto", p.Director.ID));
+
+            if (HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL("SP_Insertar_Peliculas", parameters) <= 0)
+            {
+                return false;
+            }
+            else return true;
+           ;
         }
 
         public Pelicula PeliculaXID(int id) 
@@ -44,7 +52,7 @@ namespace CineBackEnd.Datos.Implementacion
                 
                 p.Id = Convert.ToInt32(f[0]);
                 p.Titulo = Convert.ToString(f[1]);
-                p.Duracion = Convert.ToDateTime(f[2]);
+                p.Duracion = Convert.ToInt32(f[2]);
                 p.FechaEstreno = Convert.ToDateTime(f[3]);
                 p.Genero.Id = Convert.ToInt32(f[4]);
                 p.Genero.Descripcion = Convert.ToString(f[5]);
@@ -79,7 +87,7 @@ namespace CineBackEnd.Datos.Implementacion
                 Pelicula p = new Pelicula();
                 p.Id = Convert.ToInt32( r[0]);
                 p.Titulo = Convert.ToString(r[1]);
-                p.Duracion = Convert.ToDateTime(r[2]);
+                p.Duracion = Convert.ToInt32(r[2]);
                 p.FechaEstreno = Convert.ToDateTime(r[3]);
                 p.Genero.Id = Convert.ToInt32(r[4]);
                 p.Genero.Descripcion = Convert.ToString(r[5]);

@@ -15,8 +15,7 @@ namespace CineBackEnd.Entidades
 
         public DateTime FechaEstreno { get; set; }
 
-        public DateTime Duracion { get; set; }
-
+        public int Duracion { get; set; }
 
         public Genero Genero { get; set; }
 
@@ -24,6 +23,7 @@ namespace CineBackEnd.Entidades
 
         public Productora Productora { get; set; }
 
+        public Director Director { get; set; }
         public List<Actores> Reparto { get; set; }
 
         public Pelicula()
@@ -32,6 +32,7 @@ namespace CineBackEnd.Entidades
             Clasificacion = new ClasificacionPelicula();
             Productora = new Productora();        
             Reparto = new List<Actores>();
+            Director = new Director();
         }
 
     }

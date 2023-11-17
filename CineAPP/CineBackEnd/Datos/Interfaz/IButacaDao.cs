@@ -10,7 +10,7 @@ namespace CineBackEnd.Datos.Interfaz
     internal interface IButacaDao
     {
 
-        List<Butaca> ObtenerButacas();
+        List<Butaca> ObtenerButacasXFuncion(int ID_funcion);
         int ObtenerProximoNro();
         bool Crear(Butaca oPresupuesto);
         bool Actualizar(Butaca butaca);

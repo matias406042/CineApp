@@ -484,7 +484,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "CineBackEnd >= 1.0.0"
+      "CineBackEnd >= 1.0.0",
+      "System.Data.SqlClient >= 4.8.5"
     ]
   },
   "packageFolders": {
@@ -535,6 +536,12 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "System.Data.SqlClient": {
+            "target": "Package",
+            "version": "[4.8.5, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

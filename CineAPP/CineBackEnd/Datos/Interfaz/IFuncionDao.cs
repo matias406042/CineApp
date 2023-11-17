@@ -9,15 +9,14 @@ namespace CineBackEnd.Datos.Interfaz
 {
     public interface IFuncionDao
     {
-        List<Funcion> GetFunciones();
+        List<Funcion> GetFunciones(DateTime fecha);
 
         List<Pelicula> Peliculas( );
 
         List<Genero> GetGeneros();
-        List<Sala> GetSalas();
-        
+        List<Sala> GetSalas();        
         bool Crear(Funcion f);
-        bool Actualizar(Funcion f);
         bool Borrar(int id);
+        bool Actualizar(Funcion f, Pelicula p, Sala s, TimeOnly desde, TimeOnly hasta, DateTime fecha);
     }
 }

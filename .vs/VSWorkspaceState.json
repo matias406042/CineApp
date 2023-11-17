@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CineAPP",
+    "\\CineAPP\\CineBackEnd",
+    "\\CineAPP\\CineBackEnd\\Datos",
+    "\\CineAPP\\CineBackEnd\\Datos\\Implementacion",
+    "\\CineAPP\\CineBackEnd\\Entidades",
+    "\\CineAPP\\CineBackEnd\\Fachada",
+    "\\CineAPP\\CineBackEnd\\Fachada\\Implementacion",
+    "\\CineAPP\\CineFrontEnd",
+    "\\CineAPP\\CineFrontEnd\\Formularios"
+  ],
+  "SelectedNode": "\\CineAPP\\CineBackEnd\\Entidades\\Funcion.cs",
+  "PreviewInSolutionExplorer": false
+}

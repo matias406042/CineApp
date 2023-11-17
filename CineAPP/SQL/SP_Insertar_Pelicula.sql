@@ -15,4 +15,3 @@ begin
 
 
 
-	select * from PELICULAS valu

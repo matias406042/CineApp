@@ -26,10 +26,12 @@ namespace CineBackEnd.Datos.Implementacion
             throw new NotImplementedException();
         }
 
-        public List<Butaca> ObtenerButacas()
+        public List<Butaca> ObtenerButacasXFuncion(int id_funcion)
         {
             throw new NotImplementedException();
         }
+
+       
 
         public int ObtenerProximoNro()
         {
