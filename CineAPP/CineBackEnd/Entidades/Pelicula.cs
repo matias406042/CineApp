@@ -17,7 +17,7 @@ namespace CineBackEnd.Entidades
 
         public int Duracion { get; set; }
 
-
+        public Director Director { get; set; }
         public Genero Genero { get; set; }
 
         public ClasificacionPelicula Clasificacion { get; set; }    

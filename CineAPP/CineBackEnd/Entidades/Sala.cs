@@ -16,9 +16,12 @@ namespace CineBackEnd.Entidades
         public SalaTipo Tipo { get; set; }
 
         public Sala() { Tipo = new SalaTipo(); }
-        public Sala(string descripcion)
+        public Sala(int id,string descripcion,int capacidad, SalaTipo tipo)
         {
+            Id = id;
             Descripcion = descripcion;
+            Capacidad = capacidad;
+            Tipo = tipo;
         }
 
     }

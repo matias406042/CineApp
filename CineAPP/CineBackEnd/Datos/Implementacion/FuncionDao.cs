@@ -75,7 +75,8 @@ namespace CineBackEnd.Datos.Implementacion
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, null);
             foreach (DataRow fila in tabla.Rows)
             {
-                Sala s = new Sala(fila["Sala"].ToString());
+                Sala s = new Sala();
+                s.Descripcion = fila["Sala"].ToString();
                 s.Id = Convert.ToInt32(fila["id_Sala"]);
                 s.Tipo = new SalaTipo(Convert.ToInt32(fila["id_Tipo"]), fila["Tipo"].ToString());
                 s.Capacidad = Convert.ToInt32(fila["Capacidad"]);
@@ -87,19 +88,44 @@ namespace CineBackEnd.Datos.Implementacion
         public List<Funcion> GetFunciones(DateTime fecha)
         {
             List<Funcion> lstFunciones = new List<Funcion>();
-            string sp = "SP_Funciones_Fecha";
+            string sp = "SP_GET_FUNCIONES";
             List<Parametro> listParametros = new List<Parametro>();
             listParametros.Add(new Parametro("@fecha", fecha));
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, listParametros);
             foreach (DataRow fila in tabla.Rows)
-            {
+            {   
+                Genero g = new Genero();
+                    g.Id = int.Parse(fila["Id_Genero"].ToString());
+                    g.Descripcion = fila["Genero"].ToString();
+                Productora prod = new Productora();
+                    prod.Id = int.Parse(fila["Id_Productora"].ToString());
+                    prod.Nombre = fila["Productora"].ToString();
+                    prod.Pais = new Pais(int.Parse(fila["Id_Pais_Productora"].ToString()), fila["Pais_Productora"].ToString());
+                ClasificacionPelicula c = new ClasificacionPelicula();
+                    c.Id = int.Parse(fila["Id_Clasificacion"].ToString());
+                    c.EdadMinima = int.Parse(fila["Edad_Clasf"].ToString());
+                Director d = new Director();
+                    d.ID = int.Parse(fila["Id_Director"].ToString());
+                    d.Nombre = fila["Nombre_Dir"].ToString();
+                    d.Apellido = fila["Ape_Dir"].ToString();
+                    d.Edad = int.Parse(fila["Edad_Dir"].ToString());
+                    d.Nacionalidad = new Pais(int.Parse(fila["Id_Pais_Dir"].ToString()), fila["Pais_Director"].ToString());
+                Pelicula p = new Pelicula();
+                    p.Id = int.Parse(fila["Id_Pelicula"].ToString());
+                    p.Titulo = fila["Titulo"].ToString();
+                    p.Duracion = int.Parse(fila["Duracion"].ToString());
+                    p.FechaEstreno = DateTime.Parse(fila["Fecha_Estreno"].ToString());
+                    p.Genero = g;
+                    p.Clasificacion = c;
+                    p.Director = d;
+                    p.Productora = prod;
+                SalaTipo st = new SalaTipo(int.Parse(fila["Id_Tipo_Sala"].ToString()), fila["Tipo_Sala"].ToString());
                 Funcion f = new Funcion();
-
-                f.Pelicula = new Pelicula(fila["TITULO"].ToString(), fila["GENERO"].ToString());
-                f.Sala = new Sala(fila["SALA"].ToString());
-                f.HorarioInicio = DateTime.Parse(fila["HORARIO_INICIO"].ToString());
-                f.HorarioFin = DateTime.Parse(fila["HORARIO_FIN"].ToString());
-                f.Fecha = fecha;
+                    f.Pelicula = p;
+                    f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(), int.Parse(fila["Capacidad"].ToString()), st);
+                    f.HorarioInicio = TimeOnly.Parse(fila["HORARIO_INICIO"].ToString());
+                    f.HorarioFin = TimeOnly.Parse(fila["HORARIO_FIN"].ToString());
+                    f.Fecha = fecha;
                 lstFunciones.Add(f);
             }
             return lstFunciones;
@@ -116,23 +142,24 @@ namespace CineBackEnd.Datos.Implementacion
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
             foreach (DataRow fila in tabla.Rows)
             {
-                Pelicula p = new Pelicula();
+                
                 Genero g = new Genero();
+                    g.Id = int.Parse(fila["GeneroID"].ToString());
+                    g.Descripcion = fila["GeneroDescripcion"].ToString();
                 Productora prod = new Productora();
+                    prod.Id = int.Parse(fila["ProductoraID"].ToString());
+                    prod.Nombre = fila["ProductoraNombre"].ToString();
                 ClasificacionPelicula c = new ClasificacionPelicula();
-                p.Id = int.Parse(fila["PeliculasID"].ToString());
-                p.Titulo = fila["PeliculaTitulo"].ToString();
-                p.Duracion = int.Parse(fila["PeliculaDuracion"].ToString());
-                p.FechaEstreno = DateTime.Parse(fila["PeliculaEstreno"].ToString());
-                g.Id = int.Parse(fila["GeneroID"].ToString());
-                g.Descripcion = fila["GeneroDescripcion"].ToString();
-                p.Genero = g;
-                c.Id = int.Parse(fila["CalificacionID"].ToString()); 
-                c.EdadMinima = int.Parse(fila["CalificacionEdad"].ToString());
-                p.Clasificacion = c;
-                prod.Id = int.Parse(fila["ProductoraID"].ToString());
-                prod.Nombre = fila["ProductoraNombre"].ToString();
-                p.Productora = prod;
+                    c.Id = int.Parse(fila["CalificacionID"].ToString());
+                    c.EdadMinima = int.Parse(fila["CalificacionEdad"].ToString());
+                Pelicula p = new Pelicula();
+                    p.Id = int.Parse(fila["PeliculasID"].ToString());
+                    p.Titulo = fila["PeliculaTitulo"].ToString();
+                    p.Duracion = int.Parse(fila["PeliculaDuracion"].ToString());
+                    p.FechaEstreno = DateTime.Parse(fila["PeliculaEstreno"].ToString()); 
+                    p.Genero = g;
+                    p.Clasificacion = c;                
+                    p.Productora = prod;
                 lstPeliculas.Add(p);
             }
             return lstPeliculas ;

@@ -6,20 +6,16 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Entidades
 {
-    public class Pais
+    public class Director
     {
-
-        public int Id  { get; set; }
+        public int ID { get; set; }
         public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int Edad { get; set; }
+        public Pais Nacionalidad { get; set; }
+        public Director()
+        {
 
-        public Pais()
-        {
-            
-        }
-        public Pais(int id, string pais)
-        {
-            Id = id;
-            Nombre = pais;
         }
     }
 }
