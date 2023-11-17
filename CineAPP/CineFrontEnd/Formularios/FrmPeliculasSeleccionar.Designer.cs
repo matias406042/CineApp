@@ -42,9 +42,9 @@
             cbxGenero = new CheckBox();
             cbxFecha = new CheckBox();
             txbTitulo = new TextBox();
-            dtpEstreno = new DateTimePicker();
             groupBox1 = new GroupBox();
             cmbGenero = new ComboBox();
+            txbAño = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvPelicula).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -175,19 +175,10 @@
             txbTitulo.Size = new Size(125, 27);
             txbTitulo.TabIndex = 5;
             // 
-            // dtpEstreno
-            // 
-            dtpEstreno.Format = DateTimePickerFormat.Custom;
-            dtpEstreno.Location = new Point(139, 116);
-            dtpEstreno.Name = "dtpEstreno";
-            dtpEstreno.Size = new Size(110, 27);
-            dtpEstreno.TabIndex = 7;
-            dtpEstreno.ValueChanged += dtpFechaEstreno_ValueChanged;
-            // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txbAño);
             groupBox1.Controls.Add(cmbGenero);
-            groupBox1.Controls.Add(dtpEstreno);
             groupBox1.Controls.Add(txbTitulo);
             groupBox1.Controls.Add(cbxFecha);
             groupBox1.Controls.Add(cbxGenero);
@@ -199,6 +190,7 @@
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Busqueda";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // cmbGenero
             // 
@@ -207,6 +199,13 @@
             cmbGenero.Name = "cmbGenero";
             cmbGenero.Size = new Size(125, 28);
             cmbGenero.TabIndex = 8;
+            // 
+            // txbAño
+            // 
+            txbAño.Location = new Point(139, 117);
+            txbAño.Name = "txbAño";
+            txbAño.Size = new Size(125, 27);
+            txbAño.TabIndex = 9;
             // 
             // FrmPeliculasSeleccionar
             // 
@@ -239,12 +238,12 @@
         private CheckBox cbxGenero;
         private CheckBox cbxFecha;
         private TextBox txbTitulo;
-        private DateTimePicker dtpEstreno;
         private GroupBox groupBox1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private ComboBox cmbGenero;
+        private TextBox txbAño;
     }
 }

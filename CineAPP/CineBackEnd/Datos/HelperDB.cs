@@ -25,7 +25,7 @@ namespace CineBackEnd.Datos
                 instancia = new HelperDB();
             return instancia;
         }
-        public DataTable ConsultaSQL(string spNombre, List<Parametro> values)
+        public DataTable ConsultaSQL(string spNombre, List<SqlParameter> values)
         {
             DataTable tabla = new DataTable();
 
@@ -34,9 +34,9 @@ namespace CineBackEnd.Datos
             cmd.CommandType = CommandType.StoredProcedure;
             if (values != null)
             {
-                foreach (Parametro oParametro in values)
+                foreach (SqlParameter oParametro in values)
                 {
-                    cmd.Parameters.AddWithValue(oParametro.Name, oParametro.Value);
+                    cmd.Parameters.Add(oParametro);
                 }
             }
             tabla.Load(cmd.ExecuteReader());
@@ -45,9 +45,12 @@ namespace CineBackEnd.Datos
             return tabla;
         }
 
+  
+        
+
        
 
-        public int SPSimpleSQL(string strSql, List<Parametro> values)
+        public int SPTransaccionSimpleSQL(string strSql, List<SqlParameter> parametros)
         {
             int afectadas = 0;
             SqlTransaction t = null;
@@ -62,11 +65,11 @@ namespace CineBackEnd.Datos
                 cmd.CommandText = strSql;
                 cmd.Transaction = t;
 
-                if (values != null)
+                if (parametros != null)
                 {
-                    foreach (Parametro param in values)
+                    foreach (SqlParameter param in parametros)
                     {
-                        cmd.Parameters.AddWithValue(param.Name, param.Value);
+                        cmd.Parameters.Add(param);
                     }
                 }
 

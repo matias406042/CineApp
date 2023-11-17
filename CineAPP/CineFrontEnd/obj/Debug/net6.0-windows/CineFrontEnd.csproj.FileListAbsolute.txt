@@ -44,3 +44,5 @@ D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncionesSeleccionar.resources
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPelicula.resources
 D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPeliculasSeleccionar.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmComprobante.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP integrador\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmTicket.resources

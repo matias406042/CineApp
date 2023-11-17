@@ -26,7 +26,6 @@ namespace CineBackEnd.Entidades
 
         public List<Actores> Reparto { get; set; }
 
-
         public Pelicula()
         {
             Genero = new Genero();

@@ -26,14 +26,14 @@ namespace CineFrontEnd.Formularios
         private void FrmPeliculasSeleccionar_Load(object sender, EventArgs e)
         {
             btnSerch.Enabled = false;
-            dtpEstreno.CustomFormat = "yyyy";
+            
         }
 
         private void cbxFecha_CheckedChanged(object sender, EventArgs e)
         {
             ChequearElSearch();
-            if (cbxFecha.Checked == true) { dtpEstreno.Enabled = true; }
-            else if (cbxFecha.Checked == false) { dtpEstreno.Enabled = false; }
+            if (cbxFecha.Checked == true) { txbAño.Enabled = true; }
+            else if (cbxFecha.Checked == false) { txbAño.Enabled = false; }
         }
 
         private void cbxGenero_CheckedChanged(object sender, EventArgs e)
@@ -65,6 +65,11 @@ namespace CineFrontEnd.Formularios
 
 
 
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

@@ -9,7 +9,7 @@ namespace CineBackEnd.Datos.Interfaz
 {
     public interface IPeliculaDao
     {
-        List<Pelicula> ObtenerPeliculas();
+        List<Pelicula> GetPeliculas(string titulo , int Id_genero ,int AñoEstreno);
        
         bool Crear(Pelicula p);
         bool Actualizar(Pelicula p);
