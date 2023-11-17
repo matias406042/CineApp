@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace CineBackEnd.Datos.Implementacion
 {
-    internal class FuncionDao : IFuncionDao
+    public class FuncionDao : IFuncionDao
     {
         public bool Actualizar(Funcion f, Pelicula p, Sala s, TimeOnly desde, TimeOnly hasta, DateTime fecha)
         {
@@ -72,7 +72,7 @@ namespace CineBackEnd.Datos.Implementacion
         public List<Sala> GetSalas()
         {
             List<Sala> lstSalas = new List<Sala>();
-            string sp = "SP_GET_GENEROS";
+            string sp = "SP_GET_SALAS";
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, null);
             foreach (DataRow fila in tabla.Rows)
             {
@@ -124,22 +124,31 @@ namespace CineBackEnd.Datos.Implementacion
                 Funcion f = new Funcion();
                     f.Pelicula = p;
                     f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(), int.Parse(fila["Capacidad"].ToString()), st);
-                    f.HorarioInicio = TimeOnly.Parse(fila["HORARIO_INICIO"].ToString());
-                    f.HorarioFin = TimeOnly.Parse(fila["HORARIO_FIN"].ToString());
+                    f.HorarioInicio = TimeOnly.Parse(fila["Inicio"].ToString());
+                    f.HorarioFin = TimeOnly.Parse(fila["Fin"].ToString());
                     f.Fecha = fecha;
                 lstFunciones.Add(f);
             }
             return lstFunciones;
         }  
 
-        public List<Pelicula> Peliculas()
+        public List<Pelicula> Peliculas(string titulo, DateTime estreno, int genero)
         {
             List<Pelicula> lstPeliculas = new List<Pelicula>();
             string sp = "SP_BUSCAR_PELICULAS";
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@titulo", null));
-            parametros.Add(new SqlParameter("@AñoEstreno", null));
-            parametros.Add(new SqlParameter("@id_genero", null));
+            if (titulo != null)
+                parametros.Add(new SqlParameter("@titulo", titulo));
+            else
+                parametros.Add(new SqlParameter("@titulo", null));
+            if (estreno != DateTime.MinValue)
+                parametros.Add(new SqlParameter("@AñoEstreno", estreno.Year));
+            else
+                parametros.Add(new SqlParameter("@AñoEstreno", null));
+            if (genero != -1)
+                parametros.Add(new SqlParameter("@id_genero", genero));
+            else
+                parametros.Add(new SqlParameter("@id_genero", null));
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
             foreach (DataRow fila in tabla.Rows)
             {

@@ -23,6 +23,9 @@ namespace CineBackEnd.Entidades
             Capacidad = capacidad;
             Tipo = tipo;
         }
-
+        public override string ToString()
+        {
+            return Tipo.Descripcion;
+        }
     }
 }

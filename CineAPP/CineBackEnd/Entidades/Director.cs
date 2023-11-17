@@ -18,5 +18,9 @@ namespace CineBackEnd.Entidades
         {
 
         }
+        public override string ToString()
+        {
+            return $"{Nombre} {Apellido}";
+        }
     }
 }

@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CineBackEnd.Datos.Implementacion;
+using CineBackEnd.Datos.Interfaz;
+using CineBackEnd.Entidades;
 
 namespace CineFrontEnd.Formularios
 {
     public partial class FrmFuncionesSeleccionar : Form
     {
         int id = -1;
+        IFuncionDao funcionDao;
         public FrmFuncionesSeleccionar()
         {
             InitializeComponent();
+            funcionDao = new FuncionDao();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,18 +35,18 @@ namespace CineFrontEnd.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (id != -1)
-            {
+            //if (id != -1)
+            //{
 
 
-                DialogResult = MessageBox.Show("¿Seguro desea editar la funcion?");
+            //    DialogResult = MessageBox.Show("¿Seguro desea editar la funcion?");
 
-                if (DialogResult == DialogResult.OK || DialogResult == DialogResult.Yes)
-                {
-                    FrmFuncion f = new FrmFuncion(id);
-                    f.ShowDialog();
-                }
-            }
+            //    if (DialogResult == DialogResult.OK || DialogResult == DialogResult.Yes)
+            //    {
+            //        FrmFuncion f = new FrmFuncion();
+            //        f.ShowDialog();
+            //    }
+            //}
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -59,21 +64,25 @@ namespace CineFrontEnd.Formularios
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FrmFuncion f = new FrmFuncion();
-            f.ShowDialog();
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            FrmFuncion f = new FrmFuncion();
+            f.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Funcion> listaFunciones = funcionDao.GetFunciones(dtpFecha.Value);
+            dgvFunciones.Rows.Clear();
+            foreach (Funcion f in listaFunciones)
+            {
+                dgvFunciones.Rows.Add(new object[] {f.Id,f.Pelicula.Titulo,f.Pelicula.Genero.Descripcion,f.HorarioInicio,f.HorarioFin,f.Sala.Descripcion });
+            }
         }
     }
 }
