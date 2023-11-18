@@ -11,7 +11,7 @@ namespace CineBackEnd.Entidades
         public int Id{ get; set; }
        public string Estado { get; set; }
 
-        public int Fila  { get; set;}
+        public string Fila  { get; set;}
 
         public int Columna { get; set; }
 
@@ -19,7 +19,10 @@ namespace CineBackEnd.Entidades
         {
             
         }
-
+        public override string ToString()
+        {
+            return $"{Fila}{Columna}";
+        }
 
 
     }

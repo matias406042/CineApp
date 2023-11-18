@@ -13,7 +13,7 @@ namespace CineBackEnd.Datos.Interfaz
 
         bool Crear(Comprobante c);
         bool Actualizar(Comprobante c);
-        bool Borrar(int id);
+        bool Borrar(Comprobante c);
         List<FormaPago> GetFormasDePago();
         List<Descuento> GetDescuentos();
 

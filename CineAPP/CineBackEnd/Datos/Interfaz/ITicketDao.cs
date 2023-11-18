@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos.Interfaz
 
         bool Crear(Ticket t);
         bool Actualizar(Ticket t);
-        bool Borrar(int id);
+        bool Borrar(Ticket t);
 
 
 

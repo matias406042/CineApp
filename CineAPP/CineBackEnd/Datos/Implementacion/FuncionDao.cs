@@ -85,12 +85,19 @@ namespace CineBackEnd.Datos.Implementacion
             return lstSalas;
         }
 
-        public List<Funcion> GetFunciones(DateTime fecha)
+        public List<Funcion> GetFunciones(DateTime fecha, string titulo)
         {
             List<Funcion> lstFunciones = new List<Funcion>();
             string sp = "SP_GET_FUNCIONES";
             List<SqlParameter> listParametros = new List<SqlParameter>();
-            listParametros.Add(new SqlParameter("@fecha", fecha));
+            if (fecha != DateTime.MinValue)
+                listParametros.Add(new SqlParameter("@fecha", fecha));
+            else
+                listParametros.Add(new SqlParameter("@fecha", null));
+            if (titulo != string.Empty)
+                listParametros.Add(new SqlParameter("@titulo", titulo));
+            else
+                listParametros.Add(new SqlParameter("@titulo", null));
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, listParametros);
             foreach (DataRow fila in tabla.Rows)
             {   
@@ -123,10 +130,11 @@ namespace CineBackEnd.Datos.Implementacion
                 Funcion f = new Funcion();
                     f.Id = int.Parse(fila["Id_Funcion"].ToString());
                     f.Pelicula = p;
-                    f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(), int.Parse(fila["Capacidad"].ToString()), st);
+                    f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(), 
+                        int.Parse(fila["Capacidad"].ToString()), st, decimal.Parse(fila["Pre_Unit"].ToString()));
                     f.HorarioInicio = DateTime.Parse(fila["Inicio"].ToString());
                     f.HorarioFin = DateTime.Parse(fila["Fin"].ToString());
-                    f.Fecha = fecha;
+                    f.Fecha = DateTime.Parse(fila["Fecha_Estreno"].ToString());
                 lstFunciones.Add(f);
             }
             return lstFunciones;

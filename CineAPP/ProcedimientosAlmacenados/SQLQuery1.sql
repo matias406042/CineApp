@@ -91,7 +91,7 @@ delete FUNCIONES
 where id_funcion = @id_funcion
 end
 
-alter procedure SP_UPDATE_FUNCION
+create procedure SP_UPDATE_FUNCION
 @id_funcion int,
 @id_pelicula int,
 @id_sala int,
@@ -113,8 +113,9 @@ end
 insert into GENEROS_PELICULAS(genero)
 values('Comedia')
 
-create procedure SP_GET_FUNCIONES
-@fecha date
+alter procedure SP_GET_FUNCIONES
+@fecha date,
+@titulo varchar(20)
 as
 begin
 select f.id_funcion Id_Funcion, Horario_Inicio Inicio, Horario_Fin Fin, 
@@ -135,6 +136,7 @@ from FUNCIONES f
 	join Paises pa on pa.id_pais = pr.id_pais
 	join DIRECTORES di on di.id_director = p.id_director
 	join Paises pa2 on pa2.id_pais = di.id_pais
-	where Fecha = @fecha
+	where	(Fecha = @fecha or @fecha is null) and
+			(Titulo LIKE '%' + @Titulo + '%' OR @Titulo IS NULL)
 end
 

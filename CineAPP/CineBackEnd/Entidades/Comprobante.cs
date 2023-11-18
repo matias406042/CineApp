@@ -18,11 +18,14 @@ namespace CineBackEnd.Entidades
         {
             Descuento = new Descuento();
             Tickets = new List<Ticket>();
-            this.FormaPAgo = new FormaPago();
+            FormaPAgo = new FormaPago();
             
         }
 
-
+        public void AgregarTicket(Ticket ticket)
+        {
+            Tickets.Add(ticket);
+        }
         public double Total()
         {
             double aux = 0;    

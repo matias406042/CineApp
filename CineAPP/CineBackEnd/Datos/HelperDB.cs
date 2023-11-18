@@ -36,6 +36,8 @@ namespace CineBackEnd.Datos
             {
                 foreach (SqlParameter oParametro in values)
                 {
+                    if (oParametro.Value == null)
+                        oParametro.Value = DBNull.Value;
                     cmd.Parameters.Add(oParametro);
                 }
             }

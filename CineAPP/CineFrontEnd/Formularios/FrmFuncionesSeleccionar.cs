@@ -64,7 +64,7 @@ namespace CineFrontEnd.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            listaFunciones = funcionDao.GetFunciones(dtpFecha.Value);
+            listaFunciones = funcionDao.GetFunciones(dtpFecha.Value,string.Empty);
             dgvFunciones.Rows.Clear();
             foreach (Funcion f in listaFunciones)
             {
