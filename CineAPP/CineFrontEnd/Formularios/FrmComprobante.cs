@@ -8,17 +8,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CineBackEnd.Entidades;
+using CineBackEnd.Datos.Implementacion;
+using CineBackEnd.Datos.Interfaz;
 
 namespace CineFrontEnd.Formularios
 {
     public partial class FrmComprobante : Form
     {
         Comprobante comprobante;
+        IComprobanteDao dao;
         public FrmComprobante()
         {
             InitializeComponent();
             comprobante = new Comprobante();
-            
+            dao = new ComprobanteDao();
+            CargarPagos(dao.GetFormasDePago());
+            CargarDescuentos(dao.GetDescuentos());
+            txtTotal.Text = CalcularTotal().ToString();
+        }
+        private double CalcularTotal()
+        {
+            double total = 0;
+            foreach (DataGridViewRow r in dgvTickets.Rows)
+            {
+                total += Convert.ToDouble(r.Cells["ColPrecio"].Value);
+            }
+            if (cbxDescuento.Checked)
+                return total - (total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0,2));
+            else return total;
+        }
+        private void CargarDescuentos( List<Descuento> descuentos)
+        {
+            cboDescuento.DataSource = descuentos;
+            cboDescuento.DisplayMember = "Motivo";
+            cboDescuento.ValueMember = "Id";
+            cboDescuento.SelectedIndex = -1;
+        }
+
+        private void CargarPagos(List<FormaPago> formaPagos)
+        {
+            cboFormaPago.DataSource = formaPagos;
+            cboFormaPago.DisplayMember = "Forma";
+            cboFormaPago.ValueMember= "Id";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -30,7 +61,15 @@ namespace CineFrontEnd.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            comprobante.FormaPAgo.Id = (int)cboFormaPago.SelectedValue;
+            comprobante.Total = CalcularTotal();
+            if (cbxDescuento.Checked)
+                comprobante.Descuento.Id = (int)cboDescuento.SelectedValue;
+            else comprobante.Descuento.Id = 0;
+            if(dao.Crear(comprobante))
+                MessageBox.Show("Se creo con exito el comprobante","Exito!!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Hubo un error al crear el combrobante","Error!!",MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnTicket_Click_1(object sender, EventArgs e)
@@ -44,6 +83,7 @@ namespace CineFrontEnd.Formularios
         private void cboTicket_SelectedIndexChanged(object sender, EventArgs e)
         {
             Ticket t = (Ticket)cboTicket.SelectedItem;
+            comprobante.AgregarTicket(t);
             string desde = $"{t.Funcion.HorarioInicio.Hour.ToString()}:{t.Funcion.HorarioInicio.Minute.ToString()}:{t.Funcion.HorarioInicio.Second.ToString()}";
             string hasta = $"{t.Funcion.HorarioFin.Hour.ToString()}:{t.Funcion.HorarioFin.Minute.ToString()}:{t.Funcion.HorarioFin.Second.ToString()}";
             dgvTickets.Rows.Add(new object[]
@@ -55,11 +95,41 @@ namespace CineFrontEnd.Formularios
                 t.Funcion.Sala.Precio,
                 "Borrar"
             });
+            txtTotal.Text = CalcularTotal().ToString();
         }
 
         private void FrmComprobante_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void cbxDescuento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxDescuento.Checked)
+            {
+                cboDescuento.Enabled = true;
+                cboDescuento.SelectedIndex = 0;
+            }
+            else
+            {
+                cboDescuento.Enabled = false;
+                cboDescuento.SelectedIndex = -1;
+            }
+        }
+
+        private void cboDescuento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboDescuento.SelectedIndex == -1)
+            {
+                lblDescuento.Visible = false;
+                txtTotal.Text = CalcularTotal().ToString();
+            }
+            else
+            {
+                lblDescuento.Visible = true;
+                lblDescuento.Text = cboDescuento.SelectedItem.ToString();
+                txtTotal.Text = CalcularTotal().ToString();
+            }
         }
     }
 }

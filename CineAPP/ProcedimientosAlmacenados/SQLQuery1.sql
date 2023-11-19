@@ -140,3 +140,39 @@ from FUNCIONES f
 			(Titulo LIKE '%' + @Titulo + '%' OR @Titulo IS NULL)
 end
 
+create procedure SP_GET_FORMA_PAGO
+as
+begin
+select id_forma_pago ID, descripcion DESCRIPCION
+from Formas_pago 
+end
+
+create procedure SP_GET_DESCUENTOS
+as
+begin 
+select * from DESCUENTOS
+end
+
+alter procedure SP_ADD_TICKET
+@id_funcion int,
+@id_comprobante int
+--@id_butaca int
+as
+begin
+insert into TICKETS(id_funcion,id_comprobante)--,id_butaca)
+			values(@id_funcion,@id_comprobante)--,@id_butaca)
+end
+
+create procedure SP_ADD_COMPROBANTE
+@id_pago int,
+@total decimal(10,2),
+@id_descuento int,
+@id_compr int output
+as
+begin
+insert into COMPROBANTES(id_forma_pago,Total,id_descuento)
+			values(@id_pago,@total,@id_descuento)
+set @id_compr = SCOPE_IDENTITY()
+end
+
+select * from TICKETS

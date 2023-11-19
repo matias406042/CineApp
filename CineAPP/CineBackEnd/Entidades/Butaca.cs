@@ -9,7 +9,7 @@ namespace CineBackEnd.Entidades
     public class Butaca
     {
         public int Id{ get; set; }
-       public string Estado { get; set; }
+        public string Estado { get; set; }
 
         public string Fila  { get; set;}
 
@@ -23,7 +23,12 @@ namespace CineBackEnd.Entidades
         {
             return $"{Fila}{Columna}";
         }
-
+        public Butaca(char fila, int columna)
+        {
+            Fila = fila.ToString();
+            Columna = columna;
+            Estado = "Disponible";
+        }
 
     }
 }

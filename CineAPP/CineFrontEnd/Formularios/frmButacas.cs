@@ -7,16 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CineBackEnd.Entidades;
 
 namespace CineFrontEnd.Formularios
 {
     public partial class frmButacas : Form
     {
-        //FrmTicket ticket;
-        public frmButacas()
+        List<Butaca> butacas;
+        public frmButacas(Funcion f)
         {
             InitializeComponent();
-             //ticket = Owner as FrmTicket;
+            butacas = f.Butacas;
+            CargarButacas();
+        }
+
+        private void CargarButacas()
+        {
+            foreach (Butaca b in butacas)
+            {
+                foreach (var p in this.Controls.OfType<PictureBox>())
+                {
+                    if (p.Name == b.ToString())
+                    {
+                        if(b.Estado == "ocupada")
+                        {
+                            ((PictureBox)p).Image = Properties.Resources.ButacaRoja;
+                            ((PictureBox)p).Enabled = false;
+                            break;
+                        }
+                        else
+                        {
+                            ((PictureBox)p).Image = Properties.Resources.ButacaAzul;
+                            ((PictureBox)p).Enabled = true;
+                            break;
+                        }
+                        
+                    }
+                }
+            }
         }
 
         private void btnA1_Click(object sender, EventArgs e)
@@ -262,6 +290,16 @@ namespace CineFrontEnd.Formularios
             FrmTicket ticket = Owner as FrmTicket;
             ticket.txtButaca.Text = "E7";
             this.Dispose();
+        }
+
+        private void frmButacas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

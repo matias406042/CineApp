@@ -19,5 +19,15 @@ namespace CineBackEnd.Entidades
         {
             
         }
+        public Descuento(int id, string motivo, double porcentaje)
+        {
+            Id = id;
+            Motivo = motivo;
+            Porcentaje = porcentaje;
+        }
+        public override string ToString()
+        {
+            return $"{Porcentaje}%";
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace CineBackEnd.Entidades
         {
             
         }
+        public FormaPago(int id, string forma)
+        {
+            Id = id;
+            Forma = forma;
+        }
     }
 }

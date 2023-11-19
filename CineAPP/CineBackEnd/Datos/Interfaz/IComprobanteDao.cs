@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Datos.Interfaz
 {
-    internal interface IComprobanteDao
+    public interface IComprobanteDao
     {
         List<Comprobante> GetComprobantes();   
 

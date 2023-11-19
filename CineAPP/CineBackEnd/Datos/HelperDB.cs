@@ -92,7 +92,7 @@ namespace CineBackEnd.Datos
             return afectadas;
         }
 
-        public bool SPInsertMaestroDetalleSQL(List<SqlParameter> pMaestro, List<SqlParameter> pDetalle, string SPMaestro, string SPDetalle, string nameNroMaestro, string nameNroDet)
+        public bool SPInsertMaestroDetalleSQL(List<SqlParameter> pMaestro, List<SqlParameter> pDetalle, string SPMaestro, string SPDetalle, string nameNroMaestro)//, string nameNroDet)
         {
             bool aux = true;
             SqlTransaction t = null;
@@ -134,7 +134,7 @@ namespace CineBackEnd.Datos
                     {
                         cmdDetalles.Parameters.Add(p);
                         cmdDetalles.Parameters.AddWithValue(nameNroMaestro, nroMaestro);
-                        cmdDetalles.Parameters.AddWithValue(nameNroDet, nroDetalles);
+                        //cmdDetalles.Parameters.AddWithValue(nameNroDet, nroDetalles);
 
                         cmdDetalles.ExecuteNonQuery();
                         cmdDetalles.Parameters.Clear();
@@ -158,7 +158,7 @@ namespace CineBackEnd.Datos
                         {
 
                             cmdDetalles.Parameters.AddWithValue(nameNroMaestro, nroMaestro);
-                            cmdDetalles.Parameters.AddWithValue(nameNroDet, nroDetalles);
+                            //cmdDetalles.Parameters.AddWithValue(nameNroDet, nroDetalles);
                             cmdDetalles.ExecuteNonQuery();
                             cmdDetalles.Parameters.Clear();
 

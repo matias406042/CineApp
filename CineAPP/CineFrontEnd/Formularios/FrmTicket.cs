@@ -79,7 +79,23 @@ namespace CineFrontEnd.Formularios
 
         private void btnButacas_Click(object sender, EventArgs e)
         {
-            frmButacas butacas = new frmButacas();
+            Funcion funcionElegida = new Funcion();
+            foreach (DataGridViewRow fila in dgvFunciones.Rows)
+            {
+                if ((bool)fila.Cells[7].Value == true)
+                {
+                    foreach (Funcion f in funciones)
+                    {
+                        if((int)fila.Cells[0].Value == f.Id)
+                        {
+                            funcionElegida = f;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            frmButacas butacas = new frmButacas(funcionElegida);
             AddOwnedForm(butacas);
             butacas.ShowDialog();
         }
@@ -132,6 +148,7 @@ namespace CineFrontEnd.Formularios
                     else
                         fila.Cells[7].Value = false;
                 }
+                btnButacas.Enabled = true;
             }
                 
         }

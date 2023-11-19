@@ -12,29 +12,20 @@ namespace CineBackEnd.Entidades
 
         public Descuento Descuento { get; set; }
         public FormaPago FormaPAgo { get; set; }
-       
+        public double Total { get; set; }
         public List <Ticket> Tickets { get; set; }
         public Comprobante()
         {
             Descuento = new Descuento();
             Tickets = new List<Ticket>();
             FormaPAgo = new FormaPago();
-            
+            Total = 0;
         }
 
         public void AgregarTicket(Ticket ticket)
         {
             Tickets.Add(ticket);
         }
-        public double Total()
-        {
-            double aux = 0;    
 
-            foreach (Ticket t in Tickets)
-            {
-                aux += t.Funcion.Precio;
-            }
-            return aux;
-        }
     }
 }

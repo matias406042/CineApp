@@ -226,6 +226,7 @@
             // 
             // btnButacas
             // 
+            this.btnButacas.Enabled = false;
             this.btnButacas.Location = new System.Drawing.Point(845, 43);
             this.btnButacas.Name = "btnButacas";
             this.btnButacas.Size = new System.Drawing.Size(75, 61);

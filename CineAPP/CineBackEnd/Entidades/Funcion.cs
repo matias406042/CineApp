@@ -27,8 +27,23 @@ namespace CineBackEnd.Entidades
         public Funcion()
         {
             Pelicula = new Pelicula();
-            Butacas = new List<Butaca>();
+            Butacas = CrearButacas();
         }
-
+        public List<Butaca> CrearButacas()
+        {
+            List<Butaca> butacas = new List<Butaca>();
+            char fila = 'A';
+            for (int i = 0; i < 5; i++)
+            {
+                int columna = 1;
+                for (int j = 0; j < 7; j++)
+                {
+                    butacas.Add(new Butaca(fila, columna));
+                    columna++;
+                }
+                fila = (char)((int)fila + 1);
+            }
+            return butacas;
+        }
     }
 }
