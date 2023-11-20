@@ -12,6 +12,16 @@ namespace CineBackEnd.Datos.Implementacion
 {
     public class FuncionDao : IFuncionDao
     {
+
+
+        private static FuncionDao instance;
+        public static FuncionDao ObtenerInstancia()
+        {
+            if (instance == null)
+                instance = new FuncionDao();
+            return instance;
+        }
+
         public bool Actualizar(Funcion f)
         {
             string sp = "SP_UPDATE_FUNCION";
@@ -118,14 +128,9 @@ namespace CineBackEnd.Datos.Implementacion
                     d.Edad = int.Parse(fila["Edad_Dir"].ToString());
                     d.Nacionalidad = new Pais(int.Parse(fila["Id_Pais_Dir"].ToString()), fila["Pais_Director"].ToString());
                 Pelicula p = new Pelicula();
-                    p.Id = int.Parse(fila["Id_Pelicula"].ToString());
-                    p.Titulo = fila["Titulo"].ToString();
-                    p.Duracion = int.Parse(fila["Duracion"].ToString());
-                    p.FechaEstreno = DateTime.Parse(fila["Fecha_Estreno"].ToString());
-                    p.Genero = g;
-                    p.Clasificacion = c;
-                    p.Director = d;
-                    p.Productora = prod;
+                   int id = int.Parse(fila["Id_Pelicula"].ToString());
+                p= PeliculaDao.ObtenerInstancia().PeliculaXID(id);
+                  
                 SalaTipo st = new SalaTipo(int.Parse(fila["Id_Tipo_Sala"].ToString()), fila["Tipo_Sala"].ToString());
                 Funcion f = new Funcion();
                     f.Id = int.Parse(fila["Id_Funcion"].ToString());
@@ -199,21 +204,58 @@ namespace CineBackEnd.Datos.Implementacion
             parametros.Add(new SqlParameter("@col", columna));
             return HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp, parametros);
         }
-        public List<Butaca> BuscarButacas(Funcion f)
+
+        public Funcion FuncionXID(int id_funcion)
         {
-            List<Butaca> butacas = new List<Butaca>();
-            string sp = "SP_GET_BUTACAS_FUNCION";
-            List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@id_funcion",f.Id));
-            DataTable dt = HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
+           List<SqlParameter> prms = new List<SqlParameter>();
+            prms.Add(new SqlParameter("@IdFuncion", id_funcion));
+            string sp = "SP_FUNCION_X_ID";
+            DataTable dt =  new DataTable();
+            dt= HelperDB.ObtenerInstancia().ConsultaSQL(sp, prms);
+            Funcion funcion = new Funcion();
             foreach (DataRow fila in dt.Rows)
             {
-                string fil = fila[0].ToString();
-                int col = Convert.ToInt32(fila[1].ToString());
-                string estado = fila[2].ToString();
-                butacas.Add(new Butaca(fil, col, estado));
+                Genero g = new Genero();
+                g.Id = int.Parse(fila["Id_Genero"].ToString());
+                g.Descripcion = fila["Genero"].ToString();
+                Productora prod = new Productora();
+                prod.Id = int.Parse(fila["Id_Productora"].ToString());
+                prod.Nombre = fila["Productora"].ToString();
+                prod.Pais = new Pais(int.Parse(fila["Id_Pais_Productora"].ToString()), fila["Pais_Productora"].ToString());
+                ClasificacionPelicula c = new ClasificacionPelicula();
+                c.Id = int.Parse(fila["Id_Clasificacion"].ToString());
+                c.EdadMinima = int.Parse(fila["Edad_Clasf"].ToString());
+                Director d = new Director();
+                d.ID = int.Parse(fila["Id_Director"].ToString());
+                d.Nombre = fila["Nombre_Dir"].ToString();
+                d.Apellido = fila["Ape_Dir"].ToString();
+                d.Edad = int.Parse(fila["Edad_Dir"].ToString());
+                d.Nacionalidad = new Pais(int.Parse(fila["Id_Pais_Dir"].ToString()), fila["Pais_Director"].ToString());
+                Pelicula p = new Pelicula();
+                int id = int.Parse(fila["Id_Pelicula"].ToString());
+                p = PeliculaDao.ObtenerInstancia().PeliculaXID(id);
+
+                SalaTipo st = new SalaTipo(int.Parse(fila["Id_Tipo_Sala"].ToString()), fila["Tipo_Sala"].ToString());
+               
+                funcion.Id = int.Parse(fila["Id_Funcion"].ToString());
+                funcion.Pelicula = p;
+                funcion.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(),
+                    int.Parse(fila["Capacidad"].ToString()), st, decimal.Parse(fila["Pre_Unit"].ToString()));
+                funcion.HorarioInicio = DateTime.Parse(fila["Inicio"].ToString());
+                funcion.HorarioFin = DateTime.Parse(fila["Fin"].ToString());
+                funcion.Fecha = DateTime.Parse(fila["Fecha_Estreno"].ToString());
+
+
             }
-            return butacas;
+            return funcion;
+
+        }
+
+        public List<Butaca> BuscarButacas(Funcion f)
+        {
+           
+
+            return ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(f.Id);
         }
     }
 }
