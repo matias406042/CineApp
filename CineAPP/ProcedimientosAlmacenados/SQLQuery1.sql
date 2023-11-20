@@ -223,14 +223,14 @@ end
 
 select * from Butacas
 
-create procedure SP_OCUPAR_BUTACA
+alter procedure SP_OCUPAR_BUTACA
 @id_funcion int,
 @fila varchar(1),
 @col int
 as
 begin
 update Butacas
-set estado = 'Ocupado'
+set estado = 'Ocupada'
 where id_funcion = @id_funcion and fila = @fila and @col = columna
 end
 
@@ -255,3 +255,19 @@ where id_funcion = @id_funcion
 end
 
 exec SP_GET_BUTACAS_FUNCION 11
+
+select * from Butacas where estado = 'Ocupada'
+
+select * 
+from FUNCIONES f join PELICULAS p on f.id_pelicula = p.id_pelicula
+where id_funcion = 11
+
+update Butacas
+set estado = 'Ocupada'
+where estado = 'Ocupado'
+
+select * from Butacas where id_funcion = 11
+
+update Butacas
+set estado = 'Disponible'
+where id_funcion =11
