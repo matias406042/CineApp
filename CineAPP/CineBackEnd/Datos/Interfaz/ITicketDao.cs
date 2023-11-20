@@ -10,15 +10,12 @@ namespace CineBackEnd.Datos.Interfaz
     public interface ITicketDao
     {
 
-        List<Pelicula> GetTickets();
-
-        List<Butaca> GetButacaList();
-
-        bool Crear(Ticket t);
-        bool Actualizar(Ticket t);
-        bool Borrar(Ticket t);
 
 
+        List<Butaca> GetButacasXFuncion(int id_Funciom);
 
+        List<Ticket> GetTicketsXComprobante(int idComprobante);
+
+        Ticket TicketXID(int idTicket);
     }
 }

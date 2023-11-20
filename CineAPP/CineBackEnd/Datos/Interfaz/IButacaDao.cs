@@ -1,4 +1,5 @@
-﻿using CineBackEnd.Entidades;
+﻿using CineBackEnd.Datos.Implementacion;
+using CineBackEnd.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,7 @@ namespace CineBackEnd.Datos.Interfaz
     {
 
         List<Butaca> ObtenerButacasXFuncion(int ID_funcion);
-        int ObtenerProximoNro();
-        bool Crear(Butaca oPresupuesto);
-        bool Actualizar(Butaca butaca);
-        bool Borrar(int nro);
+
+        Butaca ButacaXID(int idButaca);
     }
 }

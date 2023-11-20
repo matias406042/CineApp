@@ -10,8 +10,17 @@ using System.Threading.Tasks;
 
 namespace CineBackEnd.Datos.Implementacion
 {
-    internal class PeliculaDao : IPeliculaDao
+    public class PeliculaDao : IPeliculaDao
     {
+        private static PeliculaDao instance;
+
+        public static PeliculaDao ObtenerInstancia()
+        {
+            if (instance == null)
+                instance = new PeliculaDao();
+            return instance;
+        }
+
         public bool Actualizar(Pelicula p)
         {
             throw new NotImplementedException();
