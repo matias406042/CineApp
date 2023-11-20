@@ -105,7 +105,17 @@ namespace CineFrontEnd.Formularios
                 funciones = fDao.GetFunciones(dtpFecha.Value, String.Empty);
             else
                 funciones = fDao.GetFunciones(DateTime.MinValue, "");
+            
+            //VALIDACION UWU
+
+            if(funciones.Count <= 0) {
+                MessageBox.Show("No se han encontrado resultados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //
             dgvFunciones.Rows.Clear();
+
             foreach (Funcion f in funciones)
             {
                 dgvFunciones.Rows.Add(new object[]
@@ -139,22 +149,54 @@ namespace CineFrontEnd.Formularios
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Validar datos
+
+            if(funciones == null)
+            {
+                MessageBox.Show("Debes buscar una función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+
+            // validados uwu
             FrmComprobante comprobanteForm = Owner as FrmComprobante;
+
+            Funcion f = new Funcion();
+            Ticket t = new Ticket();
+          
             foreach (DataGridViewRow fila in dgvFunciones.Rows)
             {
-                if((bool)fila.Cells[7].Value)
+                if (fila.Cells[7].Value ==null )
                 {
-                    Funcion f = new Funcion();
-                    Ticket t = new Ticket();
-                    foreach (Funcion ff in funciones)
+                    MessageBox.Show("Se debe elegir una función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    return;
+                }
+
+                    if((bool)fila.Cells[7].Value)
                     {
-                        if ((int)fila.Cells[0].Value == ff.Id)
+               
+                        foreach (Funcion ff in funciones)
                         {
-                            f = ff;
-                            break;
+                            if ((int)fila.Cells[0].Value == ff.Id)
+                            {
+                                f = ff;
+                                break;
+                            }
+
                         }
-                            
                     }
+                
+              
+
+
+                if (txtButaca.Text == string.Empty)
+                {
+                    MessageBox.Show("Se debe elgir una butaca", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                //aaaaaaaaaaaaaaaaaaaaaaaa
                     t.Funcion = f;
                     t.Precio = Convert.ToDouble(f.Sala.Precio);
                     t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
@@ -162,7 +204,8 @@ namespace CineFrontEnd.Formularios
                     comprobanteForm.cboTicket.Items.Add(t);
                     comprobanteForm.cboTicket.SelectedIndex ++ ;
                     this.Dispose();
-                }
+                
+               
             }
         }
     }

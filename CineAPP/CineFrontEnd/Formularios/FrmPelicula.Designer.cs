@@ -47,125 +47,134 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(34, 239);
+            comboBox1.Location = new Point(30, 179);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(133, 23);
             comboBox1.TabIndex = 0;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(219, 239);
+            comboBox2.Location = new Point(192, 179);
+            comboBox2.Margin = new Padding(3, 2, 3, 2);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
+            comboBox2.Size = new Size(133, 23);
             comboBox2.TabIndex = 1;
             // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(412, 239);
+            comboBox3.Location = new Point(360, 179);
+            comboBox3.Margin = new Padding(3, 2, 3, 2);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(151, 28);
+            comboBox3.Size = new Size(133, 23);
             comboBox3.TabIndex = 2;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(34, 90);
+            textBox1.Location = new Point(30, 68);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
+            textBox1.Size = new Size(110, 23);
             textBox1.TabIndex = 3;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(219, 90);
+            textBox2.Location = new Point(192, 68);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(110, 23);
             textBox2.TabIndex = 4;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 67);
+            label1.Location = new Point(30, 50);
             label1.Name = "label1";
-            label1.Size = new Size(56, 20);
+            label1.Size = new Size(45, 15);
             label1.TabIndex = 5;
             label1.Text = "TITULO";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(219, 67);
+            label2.Location = new Point(192, 50);
             label2.Name = "label2";
-            label2.Size = new Size(84, 20);
+            label2.Size = new Size(67, 15);
             label2.TabIndex = 6;
             label2.Text = "DURACION";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(219, 216);
+            label3.Location = new Point(192, 162);
             label3.Name = "label3";
-            label3.Size = new Size(112, 20);
+            label3.Size = new Size(92, 15);
             label3.TabIndex = 7;
             label3.Text = "CLASIFICACION";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(34, 216);
+            label4.Location = new Point(30, 162);
             label4.Name = "label4";
-            label4.Size = new Size(66, 20);
+            label4.Size = new Size(52, 15);
             label4.TabIndex = 8;
             label4.Text = "GENERO";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(412, 216);
+            label5.Location = new Point(360, 162);
             label5.Name = "label5";
-            label5.Size = new Size(104, 20);
+            label5.Size = new Size(83, 15);
             label5.TabIndex = 9;
             label5.Text = "PRODUCTORA";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(412, 88);
+            dateTimePicker1.Location = new Point(360, 66);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(314, 27);
+            dateTimePicker1.Size = new Size(275, 23);
             dateTimePicker1.TabIndex = 10;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(412, 65);
+            label6.Location = new Point(360, 49);
             label6.Name = "label6";
-            label6.Size = new Size(72, 20);
+            label6.Size = new Size(56, 15);
             label6.TabIndex = 11;
             label6.Text = "ESTRENO";
             // 
             // btnSaveEdit
             // 
-            btnSaveEdit.Location = new Point(607, 234);
+            btnSaveEdit.Location = new Point(531, 176);
+            btnSaveEdit.Margin = new Padding(3, 2, 3, 2);
             btnSaveEdit.Name = "btnSaveEdit";
-            btnSaveEdit.Size = new Size(119, 36);
+            btnSaveEdit.Size = new Size(104, 27);
             btnSaveEdit.TabIndex = 13;
             btnSaveEdit.Text = "Save";
             btnSaveEdit.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(704, 391);
+            btnClose.Location = new Point(616, 293);
+            btnClose.Margin = new Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(72, 37);
+            btnClose.Size = new Size(63, 28);
             btnClose.TabIndex = 14;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
             // 
             // FrmPelicula
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnClose);
             Controls.Add(btnSaveEdit);
             Controls.Add(label6);
@@ -180,6 +189,7 @@
             Controls.Add(comboBox3);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmPelicula";
             Text = "Pelicula";
             ResumeLayout(false);

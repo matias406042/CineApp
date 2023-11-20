@@ -28,214 +28,208 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblFormaPago = new System.Windows.Forms.Label();
-            this.dgvTickets = new System.Windows.Forms.DataGridView();
-            this.txbTotal = new System.Windows.Forms.TextBox();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblDescuento = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.lblTickets = new System.Windows.Forms.Label();
-            this.btnTicket = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.cboTicket = new System.Windows.Forms.ComboBox();
-            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColButaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
-            this.SuspendLayout();
+            comboBox1 = new ComboBox();
+            lblFormaPago = new Label();
+            dgvTickets = new DataGridView();
+            ColPelicula = new DataGridViewTextBoxColumn();
+            ColSala = new DataGridViewTextBoxColumn();
+            ColHorario = new DataGridViewTextBoxColumn();
+            ColButaca = new DataGridViewTextBoxColumn();
+            ColPrecio = new DataGridViewTextBoxColumn();
+            ColAccion = new DataGridViewButtonColumn();
+            txbTotal = new TextBox();
+            lblTotal = new Label();
+            lblDescuento = new Label();
+            comboBox2 = new ComboBox();
+            lblTickets = new Label();
+            btnTicket = new Button();
+            btnGuardar = new Button();
+            cboTicket = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
+            SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(686, 58);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 23);
-            this.comboBox1.TabIndex = 0;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(686, 58);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(133, 23);
+            comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // lblFormaPago
             // 
-            this.lblFormaPago.AutoSize = true;
-            this.lblFormaPago.Location = new System.Drawing.Point(686, 40);
-            this.lblFormaPago.Name = "lblFormaPago";
-            this.lblFormaPago.Size = new System.Drawing.Size(87, 15);
-            this.lblFormaPago.TabIndex = 1;
-            this.lblFormaPago.Text = "Forma de Pago";
+            lblFormaPago.AutoSize = true;
+            lblFormaPago.Location = new Point(686, 40);
+            lblFormaPago.Name = "lblFormaPago";
+            lblFormaPago.Size = new Size(87, 15);
+            lblFormaPago.TabIndex = 1;
+            lblFormaPago.Text = "Forma de Pago";
             // 
             // dgvTickets
             // 
-            this.dgvTickets.AllowUserToAddRows = false;
-            this.dgvTickets.AllowUserToDeleteRows = false;
-            this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColPelicula,
-            this.ColSala,
-            this.ColHorario,
-            this.ColButaca,
-            this.ColPrecio,
-            this.ColAccion});
-            this.dgvTickets.Location = new System.Drawing.Point(10, 58);
-            this.dgvTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvTickets.Name = "dgvTickets";
-            this.dgvTickets.ReadOnly = true;
-            this.dgvTickets.RowHeadersWidth = 51;
-            this.dgvTickets.RowTemplate.Height = 29;
-            this.dgvTickets.Size = new System.Drawing.Size(661, 190);
-            this.dgvTickets.TabIndex = 2;
-            // 
-            // txbTotal
-            // 
-            this.txbTotal.Location = new System.Drawing.Point(561, 273);
-            this.txbTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbTotal.Name = "txbTotal";
-            this.txbTotal.Size = new System.Drawing.Size(110, 23);
-            this.txbTotal.TabIndex = 3;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(504, 275);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(45, 15);
-            this.lblTotal.TabIndex = 4;
-            this.lblTotal.Text = "TOTAL :";
-            // 
-            // lblDescuento
-            // 
-            this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Location = new System.Drawing.Point(686, 160);
-            this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(63, 15);
-            this.lblDescuento.TabIndex = 5;
-            this.lblDescuento.Text = "Descuento";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(686, 178);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(133, 23);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // lblTickets
-            // 
-            this.lblTickets.AutoSize = true;
-            this.lblTickets.Location = new System.Drawing.Point(10, 33);
-            this.lblTickets.Name = "lblTickets";
-            this.lblTickets.Size = new System.Drawing.Size(49, 15);
-            this.lblTickets.TabIndex = 7;
-            this.lblTickets.Text = "Tickets :";
-            // 
-            // btnTicket
-            // 
-            this.btnTicket.Location = new System.Drawing.Point(589, 32);
-            this.btnTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(82, 22);
-            this.btnTicket.TabIndex = 8;
-            this.btnTicket.Text = "New Ticket";
-            this.btnTicket.UseVisualStyleBackColor = true;
-            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click_1);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(10, 307);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(124, 22);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // cboTicket
-            // 
-            this.cboTicket.Enabled = false;
-            this.cboTicket.FormattingEnabled = true;
-            this.cboTicket.Location = new System.Drawing.Point(828, 303);
-            this.cboTicket.Name = "cboTicket";
-            this.cboTicket.Size = new System.Drawing.Size(18, 23);
-            this.cboTicket.TabIndex = 10;
-            this.cboTicket.Visible = false;
-            this.cboTicket.SelectedIndexChanged += new System.EventHandler(this.cboTicket_SelectedIndexChanged);
+            dgvTickets.AllowUserToAddRows = false;
+            dgvTickets.AllowUserToDeleteRows = false;
+            dgvTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTickets.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColSala, ColHorario, ColButaca, ColPrecio, ColAccion });
+            dgvTickets.Location = new Point(10, 58);
+            dgvTickets.Margin = new Padding(3, 2, 3, 2);
+            dgvTickets.Name = "dgvTickets";
+            dgvTickets.ReadOnly = true;
+            dgvTickets.RowHeadersWidth = 51;
+            dgvTickets.RowTemplate.Height = 29;
+            dgvTickets.Size = new Size(661, 190);
+            dgvTickets.TabIndex = 2;
             // 
             // ColPelicula
             // 
-            this.ColPelicula.HeaderText = "Pelicula";
-            this.ColPelicula.MinimumWidth = 6;
-            this.ColPelicula.Name = "ColPelicula";
-            this.ColPelicula.ReadOnly = true;
-            this.ColPelicula.Width = 125;
+            ColPelicula.HeaderText = "Pelicula";
+            ColPelicula.MinimumWidth = 6;
+            ColPelicula.Name = "ColPelicula";
+            ColPelicula.ReadOnly = true;
+            ColPelicula.Width = 125;
             // 
             // ColSala
             // 
-            this.ColSala.HeaderText = "Sala";
-            this.ColSala.MinimumWidth = 6;
-            this.ColSala.Name = "ColSala";
-            this.ColSala.ReadOnly = true;
-            this.ColSala.Width = 125;
+            ColSala.HeaderText = "Sala";
+            ColSala.MinimumWidth = 6;
+            ColSala.Name = "ColSala";
+            ColSala.ReadOnly = true;
+            ColSala.Width = 125;
             // 
             // ColHorario
             // 
-            this.ColHorario.HeaderText = "Inicio-Fin";
-            this.ColHorario.MinimumWidth = 6;
-            this.ColHorario.Name = "ColHorario";
-            this.ColHorario.ReadOnly = true;
-            this.ColHorario.Width = 125;
+            ColHorario.HeaderText = "Inicio-Fin";
+            ColHorario.MinimumWidth = 6;
+            ColHorario.Name = "ColHorario";
+            ColHorario.ReadOnly = true;
+            ColHorario.Width = 125;
             // 
             // ColButaca
             // 
-            this.ColButaca.HeaderText = "Butaca F-C";
-            this.ColButaca.MinimumWidth = 6;
-            this.ColButaca.Name = "ColButaca";
-            this.ColButaca.ReadOnly = true;
-            this.ColButaca.Width = 60;
+            ColButaca.HeaderText = "Butaca F-C";
+            ColButaca.MinimumWidth = 6;
+            ColButaca.Name = "ColButaca";
+            ColButaca.ReadOnly = true;
+            ColButaca.Width = 60;
             // 
             // ColPrecio
             // 
-            this.ColPrecio.HeaderText = "PRECIO";
-            this.ColPrecio.MinimumWidth = 6;
-            this.ColPrecio.Name = "ColPrecio";
-            this.ColPrecio.ReadOnly = true;
-            this.ColPrecio.Width = 80;
+            ColPrecio.HeaderText = "PRECIO";
+            ColPrecio.MinimumWidth = 6;
+            ColPrecio.Name = "ColPrecio";
+            ColPrecio.ReadOnly = true;
+            ColPrecio.Width = 80;
             // 
             // ColAccion
             // 
-            this.ColAccion.HeaderText = "Accion";
-            this.ColAccion.Name = "ColAccion";
-            this.ColAccion.ReadOnly = true;
-            this.ColAccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColAccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            ColAccion.HeaderText = "Accion";
+            ColAccion.Name = "ColAccion";
+            ColAccion.ReadOnly = true;
+            ColAccion.Resizable = DataGridViewTriState.True;
+            ColAccion.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // txbTotal
+            // 
+            txbTotal.Location = new Point(561, 273);
+            txbTotal.Margin = new Padding(3, 2, 3, 2);
+            txbTotal.Name = "txbTotal";
+            txbTotal.Size = new Size(110, 23);
+            txbTotal.TabIndex = 3;
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Location = new Point(504, 275);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(45, 15);
+            lblTotal.TabIndex = 4;
+            lblTotal.Text = "TOTAL :";
+            // 
+            // lblDescuento
+            // 
+            lblDescuento.AutoSize = true;
+            lblDescuento.Location = new Point(686, 160);
+            lblDescuento.Name = "lblDescuento";
+            lblDescuento.Size = new Size(63, 15);
+            lblDescuento.TabIndex = 5;
+            lblDescuento.Text = "Descuento";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(686, 178);
+            comboBox2.Margin = new Padding(3, 2, 3, 2);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(133, 23);
+            comboBox2.TabIndex = 6;
+            // 
+            // lblTickets
+            // 
+            lblTickets.AutoSize = true;
+            lblTickets.Location = new Point(10, 33);
+            lblTickets.Name = "lblTickets";
+            lblTickets.Size = new Size(49, 15);
+            lblTickets.TabIndex = 7;
+            lblTickets.Text = "Tickets :";
+            // 
+            // btnTicket
+            // 
+            btnTicket.Location = new Point(589, 32);
+            btnTicket.Margin = new Padding(3, 2, 3, 2);
+            btnTicket.Name = "btnTicket";
+            btnTicket.Size = new Size(82, 22);
+            btnTicket.TabIndex = 8;
+            btnTicket.Text = "New Ticket";
+            btnTicket.UseVisualStyleBackColor = true;
+            btnTicket.Click += btnTicket_Click_1;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(10, 307);
+            btnGuardar.Margin = new Padding(3, 2, 3, 2);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(124, 22);
+            btnGuardar.TabIndex = 9;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // cboTicket
+            // 
+            cboTicket.Enabled = false;
+            cboTicket.FormattingEnabled = true;
+            cboTicket.Location = new Point(828, 303);
+            cboTicket.Name = "cboTicket";
+            cboTicket.Size = new Size(18, 23);
+            cboTicket.TabIndex = 10;
+            cboTicket.Visible = false;
+            cboTicket.SelectedIndexChanged += cboTicket_SelectedIndexChanged;
             // 
             // FrmComprobante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 338);
-            this.Controls.Add(this.cboTicket);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnTicket);
-            this.Controls.Add(this.lblTickets);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.lblDescuento);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.txbTotal);
-            this.Controls.Add(this.dgvTickets);
-            this.Controls.Add(this.lblFormaPago);
-            this.Controls.Add(this.comboBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmComprobante";
-            this.Text = "Nuevo Comprobante";
-            this.Load += new System.EventHandler(this.FrmComprobante_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(858, 338);
+            Controls.Add(cboTicket);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnTicket);
+            Controls.Add(lblTickets);
+            Controls.Add(comboBox2);
+            Controls.Add(lblDescuento);
+            Controls.Add(lblTotal);
+            Controls.Add(txbTotal);
+            Controls.Add(dgvTickets);
+            Controls.Add(lblFormaPago);
+            Controls.Add(comboBox1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "FrmComprobante";
+            Text = "Nuevo Comprobante";
+            Load += FrmComprobante_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

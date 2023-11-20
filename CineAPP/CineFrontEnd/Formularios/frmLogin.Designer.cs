@@ -39,29 +39,28 @@
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsuario.Location = new Point(152, 36);
-            txtUsuario.Margin = new Padding(3, 4, 3, 4);
+            txtUsuario.Location = new Point(133, 27);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(247, 30);
+            txtUsuario.Size = new Size(217, 26);
             txtUsuario.TabIndex = 0;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtContrasenia
             // 
             txtContrasenia.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContrasenia.Location = new Point(152, 97);
-            txtContrasenia.Margin = new Padding(3, 4, 3, 4);
+            txtContrasenia.Location = new Point(133, 73);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
-            txtContrasenia.Size = new Size(247, 30);
+            txtContrasenia.Size = new Size(217, 26);
             txtContrasenia.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(26, 47);
+            label1.Location = new Point(23, 35);
             label1.Name = "label1";
-            label1.Size = new Size(76, 23);
+            label1.Size = new Size(62, 18);
             label1.TabIndex = 2;
             label1.Text = "Usuario";
             // 
@@ -69,18 +68,17 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(26, 101);
+            label2.Location = new Point(23, 76);
             label2.Name = "label2";
-            label2.Size = new Size(112, 23);
+            label2.Size = new Size(89, 18);
             label2.TabIndex = 3;
             label2.Text = "Contraseña";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(293, 147);
-            btnLogin.Margin = new Padding(3, 4, 3, 4);
+            btnLogin.Location = new Point(256, 110);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(107, 31);
+            btnLogin.Size = new Size(94, 23);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Ingresar";
             btnLogin.UseVisualStyleBackColor = true;
@@ -89,10 +87,9 @@
             // cboxContrasenia
             // 
             cboxContrasenia.AutoSize = true;
-            cboxContrasenia.Location = new Point(26, 149);
-            cboxContrasenia.Margin = new Padding(3, 4, 3, 4);
+            cboxContrasenia.Location = new Point(23, 112);
             cboxContrasenia.Name = "cboxContrasenia";
-            cboxContrasenia.Size = new Size(158, 24);
+            cboxContrasenia.Size = new Size(128, 19);
             cboxContrasenia.TabIndex = 5;
             cboxContrasenia.Text = "Mostrar contraseña";
             cboxContrasenia.UseVisualStyleBackColor = true;
@@ -100,16 +97,15 @@
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(450, 193);
+            ClientSize = new Size(394, 145);
             Controls.Add(cboxContrasenia);
             Controls.Add(btnLogin);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtContrasenia);
             Controls.Add(txtUsuario);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmLogin";
             Text = "Login";
             Load += frnPrincipal_Load;

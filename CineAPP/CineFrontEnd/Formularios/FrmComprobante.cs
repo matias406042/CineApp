@@ -18,7 +18,7 @@ namespace CineFrontEnd.Formularios
         {
             InitializeComponent();
             comprobante = new Comprobante();
-            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -59,7 +59,12 @@ namespace CineFrontEnd.Formularios
 
         private void FrmComprobante_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
