@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection(@"Data Source=DESKTOP-UUMMIAU\SQLEXPRESS;Initial Catalog=TP_LABORATORIO22;Integrated Security=True");
+            cnn = new SqlConnection(@"Data Source=COMPU-DE-ZZZ\SQLEXPRESS;Initial Catalog=TP_LABORATORIO22;Integrated Security=True");
         }
 
         public static HelperDB ObtenerInstancia()
@@ -191,7 +191,64 @@ namespace CineBackEnd.Datos
 
         }
 
+        public bool SPMaestroDetalle(List<SqlParameter> pMaestro, List<SqlParameter> pDetalle, string SPMaestro, string SPDetalle, string nameNROMaestro)
+        {
+            bool aux = true;
+            SqlTransaction t = null;
+            try
+            {
 
+
+                cnn.Open();
+                t = cnn.BeginTransaction();
+
+
+
+                SqlCommand comando = new SqlCommand(SPMaestro, cnn, t);
+                comando.CommandType = CommandType.StoredProcedure;
+
+
+                comando.Parameters.AddRange(pMaestro.ToArray());
+                comando.ExecuteNonQuery();
+
+                int nroMaestro = 0;
+                foreach (SqlParameter p in pMaestro)
+                {
+                    if (p.Direction == ParameterDirection.Output)
+                    {
+                        nroMaestro = (int)p.Value;
+                        break;
+                    }
+
+                }
+
+
+                int nroDetalles = 0;
+                SqlCommand cmdDetalles = new SqlCommand(SPDetalle, cnn, t);
+                cmdDetalles.CommandType = CommandType.StoredProcedure;
+
+                foreach (SqlParameter p in pDetalle)
+                {
+                    cmdDetalles.Parameters.Clear();
+                    cmdDetalles.Parameters.Add(p);
+                    cmdDetalles.Parameters.AddWithValue(nameNROMaestro, nroMaestro);
+                    cmdDetalles.ExecuteNonQuery();
+                }
+                t.Commit();
+            }
+            catch (Exception)
+            {
+                if (t != null)
+                    t.Rollback();
+                aux = false;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+            return aux;
+        }
 
 
         public SqlConnection ObtenerConexion()

@@ -45,7 +45,7 @@ namespace CineBackEnd.Datos.Implementacion
                 paramsDetalle.Add(new SqlParameter("@id_funcion", t.Funcion.Id));
                 //paramsDetalle.Add(new SqlParameter("@id_butaca"))
             }
-            return HelperDB.ObtenerInstancia().SPInsertMaestroDetalleSQL(paramsMaestro, paramsDetalle, spMaestro, spDetalle, "@id_comprobante");
+            return HelperDB.ObtenerInstancia().SPMaestroDetalle(paramsMaestro, paramsDetalle, spMaestro, spDetalle, "@id_comprobante");
 
         }
 

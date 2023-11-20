@@ -1,4 +1,4 @@
-use TP_LABORATORIO
+use TP_LABORATORIO22
 
 alter table Funciones
 drop column horario

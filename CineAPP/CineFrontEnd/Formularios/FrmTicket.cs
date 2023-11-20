@@ -20,7 +20,7 @@ namespace CineFrontEnd.Formularios
         List<Funcion> funciones;
         int idTick;
         List<Ticket> ticketList;
-        public FrmTicket(int id,List<Ticket> ticketlist)
+        public FrmTicket(int id, List<Ticket> ticketlist)
         {
             InitializeComponent();
             fDao = new FuncionDao();
@@ -32,7 +32,7 @@ namespace CineFrontEnd.Formularios
 
         private void FrmTicket_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
@@ -76,6 +76,8 @@ namespace CineFrontEnd.Formularios
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
+
+
             this.Dispose();
         }
 
@@ -88,7 +90,7 @@ namespace CineFrontEnd.Formularios
                 {
                     foreach (Funcion f in funciones)
                     {
-                        if((int)fila.Cells[0].Value == f.Id)
+                        if ((int)fila.Cells[0].Value == f.Id)
                         {
                             funcionElegida = f;
                             break;
@@ -115,15 +117,26 @@ namespace CineFrontEnd.Formularios
         private void btnSearch_Click(object sender, EventArgs e)
         {
             funciones = new List<Funcion>();
-            if(cbxTitulo.Checked & cbxFecha.Checked)           
-                funciones = fDao.GetFunciones(dtpFecha.Value, txbTitulo.Text);          
-            else if(cbxTitulo.Checked & !cbxFecha.Checked)
+            if (cbxTitulo.Checked & cbxFecha.Checked)
+                funciones = fDao.GetFunciones(dtpFecha.Value, txbTitulo.Text);
+            else if (cbxTitulo.Checked & !cbxFecha.Checked)
                 funciones = fDao.GetFunciones(DateTime.MinValue, txbTitulo.Text);
-            else if(!cbxTitulo.Checked & cbxFecha.Checked)
+            else if (!cbxTitulo.Checked & cbxFecha.Checked)
                 funciones = fDao.GetFunciones(dtpFecha.Value, String.Empty);
             else
                 funciones = fDao.GetFunciones(DateTime.MinValue, "");
+
+            //VALIDACION UWU
+
+            if (funciones.Count <= 0)
+            {
+                MessageBox.Show("No se han encontrado resultados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //
             dgvFunciones.Rows.Clear();
+
             foreach (Funcion f in funciones)
             {
                 dgvFunciones.Rows.Add(new object[]
@@ -134,7 +147,7 @@ namespace CineFrontEnd.Formularios
                     f.HorarioFin.ToShortTimeString(),
                     f.Sala.Descripcion,
                     f.Sala.Tipo.Descripcion,
-                    f.Sala.Precio               
+                    f.Sala.Precio
                 });
             }
         }
@@ -143,28 +156,48 @@ namespace CineFrontEnd.Formularios
         {
             if (e.ColumnIndex == 7 & e.RowIndex != -1)
             {
-                foreach  (DataGridViewRow fila in dgvFunciones.Rows)
+                foreach (DataGridViewRow fila in dgvFunciones.Rows)
                 {
                     if (fila.Index == e.RowIndex)
-                       fila.Cells[7].Value = true;
+                        fila.Cells[7].Value = true;
                     else
                         fila.Cells[7].Value = false;
                 }
                 btnButacas.Enabled = true;
             }
-                
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Validar datos
+            FrmComprobante comprobanteForm = Owner as FrmComprobante;
+
+            if (funciones == null)
+            {
+                MessageBox.Show("Debes buscar una función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // validados uwu
             //FrmComprobante comprobanteForm = Owner as FrmComprobante;
+
+
             foreach (DataGridViewRow fila in dgvFunciones.Rows)
             {
-                if((bool)fila.Cells[7].Value)
+                if (fila.Cells[7].Value == null)
                 {
+                    MessageBox.Show("Se debe elegir una función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    return;
+                }
+
+                if ((bool)fila.Cells[7].Value)
+                {
+
                     Funcion f = new Funcion();
                     Ticket t = new Ticket();
+
                     foreach (Funcion ff in funciones)
                     {
                         if ((int)fila.Cells[0].Value == ff.Id)
@@ -172,18 +205,25 @@ namespace CineFrontEnd.Formularios
                             f = ff;
                             break;
                         }
-                            
+
                     }
+                    //aaaaaaaaaaaaaaaaaaaaaaaa
                     t.Funcion = f;
                     t.Precio = Convert.ToDouble(f.Sala.Precio);
                     t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
                     t.Butaca.Fila = txtButaca.Text.Substring(0, 1);
-                    _ = fDao.OcuparButaca(true,f.Id, t.Butaca.Fila, t.Butaca.Columna);
+                    _ = fDao.OcuparButaca(true, f.Id, t.Butaca.Fila, t.Butaca.Columna);
                     ticketList.Add(t);
                     //comprobanteForm.cboTicket.DataSource = ticketList;
                     this.Dispose();
+
                 }
             }
+        }
+
+        private void FrmTicket_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

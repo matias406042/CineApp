@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CineBackEnd.Entidades;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
+using System.Diagnostics.Eventing.Reader;
 
 namespace CineFrontEnd.Formularios
 {
@@ -19,16 +20,22 @@ namespace CineFrontEnd.Formularios
         bool editar;
         IFuncionDao dao;
         List<Pelicula> pelis;
-        
+        bool activo;
 
         public FrmFuncion()
         {
             InitializeComponent();
             dao = new FuncionDao();
             editar = false;
+            activo = false;
             CargarSalas();
             CargarGeneros();
+            dtpFecha.MinDate = DateTime.Now;
+            dtpInicio.ShowUpDown = true;
+            dtpFin.ShowUpDown = true;
         }
+
+      
 
         private void CargarGeneros()
         {
@@ -55,7 +62,7 @@ namespace CineFrontEnd.Formularios
             btnInsert.Text = "Editar";
             CargarGeneros();
             CargarSalas();
-            cboSala.SelectedIndex = f.Sala.Id-1;
+            cboSala.SelectedIndex = f.Sala.Id - 1;
             txtTitulo.Text = f.Pelicula.Titulo;
             dtpFecha.Value = f.Fecha;
             dtpInicio.Value = f.HorarioInicio;
@@ -95,6 +102,9 @@ namespace CineFrontEnd.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Validar Datos
+
+
+            //no se que validar aca digamos que es un solo botoncito, cualquier cosa puse un "no hay nada" cuando no hay nada. profundo.
             pelis = dao.Peliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
             dgvPelis.Rows.Clear();
             foreach (Pelicula p in pelis)
@@ -102,11 +112,37 @@ namespace CineFrontEnd.Formularios
                 dgvPelis.Rows.Add(new object[] {p.Id,p.Titulo,p.Genero.Descripcion,p.Duracion,
                     p.Director.ToString(),p.FechaEstreno.ToShortDateString(),p.Clasificacion.EdadMinima,p.Productora.Nombre});
             }
+
+            if (dgvPelis.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontró película con los parámetros ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
             //validar Datos
+            if (dtpInicio.Value >= dtpFin.Value)
+            {
+                MessageBox.Show("El horario de inicio debe ser menor al horario de salida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (dtpFecha.Value < DateTime.Now || dtpFecha.Value == DateTime.Now && dtpInicio.Value < DateTime.Now)
+            {
+                MessageBox.Show("No se puede crear una función en el pasado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (dgvPelis.CurrentRow == null)
+            {
+                MessageBox.Show("Debe elegir una película.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //datos validados uwu
             if (!editar)
             {
                 Funcion ff = new Funcion();
@@ -156,6 +192,18 @@ namespace CineFrontEnd.Formularios
                     MessageBox.Show("No se puedo Editar la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+        //    if (!activo) { ActivarHorarios(); }
+
+        //    dtpInicio.MinDate = dtpFecha.Value.Date;
+        //    dtpFin.MinDate = dtpFecha.Value.Date;
+
+        //    dtpInicio.MaxDate = dtpFecha.Value.Date.AddDays(1).AddSeconds(-1);
+        //    dtpFin.MaxDate = dtpFecha.Value.Date.AddDays(1).AddSeconds(-1);
+
         }
     }
 }

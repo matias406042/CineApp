@@ -28,308 +28,304 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cboGenero = new System.Windows.Forms.ComboBox();
-            this.lblPelicula = new System.Windows.Forms.Label();
-            this.lblHorario = new System.Windows.Forms.Label();
-            this.lblGenero = new System.Windows.Forms.Label();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.dgvPelis = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDirector = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColEstreno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColClasif = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.lblSALA = new System.Windows.Forms.Label();
-            this.cboSala = new System.Windows.Forms.ComboBox();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtDimension = new System.Windows.Forms.TextBox();
-            this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPelis)).BeginInit();
-            this.SuspendLayout();
+            btnInsert = new Button();
+            lblFecha = new Label();
+            dtpFecha = new DateTimePicker();
+            cboGenero = new ComboBox();
+            lblPelicula = new Label();
+            lblHorario = new Label();
+            lblGenero = new Label();
+            txtTitulo = new TextBox();
+            lblNombre = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            dgvPelis = new DataGridView();
+            colId = new DataGridViewTextBoxColumn();
+            ColTitulo = new DataGridViewTextBoxColumn();
+            ColGenero = new DataGridViewTextBoxColumn();
+            ColDuracion = new DataGridViewTextBoxColumn();
+            ColDirector = new DataGridViewTextBoxColumn();
+            ColEstreno = new DataGridViewTextBoxColumn();
+            ColClasif = new DataGridViewTextBoxColumn();
+            colProd = new DataGridViewTextBoxColumn();
+            btnSalir = new Button();
+            lblSALA = new Label();
+            cboSala = new ComboBox();
+            lblTipo = new Label();
+            btnBuscar = new Button();
+            label1 = new Label();
+            txtDimension = new TextBox();
+            dtpFin = new DateTimePicker();
+            dtpInicio = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)dgvPelis).BeginInit();
+            SuspendLayout();
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(21, 305);
-            this.btnInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(86, 23);
-            this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "AGREGAR";
-            this.btnInsert.UseVisualStyleBackColor = true;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            btnInsert.Location = new Point(21, 305);
+            btnInsert.Margin = new Padding(3, 2, 3, 2);
+            btnInsert.Name = "btnInsert";
+            btnInsert.Size = new Size(86, 23);
+            btnInsert.TabIndex = 0;
+            btnInsert.Text = "AGREGAR";
+            btnInsert.UseVisualStyleBackColor = true;
+            btnInsert.Click += btnInsert_Click;
             // 
             // lblFecha
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(567, 25);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(44, 15);
-            this.lblFecha.TabIndex = 2;
-            this.lblFecha.Text = "FECHA";
+            lblFecha.AutoSize = true;
+            lblFecha.Location = new Point(567, 25);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(44, 15);
+            lblFecha.TabIndex = 2;
+            lblFecha.Text = "FECHA";
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(555, 48);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(94, 23);
-            this.dtpFecha.TabIndex = 3;
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(555, 48);
+            dtpFecha.Margin = new Padding(3, 2, 3, 2);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(94, 23);
+            dtpFecha.TabIndex = 3;
+            dtpFecha.Value = new DateTime(2023, 11, 18, 0, 0, 0, 0);
+            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
             // 
             // cboGenero
             // 
-            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(259, 134);
-            this.cboGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(133, 23);
-            this.cboGenero.TabIndex = 4;
+            cboGenero.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboGenero.FormattingEnabled = true;
+            cboGenero.Location = new Point(259, 134);
+            cboGenero.Margin = new Padding(3, 2, 3, 2);
+            cboGenero.Name = "cboGenero";
+            cboGenero.Size = new Size(133, 23);
+            cboGenero.TabIndex = 4;
             // 
             // lblPelicula
             // 
-            this.lblPelicula.AutoSize = true;
-            this.lblPelicula.Location = new System.Drawing.Point(21, 106);
-            this.lblPelicula.Name = "lblPelicula";
-            this.lblPelicula.Size = new System.Drawing.Size(59, 15);
-            this.lblPelicula.TabIndex = 5;
-            this.lblPelicula.Text = "PELICULA";
+            lblPelicula.AutoSize = true;
+            lblPelicula.Location = new Point(21, 106);
+            lblPelicula.Name = "lblPelicula";
+            lblPelicula.Size = new Size(59, 15);
+            lblPelicula.TabIndex = 5;
+            lblPelicula.Text = "PELICULA";
             // 
             // lblHorario
             // 
-            this.lblHorario.AutoSize = true;
-            this.lblHorario.Location = new System.Drawing.Point(672, 25);
-            this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(97, 15);
-            this.lblHorario.TabIndex = 6;
-            this.lblHorario.Text = "HORARIO INICIO";
+            lblHorario.AutoSize = true;
+            lblHorario.Location = new Point(672, 25);
+            lblHorario.Name = "lblHorario";
+            lblHorario.Size = new Size(97, 15);
+            lblHorario.TabIndex = 6;
+            lblHorario.Text = "HORARIO INICIO";
             // 
             // lblGenero
             // 
-            this.lblGenero.AutoSize = true;
-            this.lblGenero.Location = new System.Drawing.Point(290, 106);
-            this.lblGenero.Name = "lblGenero";
-            this.lblGenero.Size = new System.Drawing.Size(52, 15);
-            this.lblGenero.TabIndex = 7;
-            this.lblGenero.Text = "GENERO";
+            lblGenero.AutoSize = true;
+            lblGenero.Location = new Point(290, 106);
+            lblGenero.Name = "lblGenero";
+            lblGenero.Size = new Size(52, 15);
+            lblGenero.TabIndex = 7;
+            lblGenero.Text = "GENERO";
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(108, 134);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(110, 23);
-            this.txtTitulo.TabIndex = 8;
+            txtTitulo.Location = new Point(108, 134);
+            txtTitulo.Margin = new Padding(3, 2, 3, 2);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(110, 23);
+            txtTitulo.TabIndex = 8;
             // 
             // lblNombre
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(132, 106);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(45, 15);
-            this.lblNombre.TabIndex = 9;
-            this.lblNombre.Text = "TITULO";
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(132, 106);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(45, 15);
+            lblNombre.TabIndex = 9;
+            lblNombre.Text = "TITULO";
             // 
             // dgvPelis
             // 
-            this.dgvPelis.AllowUserToAddRows = false;
-            this.dgvPelis.AllowUserToDeleteRows = false;
-            this.dgvPelis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPelis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.ColTitulo,
-            this.ColGenero,
-            this.ColDuracion,
-            this.ColDirector,
-            this.ColEstreno,
-            this.ColClasif,
-            this.colProd});
-            this.dgvPelis.Location = new System.Drawing.Point(7, 166);
-            this.dgvPelis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvPelis.Name = "dgvPelis";
-            this.dgvPelis.ReadOnly = true;
-            this.dgvPelis.RowHeadersWidth = 51;
-            this.dgvPelis.RowTemplate.Height = 29;
-            this.dgvPelis.Size = new System.Drawing.Size(756, 133);
-            this.dgvPelis.TabIndex = 10;
+            dgvPelis.AllowUserToAddRows = false;
+            dgvPelis.AllowUserToDeleteRows = false;
+            dgvPelis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPelis.Columns.AddRange(new DataGridViewColumn[] { colId, ColTitulo, ColGenero, ColDuracion, ColDirector, ColEstreno, ColClasif, colProd });
+            dgvPelis.Location = new Point(7, 166);
+            dgvPelis.Margin = new Padding(3, 2, 3, 2);
+            dgvPelis.Name = "dgvPelis";
+            dgvPelis.ReadOnly = true;
+            dgvPelis.RowHeadersWidth = 51;
+            dgvPelis.RowTemplate.Height = 29;
+            dgvPelis.Size = new Size(756, 133);
+            dgvPelis.TabIndex = 10;
             // 
             // colId
             // 
-            this.colId.HeaderText = "IdPeli";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
+            colId.HeaderText = "IdPeli";
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Visible = false;
             // 
             // ColTitulo
             // 
-            this.ColTitulo.HeaderText = "Titulo";
-            this.ColTitulo.Name = "ColTitulo";
-            this.ColTitulo.ReadOnly = true;
+            ColTitulo.HeaderText = "Titulo";
+            ColTitulo.Name = "ColTitulo";
+            ColTitulo.ReadOnly = true;
             // 
             // ColGenero
             // 
-            this.ColGenero.HeaderText = "Genero";
-            this.ColGenero.Name = "ColGenero";
-            this.ColGenero.ReadOnly = true;
+            ColGenero.HeaderText = "Genero";
+            ColGenero.Name = "ColGenero";
+            ColGenero.ReadOnly = true;
             // 
             // ColDuracion
             // 
-            this.ColDuracion.HeaderText = "Duracion";
-            this.ColDuracion.Name = "ColDuracion";
-            this.ColDuracion.ReadOnly = true;
+            ColDuracion.HeaderText = "Duracion";
+            ColDuracion.Name = "ColDuracion";
+            ColDuracion.ReadOnly = true;
             // 
             // ColDirector
             // 
-            this.ColDirector.HeaderText = "Director";
-            this.ColDirector.Name = "ColDirector";
-            this.ColDirector.ReadOnly = true;
+            ColDirector.HeaderText = "Director";
+            ColDirector.Name = "ColDirector";
+            ColDirector.ReadOnly = true;
             // 
             // ColEstreno
             // 
-            this.ColEstreno.HeaderText = "Año de estreno";
-            this.ColEstreno.Name = "ColEstreno";
-            this.ColEstreno.ReadOnly = true;
+            ColEstreno.HeaderText = "Año de estreno";
+            ColEstreno.Name = "ColEstreno";
+            ColEstreno.ReadOnly = true;
             // 
             // ColClasif
             // 
-            this.ColClasif.HeaderText = "Clasificacion";
-            this.ColClasif.Name = "ColClasif";
-            this.ColClasif.ReadOnly = true;
+            ColClasif.HeaderText = "Clasificacion";
+            ColClasif.Name = "ColClasif";
+            ColClasif.ReadOnly = true;
             // 
             // colProd
             // 
-            this.colProd.HeaderText = "Productora";
-            this.colProd.Name = "colProd";
-            this.colProd.ReadOnly = true;
+            colProd.HeaderText = "Productora";
+            colProd.Name = "colProd";
+            colProd.ReadOnly = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(585, 305);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(86, 23);
-            this.btnSalir.TabIndex = 11;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            btnSalir.Location = new Point(585, 305);
+            btnSalir.Margin = new Padding(3, 2, 3, 2);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(86, 23);
+            btnSalir.TabIndex = 11;
+            btnSalir.Text = "SALIR";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lblSALA
             // 
-            this.lblSALA.AutoSize = true;
-            this.lblSALA.Location = new System.Drawing.Point(21, 16);
-            this.lblSALA.Name = "lblSALA";
-            this.lblSALA.Size = new System.Drawing.Size(35, 15);
-            this.lblSALA.TabIndex = 12;
-            this.lblSALA.Text = "SALA";
+            lblSALA.AutoSize = true;
+            lblSALA.Location = new Point(21, 16);
+            lblSALA.Name = "lblSALA";
+            lblSALA.Size = new Size(35, 15);
+            lblSALA.TabIndex = 12;
+            lblSALA.Text = "SALA";
             // 
             // cboSala
             // 
-            this.cboSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSala.FormattingEnabled = true;
-            this.cboSala.Location = new System.Drawing.Point(65, 12);
-            this.cboSala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboSala.Name = "cboSala";
-            this.cboSala.Size = new System.Drawing.Size(133, 23);
-            this.cboSala.TabIndex = 13;
-            this.cboSala.SelectedIndexChanged += new System.EventHandler(this.cboSala_SelectedIndexChanged);
+            cboSala.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSala.FormattingEnabled = true;
+            cboSala.Location = new Point(65, 12);
+            cboSala.Margin = new Padding(3, 2, 3, 2);
+            cboSala.Name = "cboSala";
+            cboSala.Size = new Size(133, 23);
+            cboSala.TabIndex = 13;
+            cboSala.SelectedIndexChanged += cboSala_SelectedIndexChanged;
             // 
             // lblTipo
             // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(224, 16);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(106, 15);
-            this.lblTipo.TabIndex = 14;
-            this.lblTipo.Text = "Tipo de Dimensión";
+            lblTipo.AutoSize = true;
+            lblTipo.Location = new Point(224, 16);
+            lblTipo.Name = "lblTipo";
+            lblTipo.Size = new Size(106, 15);
+            lblTipo.TabIndex = 14;
+            lblTipo.Text = "Tipo de Dimensión";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(435, 134);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(82, 22);
-            this.btnBuscar.TabIndex = 16;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            btnBuscar.Location = new Point(435, 134);
+            btnBuscar.Margin = new Padding(3, 2, 3, 2);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(82, 22);
+            btnBuscar.TabIndex = 16;
+            btnBuscar.Text = "BUSCAR";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(680, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "HORARIO FIN";
+            label1.AutoSize = true;
+            label1.Location = new Point(680, 89);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 15);
+            label1.TabIndex = 18;
+            label1.Text = "HORARIO FIN";
             // 
             // txtDimension
             // 
-            this.txtDimension.Enabled = false;
-            this.txtDimension.Location = new System.Drawing.Point(347, 12);
-            this.txtDimension.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDimension.Name = "txtDimension";
-            this.txtDimension.Size = new System.Drawing.Size(52, 23);
-            this.txtDimension.TabIndex = 19;
+            txtDimension.Enabled = false;
+            txtDimension.Location = new Point(347, 12);
+            txtDimension.Margin = new Padding(3, 2, 3, 2);
+            txtDimension.Name = "txtDimension";
+            txtDimension.Size = new Size(52, 23);
+            txtDimension.TabIndex = 19;
             // 
             // dtpFin
             // 
-            this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpFin.Location = new System.Drawing.Point(681, 114);
-            this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(82, 23);
-            this.dtpFin.TabIndex = 20;
+            dtpFin.Format = DateTimePickerFormat.Time;
+            dtpFin.Location = new Point(681, 114);
+            dtpFin.Name = "dtpFin";
+            dtpFin.Size = new Size(82, 23);
+            dtpFin.TabIndex = 20;
+            dtpFin.Value = new DateTime(2023, 11, 18, 0, 0, 0, 0);
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpInicio.Location = new System.Drawing.Point(681, 48);
-            this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(82, 23);
-            this.dtpInicio.TabIndex = 21;
+            dtpInicio.AllowDrop = true;
+            dtpInicio.Format = DateTimePickerFormat.Time;
+            dtpInicio.Location = new Point(681, 48);
+            dtpInicio.Name = "dtpInicio";
+            dtpInicio.Size = new Size(82, 23);
+            dtpInicio.TabIndex = 21;
+            dtpInicio.Value = new DateTime(2023, 11, 18, 0, 0, 0, 0);
             // 
             // FrmFuncion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 350);
-            this.Controls.Add(this.dtpInicio);
-            this.Controls.Add(this.dtpFin);
-            this.Controls.Add(this.txtDimension);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.cboSala);
-            this.Controls.Add(this.lblSALA);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgvPelis);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.lblGenero);
-            this.Controls.Add(this.lblHorario);
-            this.Controls.Add(this.lblPelicula);
-            this.Controls.Add(this.cboGenero);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.btnInsert);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmFuncion";
-            this.Text = "Funcion";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPelis)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(775, 350);
+            Controls.Add(dtpInicio);
+            Controls.Add(dtpFin);
+            Controls.Add(txtDimension);
+            Controls.Add(label1);
+            Controls.Add(btnBuscar);
+            Controls.Add(lblTipo);
+            Controls.Add(cboSala);
+            Controls.Add(lblSALA);
+            Controls.Add(btnSalir);
+            Controls.Add(dgvPelis);
+            Controls.Add(lblNombre);
+            Controls.Add(txtTitulo);
+            Controls.Add(lblGenero);
+            Controls.Add(lblHorario);
+            Controls.Add(lblPelicula);
+            Controls.Add(cboGenero);
+            Controls.Add(dtpFecha);
+            Controls.Add(lblFecha);
+            Controls.Add(btnInsert);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "FrmFuncion";
+            Text = "Funcion";
+            ((System.ComponentModel.ISupportInitialize)dgvPelis).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

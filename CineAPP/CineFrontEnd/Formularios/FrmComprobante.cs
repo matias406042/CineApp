@@ -38,10 +38,10 @@ namespace CineFrontEnd.Formularios
                 total += Convert.ToDouble(r.Cells["ColPrecio"].Value);
             }
             if (cbxDescuento.Checked)
-                return total - (total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0,2));
+                return total - (total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0, 2));
             else return total;
         }
-        private void CargarDescuentos( List<Descuento> descuentos)
+        private void CargarDescuentos(List<Descuento> descuentos)
         {
             cboDescuento.DataSource = descuentos;
             cboDescuento.DisplayMember = "Motivo";
@@ -53,7 +53,8 @@ namespace CineFrontEnd.Formularios
         {
             cboFormaPago.DataSource = formaPagos;
             cboFormaPago.DisplayMember = "Forma";
-            cboFormaPago.ValueMember= "Id";
+            cboFormaPago.ValueMember = "Id";
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -70,18 +71,25 @@ namespace CineFrontEnd.Formularios
             if (cbxDescuento.Checked)
                 comprobante.Descuento.Id = (int)cboDescuento.SelectedValue;
             else comprobante.Descuento.Id = 0;
-            if(dao.Crear(comprobante))
-                MessageBox.Show("Se creo con exito el comprobante","Exito!!",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Hubo un error al crear el combrobante","Error!!",MessageBoxButtons.OK, MessageBoxIcon.Error);
-            this.Dispose();
+            if (dao.Crear(comprobante))
+                MessageBox.Show("Se creo con exito el comprobante", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else {
+              
+                foreach (Ticket ticket in comprobante.Tickets)
+                {
+                    fdao.OcuparButaca(false, ticket.Id, ticket.Butaca.Fila, ticket.Butaca.Columna);
+                }
 
+                MessageBox.Show("Hubo un error al crear el combrobante", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+
+            }
         }
 
         private void btnTicket_Click_1(object sender, EventArgs e)
         {
             int idTicket = dgvTickets.Rows.Count;
-            FrmTicket ti = new FrmTicket(idTicket + 1,ticketList);
+            FrmTicket ti = new FrmTicket(idTicket + 1, ticketList);
             //AddOwnedForm(ti);
             ti.ShowDialog();
             comprobante.Tickets = ticketList;
@@ -124,7 +132,12 @@ namespace CineFrontEnd.Formularios
 
         private void FrmComprobante_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void cbxDescuento_CheckedChanged(object sender, EventArgs e)
@@ -158,7 +171,7 @@ namespace CineFrontEnd.Formularios
 
         private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1 & e.ColumnIndex == 5)
+            if (e.RowIndex != -1 & e.ColumnIndex == 5)
             {
                 fdao.OcuparButaca(false, comprobante.Tickets[e.RowIndex].Funcion.Id,
                                         comprobante.Tickets[e.RowIndex].Butaca.Fila,
@@ -202,6 +215,11 @@ namespace CineFrontEnd.Formularios
             //            "Borrar"
             //    });
             //}
+        }
+
+        private void lblDescuento_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

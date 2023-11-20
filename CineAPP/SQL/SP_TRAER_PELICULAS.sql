@@ -1,6 +1,6 @@
 create  procedure SP_BUSCAR_PELICULAS
 @Titulo varchar(20)= null,
-@AñoEstreno int =null,
+@AÃ±oEstreno int =null,
 @id_Genero int= null
 
 
@@ -32,7 +32,7 @@ SELECT
 
     WHERE (Titulo LIKE '%' + @Titulo + '%' OR @Titulo IS NULL)
         AND (p.id_genero = @id_Genero OR @id_Genero IS NULL)
-        AND ((year(P.fecha_estreno) = @AñoEstreno) OR (@AñoEstreno IS NULL));
+        AND ((year(P.fecha_estreno) = @AÃ±oEstreno) OR (@AÃ±oEstreno IS NULL));
 		end
 
 
