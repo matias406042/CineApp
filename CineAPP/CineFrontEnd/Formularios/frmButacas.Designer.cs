@@ -28,46 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnA7 = new System.Windows.Forms.Button();
-            this.btnA6 = new System.Windows.Forms.Button();
-            this.btnA5 = new System.Windows.Forms.Button();
-            this.btnA4 = new System.Windows.Forms.Button();
-            this.btnA3 = new System.Windows.Forms.Button();
-            this.btnA2 = new System.Windows.Forms.Button();
-            this.btnA1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnB1 = new System.Windows.Forms.Button();
-            this.btnB2 = new System.Windows.Forms.Button();
-            this.btnB3 = new System.Windows.Forms.Button();
-            this.btnB4 = new System.Windows.Forms.Button();
-            this.btnB5 = new System.Windows.Forms.Button();
-            this.btnB6 = new System.Windows.Forms.Button();
-            this.btnB7 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnC1 = new System.Windows.Forms.Button();
-            this.btnC2 = new System.Windows.Forms.Button();
-            this.btnC3 = new System.Windows.Forms.Button();
-            this.btnC4 = new System.Windows.Forms.Button();
-            this.btnC5 = new System.Windows.Forms.Button();
-            this.btnC6 = new System.Windows.Forms.Button();
-            this.btnC7 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnD1 = new System.Windows.Forms.Button();
-            this.btnD2 = new System.Windows.Forms.Button();
-            this.btnD3 = new System.Windows.Forms.Button();
-            this.btnD4 = new System.Windows.Forms.Button();
-            this.btnD5 = new System.Windows.Forms.Button();
-            this.btnD6 = new System.Windows.Forms.Button();
-            this.btnD7 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnF1 = new System.Windows.Forms.Button();
-            this.btnF2 = new System.Windows.Forms.Button();
-            this.btnF3 = new System.Windows.Forms.Button();
-            this.btnF4 = new System.Windows.Forms.Button();
-            this.btnF5 = new System.Windows.Forms.Button();
-            this.btnF6 = new System.Windows.Forms.Button();
-            this.btnF7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -115,11 +75,6 @@
             this.A5 = new System.Windows.Forms.PictureBox();
             this.A6 = new System.Windows.Forms.PictureBox();
             this.A7 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.B7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).BeginInit();
@@ -156,436 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.A6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.A7)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnA7
-            // 
-            this.btnA7.Location = new System.Drawing.Point(291, 16);
-            this.btnA7.Name = "btnA7";
-            this.btnA7.Size = new System.Drawing.Size(45, 45);
-            this.btnA7.TabIndex = 1;
-            this.btnA7.Text = "A7";
-            this.btnA7.UseVisualStyleBackColor = true;
-            this.btnA7.Click += new System.EventHandler(this.btnA7_Click);
-            // 
-            // btnA6
-            // 
-            this.btnA6.Location = new System.Drawing.Point(246, 16);
-            this.btnA6.Name = "btnA6";
-            this.btnA6.Size = new System.Drawing.Size(45, 45);
-            this.btnA6.TabIndex = 2;
-            this.btnA6.Text = "A6";
-            this.btnA6.UseVisualStyleBackColor = true;
-            this.btnA6.Click += new System.EventHandler(this.btnA6_Click);
-            // 
-            // btnA5
-            // 
-            this.btnA5.Location = new System.Drawing.Point(201, 16);
-            this.btnA5.Name = "btnA5";
-            this.btnA5.Size = new System.Drawing.Size(45, 45);
-            this.btnA5.TabIndex = 3;
-            this.btnA5.Text = "A5";
-            this.btnA5.UseVisualStyleBackColor = true;
-            this.btnA5.Click += new System.EventHandler(this.btnA5_Click);
-            // 
-            // btnA4
-            // 
-            this.btnA4.Location = new System.Drawing.Point(156, 16);
-            this.btnA4.Name = "btnA4";
-            this.btnA4.Size = new System.Drawing.Size(45, 45);
-            this.btnA4.TabIndex = 4;
-            this.btnA4.Text = "A4";
-            this.btnA4.UseVisualStyleBackColor = true;
-            this.btnA4.Click += new System.EventHandler(this.btnA4_Click);
-            // 
-            // btnA3
-            // 
-            this.btnA3.Location = new System.Drawing.Point(111, 16);
-            this.btnA3.Name = "btnA3";
-            this.btnA3.Size = new System.Drawing.Size(45, 45);
-            this.btnA3.TabIndex = 5;
-            this.btnA3.Text = "A3";
-            this.btnA3.UseVisualStyleBackColor = true;
-            this.btnA3.Click += new System.EventHandler(this.btnA3_Click);
-            // 
-            // btnA2
-            // 
-            this.btnA2.Location = new System.Drawing.Point(66, 16);
-            this.btnA2.Name = "btnA2";
-            this.btnA2.Size = new System.Drawing.Size(45, 45);
-            this.btnA2.TabIndex = 6;
-            this.btnA2.Text = "A2";
-            this.btnA2.UseVisualStyleBackColor = true;
-            this.btnA2.Click += new System.EventHandler(this.btnA2_Click);
-            // 
-            // btnA1
-            // 
-            this.btnA1.Location = new System.Drawing.Point(21, 16);
-            this.btnA1.Name = "btnA1";
-            this.btnA1.Size = new System.Drawing.Size(45, 45);
-            this.btnA1.TabIndex = 7;
-            this.btnA1.Text = "A1";
-            this.btnA1.UseVisualStyleBackColor = true;
-            this.btnA1.Click += new System.EventHandler(this.btnA1_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnA1);
-            this.groupBox1.Controls.Add(this.btnA2);
-            this.groupBox1.Controls.Add(this.btnA3);
-            this.groupBox1.Controls.Add(this.btnA4);
-            this.groupBox1.Controls.Add(this.btnA5);
-            this.groupBox1.Controls.Add(this.btnA6);
-            this.groupBox1.Controls.Add(this.btnA7);
-            this.groupBox1.Location = new System.Drawing.Point(705, 107);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 76);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnB1);
-            this.groupBox2.Controls.Add(this.btnB2);
-            this.groupBox2.Controls.Add(this.btnB3);
-            this.groupBox2.Controls.Add(this.btnB4);
-            this.groupBox2.Controls.Add(this.btnB5);
-            this.groupBox2.Controls.Add(this.btnB6);
-            this.groupBox2.Controls.Add(this.btnB7);
-            this.groupBox2.Location = new System.Drawing.Point(705, 189);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(363, 76);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // btnB1
-            // 
-            this.btnB1.Location = new System.Drawing.Point(21, 16);
-            this.btnB1.Name = "btnB1";
-            this.btnB1.Size = new System.Drawing.Size(45, 45);
-            this.btnB1.TabIndex = 7;
-            this.btnB1.Text = "B1";
-            this.btnB1.UseVisualStyleBackColor = true;
-            this.btnB1.Click += new System.EventHandler(this.btnB1_Click);
-            // 
-            // btnB2
-            // 
-            this.btnB2.Location = new System.Drawing.Point(66, 16);
-            this.btnB2.Name = "btnB2";
-            this.btnB2.Size = new System.Drawing.Size(45, 45);
-            this.btnB2.TabIndex = 6;
-            this.btnB2.Text = "B2";
-            this.btnB2.UseVisualStyleBackColor = true;
-            this.btnB2.Click += new System.EventHandler(this.btnB2_Click);
-            // 
-            // btnB3
-            // 
-            this.btnB3.Location = new System.Drawing.Point(111, 16);
-            this.btnB3.Name = "btnB3";
-            this.btnB3.Size = new System.Drawing.Size(45, 45);
-            this.btnB3.TabIndex = 5;
-            this.btnB3.Text = "B3";
-            this.btnB3.UseVisualStyleBackColor = true;
-            this.btnB3.Click += new System.EventHandler(this.btnB3_Click);
-            // 
-            // btnB4
-            // 
-            this.btnB4.Location = new System.Drawing.Point(156, 16);
-            this.btnB4.Name = "btnB4";
-            this.btnB4.Size = new System.Drawing.Size(45, 45);
-            this.btnB4.TabIndex = 4;
-            this.btnB4.Text = "B4";
-            this.btnB4.UseVisualStyleBackColor = true;
-            this.btnB4.Click += new System.EventHandler(this.btnB4_Click);
-            // 
-            // btnB5
-            // 
-            this.btnB5.Location = new System.Drawing.Point(201, 16);
-            this.btnB5.Name = "btnB5";
-            this.btnB5.Size = new System.Drawing.Size(45, 45);
-            this.btnB5.TabIndex = 3;
-            this.btnB5.Text = "B5";
-            this.btnB5.UseVisualStyleBackColor = true;
-            this.btnB5.Click += new System.EventHandler(this.btnB5_Click);
-            // 
-            // btnB6
-            // 
-            this.btnB6.Location = new System.Drawing.Point(246, 16);
-            this.btnB6.Name = "btnB6";
-            this.btnB6.Size = new System.Drawing.Size(45, 45);
-            this.btnB6.TabIndex = 2;
-            this.btnB6.Text = "B6";
-            this.btnB6.UseVisualStyleBackColor = true;
-            this.btnB6.Click += new System.EventHandler(this.btnB6_Click);
-            // 
-            // btnB7
-            // 
-            this.btnB7.Location = new System.Drawing.Point(291, 16);
-            this.btnB7.Name = "btnB7";
-            this.btnB7.Size = new System.Drawing.Size(45, 45);
-            this.btnB7.TabIndex = 1;
-            this.btnB7.Text = "B7";
-            this.btnB7.UseVisualStyleBackColor = true;
-            this.btnB7.Click += new System.EventHandler(this.btnB7_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnC1);
-            this.groupBox3.Controls.Add(this.btnC2);
-            this.groupBox3.Controls.Add(this.btnC3);
-            this.groupBox3.Controls.Add(this.btnC4);
-            this.groupBox3.Controls.Add(this.btnC5);
-            this.groupBox3.Controls.Add(this.btnC6);
-            this.groupBox3.Controls.Add(this.btnC7);
-            this.groupBox3.Location = new System.Drawing.Point(705, 271);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(363, 76);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
-            // btnC1
-            // 
-            this.btnC1.Location = new System.Drawing.Point(21, 16);
-            this.btnC1.Name = "btnC1";
-            this.btnC1.Size = new System.Drawing.Size(45, 45);
-            this.btnC1.TabIndex = 7;
-            this.btnC1.Text = "C1";
-            this.btnC1.UseVisualStyleBackColor = true;
-            this.btnC1.Click += new System.EventHandler(this.btnC1_Click);
-            // 
-            // btnC2
-            // 
-            this.btnC2.Location = new System.Drawing.Point(66, 16);
-            this.btnC2.Name = "btnC2";
-            this.btnC2.Size = new System.Drawing.Size(45, 45);
-            this.btnC2.TabIndex = 6;
-            this.btnC2.Text = "C2";
-            this.btnC2.UseVisualStyleBackColor = true;
-            this.btnC2.Click += new System.EventHandler(this.btnC2_Click);
-            // 
-            // btnC3
-            // 
-            this.btnC3.Location = new System.Drawing.Point(111, 16);
-            this.btnC3.Name = "btnC3";
-            this.btnC3.Size = new System.Drawing.Size(45, 45);
-            this.btnC3.TabIndex = 5;
-            this.btnC3.Text = "C3";
-            this.btnC3.UseVisualStyleBackColor = true;
-            this.btnC3.Click += new System.EventHandler(this.btnC3_Click);
-            // 
-            // btnC4
-            // 
-            this.btnC4.Location = new System.Drawing.Point(156, 16);
-            this.btnC4.Name = "btnC4";
-            this.btnC4.Size = new System.Drawing.Size(45, 45);
-            this.btnC4.TabIndex = 4;
-            this.btnC4.Text = "C4";
-            this.btnC4.UseVisualStyleBackColor = true;
-            this.btnC4.Click += new System.EventHandler(this.btnC4_Click);
-            // 
-            // btnC5
-            // 
-            this.btnC5.Location = new System.Drawing.Point(201, 16);
-            this.btnC5.Name = "btnC5";
-            this.btnC5.Size = new System.Drawing.Size(45, 45);
-            this.btnC5.TabIndex = 3;
-            this.btnC5.Text = "C5";
-            this.btnC5.UseVisualStyleBackColor = true;
-            this.btnC5.Click += new System.EventHandler(this.btnC5_Click);
-            // 
-            // btnC6
-            // 
-            this.btnC6.Location = new System.Drawing.Point(246, 16);
-            this.btnC6.Name = "btnC6";
-            this.btnC6.Size = new System.Drawing.Size(45, 45);
-            this.btnC6.TabIndex = 2;
-            this.btnC6.Text = "C6";
-            this.btnC6.UseVisualStyleBackColor = true;
-            this.btnC6.Click += new System.EventHandler(this.btnC6_Click);
-            // 
-            // btnC7
-            // 
-            this.btnC7.Location = new System.Drawing.Point(291, 16);
-            this.btnC7.Name = "btnC7";
-            this.btnC7.Size = new System.Drawing.Size(45, 45);
-            this.btnC7.TabIndex = 1;
-            this.btnC7.Text = "C7";
-            this.btnC7.UseVisualStyleBackColor = true;
-            this.btnC7.Click += new System.EventHandler(this.btnC7_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.btnD1);
-            this.groupBox4.Controls.Add(this.btnD2);
-            this.groupBox4.Controls.Add(this.btnD3);
-            this.groupBox4.Controls.Add(this.btnD4);
-            this.groupBox4.Controls.Add(this.btnD5);
-            this.groupBox4.Controls.Add(this.btnD6);
-            this.groupBox4.Controls.Add(this.btnD7);
-            this.groupBox4.Location = new System.Drawing.Point(705, 353);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(363, 76);
-            this.groupBox4.TabIndex = 11;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            // 
-            // btnD1
-            // 
-            this.btnD1.Location = new System.Drawing.Point(21, 16);
-            this.btnD1.Name = "btnD1";
-            this.btnD1.Size = new System.Drawing.Size(45, 45);
-            this.btnD1.TabIndex = 7;
-            this.btnD1.Text = "D1";
-            this.btnD1.UseVisualStyleBackColor = true;
-            this.btnD1.Click += new System.EventHandler(this.btnD1_Click);
-            // 
-            // btnD2
-            // 
-            this.btnD2.Location = new System.Drawing.Point(66, 16);
-            this.btnD2.Name = "btnD2";
-            this.btnD2.Size = new System.Drawing.Size(45, 45);
-            this.btnD2.TabIndex = 6;
-            this.btnD2.Text = "D2";
-            this.btnD2.UseVisualStyleBackColor = true;
-            this.btnD2.Click += new System.EventHandler(this.btnD2_Click);
-            // 
-            // btnD3
-            // 
-            this.btnD3.Location = new System.Drawing.Point(111, 16);
-            this.btnD3.Name = "btnD3";
-            this.btnD3.Size = new System.Drawing.Size(45, 45);
-            this.btnD3.TabIndex = 5;
-            this.btnD3.Text = "D3";
-            this.btnD3.UseVisualStyleBackColor = true;
-            this.btnD3.Click += new System.EventHandler(this.btnD3_Click);
-            // 
-            // btnD4
-            // 
-            this.btnD4.Location = new System.Drawing.Point(156, 16);
-            this.btnD4.Name = "btnD4";
-            this.btnD4.Size = new System.Drawing.Size(45, 45);
-            this.btnD4.TabIndex = 4;
-            this.btnD4.Text = "D4";
-            this.btnD4.UseVisualStyleBackColor = true;
-            this.btnD4.Click += new System.EventHandler(this.btnD4_Click);
-            // 
-            // btnD5
-            // 
-            this.btnD5.Location = new System.Drawing.Point(201, 16);
-            this.btnD5.Name = "btnD5";
-            this.btnD5.Size = new System.Drawing.Size(45, 45);
-            this.btnD5.TabIndex = 3;
-            this.btnD5.Text = "D5";
-            this.btnD5.UseVisualStyleBackColor = true;
-            this.btnD5.Click += new System.EventHandler(this.btnD5_Click);
-            // 
-            // btnD6
-            // 
-            this.btnD6.Location = new System.Drawing.Point(246, 16);
-            this.btnD6.Name = "btnD6";
-            this.btnD6.Size = new System.Drawing.Size(45, 45);
-            this.btnD6.TabIndex = 2;
-            this.btnD6.Text = "D6";
-            this.btnD6.UseVisualStyleBackColor = true;
-            this.btnD6.Click += new System.EventHandler(this.btnD6_Click);
-            // 
-            // btnD7
-            // 
-            this.btnD7.Location = new System.Drawing.Point(291, 16);
-            this.btnD7.Name = "btnD7";
-            this.btnD7.Size = new System.Drawing.Size(45, 45);
-            this.btnD7.TabIndex = 1;
-            this.btnD7.Text = "D7";
-            this.btnD7.UseVisualStyleBackColor = true;
-            this.btnD7.Click += new System.EventHandler(this.btnD7_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btnF1);
-            this.groupBox5.Controls.Add(this.btnF2);
-            this.groupBox5.Controls.Add(this.btnF3);
-            this.groupBox5.Controls.Add(this.btnF4);
-            this.groupBox5.Controls.Add(this.btnF5);
-            this.groupBox5.Controls.Add(this.btnF6);
-            this.groupBox5.Controls.Add(this.btnF7);
-            this.groupBox5.Location = new System.Drawing.Point(705, 435);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(363, 76);
-            this.groupBox5.TabIndex = 12;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // btnF1
-            // 
-            this.btnF1.Location = new System.Drawing.Point(21, 16);
-            this.btnF1.Name = "btnF1";
-            this.btnF1.Size = new System.Drawing.Size(45, 45);
-            this.btnF1.TabIndex = 7;
-            this.btnF1.Text = "E1";
-            this.btnF1.UseVisualStyleBackColor = true;
-            this.btnF1.Click += new System.EventHandler(this.btnF1_Click);
-            // 
-            // btnF2
-            // 
-            this.btnF2.Location = new System.Drawing.Point(66, 16);
-            this.btnF2.Name = "btnF2";
-            this.btnF2.Size = new System.Drawing.Size(45, 45);
-            this.btnF2.TabIndex = 6;
-            this.btnF2.Text = "E2";
-            this.btnF2.UseVisualStyleBackColor = true;
-            this.btnF2.Click += new System.EventHandler(this.btnF2_Click);
-            // 
-            // btnF3
-            // 
-            this.btnF3.Location = new System.Drawing.Point(111, 16);
-            this.btnF3.Name = "btnF3";
-            this.btnF3.Size = new System.Drawing.Size(45, 45);
-            this.btnF3.TabIndex = 5;
-            this.btnF3.Text = "E3";
-            this.btnF3.UseVisualStyleBackColor = true;
-            this.btnF3.Click += new System.EventHandler(this.btnF3_Click);
-            // 
-            // btnF4
-            // 
-            this.btnF4.Location = new System.Drawing.Point(156, 16);
-            this.btnF4.Name = "btnF4";
-            this.btnF4.Size = new System.Drawing.Size(45, 45);
-            this.btnF4.TabIndex = 4;
-            this.btnF4.Text = "E4";
-            this.btnF4.UseVisualStyleBackColor = true;
-            this.btnF4.Click += new System.EventHandler(this.btnF4_Click);
-            // 
-            // btnF5
-            // 
-            this.btnF5.Location = new System.Drawing.Point(201, 16);
-            this.btnF5.Name = "btnF5";
-            this.btnF5.Size = new System.Drawing.Size(45, 45);
-            this.btnF5.TabIndex = 3;
-            this.btnF5.Text = "E5";
-            this.btnF5.UseVisualStyleBackColor = true;
-            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
-            // 
-            // btnF6
-            // 
-            this.btnF6.Location = new System.Drawing.Point(246, 16);
-            this.btnF6.Name = "btnF6";
-            this.btnF6.Size = new System.Drawing.Size(45, 45);
-            this.btnF6.TabIndex = 2;
-            this.btnF6.Text = "E6";
-            this.btnF6.UseVisualStyleBackColor = true;
-            this.btnF6.Click += new System.EventHandler(this.btnF6_Click);
-            // 
-            // btnF7
-            // 
-            this.btnF7.Location = new System.Drawing.Point(291, 16);
-            this.btnF7.Name = "btnF7";
-            this.btnF7.Size = new System.Drawing.Size(45, 45);
-            this.btnF7.TabIndex = 1;
-            this.btnF7.Text = "E7";
-            this.btnF7.UseVisualStyleBackColor = true;
-            this.btnF7.Click += new System.EventHandler(this.btnF7_Click);
             // 
             // label1
             // 
@@ -715,6 +240,7 @@
             this.B7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B7.TabIndex = 30;
             this.B7.TabStop = false;
+            this.B7.Click += new System.EventHandler(this.B7_Click);
             // 
             // B6
             // 
@@ -724,6 +250,7 @@
             this.B6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B6.TabIndex = 29;
             this.B6.TabStop = false;
+            this.B6.Click += new System.EventHandler(this.B6_Click);
             // 
             // B5
             // 
@@ -733,6 +260,7 @@
             this.B5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B5.TabIndex = 28;
             this.B5.TabStop = false;
+            this.B5.Click += new System.EventHandler(this.B5_Click);
             // 
             // B4
             // 
@@ -742,6 +270,7 @@
             this.B4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B4.TabIndex = 27;
             this.B4.TabStop = false;
+            this.B4.Click += new System.EventHandler(this.B4_Click);
             // 
             // B3
             // 
@@ -751,6 +280,7 @@
             this.B3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B3.TabIndex = 26;
             this.B3.TabStop = false;
+            this.B3.Click += new System.EventHandler(this.B3_Click);
             // 
             // B2
             // 
@@ -760,6 +290,7 @@
             this.B2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B2.TabIndex = 25;
             this.B2.TabStop = false;
+            this.B2.Click += new System.EventHandler(this.B2_Click);
             // 
             // B1
             // 
@@ -769,6 +300,7 @@
             this.B1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.B1.TabIndex = 8;
             this.B1.TabStop = false;
+            this.B1.Click += new System.EventHandler(this.B1_Click);
             // 
             // C7
             // 
@@ -778,6 +310,7 @@
             this.C7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C7.TabIndex = 30;
             this.C7.TabStop = false;
+            this.C7.Click += new System.EventHandler(this.C7_Click);
             // 
             // C6
             // 
@@ -787,6 +320,7 @@
             this.C6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C6.TabIndex = 29;
             this.C6.TabStop = false;
+            this.C6.Click += new System.EventHandler(this.C6_Click);
             // 
             // C5
             // 
@@ -796,6 +330,7 @@
             this.C5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C5.TabIndex = 28;
             this.C5.TabStop = false;
+            this.C5.Click += new System.EventHandler(this.C5_Click);
             // 
             // C4
             // 
@@ -805,6 +340,7 @@
             this.C4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C4.TabIndex = 27;
             this.C4.TabStop = false;
+            this.C4.Click += new System.EventHandler(this.C4_Click);
             // 
             // C3
             // 
@@ -814,6 +350,7 @@
             this.C3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C3.TabIndex = 26;
             this.C3.TabStop = false;
+            this.C3.Click += new System.EventHandler(this.C3_Click);
             // 
             // C2
             // 
@@ -823,6 +360,7 @@
             this.C2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C2.TabIndex = 25;
             this.C2.TabStop = false;
+            this.C2.Click += new System.EventHandler(this.C2_Click);
             // 
             // C1
             // 
@@ -832,6 +370,7 @@
             this.C1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.C1.TabIndex = 8;
             this.C1.TabStop = false;
+            this.C1.Click += new System.EventHandler(this.C1_Click);
             // 
             // D7
             // 
@@ -841,6 +380,7 @@
             this.D7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D7.TabIndex = 30;
             this.D7.TabStop = false;
+            this.D7.Click += new System.EventHandler(this.D7_Click);
             // 
             // D6
             // 
@@ -850,6 +390,7 @@
             this.D6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D6.TabIndex = 29;
             this.D6.TabStop = false;
+            this.D6.Click += new System.EventHandler(this.D6_Click);
             // 
             // D5
             // 
@@ -859,6 +400,7 @@
             this.D5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D5.TabIndex = 28;
             this.D5.TabStop = false;
+            this.D5.Click += new System.EventHandler(this.D5_Click);
             // 
             // D4
             // 
@@ -868,6 +410,7 @@
             this.D4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D4.TabIndex = 27;
             this.D4.TabStop = false;
+            this.D4.Click += new System.EventHandler(this.D4_Click);
             // 
             // D3
             // 
@@ -877,6 +420,7 @@
             this.D3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D3.TabIndex = 26;
             this.D3.TabStop = false;
+            this.D3.Click += new System.EventHandler(this.D3_Click);
             // 
             // D2
             // 
@@ -886,6 +430,7 @@
             this.D2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D2.TabIndex = 25;
             this.D2.TabStop = false;
+            this.D2.Click += new System.EventHandler(this.D2_Click);
             // 
             // D1
             // 
@@ -895,6 +440,7 @@
             this.D1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.D1.TabIndex = 8;
             this.D1.TabStop = false;
+            this.D1.Click += new System.EventHandler(this.D1_Click);
             // 
             // E7
             // 
@@ -904,6 +450,7 @@
             this.E7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E7.TabIndex = 30;
             this.E7.TabStop = false;
+            this.E7.Click += new System.EventHandler(this.E7_Click);
             // 
             // E6
             // 
@@ -913,6 +460,7 @@
             this.E6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E6.TabIndex = 29;
             this.E6.TabStop = false;
+            this.E6.Click += new System.EventHandler(this.E6_Click);
             // 
             // E5
             // 
@@ -922,6 +470,7 @@
             this.E5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E5.TabIndex = 28;
             this.E5.TabStop = false;
+            this.E5.Click += new System.EventHandler(this.E5_Click);
             // 
             // E4
             // 
@@ -931,6 +480,7 @@
             this.E4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E4.TabIndex = 27;
             this.E4.TabStop = false;
+            this.E4.Click += new System.EventHandler(this.E4_Click);
             // 
             // E3
             // 
@@ -940,6 +490,7 @@
             this.E3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E3.TabIndex = 26;
             this.E3.TabStop = false;
+            this.E3.Click += new System.EventHandler(this.E3_Click);
             // 
             // E2
             // 
@@ -949,6 +500,7 @@
             this.E2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E2.TabIndex = 25;
             this.E2.TabStop = false;
+            this.E2.Click += new System.EventHandler(this.E2_Click);
             // 
             // E1
             // 
@@ -958,6 +510,7 @@
             this.E1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.E1.TabIndex = 8;
             this.E1.TabStop = false;
+            this.E1.Click += new System.EventHandler(this.E1_Click);
             // 
             // A1
             // 
@@ -968,6 +521,7 @@
             this.A1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A1.TabIndex = 8;
             this.A1.TabStop = false;
+            this.A1.Click += new System.EventHandler(this.A1_Click);
             // 
             // A2
             // 
@@ -978,6 +532,7 @@
             this.A2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A2.TabIndex = 25;
             this.A2.TabStop = false;
+            this.A2.Click += new System.EventHandler(this.A2_Click);
             // 
             // A3
             // 
@@ -987,6 +542,7 @@
             this.A3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A3.TabIndex = 26;
             this.A3.TabStop = false;
+            this.A3.Click += new System.EventHandler(this.A3_Click);
             // 
             // A4
             // 
@@ -996,6 +552,7 @@
             this.A4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A4.TabIndex = 27;
             this.A4.TabStop = false;
+            this.A4.Click += new System.EventHandler(this.A4_Click);
             // 
             // A5
             // 
@@ -1005,6 +562,7 @@
             this.A5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A5.TabIndex = 28;
             this.A5.TabStop = false;
+            this.A5.Click += new System.EventHandler(this.A5_Click);
             // 
             // A6
             // 
@@ -1014,6 +572,7 @@
             this.A6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A6.TabIndex = 29;
             this.A6.TabStop = false;
+            this.A6.Click += new System.EventHandler(this.A6_Click);
             // 
             // A7
             // 
@@ -1023,6 +582,7 @@
             this.A7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.A7.TabIndex = 30;
             this.A7.TabStop = false;
+            this.A7.Click += new System.EventHandler(this.A7_Click);
             // 
             // frmButacas
             // 
@@ -1076,19 +636,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "frmButacas";
             this.Text = "Butacas";
             this.Load += new System.EventHandler(this.frmButacas_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.B7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.B5)).EndInit();
@@ -1130,47 +680,6 @@
         }
 
         #endregion
-
-        private Button btnA7;
-        private Button btnA6;
-        private Button btnA5;
-        private Button btnA4;
-        private Button btnA3;
-        private Button btnA2;
-        private Button btnA1;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private Button btnB1;
-        private Button btnB2;
-        private Button btnB3;
-        private Button btnB4;
-        private Button btnB5;
-        private Button btnB6;
-        private Button btnB7;
-        private GroupBox groupBox3;
-        private Button btnC1;
-        private Button btnC2;
-        private Button btnC3;
-        private Button btnC4;
-        private Button btnC5;
-        private Button btnC6;
-        private Button btnC7;
-        private GroupBox groupBox4;
-        private Button btnD1;
-        private Button btnD2;
-        private Button btnD3;
-        private Button btnD4;
-        private Button btnD5;
-        private Button btnD6;
-        private Button btnD7;
-        private GroupBox groupBox5;
-        private Button btnF1;
-        private Button btnF2;
-        private Button btnF3;
-        private Button btnF4;
-        private Button btnF5;
-        private Button btnF6;
-        private Button btnF7;
         private Label label1;
         private Label label2;
         private Label label3;

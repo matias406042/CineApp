@@ -29,6 +29,12 @@ namespace CineBackEnd.Entidades
             Columna = columna;
             Estado = "Disponible";
         }
+        public Butaca(string fila, int columna, string estado)
+        {
+            Fila = fila;
+            Columna = columna;
+            Estado = estado;
+        }
 
     }
 }

@@ -182,5 +182,38 @@ namespace CineBackEnd.Datos.Implementacion
             }
             return lstPeliculas ;
         }
+        public int OcuparButaca(bool ocupar, int id_funcion, string fila, int columna)
+        {
+            string sp = "";
+            if (ocupar)
+            {
+                sp = "SP_OCUPAR_BUTACA";
+            }
+            else
+            {
+                sp = "SP_DESOCUPAR_BUTACA";
+            }
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id_funcion", id_funcion));
+            parametros.Add(new SqlParameter("@fila", fila));
+            parametros.Add(new SqlParameter("@col", columna));
+            return HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp, parametros);
+        }
+        public List<Butaca> BuscarButacas(Funcion f)
+        {
+            List<Butaca> butacas = new List<Butaca>();
+            string sp = "SP_GET_BUTACAS_FUNCION";
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@id_funcion",f.Id));
+            DataTable dt = HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
+            foreach (DataRow fila in dt.Rows)
+            {
+                string fil = fila[0].ToString();
+                int col = Convert.ToInt32(fila[1].ToString());
+                string estado = fila[2].ToString();
+                butacas.Add(new Butaca(fil, col, estado));
+            }
+            return butacas;
+        }
     }
 }

@@ -175,4 +175,83 @@ insert into COMPROBANTES(id_forma_pago,Total,id_descuento)
 set @id_compr = SCOPE_IDENTITY()
 end
 
-select * from TICKETS
+select * from Butacas
+select * from FUNCIONES
+
+create procedure SP_GET_BUTACAS_X_FUNCION
+@id_Funcion int
+as
+begin
+select id_Butaca ID, fila Fila, columna Columna, estado Estado
+from Butacas
+where id_funcion = @id_Funcion
+end
+
+select * from Butacas
+
+create trigger TR_CrearButacas
+on funciones
+after insert
+as
+begin
+    declare @fila varchar(1)
+    declare @columna int
+    declare @total int
+    set @fila = 'A'
+    set @columna = 1
+    set @total = 0
+    while @total < 35
+    begin
+        insert into butacas values ((select id_funcion from inserted), 'Disponible', @fila, @columna)
+        set @columna = @columna +1
+        if @columna = 8
+            begin
+            set @fila = CHAR(ASCII(@fila) + 1)
+            set @columna = 1
+            end
+        set @total = @total + 1
+    end
+end
+create trigger TR_EliminarButacas
+on funciones
+instead of delete
+as 
+begin
+    delete butacas where id_funcion = (select id_funcion from deleted)
+    delete funciones where id_funcion = (select id_funcion from deleted)
+end
+
+select * from Butacas
+
+create procedure SP_OCUPAR_BUTACA
+@id_funcion int,
+@fila varchar(1),
+@col int
+as
+begin
+update Butacas
+set estado = 'Ocupado'
+where id_funcion = @id_funcion and fila = @fila and @col = columna
+end
+
+create procedure SP_DESOCUPAR_BUTACA
+@id_funcion int,
+@fila varchar(1),
+@col int
+as
+begin
+update Butacas
+set estado = 'Disponible'
+where id_funcion = @id_funcion and fila = @fila and @col = columna
+end
+
+create procedure SP_GET_BUTACAS_FUNCION
+@id_funcion int
+as
+begin
+select fila Fila, columna Col, estado Estado
+from Butacas
+where id_funcion = @id_funcion
+end
+
+exec SP_GET_BUTACAS_FUNCION 11

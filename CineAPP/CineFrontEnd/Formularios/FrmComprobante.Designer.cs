@@ -88,6 +88,7 @@
             this.dgvTickets.RowTemplate.Height = 29;
             this.dgvTickets.Size = new System.Drawing.Size(661, 190);
             this.dgvTickets.TabIndex = 2;
+            this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
             // 
             // ColPelicula
             // 
@@ -208,7 +209,7 @@
             this.cboTicket.Size = new System.Drawing.Size(18, 23);
             this.cboTicket.TabIndex = 10;
             this.cboTicket.Visible = false;
-            this.cboTicket.SelectedIndexChanged += new System.EventHandler(this.cboTicket_SelectedIndexChanged);
+            this.cboTicket.DataSourceChanged += new System.EventHandler(this.cboTicket_DataSourceChanged);
             // 
             // lblDescuento
             // 

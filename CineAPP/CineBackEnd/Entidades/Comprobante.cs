@@ -26,6 +26,10 @@ namespace CineBackEnd.Entidades
         {
             Tickets.Add(ticket);
         }
+        public void EliminarTicket(int index)
+        {
+            Tickets.RemoveAt(index);
+        }
 
     }
 }

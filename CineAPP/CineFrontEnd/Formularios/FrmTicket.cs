@@ -19,11 +19,13 @@ namespace CineFrontEnd.Formularios
         string butaca;
         List<Funcion> funciones;
         int idTick;
-        public FrmTicket(int id)
+        List<Ticket> ticketList;
+        public FrmTicket(int id,List<Ticket> ticketlist)
         {
             InitializeComponent();
             fDao = new FuncionDao();
             idTick = id;
+            this.ticketList = ticketlist;
         }
 
 
@@ -95,7 +97,7 @@ namespace CineFrontEnd.Formularios
                     break;
                 }
             }
-            frmButacas butacas = new frmButacas(funcionElegida);
+            frmButacas butacas = new frmButacas(fDao.BuscarButacas(funcionElegida));
             AddOwnedForm(butacas);
             butacas.ShowDialog();
         }
@@ -128,8 +130,8 @@ namespace CineFrontEnd.Formularios
                 {
                     f.Id,
                     f.Pelicula.Titulo,
-                    f.HorarioInicio,
-                    f.HorarioFin,
+                    f.HorarioInicio.ToShortTimeString(),
+                    f.HorarioFin.ToShortTimeString(),
                     f.Sala.Descripcion,
                     f.Sala.Tipo.Descripcion,
                     f.Sala.Precio               
@@ -156,7 +158,7 @@ namespace CineFrontEnd.Formularios
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Validar datos
-            FrmComprobante comprobanteForm = Owner as FrmComprobante;
+            //FrmComprobante comprobanteForm = Owner as FrmComprobante;
             foreach (DataGridViewRow fila in dgvFunciones.Rows)
             {
                 if((bool)fila.Cells[7].Value)
@@ -176,8 +178,9 @@ namespace CineFrontEnd.Formularios
                     t.Precio = Convert.ToDouble(f.Sala.Precio);
                     t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
                     t.Butaca.Fila = txtButaca.Text.Substring(0, 1);
-                    comprobanteForm.cboTicket.Items.Add(t);
-                    comprobanteForm.cboTicket.SelectedIndex ++ ;
+                    _ = fDao.OcuparButaca(true,f.Id, t.Butaca.Fila, t.Butaca.Columna);
+                    ticketList.Add(t);
+                    //comprobanteForm.cboTicket.DataSource = ticketList;
                     this.Dispose();
                 }
             }

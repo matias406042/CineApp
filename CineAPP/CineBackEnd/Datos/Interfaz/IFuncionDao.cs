@@ -18,5 +18,7 @@ namespace CineBackEnd.Datos.Interfaz
         bool Crear(Funcion f);
         bool Borrar(Funcion f);
         bool Actualizar(Funcion f);
+        public int OcuparButaca(bool ocupar,int id_funcion, string fila, int columna);
+        public List<Butaca> BuscarButacas(Funcion f);
     }
 }

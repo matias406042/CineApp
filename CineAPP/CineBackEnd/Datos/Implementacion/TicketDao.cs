@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CineBackEnd.Datos.Interfaz;
 using CineBackEnd.Entidades;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CineBackEnd.Datos.Implementacion
 {
@@ -34,5 +36,6 @@ namespace CineBackEnd.Datos.Implementacion
         {
             throw new NotImplementedException();
         }
+        
     }
 }
