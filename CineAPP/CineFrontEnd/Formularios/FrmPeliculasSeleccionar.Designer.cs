@@ -42,22 +42,25 @@
             cbxGenero = new CheckBox();
             cbxFecha = new CheckBox();
             txbTitulo = new TextBox();
-            groupBox1 = new GroupBox();
-            cmbGenero = new ComboBox();
             txbAño = new TextBox();
+            cmbGenero = new ComboBox();
+            panel1 = new Panel();
+            label4 = new Label();
+            button2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPelicula).BeginInit();
-            groupBox1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvPelicula
             // 
             dgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPelicula.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dgvPelicula.Location = new Point(312, 12);
+            dgvPelicula.Location = new Point(315, 0);
             dgvPelicula.Name = "dgvPelicula";
             dgvPelicula.RowHeadersWidth = 51;
             dgvPelicula.RowTemplate.Height = 29;
-            dgvPelicula.Size = new Size(476, 426);
+            dgvPelicula.Size = new Size(430, 351);
             dgvPelicula.TabIndex = 4;
             // 
             // Column1
@@ -91,139 +94,215 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(25, 291);
+            btnUpdate.BackColor = Color.Black;
+            btnUpdate.FlatAppearance.BorderSize = 2;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.Gainsboro;
+            btnUpdate.Location = new Point(165, 428);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(94, 29);
+            btnUpdate.Size = new Size(131, 45);
             btnUpdate.TabIndex = 8;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Text = "ACTUALIZAR";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(181, 394);
+            btnClose.BackColor = Color.FromArgb(51, 51, 51);
+            btnClose.FlatAppearance.BorderColor = Color.FromArgb(229, 9, 20);
+            btnClose.FlatAppearance.BorderSize = 4;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClose.ForeColor = Color.Gainsboro;
+            btnClose.Location = new Point(605, 408);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(94, 29);
+            btnClose.Size = new Size(129, 48);
             btnClose.TabIndex = 9;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Text = "SALIR";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(181, 291);
+            btnDelete.FlatAppearance.BorderSize = 2;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.Gainsboro;
+            btnDelete.Location = new Point(25, 426);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 29);
+            btnDelete.Size = new Size(122, 49);
             btnDelete.TabIndex = 10;
-            btnDelete.Text = "Delete";
+            btnDelete.Text = "ELIMINAR";
             btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(25, 394);
+            btnAdd.FlatAppearance.BorderSize = 2;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.Gainsboro;
+            btnAdd.Location = new Point(25, 357);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
+            btnAdd.Size = new Size(122, 49);
             btnAdd.TabIndex = 11;
-            btnAdd.Text = "Add";
+            btnAdd.Text = "AGREGAR";
             btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnSerch
             // 
-            btnSerch.Location = new Point(13, 185);
+            btnSerch.BackColor = Color.Black;
+            btnSerch.FlatAppearance.BorderColor = Color.FromArgb(229, 9, 20);
+            btnSerch.FlatStyle = FlatStyle.Flat;
+            btnSerch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSerch.ForeColor = Color.LightGray;
+            btnSerch.Location = new Point(165, 357);
             btnSerch.Name = "btnSerch";
-            btnSerch.Size = new Size(94, 29);
+            btnSerch.Size = new Size(131, 49);
             btnSerch.TabIndex = 0;
-            btnSerch.Text = "Search";
-            btnSerch.UseVisualStyleBackColor = true;
+            btnSerch.Text = "BUSCAR";
+            btnSerch.UseVisualStyleBackColor = false;
             btnSerch.Click += btnSerch_Click;
             // 
             // cbxTitulo
             // 
             cbxTitulo.AutoSize = true;
-            cbxTitulo.Location = new Point(13, 26);
+            cbxTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cbxTitulo.ForeColor = Color.LightGray;
+            cbxTitulo.Location = new Point(25, 94);
             cbxTitulo.Name = "cbxTitulo";
-            cbxTitulo.Size = new Size(69, 24);
+            cbxTitulo.Size = new Size(84, 24);
             cbxTitulo.TabIndex = 1;
-            cbxTitulo.Text = "Titulo";
+            cbxTitulo.Text = "TITULO";
             cbxTitulo.UseVisualStyleBackColor = true;
             cbxTitulo.CheckedChanged += cbxTitulo_CheckedChanged;
             // 
             // cbxGenero
             // 
             cbxGenero.AutoSize = true;
-            cbxGenero.Location = new Point(13, 71);
+            cbxGenero.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cbxGenero.ForeColor = Color.LightGray;
+            cbxGenero.Location = new Point(25, 173);
             cbxGenero.Name = "cbxGenero";
-            cbxGenero.Size = new Size(79, 24);
+            cbxGenero.Size = new Size(91, 24);
             cbxGenero.TabIndex = 2;
-            cbxGenero.Text = "Genero";
+            cbxGenero.Text = "GENERO";
             cbxGenero.UseVisualStyleBackColor = true;
             cbxGenero.CheckedChanged += cbxGenero_CheckedChanged;
             // 
             // cbxFecha
             // 
             cbxFecha.AutoSize = true;
-            cbxFecha.Location = new Point(13, 119);
+            cbxFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            cbxFecha.ForeColor = Color.LightGray;
+            cbxFecha.Location = new Point(25, 257);
             cbxFecha.Name = "cbxFecha";
-            cbxFecha.Size = new Size(111, 24);
+            cbxFecha.Size = new Size(135, 24);
             cbxFecha.TabIndex = 3;
-            cbxFecha.Text = "Año Estreno";
+            cbxFecha.Text = "AÑO ESTRENO";
             cbxFecha.UseVisualStyleBackColor = true;
             cbxFecha.CheckedChanged += cbxFecha_CheckedChanged;
             // 
             // txbTitulo
             // 
-            txbTitulo.Location = new Point(139, 23);
+            txbTitulo.Location = new Point(25, 124);
             txbTitulo.Name = "txbTitulo";
             txbTitulo.Size = new Size(125, 27);
             txbTitulo.TabIndex = 5;
             // 
-            // groupBox1
+            // txbAño
             // 
-            groupBox1.Controls.Add(txbAño);
-            groupBox1.Controls.Add(cmbGenero);
-            groupBox1.Controls.Add(txbTitulo);
-            groupBox1.Controls.Add(cbxFecha);
-            groupBox1.Controls.Add(cbxGenero);
-            groupBox1.Controls.Add(cbxTitulo);
-            groupBox1.Controls.Add(btnSerch);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(282, 240);
-            groupBox1.TabIndex = 12;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Busqueda";
-            groupBox1.Enter += groupBox1_Enter;
+            txbAño.Location = new Point(25, 287);
+            txbAño.Name = "txbAño";
+            txbAño.Size = new Size(125, 27);
+            txbAño.TabIndex = 9;
             // 
             // cmbGenero
             // 
             cmbGenero.FormattingEnabled = true;
-            cmbGenero.Location = new Point(139, 69);
+            cmbGenero.Location = new Point(25, 203);
             cmbGenero.Name = "cmbGenero";
             cmbGenero.Size = new Size(125, 28);
             cmbGenero.TabIndex = 8;
             // 
-            // txbAño
+            // panel1
             // 
-            txbAño.Location = new Point(139, 117);
-            txbAño.Name = "txbAño";
-            txbAño.Size = new Size(125, 27);
-            txbAño.TabIndex = 9;
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(btnUpdate);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(btnSerch);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnAdd);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(cbxGenero);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(txbAño);
+            panel1.Controls.Add(cmbGenero);
+            panel1.Controls.Add(cbxFecha);
+            panel1.Controls.Add(txbTitulo);
+            panel1.Controls.Add(cbxTitulo);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(309, 482);
+            panel1.TabIndex = 13;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Black;
+            label4.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(229, 9, 20);
+            label4.Location = new Point(25, 42);
+            label4.Name = "label4";
+            label4.Size = new Size(271, 24);
+            label4.TabIndex = 25;
+            label4.Text = "BUSQUEDA DE PELICULAS";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.Gainsboro;
+            button2.Location = new Point(327, 381);
+            button2.Name = "button2";
+            button2.Size = new Size(221, 75);
+            button2.TabIndex = 9;
+            button2.Text = "SALIR";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += btnClose_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.Gainsboro;
+            button1.Location = new Point(327, 301);
+            button1.Name = "button1";
+            button1.Size = new Size(221, 74);
+            button1.TabIndex = 8;
+            button1.Text = "ACTUALIZAR";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += btnUpdate_Click;
             // 
             // FrmPeliculasSeleccionar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
-            Controls.Add(btnAdd);
-            Controls.Add(btnDelete);
-            Controls.Add(btnClose);
-            Controls.Add(btnUpdate);
+            BackColor = Color.FromArgb(51, 51, 51);
+            ClientSize = new Size(746, 482);
             Controls.Add(dgvPelicula);
+            Controls.Add(panel1);
+            Controls.Add(btnClose);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPeliculasSeleccionar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Seleccion de Peliculas";
             Load += FrmPeliculasSeleccionar_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPelicula).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -238,12 +317,15 @@
         private CheckBox cbxGenero;
         private CheckBox cbxFecha;
         private TextBox txbTitulo;
-        private GroupBox groupBox1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private ComboBox cmbGenero;
         private TextBox txbAño;
+        private Panel panel1;
+        private Label label4;
+        private Button button2;
+        private Button button1;
     }
 }

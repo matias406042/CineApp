@@ -47,3 +47,27 @@ C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.
 C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\refint\CineBackEnd.dll
 C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.pdb
 C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\ref\CineBackEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.deps.json
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.pdb
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.AssemblyReference.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfoInputs.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfo.cs
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.CoreCompileInputs.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\refint\CineBackEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.pdb
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\ref\CineBackEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.deps.json
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.pdb
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\refint\CineBackEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.pdb
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineBackEnd\obj\Debug\net6.0\ref\CineBackEnd.dll

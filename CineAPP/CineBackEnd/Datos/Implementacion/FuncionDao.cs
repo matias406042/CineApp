@@ -89,7 +89,7 @@ namespace CineBackEnd.Datos.Implementacion
                 s.Descripcion = fila["Sala"].ToString();
                 s.Id = Convert.ToInt32(fila["id_Sala"]);
                 s.Tipo = new SalaTipo(Convert.ToInt32(fila["id_Tipo"]), fila["Tipo"].ToString());
-                s.Capacidad = Convert.ToInt32(fila["Capacidad"]);
+             
                 lstSalas.Add(s);
             }
             return lstSalas;
@@ -135,8 +135,8 @@ namespace CineBackEnd.Datos.Implementacion
                 Funcion f = new Funcion();
                     f.Id = int.Parse(fila["Id_Funcion"].ToString());
                     f.Pelicula = p;
-                    f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(), 
-                        int.Parse(fila["Capacidad"].ToString()), st, decimal.Parse(fila["Pre_Unit"].ToString()));
+                    f.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString()
+                        , st, decimal.Parse(fila["Pre_Unit"].ToString()));
                     f.HorarioInicio = DateTime.Parse(fila["Inicio"].ToString());
                     f.HorarioFin = DateTime.Parse(fila["Fin"].ToString());
                     f.Fecha = DateTime.Parse(fila["Fecha_Estreno"].ToString());
@@ -240,7 +240,7 @@ namespace CineBackEnd.Datos.Implementacion
                 funcion.Id = int.Parse(fila["Id_Funcion"].ToString());
                 funcion.Pelicula = p;
                 funcion.Sala = new Sala(int.Parse(fila["Id_Sala"].ToString()), fila["Sala"].ToString(),
-                    int.Parse(fila["Capacidad"].ToString()), st, decimal.Parse(fila["Pre_Unit"].ToString()));
+                   st, decimal.Parse(fila["Pre_Unit"].ToString()));
                 funcion.HorarioInicio = DateTime.Parse(fila["Inicio"].ToString());
                 funcion.HorarioFin = DateTime.Parse(fila["Fin"].ToString());
                 funcion.Fecha = DateTime.Parse(fila["Fecha_Estreno"].ToString());

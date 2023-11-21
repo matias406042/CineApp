@@ -46,27 +46,31 @@
             cboTicket = new ComboBox();
             lblDescuento = new Label();
             cbxDescuento = new CheckBox();
+            panel1 = new Panel();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // cboFormaPago
             // 
             cboFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFormaPago.FormattingEnabled = true;
-            cboFormaPago.Location = new Point(686, 58);
-            cboFormaPago.Margin = new Padding(3, 2, 3, 2);
+            cboFormaPago.Location = new Point(18, 171);
             cboFormaPago.Name = "cboFormaPago";
-            cboFormaPago.Size = new Size(133, 23);
+            cboFormaPago.Size = new Size(151, 28);
             cboFormaPago.TabIndex = 0;
             // 
             // lblFormaPago
             // 
             lblFormaPago.AutoSize = true;
-            lblFormaPago.Location = new Point(686, 40);
+            lblFormaPago.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblFormaPago.ForeColor = Color.LightGray;
+            lblFormaPago.Location = new Point(18, 152);
             lblFormaPago.Name = "lblFormaPago";
-            lblFormaPago.Size = new Size(87, 15);
+            lblFormaPago.Size = new Size(131, 16);
             lblFormaPago.TabIndex = 1;
-            lblFormaPago.Text = "Forma de Pago";
+            lblFormaPago.Text = "FORMA DE PAGO";
             // 
             // dgvTickets
             // 
@@ -74,13 +78,12 @@
             dgvTickets.AllowUserToDeleteRows = false;
             dgvTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTickets.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColSala, ColHorario, ColButaca, ColPrecio, ColAccion });
-            dgvTickets.Location = new Point(10, 58);
-            dgvTickets.Margin = new Padding(3, 2, 3, 2);
+            dgvTickets.Location = new Point(272, 0);
             dgvTickets.Name = "dgvTickets";
             dgvTickets.ReadOnly = true;
             dgvTickets.RowHeadersWidth = 51;
             dgvTickets.RowTemplate.Height = 29;
-            dgvTickets.Size = new Size(661, 190);
+            dgvTickets.Size = new Size(693, 362);
             dgvTickets.TabIndex = 2;
             dgvTickets.CellContentClick += dgvTickets_CellContentClick;
             // 
@@ -127,27 +130,30 @@
             // ColAccion
             // 
             ColAccion.HeaderText = "Accion";
+            ColAccion.MinimumWidth = 6;
             ColAccion.Name = "ColAccion";
             ColAccion.ReadOnly = true;
             ColAccion.Resizable = DataGridViewTriState.True;
             ColAccion.SortMode = DataGridViewColumnSortMode.Automatic;
+            ColAccion.Width = 125;
             // 
             // txtTotal
             // 
             txtTotal.Enabled = false;
-            txtTotal.Location = new Point(561, 273);
-            txtTotal.Margin = new Padding(3, 2, 3, 2);
+            txtTotal.Location = new Point(367, 378);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(110, 23);
+            txtTotal.Size = new Size(125, 27);
             txtTotal.TabIndex = 3;
-            txtTotal.Text = "0";
+            txtTotal.Text = "0,00";
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(504, 275);
+            lblTotal.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTotal.ForeColor = Color.LightGray;
+            lblTotal.Location = new Point(297, 384);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(45, 15);
+            lblTotal.Size = new Size(64, 16);
             lblTotal.TabIndex = 4;
             lblTotal.Text = "TOTAL :";
             // 
@@ -156,41 +162,46 @@
             cboDescuento.DropDownStyle = ComboBoxStyle.DropDownList;
             cboDescuento.Enabled = false;
             cboDescuento.FormattingEnabled = true;
-            cboDescuento.Location = new Point(686, 150);
-            cboDescuento.Margin = new Padding(3, 2, 3, 2);
+            cboDescuento.Location = new Point(18, 247);
             cboDescuento.Name = "cboDescuento";
-            cboDescuento.Size = new Size(133, 23);
+            cboDescuento.Size = new Size(151, 28);
             cboDescuento.TabIndex = 6;
             cboDescuento.SelectedIndexChanged += cboDescuento_SelectedIndexChanged;
             // 
             // lblTickets
             // 
             lblTickets.AutoSize = true;
-            lblTickets.Location = new Point(10, 33);
+            lblTickets.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTickets.ForeColor = Color.FromArgb(229, 9, 20);
+            lblTickets.Location = new Point(75, 20);
             lblTickets.Name = "lblTickets";
-            lblTickets.Size = new Size(49, 15);
+            lblTickets.Size = new Size(119, 25);
             lblTickets.TabIndex = 7;
-            lblTickets.Text = "Tickets :";
+            lblTickets.Text = "TICKETS: ";
             // 
             // btnTicket
             // 
-            btnTicket.Location = new Point(589, 32);
-            btnTicket.Margin = new Padding(3, 2, 3, 2);
+            btnTicket.FlatAppearance.BorderSize = 2;
+            btnTicket.FlatStyle = FlatStyle.Flat;
+            btnTicket.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTicket.ForeColor = Color.LightGray;
+            btnTicket.Location = new Point(18, 64);
             btnTicket.Name = "btnTicket";
-            btnTicket.Size = new Size(82, 22);
+            btnTicket.Size = new Size(227, 57);
             btnTicket.TabIndex = 8;
-            btnTicket.Text = "New Ticket";
+            btnTicket.Text = "NUEVO TICKET";
             btnTicket.UseVisualStyleBackColor = true;
             btnTicket.Click += btnTicket_Click_1;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(10, 307);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.ForeColor = Color.LightGray;
+            btnGuardar.Location = new Point(18, 314);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(124, 22);
+            btnGuardar.Size = new Size(227, 57);
             btnGuardar.TabIndex = 9;
-            btnGuardar.Text = "Guardar";
+            btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -198,20 +209,23 @@
             // 
             cboTicket.Enabled = false;
             cboTicket.FormattingEnabled = true;
-            cboTicket.Location = new Point(828, 303);
+            cboTicket.Location = new Point(217, 171);
+            cboTicket.Margin = new Padding(3, 4, 3, 4);
             cboTicket.Name = "cboTicket";
-            cboTicket.Size = new Size(18, 23);
+            cboTicket.Size = new Size(20, 28);
             cboTicket.TabIndex = 10;
             cboTicket.Visible = false;
+            cboTicket.SelectedIndexChanged += cboTicket_SelectedIndexChanged;
             cboTicket.DataSourceChanged += cboTicket_DataSourceChanged;
             // 
             // lblDescuento
             // 
             lblDescuento.AutoSize = true;
-            lblDescuento.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDescuento.Location = new Point(729, 192);
+            lblDescuento.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDescuento.ForeColor = Color.LightGray;
+            lblDescuento.Location = new Point(217, 253);
             lblDescuento.Name = "lblDescuento";
-            lblDescuento.Size = new Size(37, 25);
+            lblDescuento.Size = new Size(28, 16);
             lblDescuento.TabIndex = 11;
             lblDescuento.Text = "0%";
             lblDescuento.Visible = false;
@@ -220,36 +234,69 @@
             // cbxDescuento
             // 
             cbxDescuento.AutoSize = true;
-            cbxDescuento.Location = new Point(690, 126);
+            cbxDescuento.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            cbxDescuento.ForeColor = Color.LightGray;
+            cbxDescuento.Location = new Point(18, 221);
+            cbxDescuento.Margin = new Padding(3, 4, 3, 4);
             cbxDescuento.Name = "cbxDescuento";
-            cbxDescuento.Size = new Size(82, 19);
+            cbxDescuento.Size = new Size(123, 20);
             cbxDescuento.TabIndex = 12;
-            cbxDescuento.Text = "Descuento";
+            cbxDescuento.Text = "DESCUENTO";
             cbxDescuento.UseVisualStyleBackColor = true;
             cbxDescuento.CheckedChanged += cbxDescuento_CheckedChanged;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(15, 15, 15);
+            panel1.Controls.Add(btnTicket);
+            panel1.Controls.Add(lblTickets);
+            panel1.Controls.Add(btnGuardar);
+            panel1.Controls.Add(cboTicket);
+            panel1.Controls.Add(cbxDescuento);
+            panel1.Controls.Add(lblDescuento);
+            panel1.Controls.Add(cboFormaPago);
+            panel1.Controls.Add(lblFormaPago);
+            panel1.Controls.Add(cboDescuento);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(275, 423);
+            panel1.TabIndex = 13;
+            panel1.Paint += panel1_Paint;
+            // 
+            // btnSalir
+            // 
+            btnSalir.FlatAppearance.BorderColor = Color.FromArgb(229, 9, 20);
+            btnSalir.FlatAppearance.BorderSize = 4;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.LightGray;
+            btnSalir.Location = new Point(836, 372);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(107, 38);
+            btnSalir.TabIndex = 13;
+            btnSalir.Text = "SALIR";
+            btnSalir.UseVisualStyleBackColor = true;
+            // 
             // FrmComprobante
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(858, 338);
-            Controls.Add(cbxDescuento);
-            Controls.Add(cboDescuento);
-            Controls.Add(txtTotal);
-            Controls.Add(cboFormaPago);
-            Controls.Add(cboTicket);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnTicket);
-            Controls.Add(lblTickets);
-            Controls.Add(lblDescuento);
+            BackColor = Color.FromArgb(51, 51, 51);
+            ClientSize = new Size(965, 423);
+            Controls.Add(btnSalir);
+            Controls.Add(panel1);
             Controls.Add(lblTotal);
+            Controls.Add(txtTotal);
             Controls.Add(dgvTickets);
-            Controls.Add(lblFormaPago);
-            Margin = new Padding(3, 2, 3, 2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmComprobante";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo Comprobante";
             Load += FrmComprobante_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,5 +321,7 @@
         private DataGridViewButtonColumn ColAccion;
         private Label lblDescuento;
         private CheckBox cbxDescuento;
+        private Panel panel1;
+        private Button btnSalir;
     }
 }

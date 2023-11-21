@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineBackEnd.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,42 @@ using System.Windows.Forms;
 
 namespace CineFrontEnd.Formularios
 {
-    public partial class frmMenu : Form
+    public partial class FrmMenu : Form
     {
-        public frmMenu()
+        public FrmMenu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void btnFunciones_Click(object sender, EventArgs e)
+        {
+            FrmFuncion frmfuncion = new FrmFuncion();
+
+            frmfuncion.ShowDialog();
+        }
+
+        private void btnPeliculas_Click(object sender, EventArgs e)
+        {
+            FrmPelicula frmPelicula = new FrmPelicula();
+            frmPelicula.ShowDialog();
+        }
+
+        private void btnTickets_Click(object sender, EventArgs e)
+        {
+            //FrmTicket frmTicket = new FrmTicket();
+            //frmTicket.ShowDialog();
+        }
+
+        private void btnComprobantes_Click(object sender, EventArgs e)
+        {
+            FrmComprobante frmComp = new FrmComprobante();
+            frmComp.ShowDialog();
         }
     }
 }

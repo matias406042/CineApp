@@ -17,7 +17,17 @@ namespace CineFrontEnd.Formularios
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmPelicula_Load(object sender, EventArgs e)
         {
 
         }

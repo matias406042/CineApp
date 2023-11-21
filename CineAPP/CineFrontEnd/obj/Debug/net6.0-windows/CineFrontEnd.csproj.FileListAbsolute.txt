@@ -34,3 +34,74 @@ C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6
 C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.pdb
 C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\TP\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\ref\CineFrontEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.exe
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.deps.json
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.runtimeconfig.json
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.pdb
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineBackEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineBackEnd.pdb
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.AssemblyReference.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.frmButacas.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmComprobante.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncion.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncionesSeleccionar.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.frmLogin.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.frmMenu.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPelicula.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPeliculasSeleccionar.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmTicket.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Properties.Resources.resources
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.GenerateResource.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.AssemblyInfoInputs.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.AssemblyInfo.cs
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.CoreCompileInputs.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.CopyComplete
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\refint\CineFrontEnd.dll
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.pdb
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.genruntimeconfig.cache
+D:\material de estudio primer cuatrimestre TUP2022\programacion material estudio\visual studio proyectos\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\ref\CineFrontEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.frmButacas.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmComprobante.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncion.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmFuncionesSeleccionar.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.frmLogin.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmMenu.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPelicula.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmPeliculasSeleccionar.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Formularios.FrmTicket.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Properties.Resources.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\refint\CineFrontEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.pdb
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.g.resources
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.exe
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.deps.json
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.runtimeconfig.json
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineFrontEnd.pdb
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineBackEnd.dll
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\bin\Debug\net6.0-windows\CineBackEnd.pdb
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.csproj.CopyComplete
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.genruntimeconfig.cache
+C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\ref\CineFrontEnd.dll

@@ -76,8 +76,6 @@ namespace CineFrontEnd.Formularios
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
-
-
             this.Dispose();
         }
 
@@ -125,18 +123,7 @@ namespace CineFrontEnd.Formularios
                 funciones = fDao.GetFunciones(dtpFecha.Value, String.Empty);
             else
                 funciones = fDao.GetFunciones(DateTime.MinValue, "");
-
-            //VALIDACION UWU
-
-            if (funciones.Count <= 0)
-            {
-                MessageBox.Show("No se han encontrado resultados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            //
             dgvFunciones.Rows.Clear();
-
             foreach (Funcion f in funciones)
             {
                 dgvFunciones.Rows.Add(new object[]
@@ -171,33 +158,13 @@ namespace CineFrontEnd.Formularios
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Validar datos
-            FrmComprobante comprobanteForm = Owner as FrmComprobante;
-
-            if (funciones == null)
-            {
-                MessageBox.Show("Debes buscar una función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            // validados uwu
             //FrmComprobante comprobanteForm = Owner as FrmComprobante;
-
-
             foreach (DataGridViewRow fila in dgvFunciones.Rows)
             {
-                if (fila.Cells[7].Value == null)
-                {
-                    MessageBox.Show("Se debe elegir una función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    return;
-                }
-
                 if ((bool)fila.Cells[7].Value)
                 {
-
                     Funcion f = new Funcion();
                     Ticket t = new Ticket();
-
                     foreach (Funcion ff in funciones)
                     {
                         if ((int)fila.Cells[0].Value == ff.Id)
@@ -207,7 +174,6 @@ namespace CineFrontEnd.Formularios
                         }
 
                     }
-                    //aaaaaaaaaaaaaaaaaaaaaaaa
                     t.Funcion = f;
                     t.Precio = Convert.ToDouble(f.Sala.Precio);
                     t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
@@ -216,12 +182,16 @@ namespace CineFrontEnd.Formularios
                     ticketList.Add(t);
                     //comprobanteForm.cboTicket.DataSource = ticketList;
                     this.Dispose();
-
                 }
             }
         }
 
-        private void FrmTicket_Load_1(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

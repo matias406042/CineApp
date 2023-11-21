@@ -12,15 +12,15 @@ namespace CineBackEnd.Entidades
         public int Id { get; set; }
         public string Descripcion { get; set; }
 
-        public int Capacidad { get; set; }
+     
         public SalaTipo Tipo { get; set; }
         public decimal Precio { get; set; }
         public Sala() { Tipo = new SalaTipo(); }
-        public Sala(int id,string descripcion,int capacidad, SalaTipo tipo, decimal precio)
+        public Sala(int id,string descripcion, SalaTipo tipo, decimal precio)
         {
             Id = id;
             Descripcion = descripcion;
-            Capacidad = capacidad;
+           
             Tipo = tipo;
             Precio = precio;
         }

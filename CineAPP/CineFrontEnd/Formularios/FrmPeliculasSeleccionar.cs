@@ -26,7 +26,7 @@ namespace CineFrontEnd.Formularios
         private void FrmPeliculasSeleccionar_Load(object sender, EventArgs e)
         {
             btnSerch.Enabled = false;
-            
+
         }
 
         private void cbxFecha_CheckedChanged(object sender, EventArgs e)
@@ -69,6 +69,16 @@ namespace CineFrontEnd.Formularios
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
 
         }
