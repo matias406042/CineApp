@@ -28,5 +28,13 @@
     <Compile Update="Formularios\FrmTicket.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Reportes\frmReporteComprobantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Reportes\DScomrpobantes.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

@@ -135,3 +135,13 @@ C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineApi\obj\Debug\net6.0\CineApi
 C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineApi\obj\Debug\net6.0\CineApi.dll
 C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineApi\obj\Debug\net6.0\refint\CineApi.dll
 C:\Users\Usuario\Desktop\TP INTERGRADOR\CineAPP\CineApi\obj\Debug\net6.0\CineApi.pdb
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.csproj.AssemblyReference.cache
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.AssemblyInfoInputs.cache
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.AssemblyInfo.cs
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.csproj.CoreCompileInputs.cache
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.MvcApplicationPartsAssemblyInfo.cs
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.MvcApplicationPartsAssemblyInfo.cache
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.dll
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\refint\CineApi.dll
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineApi\obj\Debug\net6.0\CineApi.pdb

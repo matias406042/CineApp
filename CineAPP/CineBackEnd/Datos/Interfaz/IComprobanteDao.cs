@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CineBackEnd.Datos.Interfaz
 {
@@ -17,7 +18,7 @@ namespace CineBackEnd.Datos.Interfaz
         List<FormaPago> GetFormasDePago();
         List<Descuento> GetDescuentos();
 
-
+        DataTable GetComprobantes(DateTime desde, DateTime hasta);
        
     }
 }
