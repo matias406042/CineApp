@@ -48,9 +48,7 @@
             btnButacas = new Button();
             txtButaca = new TextBox();
             label2 = new Label();
-            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvFunciones).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvFunciones
@@ -59,23 +57,22 @@
             dgvFunciones.AllowUserToDeleteRows = false;
             dgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFunciones.Columns.AddRange(new DataGridViewColumn[] { ColFuncionID, ColPElicula, Colhorario, Column1, ColSala, ColDIMENSION, ColPrecio, ColACCION });
-            dgvFunciones.Location = new Point(287, 0);
+            dgvFunciones.Location = new Point(10, 112);
+            dgvFunciones.Margin = new Padding(3, 2, 3, 2);
             dgvFunciones.Name = "dgvFunciones";
             dgvFunciones.ReadOnly = true;
             dgvFunciones.RowHeadersWidth = 51;
             dgvFunciones.RowTemplate.Height = 29;
-            dgvFunciones.Size = new Size(928, 478);
+            dgvFunciones.Size = new Size(933, 179);
             dgvFunciones.TabIndex = 0;
             dgvFunciones.CellContentClick += dgvFunciones_CellContentClick;
             // 
             // ColFuncionID
             // 
             ColFuncionID.HeaderText = "ID";
-            ColFuncionID.MinimumWidth = 6;
             ColFuncionID.Name = "ColFuncionID";
             ColFuncionID.ReadOnly = true;
             ColFuncionID.Visible = false;
-            ColFuncionID.Width = 125;
             // 
             // ColPElicula
             // 
@@ -137,114 +134,94 @@
             // 
             // btnSearch
             // 
-            btnSearch.FlatAppearance.BorderColor = Color.LightGray;
-            btnSearch.FlatAppearance.BorderSize = 3;
-            btnSearch.FlatStyle = FlatStyle.Flat;
-            btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSearch.ForeColor = Color.LightGray;
-            btnSearch.Location = new Point(24, 492);
+            btnSearch.Location = new Point(397, 86);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(106, 36);
+            btnSearch.Size = new Size(82, 22);
             btnSearch.TabIndex = 1;
-            btnSearch.Text = "BUSCAR";
+            btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
             // dtpFecha
             // 
             dtpFecha.Enabled = false;
-            dtpFecha.Location = new Point(24, 195);
+            dtpFecha.Location = new Point(196, 87);
+            dtpFecha.Margin = new Padding(3, 2, 3, 2);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(165, 27);
+            dtpFecha.Size = new Size(145, 23);
             dtpFecha.TabIndex = 4;
             // 
             // txbTitulo
             // 
             txbTitulo.Enabled = false;
-            txbTitulo.Location = new Point(24, 108);
+            txbTitulo.Location = new Point(31, 87);
+            txbTitulo.Margin = new Padding(3, 2, 3, 2);
             txbTitulo.Name = "txbTitulo";
-            txbTitulo.Size = new Size(165, 27);
+            txbTitulo.Size = new Size(125, 23);
             txbTitulo.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(229, 9, 20);
-            label1.Location = new Point(12, 20);
+            label1.Location = new Point(10, 7);
             label1.Name = "label1";
-            label1.Size = new Size(257, 28);
+            label1.Size = new Size(145, 15);
             label1.TabIndex = 8;
             label1.Text = "BUSQUEDA DE FUNCION :";
             // 
             // btnSave
             // 
-            btnSave.FlatAppearance.BorderColor = Color.LightGray;
-            btnSave.FlatAppearance.BorderSize = 3;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.LightGray;
-            btnSave.Location = new Point(166, 492);
+            btnSave.Location = new Point(10, 307);
+            btnSave.Margin = new Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(103, 36);
+            btnSave.Size = new Size(82, 22);
             btnSave.TabIndex = 9;
-            btnSave.Text = "GUARDAR";
+            btnSave.Text = "SAVE";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
             // btnClose
             // 
-            btnClose.FlatAppearance.BorderColor = Color.FromArgb(229, 9, 20);
-            btnClose.FlatAppearance.BorderSize = 4;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.ForeColor = Color.LightGray;
-            btnClose.Location = new Point(1090, 492);
+            btnClose.Location = new Point(858, 307);
+            btnClose.Margin = new Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(97, 36);
+            btnClose.Size = new Size(82, 22);
             btnClose.TabIndex = 10;
-            btnClose.Text = "SALIR";
+            btnClose.Text = "CLOSE";
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click_1;
             // 
             // cbxTitulo
             // 
             cbxTitulo.AutoSize = true;
-            cbxTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            cbxTitulo.ForeColor = Color.LightGray;
-            cbxTitulo.Location = new Point(24, 76);
+            cbxTitulo.Location = new Point(31, 64);
+            cbxTitulo.Margin = new Padding(3, 2, 3, 2);
             cbxTitulo.Name = "cbxTitulo";
-            cbxTitulo.Size = new Size(84, 24);
+            cbxTitulo.Size = new Size(56, 19);
             cbxTitulo.TabIndex = 11;
-            cbxTitulo.Text = "TITULO";
+            cbxTitulo.Text = "Titulo";
             cbxTitulo.UseVisualStyleBackColor = true;
             cbxTitulo.CheckedChanged += cbxTitulo_CheckedChanged_1;
             // 
             // cbxFecha
             // 
             cbxFecha.AutoSize = true;
-            cbxFecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            cbxFecha.ForeColor = Color.LightGray;
-            cbxFecha.Location = new Point(24, 164);
+            cbxFecha.Location = new Point(196, 64);
+            cbxFecha.Margin = new Padding(3, 2, 3, 2);
             cbxFecha.Name = "cbxFecha";
-            cbxFecha.Size = new Size(78, 24);
+            cbxFecha.Size = new Size(57, 19);
             cbxFecha.TabIndex = 12;
-            cbxFecha.Text = "FECHA";
+            cbxFecha.Text = "Fecha";
             cbxFecha.UseVisualStyleBackColor = true;
             cbxFecha.CheckedChanged += cbxFecha_CheckedChanged_1;
             // 
             // btnButacas
             // 
             btnButacas.Enabled = false;
-            btnButacas.FlatAppearance.BorderColor = Color.FromArgb(229, 9, 20);
-            btnButacas.FlatAppearance.BorderSize = 8;
-            btnButacas.FlatStyle = FlatStyle.Flat;
-            btnButacas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnButacas.ForeColor = Color.LightGray;
-            btnButacas.Location = new Point(24, 276);
-            btnButacas.Margin = new Padding(3, 4, 3, 4);
+            btnButacas.Location = new Point(845, 43);
             btnButacas.Name = "btnButacas";
-            btnButacas.Size = new Size(217, 81);
+            btnButacas.Size = new Size(75, 61);
             btnButacas.TabIndex = 13;
             btnButacas.Text = "ELEGIR BUTACA";
             btnButacas.UseVisualStyleBackColor = true;
@@ -253,61 +230,45 @@
             // txtButaca
             // 
             txtButaca.Enabled = false;
-            txtButaca.Location = new Point(189, 414);
-            txtButaca.Margin = new Padding(3, 4, 3, 4);
+            txtButaca.Location = new Point(660, 81);
             txtButaca.Name = "txtButaca";
-            txtButaca.Size = new Size(81, 27);
+            txtButaca.Size = new Size(179, 23);
             txtButaca.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(229, 9, 20);
-            label2.Location = new Point(24, 395);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(675, 57);
             label2.Name = "label2";
-            label2.Size = new Size(136, 46);
+            label2.Size = new Size(148, 21);
             label2.TabIndex = 15;
-            label2.Text = "BUTACA\r\nSELECCIONADA";
-            label2.Click += label2_Click;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(cbxTitulo);
-            panel1.Controls.Add(btnButacas);
-            panel1.Controls.Add(btnSave);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(btnSearch);
-            panel1.Controls.Add(txtButaca);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(txbTitulo);
-            panel1.Controls.Add(cbxFecha);
-            panel1.Controls.Add(dtpFecha);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(290, 540);
-            panel1.TabIndex = 16;
-            panel1.Paint += panel1_Paint;
+            label2.Text = "Butaca seleccionada";
             // 
             // FrmTicket
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(51, 51, 51);
-            ClientSize = new Size(1216, 540);
-            Controls.Add(panel1);
+            ClientSize = new Size(952, 338);
+            Controls.Add(label2);
+            Controls.Add(txtButaca);
+            Controls.Add(btnButacas);
+            Controls.Add(cbxFecha);
+            Controls.Add(cbxTitulo);
             Controls.Add(btnClose);
+            Controls.Add(btnSave);
+            Controls.Add(label1);
+            Controls.Add(txbTitulo);
+            Controls.Add(dtpFecha);
+            Controls.Add(btnSearch);
             Controls.Add(dgvFunciones);
-            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmTicket";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ticket";
+            Load += FrmTicket_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvFunciones).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -332,6 +293,5 @@
         private DataGridViewTextBoxColumn ColDIMENSION;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewCheckBoxColumn ColACCION;
-        private Panel panel1;
     }
 }

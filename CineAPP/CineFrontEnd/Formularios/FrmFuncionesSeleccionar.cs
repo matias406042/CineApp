@@ -70,6 +70,11 @@ namespace CineFrontEnd.Formularios
             {
                 dgvFunciones.Rows.Add(new object[] {f.Id,f.Pelicula.Titulo,f.Pelicula.Genero.Descripcion,f.HorarioInicio,f.HorarioFin,f.Sala.Descripcion });
             }
+            if (dgvFunciones.Rows[0] == null)
+            {
+                MessageBox.Show("No se han encontrado películas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

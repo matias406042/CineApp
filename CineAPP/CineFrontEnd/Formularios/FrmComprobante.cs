@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CineBackEnd.Entidades;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
+using Newtonsoft.Json;
+using CineFrontEnd.Http;
 
 namespace CineFrontEnd.Formularios
 {
@@ -25,8 +27,8 @@ namespace CineFrontEnd.Formularios
             comprobante = new Comprobante();
             dao = new ComprobanteDao();
             fdao = new FuncionDao();
-            CargarPagos(dao.GetFormasDePago());
-            CargarDescuentos(dao.GetDescuentos());
+            AsyncCargarPagos();
+            AsyncCargarDecuento();
             txtTotal.Text = CalcularTotal().ToString();
             ticketList = new List<Ticket>();
         }
@@ -41,19 +43,29 @@ namespace CineFrontEnd.Formularios
                 return total - (total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0, 2));
             else return total;
         }
-        private void CargarDescuentos(List<Descuento> descuentos)
+  
+
+        private async void AsyncCargarDecuento()
         {
+            string url = "https://localhost:7168/comprobantes/getDescuentos";
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var descuentos = JsonConvert.DeserializeObject<List<Descuento>>(result);
+
             cboDescuento.DataSource = descuentos;
             cboDescuento.DisplayMember = "Motivo";
             cboDescuento.ValueMember = "Id";
             cboDescuento.SelectedIndex = -1;
         }
-
-        private void CargarPagos(List<FormaPago> formaPagos)
+        private async void AsyncCargarPagos()
         {
+            string url = "https://localhost:7168/comprobantes/FormasPago";
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var formaPagos = JsonConvert.DeserializeObject<List<FormaPago>>(result);
+
             cboFormaPago.DataSource = formaPagos;
             cboFormaPago.DisplayMember = "Forma";
             cboFormaPago.ValueMember = "Id";
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -73,9 +85,17 @@ namespace CineFrontEnd.Formularios
             if (dao.Crear(comprobante))
                 MessageBox.Show("Se creo con exito el comprobante", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Hubo un error al crear el combrobante", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            this.Dispose();
+            {
 
+                foreach (Ticket ticket in comprobante.Tickets)
+                {
+                    fdao.OcuparButaca(false, ticket.Id, ticket.Butaca.Fila, ticket.Butaca.Columna);
+                }
+
+                MessageBox.Show("Hubo un error al crear el combrobante", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Dispose();
+
+            }
         }
 
         private void btnTicket_Click_1(object sender, EventArgs e)
@@ -123,6 +143,11 @@ namespace CineFrontEnd.Formularios
         //}
 
         private void FrmComprobante_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -209,12 +234,7 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void cboTicket_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void cboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

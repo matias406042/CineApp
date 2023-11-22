@@ -1,4 +1,5 @@
 ﻿using CineBackEnd.Entidades;
+using CineFrontEnd.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,9 +27,9 @@ namespace CineFrontEnd.Formularios
 
         private void btnFunciones_Click(object sender, EventArgs e)
         {
-            FrmFuncion frmfuncion = new FrmFuncion();
+            FrmFuncionesSeleccionar frmfuncionseleccionar = new FrmFuncionesSeleccionar();
 
-            frmfuncion.ShowDialog();
+            frmfuncionseleccionar.ShowDialog();
         }
 
         private void btnPeliculas_Click(object sender, EventArgs e)
@@ -39,14 +40,28 @@ namespace CineFrontEnd.Formularios
 
         private void btnTickets_Click(object sender, EventArgs e)
         {
-            //FrmTicket frmTicket = new FrmTicket();
-            //frmTicket.ShowDialog();
+            if (MessageBox.Show("Que reporte desea consultar?", "Seleccionar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                frmReporteComprobantes frmReporteComprobantes = new frmReporteComprobantes();
+                frmReporteComprobantes.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Ese reporte no existe todavia uwu", "perdon uwu");
+            }
+
+
         }
 
         private void btnComprobantes_Click(object sender, EventArgs e)
         {
             FrmComprobante frmComp = new FrmComprobante();
             frmComp.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

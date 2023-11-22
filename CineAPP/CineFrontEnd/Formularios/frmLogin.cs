@@ -75,7 +75,7 @@ namespace CineFrontEnd
 
         private void txtContrasenia_Enter(object sender, EventArgs e)
         {
-            if (txtContrasenia.Text == "CONTRASEÑA")
+            if (txtContrasenia.Text == "CONTRASEï¿½A")
             {
                 txtContrasenia.Text = "";
                 txtContrasenia.ForeColor = Color.White;
@@ -87,7 +87,7 @@ namespace CineFrontEnd
         {
             if (txtContrasenia.Text == "")
             {
-                txtContrasenia.Text = "CONTRASEÑA";
+                txtContrasenia.Text = "CONTRASEï¿½A";
                 txtContrasenia.ForeColor = Color.DimGray;
                 txtContrasenia.UseSystemPasswordChar = false;
 

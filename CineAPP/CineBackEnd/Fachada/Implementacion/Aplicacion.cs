@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using CineBackEnd.Datos.Implementacion;
 
 namespace CineBackEnd.Fachada.Implementacion
 {
@@ -16,8 +17,13 @@ namespace CineBackEnd.Fachada.Implementacion
         IPeliculaDao daoPelicula;
         ITicketDao daoTicket;
         IComprobanteDao daoComprobante;
-        
-      
+
+        public Aplicacion()
+        {
+                                    daoFuncion = new FuncionDao();
+                daoComprobante = new ComprobanteDao();
+            daoTicket = new TicketDao();           daoPelicula = new PeliculaDao();
+        }
 
         public bool DeleteFuncion(Funcion f)
         {

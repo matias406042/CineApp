@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using CineBackEnd.Entidades;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
+using System.Diagnostics.Eventing.Reader;
+using CineFrontEnd.Http;
+using Newtonsoft.Json;
 
 namespace CineFrontEnd.Formularios
 {
@@ -19,29 +22,41 @@ namespace CineFrontEnd.Formularios
         bool editar;
         IFuncionDao dao;
         List<Pelicula> pelis;
-
+        bool activo;
 
         public FrmFuncion()
         {
             InitializeComponent();
             dao = new FuncionDao();
             editar = false;
-            CargarSalas();
-            CargarGeneros();
+            activo = false;
+            AsyncCargarSalas();
+            AsyncCargarGeneros();
+            dtpFecha.MinDate = DateTime.Now;
+            dtpInicio.ShowUpDown = true;
+            dtpFin.ShowUpDown = true;
         }
 
-        private void CargarGeneros()
+
+
+        private async void AsyncCargarGeneros()
         {
-            List<Genero> lstGeneros = dao.GetGeneros();
-            cboGenero.DataSource = lstGeneros;
+            string url = "https://localhost:7168/Funciones/traerGeneros";
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var generos = JsonConvert.DeserializeObject<List<Genero>>(result);
+
+            cboGenero.DataSource = generos;
             cboGenero.ValueMember = "Id";
             cboGenero.DisplayMember = "Descripcion";
         }
 
-        private void CargarSalas()
+        private async void AsyncCargarSalas()
         {
-            List<Sala> lstSalas = dao.GetSalas();
-            cboSala.DataSource = lstSalas;
+            string url = "https://localhost:7168/Funciones/traerSalas";
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var salas = JsonConvert.DeserializeObject<List<Sala>>(result);
+
+            cboSala.DataSource = salas;
             cboSala.ValueMember = "Id";
             cboSala.DisplayMember = "Descripcion";
         }
@@ -53,8 +68,8 @@ namespace CineFrontEnd.Formularios
             funcion = f;
             editar = true;
             btnInsert.Text = "Editar";
-            CargarGeneros();
-            CargarSalas();
+            AsyncCargarGeneros();
+            AsyncCargarSalas();
             cboSala.SelectedIndex = f.Sala.Id - 1;
             txtTitulo.Text = f.Pelicula.Titulo;
             dtpFecha.Value = f.Fecha;
@@ -95,18 +110,47 @@ namespace CineFrontEnd.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Validar Datos
-            pelis = dao.Peliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
+
+
+            //no se que validar aca digamos que es un solo botoncito, cualquier cosa puse un "no hay nada" cuando no hay nada. profundo.
+            pelis = dao.GetPeliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
             dgvPelis.Rows.Clear();
             foreach (Pelicula p in pelis)
             {
                 dgvPelis.Rows.Add(new object[] {p.Id,p.Titulo,p.Genero.Descripcion,p.Duracion,
                     p.Director.ToString(),p.FechaEstreno.ToShortDateString(),p.Clasificacion.EdadMinima,p.Productora.Nombre});
             }
+
+            if (dgvPelis.Rows.Count == 0)
+            {
+                MessageBox.Show("No se encontró película con los parámetros ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
             //validar Datos
+            if (dtpInicio.Value >= dtpFin.Value)
+            {
+                MessageBox.Show("El horario de inicio debe ser menor al horario de salida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (dtpFecha.Value < DateTime.Now || dtpFecha.Value == DateTime.Now && dtpInicio.Value < DateTime.Now)
+            {
+                MessageBox.Show("No se puede crear una función en el pasado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (dgvPelis.CurrentRow == null)
+            {
+                MessageBox.Show("Debe elegir una película.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //datos validados uwu
             if (!editar)
             {
                 Funcion ff = new Funcion();
@@ -137,7 +181,7 @@ namespace CineFrontEnd.Formularios
                 ff.Sala = (Sala)cboSala.SelectedItem;
                 ff.HorarioInicio = dtpInicio.Value;
                 ff.HorarioFin = dtpFin.Value;
-                pelis = dao.Peliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
+                pelis = dao.GetPeliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
                 foreach (Pelicula p in pelis)
                 {
                     if (p.Id == Convert.ToInt32(dgvPelis.CurrentRow.Cells["colId"].Value))
@@ -158,27 +202,19 @@ namespace CineFrontEnd.Formularios
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
+            //    if (!activo) { ActivarHorarios(); }
+
+            //    dtpInicio.MinDate = dtpFecha.Value.Date;
+            //    dtpFin.MinDate = dtpFecha.Value.Date;
+
+            //    dtpInicio.MaxDate = dtpFecha.Value.Date.AddDays(1).AddSeconds(-1);
+            //    dtpFin.MaxDate = dtpFecha.Value.Date.AddDays(1).AddSeconds(-1);
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvPelis_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dtpFin_ValueChanged(object sender, EventArgs e)
+        private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
