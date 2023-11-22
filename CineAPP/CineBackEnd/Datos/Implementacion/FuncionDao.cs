@@ -145,7 +145,7 @@ namespace CineBackEnd.Datos.Implementacion
             return lstFunciones;
         }  
 
-        public List<Pelicula> Peliculas(string titulo, DateTime estreno, int genero)
+        public List<Pelicula> GetPeliculas(string titulo, DateTime estreno, int genero)
         {
             List<Pelicula> lstPeliculas = new List<Pelicula>();
             string sp = "SP_BUSCAR_PELICULAS";

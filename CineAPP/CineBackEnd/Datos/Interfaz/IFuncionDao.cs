@@ -12,7 +12,7 @@ namespace CineBackEnd.Datos.Interfaz
     {
         List<Funcion> GetFunciones(DateTime fecha, string titulo);
 
-        List<Pelicula> Peliculas( string titulo, DateTime estreno, int genero);
+        List<Pelicula> GetPeliculas( string titulo, DateTime estreno, int genero);
 
 
         List<Genero> GetGeneros();

@@ -3,6 +3,7 @@ using CineBackEnd.Entidades;
 using CineBackEnd.Fachada.Implementacion;
 using CineBackEnd.Fachada.Interfaz;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -155,7 +156,7 @@ namespace CineApi.Controllers
             try
             {
 
-                if (app.OcuparButaca(ocupar,id_funcion,fila,columna))
+                if (app.OcuparButaca(ocupar,id_funcion,fila,columna)>0)
                     return Ok("se actualizo la butaca con exito");
                 else
                     return NotFound("NO se encontradola butaca: ");
@@ -304,13 +305,13 @@ namespace CineApi.Controllers
         //////// comprobantes 
 
         [HttpGet("/comprobantes")]
-        public IActionResult GetComprobante()
+        public IActionResult GetComprobante(DateTime desde, DateTime hasta)
         {
-            List<Comprobante> lst = null;
+            DataTable dt = null;
             try
             {
-                lst = app.GetComprobantes();
-                return Ok(lst);
+                dt = app.GetComprobantes(desde, hasta);
+                return Ok(dt);
 
             }
             catch (Exception ex)

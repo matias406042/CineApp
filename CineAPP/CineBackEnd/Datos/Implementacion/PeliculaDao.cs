@@ -26,7 +26,7 @@ namespace CineBackEnd.Datos.Implementacion
             throw new NotImplementedException();
         }
 
-        public bool Borrar(int id)
+        public bool BorrarPelicula(int id)
         {
             throw new NotImplementedException();
         }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CineBackEnd.Fachada.Implementacion
 {
@@ -38,7 +39,7 @@ namespace CineBackEnd.Fachada.Implementacion
             return daoFuncion.BuscarButacas(f);
         }
 
-        public List<Comprobante> GetComprobantes(DateTime desde ,DateTime hasta)
+        public DataTable GetComprobantes(DateTime desde ,DateTime hasta)
         {
             return daoComprobante.GetComprobantes(desde, hasta);
         }
