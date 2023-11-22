@@ -10,11 +10,17 @@
 
   <ItemGroup>
     <None Remove="Reportes\rdlcComprobantes.rdlc" />
+    <None Remove="Reportes\rdlcPeliculasClasificacion.rdlc" />
+    <None Remove="Reportes\rdlcPeliculasGenero.rdlc" />
+    <None Remove="Reportes\rdlcPeliculasProductora.rdlc" />
     <None Remove="Resources\cineedit.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Reportes\rdlcComprobantes.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlcPeliculasClasificacion.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlcPeliculasGenero.rdlc" />
+    <EmbeddedResource Include="Reportes\rdlcPeliculasProductora.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +49,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DScomrpobantes.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Reportes\DSpeliculas.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DSpeliculas.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -56,6 +67,10 @@
     <None Update="Reportes\DScomrpobantes.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DScomrpobantes.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reportes\DSpeliculas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSpeliculas.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

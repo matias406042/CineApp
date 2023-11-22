@@ -174,3 +174,4 @@ D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\ne
 D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.pdb
 D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.genruntimeconfig.cache
 D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\ref\CineFrontEnd.dll
+D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Reportes.frmReportePeliculas.resources

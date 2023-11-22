@@ -95,7 +95,7 @@ namespace CineFrontEnd.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Validar Datos
-            pelis = dao.Peliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
+            pelis = dao.GetPeliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
             dgvPelis.Rows.Clear();
             foreach (Pelicula p in pelis)
             {
@@ -137,7 +137,7 @@ namespace CineFrontEnd.Formularios
                 ff.Sala = (Sala)cboSala.SelectedItem;
                 ff.HorarioInicio = dtpInicio.Value;
                 ff.HorarioFin = dtpFin.Value;
-                pelis = dao.Peliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
+                pelis = dao.GetPeliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
                 foreach (Pelicula p in pelis)
                 {
                     if (p.Id == Convert.ToInt32(dgvPelis.CurrentRow.Cells["colId"].Value))

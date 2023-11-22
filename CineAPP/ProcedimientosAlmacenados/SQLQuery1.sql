@@ -273,7 +273,7 @@ update Butacas
 set estado = 'Disponible'
 where id_funcion =11
 
-alter procedure SP_REPORTE_COMPROBANTES
+create procedure SP_REPORTE_COMPROBANTES
 @desde datetime,
 @hasta datetime
 as
@@ -286,4 +286,28 @@ join FUNCIONES f on f.id_funcion = b.id_funcion
 join Salas s on s.id_Sala = f.id_sala
 where c.fecha between @desde and @hasta
 group by c.id_comprobante,c.fecha,d.descripcion,d.porcentaje,Total
+end
+
+create procedure SP_REPORTE_PELICULAS
+@seleccion int
+AS
+begin 
+if @seleccion = 1
+begin
+select count(*) Cantidad_Total, g.genero Genero
+from PELICULAS p join GENEROS_PELICULAS g on p.id_genero = g.id_genero
+group by  g.genero
+end
+if @seleccion = 2
+begin
+select count(*) Cantidad_Total, cast(c.edad as varchar(20)) Edad
+from PELICULAS p join CLASIFICACIONES_PELICULAS c on p.id_clasificacion = c.id_clasificacion
+group by c.edad
+end
+if @seleccion = 3
+begin 
+select count(*) Cantidad_Total, pr.nombre Nombre
+from PELICULAS p join Productoras pr on p.id_productora = pr.id_productora
+group by pr.nombre
+end
 end

@@ -117,6 +117,12 @@ namespace CineBackEnd.Datos.Implementacion
 
         }
 
-
+        public DataTable PeliculasReporte(int seleccion)
+        {
+            string sp = "SP_REPORTE_PELICULAS";
+            List<SqlParameter> lst = new List<SqlParameter>();
+            lst.Add(new SqlParameter("@seleccion", seleccion));
+            return HelperDB.ObtenerInstancia().ConsultaSQL(sp, lst);
+        }
     }
 }

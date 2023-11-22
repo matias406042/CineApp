@@ -39,13 +39,15 @@ namespace CineBackEnd.Datos.Implementacion
                 SqlParameter p = new SqlParameter("@id_compr", SqlDbType.Int);
                 p.Direction = ParameterDirection.Output;
                 paramsMaestro.Add(p);
-            List<SqlParameter> paramsDetalle = new List<SqlParameter>();
+            List<List<SqlParameter>> paramsDetalles = new List<List<SqlParameter>>();
             foreach (Ticket t in c.Tickets)
             {
-                paramsDetalle.Add(new SqlParameter("@id_funcion", t.Funcion.Id));
-                //paramsDetalle.Add(new SqlParameter("@id_butaca"))
+                List<SqlParameter> pdetalles = new List<SqlParameter>();
+                pdetalles.Add(new SqlParameter("@id_funcion", t.Funcion.Id));
+                pdetalles.Add(new SqlParameter("@id_butaca", t.Butaca));
+                paramsDetalles.Add(pdetalles);
             }
-            return HelperDB.ObtenerInstancia().SPMaestroDetalle(paramsMaestro, paramsDetalle, spMaestro, spDetalle, "@id_comprobante");
+            return HelperDB.ObtenerInstancia().SPMaestroDetalle(paramsMaestro, paramsDetalles, spMaestro, spDetalle, "@id_comprobante");
 
         }
 
