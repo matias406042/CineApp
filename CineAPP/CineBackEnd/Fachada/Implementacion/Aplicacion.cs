@@ -45,6 +45,11 @@ namespace CineBackEnd.Fachada.Implementacion
             return daoFuncion.BuscarButacas(f);
         }
 
+        public List<ClasificacionPelicula> GetClasificaciones()
+        {
+            return daoPelicula.
+        }
+
         public DataTable GetComprobantes(DateTime desde ,DateTime hasta)
         {
             return daoComprobante.GetComprobantes(desde, hasta);
@@ -70,6 +75,11 @@ namespace CineBackEnd.Fachada.Implementacion
             return daoFuncion.GetGeneros();
         }
 
+        public List<Genero> GetGenerosP()
+        {
+            return daoFuncion.GetGeneros();
+        }
+
         public List<Pelicula> GetPeliculas(string titulo, int Id_genero, int AñoEstreno)
         {
             return daoPelicula.GetPeliculas(titulo, Id_genero, AñoEstreno);
@@ -78,6 +88,11 @@ namespace CineBackEnd.Fachada.Implementacion
         public List<Pelicula> GetPeliculasX3Condiciones(string titulo, DateTime estreno, int genero)
         {
            return daoFuncion.GetPeliculas(titulo, estreno, genero);
+        }
+
+        public List<Productora> GetProductora()
+        {
+            throw new NotImplementedException();
         }
 
         public List<Sala> GetSalas()

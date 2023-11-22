@@ -73,25 +73,10 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmPelicula frm = new FrmPelicula();
-            frm.ShowDialog();
+            FrmPelicula p = new FrmPelicula();
+            p.ShowDialog();
         }
     }
 }

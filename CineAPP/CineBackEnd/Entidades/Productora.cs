@@ -18,5 +18,11 @@ namespace CineBackEnd.Entidades
         {
                 Pais = new Pais();
         }
+
+        public Productora(string productora, Pais pais)
+        {
+            Nombre = productora;
+            Pais = pais;
+        }
     }
 }

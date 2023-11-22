@@ -77,6 +77,14 @@ namespace CineFrontEnd.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //Validaciones
+
+            if(dgvTickets.Rows.Count <= 0) {
+                MessageBox.Show("Se debe asignar al menos un ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            //
             comprobante.FormaPAgo.Id = (int)cboFormaPago.SelectedValue;
             comprobante.Total = CalcularTotal();
             if (cbxDescuento.Checked)

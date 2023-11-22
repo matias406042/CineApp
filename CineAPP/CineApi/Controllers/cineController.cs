@@ -419,74 +419,58 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        //[HttpGet("/tickets/getButacas")]
-        //public IActionResult getGetButacaT()
-        //{
-        //    List<Butaca> lst = null;
-        //    try
-        //    {
-        //        lst = app.GetButacaT();
-        //        return Ok(lst);
+       
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error interno! Intente luego");
-        //    }
-        //}
+        [HttpGet("/Peliculas/traerProductora")]
+        public IActionResult GetProductora()
+        {
+            List<Productora> lst = null;
+            try
+            {
+                lst = app.GetProductora();
+                return Ok(lst);
 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
 
-        //[HttpPost("/tickets")]
-        //public IActionResult PostTickets(Ticket ticket)
-        //{
-        //    try
-        //    {
-        //        if (ticket == null)
-        //            return BadRequest("Ticket Invalido!");
-        //        if (app.(ticket))
-        //            return Ok(ticket);
-        //        else
-        //            return NotFound("No se pudo guardar el ticket");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error Interno!, Intente luego...");
-        //    }
-        //}
+        }
 
-        //[HttpPut("/tickets")]
-        //public IActionResult PutTicket(Ticket ticket)
-        //{
-        //    try
-        //    {
+        [HttpGet("/Peliculas/traerClasificaciones")]
+        public IActionResult GetClasificaciones()
+        {
+            List<ClasificacionPelicula> lst = null;
+            try
+            {
+                lst = app.GetClasificaciones();
+                return Ok(lst);
 
-        //        if (app.(ticket))
-        //            return Ok("se actualizo el ticket con exito");
-        //        else
-        //            return NotFound("NO se encontrado el ticket: ");
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return StatusCode(500, "Error interno! Intente luego");
-        //    }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
 
-        //}
+        }
 
-        //[HttpDelete("/tickets/{id}")]
-        //public IActionResult DeleteTickets(Ticket oTicket)
-        //{
-        //    try
-        //    {
-        //        if (app.DeleteTicket(oTicket))
-        //            return Ok("se borro exitosamente");
-        //        else
-        //            return NotFound("No se pudo borrar el ticket!!!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error interno!!! Intente luego...");
-        //    }
-        //}
+        [HttpGet("/Peliculas/traerGeneros")]
+        public IActionResult GetGenerosP()
+        {
+            try
+            {
+                List<Genero> lst = app.GetGenerosP();
+                if (lst != null)
+                    return Ok(lst);
+                else
+                    return NotFound("generos no encontrados");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
     }
 }
 

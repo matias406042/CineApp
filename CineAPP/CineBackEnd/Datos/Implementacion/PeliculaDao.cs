@@ -110,13 +110,30 @@ namespace CineBackEnd.Datos.Implementacion
 
             return peliculas;
 
-
-
-
-
-
         }
 
+
+        public List<Productora> GetProductora()
+        {
+            List<Productora> lstProductora = new List<Productora>();
+            string sp = "SP_GET_PRODUCTORAS";
+            DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, null);
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Productora p = new Productora(fila["nombre"].ToString(), 
+                               new Pais(Convert.ToInt32(fila["id_pais"]), fila["pais"].ToString()));
+                g.Id = Convert.ToInt32(fila["id_productora"]);
+                lstProductora.Add(g);
+
+
+
+                s.Descripcion = fila["Sala"].ToString();
+                s.Id = Convert.ToInt32(fila["id_Sala"]);
+                s.Tipo = new SalaTipo(Convert.ToInt32(fila["id_Tipo"]), fila["Tipo"].ToString());
+
+            }
+            return lstGeneros;
+        }
 
     }
 }

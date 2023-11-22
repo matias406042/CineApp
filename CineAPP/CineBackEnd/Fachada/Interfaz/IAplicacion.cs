@@ -73,5 +73,11 @@ namespace CineBackEnd.Fachada.Interfaz
 
         public bool UpdatePelicula(Pelicula p);
 
+        public List<Productora> GetProductora();
+
+        public List<ClasificacionPelicula> GetClasificaciones();
+
+        public List<Genero> GetGenerosP();
+
     }
 }
