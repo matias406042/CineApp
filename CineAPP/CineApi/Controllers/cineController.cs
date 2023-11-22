@@ -23,12 +23,12 @@ namespace CineApi.Controllers
         // GET: api/<cineController>
         [HttpGet]
         [HttpGet("/Peliculas/traer{id}")]
-        public IActionResult GetPelicula(int id)
+        public IActionResult GetPeliculaxID(int id_pelicula)
         {
             Pelicula peli = null;
             try
             {
-                peli = app.GetPelicula(id);
+                peli = app.PeliculaXID(id_pelicula);
                 return Ok(peli);
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace CineApi.Controllers
 
 
         [HttpPost("/Peliculas/cargar")]
-        public IActionResult PostPresupuesto(Pelicula oPelicula)
+        public IActionResult PostPelicula(Pelicula oPelicula)
         {
             try
             {
@@ -61,11 +61,11 @@ namespace CineApi.Controllers
 
 
         [HttpGet("/Peliculas/traer")]
-        public IActionResult GetPeliculasParametro(string titulo, int id, int estreno)
+        public IActionResult GetPeliculasParametro(string titulo, int id_genero, int anioEstreno)
         {
             try
             {
-                List<Pelicula> lst = app.GetPeliculaParametro(titulo, id, estreno);
+                List<Pelicula> lst = app.GetPeliculas(titulo,id_genero ,anioEstreno);
                 if (lst != null)
                     return Ok(lst);
                 else
@@ -77,13 +77,13 @@ namespace CineApi.Controllers
             }
         }
 
-        [HttpPut("/Peliculas/act")]
-        public IActionResult ActPresupuesto(Pelicula oPelicula)
+        [HttpPut("/Peliculas/actualizar")]
+        public IActionResult UpdatePelicula(Pelicula oPelicula)
         {
             try
             {
 
-                if (app.ActPelicula(oPelicula))
+                if (app.UpdatePelicula(oPelicula))
                     return Ok("se actualizo la pelicula con exito");
                 else
                     return NotFound("NO se encontradola pelicula: ");
@@ -114,30 +114,30 @@ namespace CineApi.Controllers
         /////////////////////////////////////////////////
         /// butacas 
 
-        [HttpPost("/butacas/cargar")]
-        public IActionResult PostButaca(Butaca oButaca)
-        {
-            try
-            {
-                if (oButaca == null)
-                    return BadRequest("butaca inválida!!!");
-                if (app.saveButaca(oButaca))
-                    return Ok(oButaca);
-                else
-                    return NotFound("No se pudo guardar la butaca!!!");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno!!! Intente luego...");
-            }
+        //[HttpPost("/butacas/cargar")]
+        //public IActionResult PostButaca(Butaca oButaca)
+        //{
+        //    try
+        //    {
+        //        if (oButaca == null)
+        //            return BadRequest("butaca inválida!!!");
+        //        if (app.saveButaca(oButaca))
+        //            return Ok(oButaca);
+        //        else
+        //            return NotFound("No se pudo guardar la butaca!!!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Error interno!!! Intente luego...");
+        //    }
 
-        }
+        //}
         [HttpGet("/Butacas/traer{id}")]
-        public IActionResult GetButacas(string titulo, int id, int estreno)
+        public IActionResult GetButacas( int id_funcion)
         {
             try
             {
-                List<Butaca> lst = app.GetButacas_Funcion(id);
+                List<Butaca> lst = app.GetButacasXFuncion(id_funcion);
                 if (lst != null)
                     return Ok(lst);
                 else
@@ -148,13 +148,14 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+
         [HttpPut("/Butaca/act")]
-        public IActionResult ActualizarButaca(Butaca obutaca)
+        public IActionResult ActualizarButaca(bool ocupar,int id_funcion,string fila,int columna)
         {
             try
             {
 
-                if (app.ActButaca(obutaca))
+                if (app.OcuparButaca(ocupar,id_funcion,fila,columna))
                     return Ok("se actualizo la butaca con exito");
                 else
                     return NotFound("NO se encontradola butaca: ");
@@ -164,22 +165,22 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        [HttpDelete("/Butacas/borrar{id}")]
-        public IActionResult DeleteButaca(int id)
-        {
-            try
-            {
-                if (app.DeleteButaca(id))
-                    return Ok("se borro exitosamente");
-                else
-                    return NotFound("No se pudo borrar la butaca!!!");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno!!! Intente luego...");
-            }
+        //[HttpDelete("/Butacas/borrar{id}")]
+        //public IActionResult DeleteButaca(int id)
+        //{
+        //    try
+        //    {
+        //        if (app.DeleteButaca(id))
+        //            return Ok("se borro exitosamente");
+        //        else
+        //            return NotFound("No se pudo borrar la butaca!!!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Error interno!!! Intente luego...");
+        //    }
 
-        }
+        //}
         ///////////////////////////
         ////
 
@@ -205,7 +206,7 @@ namespace CineApi.Controllers
         {
             try
             {
-                List<Pelicula> lst = app.Peliculas(titulo,estreno,genero);
+                List<Pelicula> lst = app.GetPeliculasX3Condiciones(titulo,estreno,genero);
                 if (lst != null)
                     return Ok(lst);
                 else
@@ -256,7 +257,7 @@ namespace CineApi.Controllers
             {
                 if (oFuncion == null)
                     return BadRequest("Funcion inválida!!!");
-                if (app.saveFuncion(oFuncion))
+                if (app.SaveFuncion(oFuncion))
                     return Ok(oFuncion);
                 else
                     return NotFound("No se pudo guardar la Funcion!!!");
@@ -273,7 +274,7 @@ namespace CineApi.Controllers
             try
             {
 
-                if (app.ActFuncion(f))
+                if (app.UpdateFuncion(f))
                     return Ok("se actualizo la funcion con exito");
                 else
                     return NotFound("NO se encontradola funcion");
@@ -374,7 +375,7 @@ namespace CineApi.Controllers
             try
             {
 
-                if (app.ActComprobante(ocomprobante))
+                if (app.UpdateComprobante(ocomprobante))
                     return Ok("se actualizo la butaca con exito");
                 else
                     return NotFound("NO se encontradola butaca: ");
@@ -384,31 +385,31 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        [HttpDelete("/Comprobantes/borrar{id}")]
-        public IActionResult DeleteComprobante(Comprobante ocomprobante)
-        {
-            try
-            {
-                if (app.deleteComprobante(ocomprobante))
-                    return Ok("se borro exitosamente");
-                else
-                    return NotFound("No se pudo borrar la butaca!!!");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno!!! Intente luego...");
-            }
+        //[HttpDelete("/Comprobantes/borrar{id}")]
+        //public IActionResult DeleteComprobante(Comprobante ocomprobante)
+        //{
+        //    try
+        //    {
+        //        if (app.da(ocomprobante))
+        //            return Ok("se borro exitosamente");
+        //        else
+        //            return NotFound("No se pudo borrar la butaca!!!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Error interno!!! Intente luego...");
+        //    }
 
-        }
+        //}
         //////tickets
 
-        [HttpGet("/tickets")]
-        public IActionResult GetTickets()
+        [HttpGet("/comprobantes/getTickets")]
+        public IActionResult GetTicketsX(int id_comprobante)
         {
-            List<Pelicula> lst = null;
+            List<Ticket> lst = null;
             try
             {
-                lst = app.GetTickets();
+                lst = app.GetTicketsXComprobante(id_comprobante);
                 return Ok(lst);
 
             }
@@ -417,74 +418,74 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        [HttpGet("/tickets/getButacas")]
-        public IActionResult getGetButacaT()
-        {
-            List<Butaca> lst = null;
-            try
-            {
-                lst = app.GetButacaT();
-                return Ok(lst);
+        //[HttpGet("/tickets/getButacas")]
+        //public IActionResult getGetButacaT()
+        //{
+        //    List<Butaca> lst = null;
+        //    try
+        //    {
+        //        lst = app.GetButacaT();
+        //        return Ok(lst);
 
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Error interno! Intente luego");
+        //    }
+        //}
 
 
-        [HttpPost("/tickets")]
-        public IActionResult PostTickets(Ticket ticket)
-        {
-            try
-            {
-                if (ticket == null)
-                    return BadRequest("Ticket Invalido!");
-                if (app.SaveTicket(ticket))
-                    return Ok(ticket);
-                else
-                    return NotFound("No se pudo guardar el ticket");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error Interno!, Intente luego...");
-            }
-        }
+        //[HttpPost("/tickets")]
+        //public IActionResult PostTickets(Ticket ticket)
+        //{
+        //    try
+        //    {
+        //        if (ticket == null)
+        //            return BadRequest("Ticket Invalido!");
+        //        if (app.(ticket))
+        //            return Ok(ticket);
+        //        else
+        //            return NotFound("No se pudo guardar el ticket");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Error Interno!, Intente luego...");
+        //    }
+        //}
 
-        [HttpPut("/tickets")]
-        public IActionResult PutTicket(Ticket ticket)
-        {
-            try
-            {
+        //[HttpPut("/tickets")]
+        //public IActionResult PutTicket(Ticket ticket)
+        //{
+        //    try
+        //    {
 
-                if (app.ActTicket(ticket))
-                    return Ok("se actualizo el ticket con exito");
-                else
-                    return NotFound("NO se encontrado el ticket: ");
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
+        //        if (app.(ticket))
+        //            return Ok("se actualizo el ticket con exito");
+        //        else
+        //            return NotFound("NO se encontrado el ticket: ");
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500, "Error interno! Intente luego");
+        //    }
 
-        }
+        //}
 
-        [HttpDelete("/tickets/{id}")]
-        public IActionResult DeleteTickets(Ticket oTicket)
-        {
-            try
-            {
-                if (app.DeleteTicket(oTicket))
-                    return Ok("se borro exitosamente");
-                else
-                    return NotFound("No se pudo borrar el ticket!!!");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno!!! Intente luego...");
-            }
-        }
+        //[HttpDelete("/tickets/{id}")]
+        //public IActionResult DeleteTickets(Ticket oTicket)
+        //{
+        //    try
+        //    {
+        //        if (app.DeleteTicket(oTicket))
+        //            return Ok("se borro exitosamente");
+        //        else
+        //            return NotFound("No se pudo borrar el ticket!!!");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Error interno!!! Intente luego...");
+        //    }
+        //}
     }
 }
 
