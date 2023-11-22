@@ -60,7 +60,7 @@
             dgvPelicula.Name = "dgvPelicula";
             dgvPelicula.RowHeadersWidth = 51;
             dgvPelicula.RowTemplate.Height = 29;
-            dgvPelicula.Size = new Size(430, 351);
+            dgvPelicula.Size = new Size(432, 351);
             dgvPelicula.TabIndex = 4;
             // 
             // Column1
@@ -148,6 +148,7 @@
             btnAdd.TabIndex = 11;
             btnAdd.Text = "AGREGAR";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnSerch
             // 
@@ -246,6 +247,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(309, 482);
             panel1.TabIndex = 13;
+            panel1.Paint += panel1_Paint;
             // 
             // label4
             // 

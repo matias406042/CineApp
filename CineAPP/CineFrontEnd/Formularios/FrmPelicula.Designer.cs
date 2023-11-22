@@ -109,9 +109,9 @@
             label2.ForeColor = Color.LightGray;
             label2.Location = new Point(107, 197);
             label2.Name = "label2";
-            label2.Size = new Size(89, 20);
+            label2.Size = new Size(186, 20);
             label2.TabIndex = 6;
-            label2.Text = "DURACION";
+            label2.Text = "DURACION EN MINUTOS";
             // 
             // label3
             // 

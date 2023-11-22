@@ -82,5 +82,16 @@ namespace CineFrontEnd.Formularios
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmPelicula frm = new FrmPelicula();
+            frm.ShowDialog();
+        }
     }
 }

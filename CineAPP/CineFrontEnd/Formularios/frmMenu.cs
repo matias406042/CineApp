@@ -33,8 +33,8 @@ namespace CineFrontEnd.Formularios
 
         private void btnPeliculas_Click(object sender, EventArgs e)
         {
-            FrmPelicula frmPelicula = new FrmPelicula();
-            frmPelicula.ShowDialog();
+            FrmPeliculasSeleccionar frmPeliculaSeleccionar = new FrmPeliculasSeleccionar();
+            frmPeliculaSeleccionar.ShowDialog();
         }
 
         private void btnTickets_Click(object sender, EventArgs e)

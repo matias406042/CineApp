@@ -55,10 +55,11 @@ select *
 from GENEROS_PELICULAS
 end
 select * from PELICULAS
+
 create procedure SP_GET_SALAS
 as
 begin
-select s.id_Sala id_Sala, s.id_Tipo id_Tipo, Capacidad, s.descripcion Sala, t.descripcion Tipo 
+select s.id_Sala id_Sala, s.id_Tipo id_Tipo, s.descripcion Sala, t.descripcion Tipo 
 from Salas s join Tipos_Sala t on s.id_Tipo = t.id_Tipo
 end
 
