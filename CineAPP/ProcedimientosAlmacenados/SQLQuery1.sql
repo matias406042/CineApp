@@ -272,3 +272,18 @@ select * from Butacas where id_funcion = 11
 update Butacas
 set estado = 'Disponible'
 where id_funcion =11
+
+alter procedure SP_REPORTE_COMPROBANTES
+@desde datetime,
+@hasta datetime
+as
+begin
+select  c.id_comprobante ID, c.fecha Fecha,count(*)'Cantidad_de_tickets', d.descripcion 'Razon_descuento', d.porcentaje 'Valor_del_descuento',sum(Pre_unit)'Total_sin_descuentos aplicados', Total 'Total_real'
+from COMPROBANTES c join TICKETS t on c.id_comprobante = t.id_comprobante 
+join DESCUENTOS d on d.id_descuento = c.id_descuento
+join Butacas b on b.id_Butaca = t.id_butaca
+join FUNCIONES f on f.id_funcion = b.id_funcion
+join Salas s on s.id_Sala = f.id_sala
+where c.fecha between @desde and @hasta
+group by c.id_comprobante,c.fecha,d.descripcion,d.porcentaje,Total
+end

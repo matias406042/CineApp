@@ -78,6 +78,13 @@ namespace CineBackEnd.Datos.Implementacion
             return descuentos;
         }
 
-      
+        public DataTable GetComprobantes(DateTime desde, DateTime hasta)
+        {
+            string sp = "SP_REPORTE_COMPROBANTES";
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@desde", desde));
+            parametros.Add(new SqlParameter("@hasta", hasta));
+            return HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
+        }
     }
 }
