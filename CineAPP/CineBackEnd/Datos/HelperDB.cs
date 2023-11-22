@@ -191,7 +191,7 @@ namespace CineBackEnd.Datos
 
         }
 
-        public bool SPMaestroDetalle(List<SqlParameter> pMaestro, List<SqlParameter> pDetalle, string SPMaestro, string SPDetalle, string nameNROMaestro)
+        public bool SPMaestroDetalle(List<SqlParameter> pMaestro, List<List<SqlParameter>> pDetalles, string SPMaestro, string SPDetalle, string nameNROMaestro)
         {
             bool aux = true;
             SqlTransaction t = null;
@@ -227,11 +227,13 @@ namespace CineBackEnd.Datos
                 SqlCommand cmdDetalles = new SqlCommand(SPDetalle, cnn, t);
                 cmdDetalles.CommandType = CommandType.StoredProcedure;
 
-                foreach (SqlParameter p in pDetalle)
+                foreach (List<SqlParameter> lstp in pDetalles)
                 {
                     cmdDetalles.Parameters.Clear();
-                    cmdDetalles.Parameters.Add(p);
-                    cmdDetalles.Parameters.AddWithValue(nameNROMaestro, nroMaestro);
+                    foreach (SqlParameter pd in lstp)
+                    {
+                        cmdDetalles.Parameters.Add(pd);
+                    }
                     cmdDetalles.ExecuteNonQuery();
                 }
                 t.Commit();

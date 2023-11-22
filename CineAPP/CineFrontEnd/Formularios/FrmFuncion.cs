@@ -110,9 +110,12 @@ namespace CineFrontEnd.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Validar Datos
+<<<<<<< HEAD
 
 
             //no se que validar aca digamos que es un solo botoncito, cualquier cosa puse un "no hay nada" cuando no hay nada. profundo.
+=======
+>>>>>>> apiwork
             pelis = dao.GetPeliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
             dgvPelis.Rows.Clear();
             foreach (Pelicula p in pelis)

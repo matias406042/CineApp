@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace CineBackEnd.Datos.Interfaz
 {
@@ -15,7 +16,8 @@ namespace CineBackEnd.Datos.Interfaz
         bool Crear(Pelicula p);
         bool Actualizar(Pelicula p);
         bool BorrarPelicula(int id);
-        public Pelicula PeliculaXID(int id);
+        Pelicula PeliculaXID(int id);
+        DataTable PeliculasReporte(int seleccion);
 
     }
 }

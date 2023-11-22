@@ -113,6 +113,7 @@ namespace CineBackEnd.Datos.Implementacion
         }
 
 
+
         public List<Productora> GetProductora()
         {
             List<Productora> lstProductora = new List<Productora>();
@@ -133,6 +134,15 @@ namespace CineBackEnd.Datos.Implementacion
 
             }
             return lstGeneros;
+        }
+
+
+        public DataTable PeliculasReporte(int seleccion)
+        {
+            string sp = "SP_REPORTE_PELICULAS";
+            List<SqlParameter> lst = new List<SqlParameter>();
+            lst.Add(new SqlParameter("@seleccion", seleccion));
+            return HelperDB.ObtenerInstancia().ConsultaSQL(sp, lst);
         }
 
     }

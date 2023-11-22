@@ -31,9 +31,15 @@
     <Compile Update="Reportes\frmReporteComprobantes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Reportes\frmReportePeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="Reportes\DScomrpobantes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Reportes\DSpeliculas.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
