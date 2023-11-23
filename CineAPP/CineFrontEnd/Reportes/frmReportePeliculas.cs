@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
+using Newtonsoft.Json;
+using CineFrontEnd.Http;
 
 namespace CineFrontEnd.Reportes
 {
     public partial class frmReportePeliculas : Form
     {
         IPeliculaDao dao;
+
         public frmReportePeliculas()
         {
             InitializeComponent();
@@ -22,28 +25,34 @@ namespace CineFrontEnd.Reportes
             cboSeleccion.SelectedIndex = 0;
         }
 
-        private void btnGenerar_Click(object sender, EventArgs e)
+        private async void btnGenerar_Click(object sender, EventArgs e)
         {
             if(cboSeleccion.SelectedIndex == 0)
             {
+                string url = "https://localhost:7168/PeliculasRep?selec=" + 1;
+                var result = await Cliente.GetInstance().GetAsync(url);
+                var dt = JsonConvert.DeserializeObject<DataTable>(result);
                 reportViewer1.LocalReport.ReportEmbeddedResource = "CineFrontEnd.Reportes.rdlcPeliculasGenero.rdlc";
-                DataTable dt = dao.PeliculasReporte(1);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dt));
                 reportViewer1.RefreshReport();
             }
             else if(cboSeleccion.SelectedIndex == 1)
             {
+                string url = "https://localhost:7168/PeliculasRep?selec=" + 2;
+                var result = await Cliente.GetInstance().GetAsync(url);
+                var dt = JsonConvert.DeserializeObject<DataTable>(result);
                 reportViewer1.LocalReport.ReportEmbeddedResource = "CineFrontEnd.Reportes.rdlcPeliculasClasificacion.rdlc";
-                DataTable dt = dao.PeliculasReporte(2);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dt));
                 reportViewer1.RefreshReport();
             }
             else
             {
+                string url = "https://localhost:7168/PeliculasRep?selec=" + 3;
+                var result = await Cliente.GetInstance().GetAsync(url);
+                var dt = JsonConvert.DeserializeObject<DataTable>(result);
                 reportViewer1.LocalReport.ReportEmbeddedResource = "CineFrontEnd.Reportes.rdlcPeliculasProductora.rdlc";
-                DataTable dt = dao.PeliculasReporte(3);
                 reportViewer1.LocalReport.DataSources.Clear();
                 reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dt));
                 reportViewer1.RefreshReport();
