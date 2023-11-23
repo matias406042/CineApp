@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ou1qLhIY7NpvX0FYiKKZvlq74Wz2q4xJl9HzH1amYV6qutQqlbKZsUXNPnYd4pCq2BJTmIw1YLsN+cAdv/Nzvg==",
+  "dgSpecHash": "PZFYbW4c17JotFt5BSp0EHqnqs1HjmJu/dZEKAL4xvnaLtPIZ4vRCsDdJR2TyTN9f3XM4IUdyuTl26T9JoibsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\finale\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\TP3\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -13,10 +13,7 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

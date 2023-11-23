@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CineBackEnd.Entidades;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
+using CineFrontEnd.Http;
+using Newtonsoft.Json;
 
 namespace CineFrontEnd.Formularios
 {
@@ -99,7 +101,7 @@ namespace CineFrontEnd.Formularios
                     break;
                 }
             }
-            frmButacas butacas = new frmButacas(fDao.BuscarButacas(funcionElegida));
+            frmButacas butacas = new frmButacas(ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(funcionElegida.Id));
             AddOwnedForm(butacas);
             butacas.ShowDialog();
         }
@@ -168,7 +170,7 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             //Validar datos
             FrmComprobante comprobanteForm = Owner as FrmComprobante;
@@ -208,20 +210,26 @@ namespace CineFrontEnd.Formularios
 
                     }
 
-                    if(txtButaca.Text == string.Empty)
+                    if(txtButaca.Text != string.Empty)
                     {
-                        MessageBox.Show("Se debe elegir una butaca", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
 
-                    //aaaaaaaaaaaaaaaaaaaaaaaa
-                    t.Funcion = f;
-                    t.Precio = Convert.ToDouble(f.Sala.Precio);
-                    t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
-                    t.Butaca.Fila = txtButaca.Text.Substring(0, 1);
-                    _ = fDao.OcuparButaca(true, f.Id, t.Butaca.Fila, t.Butaca.Columna);
-                    ticketList.Add(t);
-                    //comprobanteForm.cboTicket.DataSource = ticketList;
-                    this.Dispose();
+                        //aaaaaaaaaaaaaaaaaaaaaaaa
+                        t.Funcion = f;
+                        t.Precio = Convert.ToDouble(f.Sala.Precio);
+                        t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
+                        t.Butaca.Fila = txtButaca.Text.Substring(0, 1);
+                        string url1 = "https://localhost:7168/Butaca/ocupar";
+                        string bodycontent = JsonConvert.SerializeObject(t);
+                        var result2 = await Cliente.GetInstance().PutAsync(url1, bodycontent);
+                      
+                        ticketList.Add(t);
+                        //comprobanteForm.cboTicket.DataSource = ticketList;
+                        this.Dispose();
+
+                        
+                    }
+                    else MessageBox.Show("Se debe elegir una butaca", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
                 }
             }

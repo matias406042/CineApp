@@ -112,27 +112,8 @@ namespace CineApi.Controllers
             }
 
         }
-        /////////////////////////////////////////////////
-        /// butacas 
 
-        //[HttpPost("/butacas/cargar")]
-        //public IActionResult PostButaca(Butaca oButaca)
-        //{
-        //    try
-        //    {
-        //        if (oButaca == null)
-        //            return BadRequest("butaca inválida!!!");
-        //        if (app.saveButaca(oButaca))
-        //            return Ok(oButaca);
-        //        else
-        //            return NotFound("No se pudo guardar la butaca!!!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error interno!!! Intente luego...");
-        //    }
-
-        //}
+       
         [HttpGet("/Butacas/traer{id}")]
         public IActionResult GetButacas( int id_funcion)
         {
@@ -150,16 +131,32 @@ namespace CineApi.Controllers
             }
         }
 
-        [HttpPut("/Butaca/act")]
-        public IActionResult ActualizarButaca(bool ocupar,int id_funcion,string fila,int columna)
+        [HttpPut("/Butaca/desocupar")]
+        public IActionResult PutButacaOcupar(Ticket t)
         {
             try
             {
 
-                if (app.OcuparButaca(ocupar,id_funcion,fila,columna)>0)
+                if (app.OcuparButaca(false,t.Funcion.Id,t.Butaca.Fila,t.Butaca.Columna)>0)
                     return Ok("se actualizo la butaca con exito");
                 else
-                    return NotFound("NO se encontradola butaca: ");
+                    return NotFound("NO se encontrado la butaca: ");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        [HttpPut("/Butaca/ocupar")]
+        public IActionResult PutButacaDesocupar(Ticket t)
+        {
+            try
+            {
+
+                if (app.OcuparButaca(true, t.Funcion.Id, t.Butaca.Fila, t.Butaca.Columna) > 0)
+                    return Ok("se actualizo la butaca con exito");
+                else
+                    return NotFound("NO se encontrado la butaca: ");
             }
             catch (Exception)
             {
@@ -351,7 +348,7 @@ namespace CineApi.Controllers
         }
 
         //// POST api/<ComprobanteController>
-        [HttpPost("/comprobantes")]
+        [HttpPost("/comprobante/save")]
         public IActionResult PostComprobante(Comprobante comprobante)
         {
             try

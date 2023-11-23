@@ -43,7 +43,7 @@ namespace CineFrontEnd.Formularios
                 return total - (total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0, 2));
             else return total;
         }
-  
+
 
         private async void AsyncCargarDecuento()
         {
@@ -68,6 +68,8 @@ namespace CineFrontEnd.Formularios
 
         }
 
+       
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             // realizar el insert que devuelva un output int que vamos a usar para mostrar un reporte del
@@ -75,35 +77,25 @@ namespace CineFrontEnd.Formularios
         }
 
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
             //Validaciones
-
-            if(dgvTickets.Rows.Count <= 0) {
-                MessageBox.Show("Se debe asignar al menos un ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-            //
             comprobante.FormaPAgo.Id = (int)cboFormaPago.SelectedValue;
             comprobante.Total = CalcularTotal();
             if (cbxDescuento.Checked)
                 comprobante.Descuento.Id = (int)cboDescuento.SelectedValue;
             else comprobante.Descuento.Id = 0;
-            if (dao.Crear(comprobante))
-                MessageBox.Show("Se creo con exito el comprobante", "Exito!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+
+            if (dgvTickets.Rows.Count <= 0)
             {
-
-                foreach (Ticket ticket in comprobante.Tickets)
-                {
-                    fdao.OcuparButaca(false, ticket.Id, ticket.Butaca.Fila, ticket.Butaca.Columna);
-                }
-
-                MessageBox.Show("Hubo un error al crear el combrobante", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Dispose();
+                MessageBox.Show("Se debe asignar al menos un ticket", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            else
+                await GuardarComprobanteAsync();
+           
+
+           
         }
 
         private void btnTicket_Click_1(object sender, EventArgs e)
@@ -245,6 +237,34 @@ namespace CineFrontEnd.Formularios
         private void cboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private async Task GuardarComprobanteAsync()
+        {
+
+
+            string bodyContent = JsonConvert.SerializeObject(comprobante);
+
+            string url = "https://localhost:7168//comprobante/save";
+            var result = await Cliente.GetInstance().PostAsync(url, bodyContent);
+
+            if (result.Equals("true"))
+            {
+                MessageBox.Show("Comprobante registrado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("ERROR. No se pudo registrar el Comprobante", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                foreach (Ticket t in comprobante.Tickets)
+                {
+                    //hacer un put en butacas desocupar
+                    string url1 = "https://localhost:7168//Butaca/desocupar";
+                    string bodycontent = JsonConvert.SerializeObject(t);
+                    var result2 =  await Cliente.GetInstance().PutAsync(url1, bodycontent);
+                    
+                   
+                }
+            }
         }
     }
 }
