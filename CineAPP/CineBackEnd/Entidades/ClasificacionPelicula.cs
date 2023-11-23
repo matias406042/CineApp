@@ -12,6 +12,11 @@ namespace CineBackEnd.Entidades
 
         public int EdadMinima { get; set; }
 
+
+        public ClasificacionPelicula(int edad)
+        {
+            EdadMinima = edad;
+        }
         public ClasificacionPelicula()
         {
             

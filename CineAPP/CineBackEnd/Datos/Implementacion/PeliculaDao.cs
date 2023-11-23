@@ -123,18 +123,27 @@ namespace CineBackEnd.Datos.Implementacion
             {
                 Productora p = new Productora(fila["nombre"].ToString(), 
                                new Pais(Convert.ToInt32(fila["id_pais"]), fila["pais"].ToString()));
-                g.Id = Convert.ToInt32(fila["id_productora"]);
-                lstProductora.Add(g);
-
-
-
-                s.Descripcion = fila["Sala"].ToString();
-                s.Id = Convert.ToInt32(fila["id_Sala"]);
-                s.Tipo = new SalaTipo(Convert.ToInt32(fila["id_Tipo"]), fila["Tipo"].ToString());
-
+                p.Id = Convert.ToInt32(fila["id_productora"]);
+                lstProductora.Add(p);
             }
-            return lstGeneros;
+            return lstProductora;
         }
+
+
+        public List<ClasificacionPelicula> GetClasificacion()
+        {
+            List<ClasificacionPelicula> lstClasificacion = new List<ClasificacionPelicula>();
+            string sp = "SP_GET_CLASIFICACIONES";
+            DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, null);
+            foreach (DataRow fila in tabla.Rows)
+            {
+                ClasificacionPelicula p = new ClasificacionPelicula(Convert.ToInt32(fila["edad"]));
+                p.Id = Convert.ToInt32(fila["id_clasificacion"]);
+                lstClasificacion.Add(p);
+            }
+            return lstClasificacion;
+        }
+
 
 
         public DataTable PeliculasReporte(int seleccion)

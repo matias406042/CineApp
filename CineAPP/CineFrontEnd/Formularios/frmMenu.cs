@@ -47,7 +47,8 @@ namespace CineFrontEnd.Formularios
             }
             else
             {
-                MessageBox.Show("Ese reporte no existe todavia uwu", "perdon uwu");
+                frmReportePeliculas frmReportePeliculas = new frmReportePeliculas();
+                frmReportePeliculas.ShowDialog();
             }
 
 

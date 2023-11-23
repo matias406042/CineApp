@@ -18,6 +18,7 @@ namespace CineBackEnd.Datos.Interfaz
         bool BorrarPelicula(int id);
         Pelicula PeliculaXID(int id);
         DataTable PeliculasReporte(int seleccion);
-
+        List<ClasificacionPelicula> GetClasificacion();
+        List<Productora> GetProductora();
     }
 }

@@ -47,7 +47,7 @@ namespace CineBackEnd.Fachada.Implementacion
 
         public List<ClasificacionPelicula> GetClasificaciones()
         {
-            return daoPelicula.
+            return daoPelicula.GetClasificacion();
         }
 
         public DataTable GetComprobantes(DateTime desde ,DateTime hasta)
@@ -92,7 +92,7 @@ namespace CineBackEnd.Fachada.Implementacion
 
         public List<Productora> GetProductora()
         {
-            throw new NotImplementedException();
+            return daoPelicula.GetProductora();
         }
 
         public List<Sala> GetSalas()

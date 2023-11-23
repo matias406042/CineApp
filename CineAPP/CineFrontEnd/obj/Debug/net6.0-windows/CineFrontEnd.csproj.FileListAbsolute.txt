@@ -249,3 +249,4 @@ C:\Users\Usuario\Desktop\finale\TpIntegradorCine\CineAPP\CineFrontEnd\bin\Debug\
 =======
 D:\Facu\Programacion\Tp_final\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Reportes.frmReportePeliculas.resources
 >>>>>>> apiwork
+C:\Users\Usuario\Desktop\finale\TpIntegradorCine\CineAPP\CineFrontEnd\obj\Debug\net6.0-windows\CineFrontEnd.Reportes.frmReportePeliculas.resources
