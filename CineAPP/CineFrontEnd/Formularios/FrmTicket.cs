@@ -17,7 +17,7 @@ namespace CineFrontEnd.Formularios
 {
     public partial class FrmTicket : Form
     {
-        IFuncionDao fDao;
+        //IFuncionDao fDao;
         string butaca;
         List<Funcion> funciones;
         int idTick;
@@ -25,7 +25,7 @@ namespace CineFrontEnd.Formularios
         public FrmTicket(int id, List<Ticket> ticketlist)
         {
             InitializeComponent();
-            fDao = new FuncionDao();
+            //fDao = new FuncionDao();
             idTick = id;
             this.ticketList = ticketlist;
         }

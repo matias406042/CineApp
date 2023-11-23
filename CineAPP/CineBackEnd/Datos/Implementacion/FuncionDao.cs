@@ -253,7 +253,6 @@ namespace CineBackEnd.Datos.Implementacion
 
         public List<Butaca> BuscarButacas(Funcion f)
         {
-           
 
             return ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(f.Id);
         }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
+using CineFrontEnd.Http;
+using Newtonsoft.Json;
+using CineBackEnd.Entidades;
 
 namespace CineFrontEnd.Reportes
 {
@@ -21,9 +24,12 @@ namespace CineFrontEnd.Reportes
             dao = new ComprobanteDao();
         }
 
-        private void btnGenerar_Click(object sender, EventArgs e)
+        private async void btnGenerar_Click(object sender, EventArgs e)
         {
-            DataTable dt = dao.GetComprobantes(dtpDesde.Value,dtpHasta.Value);
+            string url = string.Format("https://localhost:7168/comprobantes?desde={0}&hasta={1}", dtpDesde.Value.ToString("yyyy-MM-dd"), dtpHasta.Value.ToString("yyyy-MM-dd"));
+            //DataTable dt = dao.GetComprobantes(dtpDesde.Value,dtpHasta.Value);
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var dt = JsonConvert.DeserializeObject<DataTable>(result);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dt));
             reportViewer1.RefreshReport();
