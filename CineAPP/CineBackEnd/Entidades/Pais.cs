@@ -14,7 +14,8 @@ namespace CineBackEnd.Entidades
 
         public Pais()
         {
-            
+            Id= 0;
+            Nombre = "";
         }
         public Pais(int id, string pais)
         {

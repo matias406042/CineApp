@@ -27,6 +27,11 @@ namespace CineFrontEnd.Http
             var content = "";
             if (result.IsSuccessStatusCode)
                 content = await result.Content.ReadAsStringAsync();
+            if (!result.IsSuccessStatusCode)
+            {
+                var errorDetails = await result.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {errorDetails}");
+            }
             return content;
         }
         public async Task<string> PostAsync(string url, string data)
@@ -37,6 +42,11 @@ namespace CineFrontEnd.Http
             var response = "";
             if (result.IsSuccessStatusCode)
                 response = await result.Content.ReadAsStringAsync();
+            if (!result.IsSuccessStatusCode)
+            {
+                var errorDetails = await result.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {errorDetails}");
+            }
             return response;
         }
         public async Task<string> PutAsync(string url, string data)
@@ -46,6 +56,11 @@ namespace CineFrontEnd.Http
             var response = "";
             if (result.IsSuccessStatusCode)
                 response = await result.Content.ReadAsStringAsync();
+            if (!result.IsSuccessStatusCode)
+            {
+                var errorDetails = await result.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {errorDetails}");
+            }
             return response;
         }
 
@@ -55,6 +70,18 @@ namespace CineFrontEnd.Http
             var response = "";
             if (result.IsSuccessStatusCode)
                 response = await result.Content.ReadAsStringAsync();
+            return response;
+        }
+        public async Task<string> PostAsync(string urlPost)
+        {
+            //StringContent content = new StringContent(dataJson, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage responseHTTP = await client.PostAsync(urlPost, null);
+            var response = "";
+            if (responseHTTP.IsSuccessStatusCode)
+            {
+                response = await responseHTTP.Content.ReadAsStringAsync();
+            }
             return response;
         }
     }

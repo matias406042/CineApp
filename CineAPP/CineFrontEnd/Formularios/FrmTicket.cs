@@ -83,7 +83,7 @@ namespace CineFrontEnd.Formularios
             this.Dispose();
         }
 
-        private void btnButacas_Click(object sender, EventArgs e)
+        private async void btnButacas_Click(object sender, EventArgs e)
         {
             Funcion funcionElegida = new Funcion();
             foreach (DataGridViewRow fila in dgvFunciones.Rows)
@@ -101,7 +101,11 @@ namespace CineFrontEnd.Formularios
                     break;
                 }
             }
-            frmButacas butacas = new frmButacas(ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(funcionElegida.Id));
+            string url = String.Format("https://localhost:7168/Butacas/traerid?id_funcion={0}",funcionElegida.Id); 
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var lstbutacas = JsonConvert.DeserializeObject<List<Butaca>>(result);
+            //frmButacas butacas = new frmButacas(ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(funcionElegida.Id));
+            frmButacas butacas = new frmButacas(lstbutacas);
             AddOwnedForm(butacas);
             butacas.ShowDialog();
         }
@@ -116,18 +120,30 @@ namespace CineFrontEnd.Formularios
             dtpFecha.Enabled = !dtpFecha.Enabled;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
+            dgvFunciones.Rows.Clear();
             funciones = new List<Funcion>();
-            if (cbxTitulo.Checked & cbxFecha.Checked)
-                funciones = fDao.GetFunciones(dtpFecha.Value, txbTitulo.Text);
-            else if (cbxTitulo.Checked & !cbxFecha.Checked)
-                funciones = fDao.GetFunciones(DateTime.MinValue, txbTitulo.Text);
-            else if (!cbxTitulo.Checked & cbxFecha.Checked)
-                funciones = fDao.GetFunciones(dtpFecha.Value, String.Empty);
+            string url = "";
+            if (cbxTitulo.Checked)
+            {
+                url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}&titulo={1}", dtpFecha.Value.ToString("yyyy-MM-dd"), txbTitulo.Text);
+            }
             else
-                funciones = fDao.GetFunciones(DateTime.MinValue, "");
-
+            {
+                url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}&titulo=12365448632163s6sd6f", dtpFecha.Value.ToString("yyyy-MM-dd"));
+            }
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var lstfunciones = JsonConvert.DeserializeObject<List<Funcion>>(result);
+            //if (cbxTitulo.Checked & cbxFecha.Checked)
+            //    funciones = fDao.GetFunciones(dtpFecha.Value, txbTitulo.Text);
+            //else if (cbxTitulo.Checked & !cbxFecha.Checked)
+            //    funciones = fDao.GetFunciones(DateTime.MinValue, txbTitulo.Text);
+            //else if (!cbxTitulo.Checked & cbxFecha.Checked)
+            //    funciones = fDao.GetFunciones(dtpFecha.Value, String.Empty);
+            //else
+            //    funciones = fDao.GetFunciones(DateTime.MinValue, "");
+            funciones = lstfunciones;
             //VALIDACION UWU
 
             if (funciones.Count <= 0)
@@ -218,10 +234,10 @@ namespace CineFrontEnd.Formularios
                         t.Precio = Convert.ToDouble(f.Sala.Precio);
                         t.Butaca.Columna = Convert.ToInt32(txtButaca.Text.Substring(1));
                         t.Butaca.Fila = txtButaca.Text.Substring(0, 1);
+                        t.Butaca.Estado = "Ocupada";
                         string url1 = "https://localhost:7168/Butaca/ocupar";
                         string bodycontent = JsonConvert.SerializeObject(t);
                         var result2 = await Cliente.GetInstance().PutAsync(url1, bodycontent);
-                      
                         ticketList.Add(t);
                         //comprobanteForm.cboTicket.DataSource = ticketList;
                         this.Dispose();

@@ -16,7 +16,12 @@ namespace CineBackEnd.Entidades
         public Pais Nacionalidad { get; set; }
         public Director()
         {
-
+            ID = 0;
+            Nombre = "";
+            Apellido = "";
+            Edad = 0;
+            Nacionalidad = new Pais();
+             
         }
         public override string ToString()
         {

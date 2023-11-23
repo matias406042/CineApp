@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection(@"Data Source=DESKTOP-JDKTHBG\SQLEXPRESS;Initial Catalog=TP_LABORATORIO_FINAL;Integrated Security=True");
+            cnn = new SqlConnection(Properties.Resources.conexionTomi);
         }
 
         public static HelperDB ObtenerInstancia()
@@ -232,6 +232,7 @@ namespace CineBackEnd.Datos
                     cmdDetalles.Parameters.Clear();
                     foreach (SqlParameter pd in lstp)
                     {
+                        cmdDetalles.Parameters.AddWithValue(nameNROMaestro, nroMaestro);
                         cmdDetalles.Parameters.Add(pd);
                     }
                     cmdDetalles.ExecuteNonQuery();

@@ -18,15 +18,15 @@ namespace CineFrontEnd.Formularios
     public partial class FrmComprobante : Form
     {
         Comprobante comprobante;
-        IComprobanteDao dao;
-        IFuncionDao fdao;
+        //IComprobanteDao dao;
+        //IFuncionDao fdao;
         List<Ticket> ticketList;
         public FrmComprobante()
         {
             InitializeComponent();
             comprobante = new Comprobante();
-            dao = new ComprobanteDao();
-            fdao = new FuncionDao();
+            //dao = new ComprobanteDao();
+            //fdao = new FuncionDao();
             AsyncCargarPagos();
             AsyncCargarDecuento();
             txtTotal.Text = CalcularTotal().ToString();
@@ -70,21 +70,19 @@ namespace CineFrontEnd.Formularios
 
        
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            // realizar el insert que devuelva un output int que vamos a usar para mostrar un reporte del
-            // comprobante a travez del cliente http
-        }
-
 
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             //Validaciones
-            comprobante.FormaPAgo.Id = (int)cboFormaPago.SelectedValue;
+            comprobante.FormaPago = (FormaPago)cboFormaPago.SelectedItem;
             comprobante.Total = CalcularTotal();
             if (cbxDescuento.Checked)
-                comprobante.Descuento.Id = (int)cboDescuento.SelectedValue;
-            else comprobante.Descuento.Id = 0;
+                comprobante.Descuento = (Descuento)cboDescuento.SelectedItem;
+            else
+            {
+                comprobante.Descuento = new Descuento(0, "", 0);
+            }
+
 
             if (dgvTickets.Rows.Count <= 0)
             {
@@ -93,28 +91,26 @@ namespace CineFrontEnd.Formularios
             }
             else
                 await GuardarComprobanteAsync();
-           
 
-           
         }
 
         private void btnTicket_Click_1(object sender, EventArgs e)
         {
             int idTicket = dgvTickets.Rows.Count;
             FrmTicket ti = new FrmTicket(idTicket + 1, ticketList);
-            //AddOwnedForm(ti);
+            
             ti.ShowDialog();
             comprobante.Tickets = ticketList;
-            //ticketList.Clear();
+            
             dgvTickets.Rows.Clear();
             foreach (Ticket t in ticketList)
             {
-                //ticketList.Add(t);
+                
                 string desde = $"{t.Funcion.HorarioInicio.Hour.ToString()}:{t.Funcion.HorarioInicio.Minute.ToString()}:{t.Funcion.HorarioInicio.Second.ToString()}";
                 string hasta = $"{t.Funcion.HorarioFin.Hour.ToString()}:{t.Funcion.HorarioFin.Minute.ToString()}:{t.Funcion.HorarioFin.Second.ToString()}";
                 dgvTickets.Rows.Add(new object[]
                 {
-                        t.Funcion.Pelicula,
+                        t.Funcion.Pelicula.Titulo,
                         t.Funcion.Sala.Descripcion,
                         $"{desde} A {hasta}",
                         t.Butaca.ToString(),
@@ -124,30 +120,7 @@ namespace CineFrontEnd.Formularios
             }
         }
 
-        //private void cboTicket_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    Ticket t = (Ticket)cboTicket.SelectedItem;
-        //    comprobante.AgregarTicket(t);
-        //    string desde = $"{t.Funcion.HorarioInicio.Hour.ToString()}:{t.Funcion.HorarioInicio.Minute.ToString()}:{t.Funcion.HorarioInicio.Second.ToString()}";
-        //    string hasta = $"{t.Funcion.HorarioFin.Hour.ToString()}:{t.Funcion.HorarioFin.Minute.ToString()}:{t.Funcion.HorarioFin.Second.ToString()}";
-        //    dgvTickets.Rows.Add(new object[]
-        //    {
-        //        t.Funcion.Pelicula,
-        //        t.Funcion.Sala.Descripcion,
-        //        $"{desde} A {hasta}",
-        //        t.Butaca.ToString(),
-        //        t.Funcion.Sala.Precio,
-        //        "Borrar"
-        //    });
-        //    txtTotal.Text = CalcularTotal().ToString();
-        //}
-
         private void FrmComprobante_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -181,71 +154,23 @@ namespace CineFrontEnd.Formularios
             }
         }
 
-        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1 & e.ColumnIndex == 5)
             {
-                fdao.OcuparButaca(false, comprobante.Tickets[e.RowIndex].Funcion.Id,
-                                        comprobante.Tickets[e.RowIndex].Butaca.Fila,
-                                        comprobante.Tickets[e.RowIndex].Butaca.Columna);
+                string url = "https://localhost:7168/Butaca/desocupar";
+                Ticket t = comprobante.Tickets[e.RowIndex];
+                string bodycontent = JsonConvert.SerializeObject(t);
+                var result = await Cliente.GetInstance().PutAsync(url, bodycontent);
                 comprobante.EliminarTicket(e.RowIndex);
-                //cboTicket.Items.RemoveAt(e.RowIndex);
                 dgvTickets.Rows.RemoveAt(e.RowIndex);
             }
         }
-
-        private void cboTicket_DataSourceChanged(object sender, EventArgs e)
-        {
-            //Ticket t = (Ticket)cboTicket.SelectedItem;
-            //comprobante.AgregarTicket(t);
-            //string desde = $"{t.Funcion.HorarioInicio.Hour.ToString()}:{t.Funcion.HorarioInicio.Minute.ToString()}:{t.Funcion.HorarioInicio.Second.ToString()}";
-            //string hasta = $"{t.Funcion.HorarioFin.Hour.ToString()}:{t.Funcion.HorarioFin.Minute.ToString()}:{t.Funcion.HorarioFin.Second.ToString()}";
-            //dgvTickets.Rows.Add(new object[]
-            //{
-            //        t.Funcion.Pelicula,
-            //        t.Funcion.Sala.Descripcion,
-            //        $"{desde} A {hasta}",
-            //        t.Butaca.ToString(),
-            //        t.Funcion.Sala.Precio,
-            //        "Borrar"
-            //});
-            //txtTotal.Text = CalcularTotal().ToString();
-            //ticketList.Clear();
-            //dgvTickets.Rows.Clear();
-            //foreach (Ticket t in cboTicket.Items)
-            //{     
-            //    ticketList.Add(t);
-            //    string desde = $"{t.Funcion.HorarioInicio.Hour.ToString()}:{t.Funcion.HorarioInicio.Minute.ToString()}:{t.Funcion.HorarioInicio.Second.ToString()}";
-            //    string hasta = $"{t.Funcion.HorarioFin.Hour.ToString()}:{t.Funcion.HorarioFin.Minute.ToString()}:{t.Funcion.HorarioFin.Second.ToString()}";
-            //    dgvTickets.Rows.Add(new object[]
-            //    {
-            //            t.Funcion.Pelicula,
-            //            t.Funcion.Sala.Descripcion,
-            //            $"{desde} A {hasta}",
-            //            t.Butaca.ToString(),
-            //            t.Funcion.Sala.Precio,
-            //            "Borrar"
-            //    });
-            //}
-        }
-
-        private void lblDescuento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboFormaPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         private async Task GuardarComprobanteAsync()
         {
-
-
-            string bodyContent = JsonConvert.SerializeObject(comprobante);
-
-            string url = "https://localhost:7168//comprobante/save";
-            var result = await Cliente.GetInstance().PostAsync(url, bodyContent);
+            string bodyContent = JsonConvert.SerializeObject(comprobante);           
+            string url = "https://localhost:7168/comprobante/save";
+            var result = await Cliente.GetInstance().PostAsync(url,bodyContent);
 
             if (result.Equals("true"))
             {
@@ -257,14 +182,22 @@ namespace CineFrontEnd.Formularios
                 MessageBox.Show("ERROR. No se pudo registrar el Comprobante", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 foreach (Ticket t in comprobante.Tickets)
                 {
-                    //hacer un put en butacas desocupar
                     string url1 = "https://localhost:7168//Butaca/desocupar";
                     string bodycontent = JsonConvert.SerializeObject(t);
                     var result2 =  await Cliente.GetInstance().PutAsync(url1, bodycontent);
-                    
-                   
                 }
             }
+        }
+
+        private async void btnCancelar_Click(object sender, EventArgs e)
+        {
+            foreach (Ticket t in comprobante.Tickets)
+            {
+                string url = "https://localhost:7168//Butaca/desocupar";
+                string bodycontent = JsonConvert.SerializeObject(t);
+                var result = await Cliente.GetInstance().PutAsync(url, bodycontent);
+            }
+            this.Dispose();
         }
     }
 }

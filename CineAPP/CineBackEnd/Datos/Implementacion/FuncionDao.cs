@@ -104,7 +104,7 @@ namespace CineBackEnd.Datos.Implementacion
                 listParametros.Add(new SqlParameter("@fecha", fecha));
             else
                 listParametros.Add(new SqlParameter("@fecha", null));
-            if (titulo != string.Empty)
+            if (titulo != "12365448632163s6sd6f")
                 listParametros.Add(new SqlParameter("@titulo", titulo));
             else
                 listParametros.Add(new SqlParameter("@titulo", null));

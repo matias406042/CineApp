@@ -11,14 +11,14 @@ namespace CineBackEnd.Entidades
         public int Id { get; set; }
 
         public Descuento Descuento { get; set; }
-        public FormaPago FormaPAgo { get; set; }
+        public FormaPago FormaPago { get; set; }
         public double Total { get; set; }
         public List <Ticket> Tickets { get; set; }
         public Comprobante()
         {
             Descuento = new Descuento();
             Tickets = new List<Ticket>();
-            FormaPAgo = new FormaPago();
+            FormaPago = new FormaPago();
             Total = 0;
         }
 

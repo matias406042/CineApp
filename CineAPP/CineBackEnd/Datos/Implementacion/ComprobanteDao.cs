@@ -30,7 +30,7 @@ namespace CineBackEnd.Datos.Implementacion
             string spMaestro = "SP_ADD_COMPROBANTE";
             string spDetalle = "SP_ADD_TICKET";
             List<SqlParameter> paramsMaestro = new List<SqlParameter>();
-                paramsMaestro.Add(new SqlParameter("@id_pago", c.FormaPAgo.Id));
+                paramsMaestro.Add(new SqlParameter("@id_pago", c.FormaPago.Id));
                 paramsMaestro.Add(new SqlParameter("@total", c.Total));
                 if(c.Descuento.Id != 0)
                     paramsMaestro.Add(new SqlParameter("@id_descuento", c.Descuento.Id));
@@ -42,9 +42,18 @@ namespace CineBackEnd.Datos.Implementacion
             List<List<SqlParameter>> paramsDetalles = new List<List<SqlParameter>>();
             foreach (Ticket t in c.Tickets)
             {
+                Butaca butaca = new Butaca();
+                List<Butaca> lstB = ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(t.Funcion.Id);
+                foreach (Butaca b in lstB)
+                {
+                    if(b.ToString() == t.Butaca.ToString())
+                    {
+                        t.Butaca = b;
+                        break;
+                    }
+                }
                 List<SqlParameter> pdetalles = new List<SqlParameter>();
-                pdetalles.Add(new SqlParameter("@id_funcion", t.Funcion.Id));
-                pdetalles.Add(new SqlParameter("@id_butaca", t.Butaca));
+                pdetalles.Add(new SqlParameter("@id_butaca", t.Butaca.Id));
                 paramsDetalles.Add(pdetalles);
             }
             return HelperDB.ObtenerInstancia().SPMaestroDetalle(paramsMaestro, paramsDetalles, spMaestro, spDetalle, "@id_comprobante");

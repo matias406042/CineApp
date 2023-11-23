@@ -22,7 +22,7 @@ namespace CineApi.Controllers
 
 
         // GET: api/<cineController>
-        [HttpGet]
+       // [HttpGet]
         [HttpGet("/Peliculas/traer{id}")]
         public IActionResult GetPeliculaxID(int id_pelicula)
         {
@@ -132,7 +132,7 @@ namespace CineApi.Controllers
         }
 
         [HttpPut("/Butaca/desocupar")]
-        public IActionResult PutButacaOcupar(Ticket t)
+        public IActionResult PutButacaDesocupar(Ticket t)
         {
             try
             {
@@ -147,14 +147,18 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+
         [HttpPut("/Butaca/ocupar")]
-        public IActionResult PutButacaDesocupar(Ticket t)
+        public IActionResult PutButacaOcupar(Ticket t)
         {
             try
             {
-
-                if (app.OcuparButaca(true, t.Funcion.Id, t.Butaca.Fila, t.Butaca.Columna) > 0)
-                    return Ok("se actualizo la butaca con exito");
+                if(t != null)
+                {
+                    return Ok(app.OcuparButaca(true, t.Funcion.Id, t.Butaca.Fila, t.Butaca.Columna)); 
+                }
+                //if (app.OcuparButaca(true, t.Funcion.Id, t.Butaca.Fila, t.Butaca.Columna) > 0)
+                //    return Ok("se actualizo la butaca con exito");
                 else
                     return NotFound("NO se encontrado la butaca: ");
             }
@@ -183,7 +187,7 @@ namespace CineApi.Controllers
         ////
 
         [HttpGet("/Funciones/traerFunciones")]
-        public IActionResult GetFunciones(DateTime fecha, string titulo)
+        public IActionResult GetFunciones(DateTime fecha, string titulo = null)
         {
             try
             {
@@ -353,12 +357,13 @@ namespace CineApi.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
                 if (comprobante == null)
                     return BadRequest("Comprobante Invalido!");
-                if (app.SaveComprobante(comprobante))
-                    return Ok(comprobante);
-                else
-                    return NotFound("No se pudo guardar el comprobante");
+                return Ok(app.SaveComprobante(comprobante));
+                //else
+                //    return NotFound("No se pudo guardar el comprobante");
             }
             catch (Exception ex)
             {
