@@ -259,10 +259,8 @@ namespace CineApi.Controllers
             {
                 if (oFuncion == null)
                     return BadRequest("Funcion inválida!!!");
-                if (app.SaveFuncion(oFuncion))
-                    return Ok(oFuncion);
-                else
-                    return NotFound("No se pudo guardar la Funcion!!!");
+                return Ok(app.SaveFuncion(oFuncion));
+          
             }
             catch (Exception ex)
             {

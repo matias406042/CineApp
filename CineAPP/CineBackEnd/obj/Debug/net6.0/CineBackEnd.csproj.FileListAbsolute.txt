@@ -122,3 +122,18 @@ D:\Facu\Programacion\TP_Finalisimo_Definitivo_deluxe\TpIntegradorCine\CineAPP\Ci
 D:\Facu\Programacion\TP_Finalisimo_Definitivo_deluxe\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\refint\CineBackEnd.dll
 D:\Facu\Programacion\TP_Finalisimo_Definitivo_deluxe\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.pdb
 D:\Facu\Programacion\TP_Finalisimo_Definitivo_deluxe\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\ref\CineBackEnd.dll
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.Properties.Resources.resources
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.sourcelink.json
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.dll
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\refint\CineBackEnd.dll
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\CineBackEnd.pdb
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.deps.json
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.dll
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\bin\Debug\net6.0\CineBackEnd.pdb
+C:\Users\Usuario\Desktop\tp final final fnail final\TpIntegradorCine\CineAPP\CineBackEnd\obj\Debug\net6.0\ref\CineBackEnd.dll

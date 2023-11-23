@@ -80,6 +80,11 @@ namespace CineFrontEnd.Formularios
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Funcion ff = new Funcion();
+            if( listaFunciones == null || listaFunciones.Count == 0)
+            {
+                MessageBox.Show("Se debe seleccionar una función", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             foreach (Funcion fun in listaFunciones)
             {
                 if(fun.Id == Convert.ToInt32(dgvFunciones.CurrentRow.Cells["colIdFuncion"].Value)) 
@@ -87,6 +92,8 @@ namespace CineFrontEnd.Formularios
                     ff = fun;
                     break;
                 }
+
+                
             }
             FrmFuncion f = new FrmFuncion(ff);
             f.ShowDialog();
@@ -94,6 +101,13 @@ namespace CineFrontEnd.Formularios
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
+
+            if (listaFunciones == null || listaFunciones.Count == 0)
+            {
+                MessageBox.Show("Se debe seleccionar una función", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             if (DialogResult.Yes == MessageBox.Show("Esta seguro de borrar esta funcion", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
             {
                 Funcion ff = new Funcion();

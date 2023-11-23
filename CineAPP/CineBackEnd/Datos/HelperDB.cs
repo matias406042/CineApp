@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection(Properties.Resources.conexionTomi);
+            cnn = new SqlConnection(Properties.Resources.conexionMateo);
         }
 
         public static HelperDB ObtenerInstancia()

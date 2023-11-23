@@ -56,6 +56,7 @@
             txtDimension = new TextBox();
             dtpFin = new DateTimePicker();
             dtpInicio = new DateTimePicker();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPelis).BeginInit();
             SuspendLayout();
             // 
@@ -297,12 +298,23 @@
             dtpInicio.TabIndex = 21;
             dtpInicio.Value = new DateTime(2023, 11, 18, 0, 0, 0, 0);
             // 
+            // button2
+            // 
+            button2.Location = new Point(393, 60);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 22;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // FrmFuncion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(775, 350);
+            Controls.Add(button2);
             Controls.Add(dtpInicio);
             Controls.Add(dtpFin);
             Controls.Add(txtDimension);
@@ -325,6 +337,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmFuncion";
             Text = "Funcion";
+            Load += FrmFuncion_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvPelis).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -363,5 +376,6 @@
         private DataGridViewTextBoxColumn ColEstreno;
         private DataGridViewTextBoxColumn ColClasif;
         private DataGridViewTextBoxColumn colProd;
+        private Button button2;
     }
 }

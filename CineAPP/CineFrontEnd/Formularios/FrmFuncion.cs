@@ -64,20 +64,23 @@ namespace CineFrontEnd.Formularios
         public FrmFuncion(Funcion f)
         {
             InitializeComponent();
+
             dao = new FuncionDao();
             funcion = f;
             editar = true;
             btnInsert.Text = "Editar";
-            AsyncCargarGeneros();
-            AsyncCargarSalas();
-            cboSala.SelectedIndex = f.Sala.Id - 1;
+
+
             txtTitulo.Text = f.Pelicula.Titulo;
             dtpFecha.Value = f.Fecha;
             dtpInicio.Value = f.HorarioInicio;
             dtpFin.Value = f.HorarioFin;
-            cboGenero.SelectedIndex = f.Pelicula.Genero.Id - 1;
             dgvPelis.Rows.Add(new object[] {f.Pelicula.Id,f.Pelicula.Titulo,f.Pelicula.Genero.Descripcion,f.Pelicula.Duracion,
                     f.Pelicula.Director.ToString(),f.Pelicula.FechaEstreno.ToShortDateString(),f.Pelicula.Clasificacion.EdadMinima,f.Pelicula.Productora.Nombre});
+
+
+            AsyncCargarGeneros();
+            AsyncCargarSalas();
         }
 
 
@@ -127,7 +130,14 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private async void AsyncBtnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private async void btnInsert_Click(object sender, EventArgs e)
         {
             //validar Datos
             if (dtpInicio.Value >= dtpFin.Value)
@@ -164,14 +174,17 @@ namespace CineFrontEnd.Formularios
                     }
                 }
                 ff.Fecha = dtpFecha.Value;
-                if (dao.Crear(ff))
-                {
-                    MessageBox.Show("Se creo la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se puedo crear la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                funcion = ff;
+                //if (dao.Crear(ff))
+                //{
+                //    MessageBox.Show("Se creo la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("No se puedo crear la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+
+                await GuardarFuncionAsync();
             }
             else
             {
@@ -200,6 +213,25 @@ namespace CineFrontEnd.Formularios
             }
         }
 
+        private async Task GuardarFuncionAsync()
+        {
+            string bodyContent = JsonConvert.SerializeObject(funcion);
+            string url = "https://localhost:7168/Funciones/cargar";
+            var result = await Cliente.GetInstance().PostAsync(url, bodyContent);
+
+            if (result.Equals("true"))
+            {
+                MessageBox.Show("Función registrada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("ERROR. No se pudo registrar la función", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
             //    if (!activo) { ActivarHorarios(); }
@@ -215,6 +247,17 @@ namespace CineFrontEnd.Formularios
         private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cboSala.SelectedIndex = funcion.Sala.Tipo.Id - 1;
+
+        }
+
+        private async void FrmFuncion_Load_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }

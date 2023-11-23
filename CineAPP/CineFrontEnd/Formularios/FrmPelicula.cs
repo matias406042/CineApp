@@ -61,11 +61,11 @@ namespace CineFrontEnd.Formularios
         {
             string url = "https://localhost:7168/Peliculas/traerProductoras";
             var result = await Cliente.GetInstance().GetAsync(url);
-            var prod = JsonConvert.DeserializeObject<List<Productora>>(result);
+            var prod = JsonConvert.DeserializeObject<Productora>(result);
 
             cboGenero.DataSource = prod;
-            cboGenero.ValueMember = "Id";
-            cboGenero.DisplayMember = "Descripcion";
+            cboGenero.ValueMember = "id_productora";
+            cboGenero.DisplayMember = "nombre";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
