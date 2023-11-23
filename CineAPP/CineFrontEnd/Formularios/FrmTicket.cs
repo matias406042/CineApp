@@ -37,18 +37,6 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            FrmComprobante ventanaUno = this.Owner as FrmComprobante;
-            if (ventanaUno != null)
-            {
-                // Realizar llenado de dgvTickets de la ventanaUno con el ticket creado
-
-                this.Dispose();
-            }
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -125,7 +113,7 @@ namespace CineFrontEnd.Formularios
             dgvFunciones.Rows.Clear();
             funciones = new List<Funcion>();
             string url = "";
-            if (cbxTitulo.Checked)
+            if (cbxTitulo.Checked & txbTitulo.Text != String.Empty)
             {
                 url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}&titulo={1}", dtpFecha.Value.ToString("yyyy-MM-dd"), txbTitulo.Text);
             }
@@ -154,7 +142,8 @@ namespace CineFrontEnd.Formularios
 
             //
             dgvFunciones.Rows.Clear();
-
+            txtButaca.Text = string.Empty;
+            btnButacas.Enabled = false;
             foreach (Funcion f in funciones)
             {
                 dgvFunciones.Rows.Add(new object[]

@@ -73,6 +73,7 @@
             this.dgvFunciones.RowTemplate.Height = 29;
             this.dgvFunciones.Size = new System.Drawing.Size(933, 179);
             this.dgvFunciones.TabIndex = 0;
+            this.dgvFunciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunciones_CellContentClick);
             // 
             // ColFuncionID
             // 
@@ -185,7 +186,7 @@
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
