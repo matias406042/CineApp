@@ -95,7 +95,8 @@ namespace CineBackEnd.Datos.Implementacion
             List<SqlParameter> parametros = new List<SqlParameter>();
             parametros.Add(new SqlParameter("@desde", desde));
             parametros.Add(new SqlParameter("@hasta", hasta));
-            return HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
+            DataTable dt = HelperDB.ObtenerInstancia().ConsultaSQL(sp, parametros);
+            return dt;
         }
     }
 }

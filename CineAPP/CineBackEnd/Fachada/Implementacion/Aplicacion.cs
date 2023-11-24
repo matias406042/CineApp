@@ -85,6 +85,11 @@ namespace CineBackEnd.Fachada.Implementacion
             return daoPelicula.GetPeliculas(titulo, Id_genero, AñoEstreno);
         }
 
+        public DataTable GetPeliculasReporte(int selec)
+        {
+            return daoPelicula.PeliculasReporte(selec);
+        }
+
         public List<Pelicula> GetPeliculasX3Condiciones(string titulo, DateTime estreno, int genero)
         {
            return daoFuncion.GetPeliculas(titulo, estreno, genero);

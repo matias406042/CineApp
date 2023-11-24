@@ -310,14 +310,42 @@ namespace CineApi.Controllers
             try
             {
                 dt = app.GetComprobantes(desde, hasta);
-                return Ok(dt);
+                var data = dt.AsEnumerable()
+           .Select(row => dt.Columns.Cast<DataColumn>()
+               .ToDictionary(col => col.ColumnName, col => row[col]))
+           .ToList();
+
+                return Ok(data);
+                //return Ok(dt);
 
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error interno! Intente luego");
+                return BadRequest(ex);
+                //return StatusCode(500, "Error interno! Intente luego");
             }
         }
+        [HttpGet("/PeliculasRep")]
+
+        public IActionResult GetPeliculasReporte(int selec)
+        {
+            DataTable dt = null;
+            try
+            {
+                dt = app.GetPeliculasReporte(selec);
+                var data = dt.AsEnumerable()
+           .Select(row => dt.Columns.Cast<DataColumn>()
+               .ToDictionary(col => col.ColumnName, col => row[col]))
+           .ToList();
+
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);  
+            }
+        }
+
         [HttpGet("/comprobantes/FormasPago")]
         public IActionResult GetFormasPagos()
         {
