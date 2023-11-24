@@ -78,5 +78,10 @@ namespace CineFrontEnd.Formularios
             FrmPelicula p = new FrmPelicula();
             p.ShowDialog();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

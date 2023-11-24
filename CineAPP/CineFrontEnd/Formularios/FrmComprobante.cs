@@ -68,7 +68,7 @@ namespace CineFrontEnd.Formularios
 
         }
 
-       
+
 
 
         private async void btnGuardar_Click(object sender, EventArgs e)
@@ -98,14 +98,14 @@ namespace CineFrontEnd.Formularios
         {
             int idTicket = dgvTickets.Rows.Count;
             FrmTicket ti = new FrmTicket(idTicket + 1, ticketList);
-            
+
             ti.ShowDialog();
             comprobante.Tickets = ticketList;
-            
+
             dgvTickets.Rows.Clear();
             foreach (Ticket t in ticketList)
             {
-                
+
                 string desde = $"{t.Funcion.HorarioInicio.Hour.ToString()}:{t.Funcion.HorarioInicio.Minute.ToString()}:{t.Funcion.HorarioInicio.Second.ToString()}";
                 string hasta = $"{t.Funcion.HorarioFin.Hour.ToString()}:{t.Funcion.HorarioFin.Minute.ToString()}:{t.Funcion.HorarioFin.Second.ToString()}";
                 dgvTickets.Rows.Add(new object[]
@@ -168,9 +168,9 @@ namespace CineFrontEnd.Formularios
         }
         private async Task GuardarComprobanteAsync()
         {
-            string bodyContent = JsonConvert.SerializeObject(comprobante);           
+            string bodyContent = JsonConvert.SerializeObject(comprobante);
             string url = "https://localhost:7168/comprobante/save";
-            var result = await Cliente.GetInstance().PostAsync(url,bodyContent);
+            var result = await Cliente.GetInstance().PostAsync(url, bodyContent);
 
             if (result.Equals("true"))
             {
@@ -184,7 +184,7 @@ namespace CineFrontEnd.Formularios
                 {
                     string url1 = "https://localhost:7168//Butaca/desocupar";
                     string bodycontent = JsonConvert.SerializeObject(t);
-                    var result2 =  await Cliente.GetInstance().PutAsync(url1, bodycontent);
+                    var result2 = await Cliente.GetInstance().PutAsync(url1, bodycontent);
                 }
             }
         }
@@ -198,6 +198,11 @@ namespace CineFrontEnd.Formularios
                 var result = await Cliente.GetInstance().PutAsync(url, bodycontent);
             }
             this.Dispose();
+        }
+
+        private void lblFormaPago_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

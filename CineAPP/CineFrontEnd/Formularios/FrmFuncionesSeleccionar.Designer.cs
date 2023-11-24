@@ -38,7 +38,6 @@
             ColumnHora = new DataGridViewTextBoxColumn();
             ColumnSala = new DataGridViewTextBoxColumn();
             ColumnTipo = new DataGridViewTextBoxColumn();
-            groupBox1 = new GroupBox();
             dgvFunciones = new DataGridView();
             colIdFuncion = new DataGridViewTextBoxColumn();
             colTitulo = new DataGridViewTextBoxColumn();
@@ -47,47 +46,68 @@
             colFin = new DataGridViewTextBoxColumn();
             colSala = new DataGridViewTextBoxColumn();
             btnAdd = new Button();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvFunciones).BeginInit();
             SuspendLayout();
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(134, 21);
+            btnBuscar.BackColor = Color.FromArgb(64, 64, 64);
+            btnBuscar.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnBuscar.FlatAppearance.BorderSize = 3;
+            btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.ForeColor = Color.LightGray;
+            btnBuscar.Location = new Point(143, 10);
             btnBuscar.Margin = new Padding(3, 2, 3, 2);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(82, 22);
+            btnBuscar.Size = new Size(123, 33);
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(10, 308);
+            btnUpdate.BackColor = Color.FromArgb(64, 64, 64);
+            btnUpdate.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnUpdate.FlatAppearance.BorderSize = 3;
+            btnUpdate.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdate.ForeColor = Color.LightGray;
+            btnUpdate.Location = new Point(12, 349);
             btnUpdate.Margin = new Padding(3, 2, 3, 2);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(87, 22);
+            btnUpdate.Size = new Size(123, 60);
             btnUpdate.TabIndex = 2;
             btnUpdate.Text = "ACTUALIZAR";
-            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(115, 308);
+            btnDelete.BackColor = Color.FromArgb(64, 64, 64);
+            btnDelete.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnDelete.FlatAppearance.BorderSize = 3;
+            btnDelete.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.LightGray;
+            btnDelete.Location = new Point(143, 349);
             btnDelete.Margin = new Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(87, 22);
+            btnDelete.Size = new Size(123, 60);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "ELIMINAR";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click_1;
             // 
             // dtpFecha
             // 
+            dtpFecha.CalendarMonthBackground = Color.FromArgb(40, 40, 40);
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(14, 34);
+            dtpFecha.Location = new Point(12, 13);
             dtpFecha.Margin = new Padding(3, 2, 3, 2);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(105, 23);
@@ -95,13 +115,21 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(607, 308);
+            btnExit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnExit.BackColor = Color.FromArgb(50, 0, 0);
+            btnExit.FlatAppearance.BorderColor = Color.FromArgb(100, 0, 0);
+            btnExit.FlatAppearance.BorderSize = 3;
+            btnExit.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, 0, 0);
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnExit.ForeColor = Color.LightGray;
+            btnExit.Location = new Point(567, 349);
             btnExit.Margin = new Padding(3, 2, 3, 2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(82, 22);
+            btnExit.Size = new Size(123, 60);
             btnExit.TabIndex = 5;
             btnExit.Text = "CERRAR";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
             // ColumnPelicula
@@ -144,32 +172,19 @@
             ColumnTipo.Name = "ColumnTipo";
             ColumnTipo.Width = 125;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(dgvFunciones);
-            groupBox1.Controls.Add(btnBuscar);
-            groupBox1.Location = new Point(9, 15);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(679, 293);
-            groupBox1.TabIndex = 6;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Busqueda Por Fecha";
-            // 
             // dgvFunciones
             // 
             dgvFunciones.AllowUserToAddRows = false;
             dgvFunciones.AllowUserToDeleteRows = false;
             dgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFunciones.Columns.AddRange(new DataGridViewColumn[] { colIdFuncion, colTitulo, colGenero, colInicio, colFin, colSala });
-            dgvFunciones.Location = new Point(0, 59);
+            dgvFunciones.Location = new Point(12, 50);
             dgvFunciones.Margin = new Padding(3, 2, 3, 2);
             dgvFunciones.Name = "dgvFunciones";
             dgvFunciones.ReadOnly = true;
             dgvFunciones.RowHeadersWidth = 51;
             dgvFunciones.RowTemplate.Height = 29;
-            dgvFunciones.Size = new Size(683, 225);
+            dgvFunciones.Size = new Size(678, 259);
             dgvFunciones.TabIndex = 1;
             // 
             // colIdFuncion
@@ -216,30 +231,40 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(226, 308);
+            btnAdd.BackColor = Color.FromArgb(64, 64, 64);
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnAdd.FlatAppearance.BorderSize = 3;
+            btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.LightGray;
+            btnAdd.Location = new Point(272, 349);
             btnAdd.Margin = new Padding(3, 2, 3, 2);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(119, 22);
+            btnAdd.Size = new Size(123, 60);
             btnAdd.TabIndex = 7;
             btnAdd.Text = "AÑADIR NUEVA";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click_1;
             // 
             // FrmFuncionesSeleccionar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
-            Controls.Add(btnAdd);
-            Controls.Add(dtpFecha);
-            Controls.Add(groupBox1);
+            BackColor = Color.FromArgb(15, 15, 15);
+            ClientSize = new Size(714, 420);
             Controls.Add(btnExit);
+            Controls.Add(btnBuscar);
+            Controls.Add(dtpFecha);
+            Controls.Add(dgvFunciones);
+            Controls.Add(btnAdd);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
             Name = "FrmFuncionesSeleccionar";
             Text = "Funciones";
-            groupBox1.ResumeLayout(false);
+            Load += FrmFuncionesSeleccionar_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvFunciones).EndInit();
             ResumeLayout(false);
         }
@@ -256,7 +281,6 @@
         private DataGridViewTextBoxColumn ColumnHora;
         private DataGridViewTextBoxColumn ColumnSala;
         private DataGridViewTextBoxColumn ColumnTipo;
-        private GroupBox groupBox1;
         private DataGridView dgvFunciones;
         private Button btnAdd;
         private DataGridViewTextBoxColumn colIdFuncion;

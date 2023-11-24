@@ -68,6 +68,7 @@ namespace CineFrontEnd.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
             asyncBuscarFunciones();
 
 
@@ -80,6 +81,9 @@ namespace CineFrontEnd.Formularios
             string url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}", DateTime.MinValue.ToString("yyyy-MM-dd"));
             var result = await Cliente.GetInstance().GetAsync(url);
             var funciones = JsonConvert.DeserializeObject<List<Funcion>>(result);
+
+
+            listaFunciones = funcionDao.GetFunciones(dtpFecha.Value, string.Empty);
 
             dgvFunciones.Rows.Clear();
             foreach (Funcion f in listaFunciones)
@@ -98,20 +102,20 @@ namespace CineFrontEnd.Formularios
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Funcion ff = new Funcion();
-            if( listaFunciones == null || listaFunciones.Count == 0)
+            if (listaFunciones == null || listaFunciones.Count == 0)
             {
                 MessageBox.Show("Se debe seleccionar una función", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             foreach (Funcion fun in listaFunciones)
             {
-                if(fun.Id == Convert.ToInt32(dgvFunciones.CurrentRow.Cells["colIdFuncion"].Value)) 
+                if (fun.Id == Convert.ToInt32(dgvFunciones.CurrentRow.Cells["colIdFuncion"].Value))
                 {
                     ff = fun;
                     break;
                 }
 
-                
+
             }
             FrmFuncion f = new FrmFuncion(ff);
             f.ShowDialog();
@@ -151,9 +155,19 @@ namespace CineFrontEnd.Formularios
             }
             else
             {
-                MessageBox.Show("Eliminacion cancelada","Cancelar",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("Eliminacion cancelada", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-           
+
+        }
+
+        public void cambiarTextolbl(string texto)
+        {
+
+        }
+
+        private void FrmFuncionesSeleccionar_Load_1(object sender, EventArgs e)
+        {
+
         }
 
         private bool existeTicket(Funcion f)

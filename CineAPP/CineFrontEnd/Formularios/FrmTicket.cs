@@ -89,7 +89,7 @@ namespace CineFrontEnd.Formularios
                     break;
                 }
             }
-            string url = String.Format("https://localhost:7168/Butacas/traerid?id_funcion={0}",funcionElegida.Id); 
+            string url = String.Format("https://localhost:7168/Butacas/traerid?id_funcion={0}", funcionElegida.Id);
             var result = await Cliente.GetInstance().GetAsync(url);
             var lstbutacas = JsonConvert.DeserializeObject<List<Butaca>>(result);
             //frmButacas butacas = new frmButacas(ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(funcionElegida.Id));
@@ -215,7 +215,7 @@ namespace CineFrontEnd.Formularios
 
                     }
 
-                    if(txtButaca.Text != string.Empty)
+                    if (txtButaca.Text != string.Empty)
                     {
 
                         //aaaaaaaaaaaaaaaaaaaaaaaa
@@ -231,7 +231,7 @@ namespace CineFrontEnd.Formularios
                         //comprobanteForm.cboTicket.DataSource = ticketList;
                         this.Dispose();
 
-                        
+
                     }
                     else MessageBox.Show("Se debe elegir una butaca", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -241,6 +241,11 @@ namespace CineFrontEnd.Formularios
         }
 
         private void FrmTicket_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
