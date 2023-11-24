@@ -14,10 +14,9 @@ namespace CineBackEnd.Datos
         private static HelperDB instancia;
         private SqlConnection cnn;
 
-        private HelperDB()
-        {
-
-            cnn = new SqlConnection("Data Source=DESKTOP-JDKTHBG\\SQLEXPRESS;Initial Catalog=TP_PROGRAMACION_FINAL;Integrated Security=True");
+        private HelperDB() { 
+    
+            cnn = new SqlConnection(@"Data Source=DESKTOP-JDKTHBG\SQLEXPRESS;Initial Catalog=TP_PROGRAMACION_FINAL;Integrated Security=True");
 
         }
 
