@@ -9,9 +9,6 @@ namespace CineBackEnd.Datos.Interfaz
 {
     public interface ITicketDao
     {
-
-
-
         List<Butaca> GetButacasXFuncion(int id_Funciom);
 
         List<Ticket> GetTicketsXComprobante(int idComprobante);

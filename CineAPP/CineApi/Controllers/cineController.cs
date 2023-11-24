@@ -22,7 +22,24 @@ namespace CineApi.Controllers
 
 
         // GET: api/<cineController>
-       // [HttpGet]
+        // [HttpGet]
+        [HttpGet("/Uuario/loguear")]
+        public IActionResult GetLogin()
+        {
+            try
+            {
+                List<Usuarios> lst = app.GetUsuarios();
+                if (lst != null)
+                    return Ok(lst);
+                else
+                    return NotFound("Usuarios no encontrados");
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(500, "Error interno");
+            }
+        }
         [HttpGet("/Peliculas/traer{id}")]
         public IActionResult GetPeliculaxID(int id_pelicula)
         {

@@ -17,12 +17,15 @@ namespace CineBackEnd.Fachada.Implementacion
         IPeliculaDao daoPelicula;
         ITicketDao daoTicket;
         IComprobanteDao daoComprobante;
+        IUsuarioDao daoUsuario;
 
         public Aplicacion()
         {
-                                    daoFuncion = new FuncionDao();
-                daoComprobante = new ComprobanteDao();
-            daoTicket = new TicketDao();           daoPelicula = new PeliculaDao();
+            daoFuncion = new FuncionDao();
+            daoComprobante = new ComprobanteDao();
+            daoTicket = new TicketDao();           
+            daoPelicula = new PeliculaDao();
+            daoUsuario = new UsuarioDao();
         }
 
         public bool DeleteFuncion(Funcion f)
@@ -113,6 +116,11 @@ namespace CineBackEnd.Fachada.Implementacion
         public Ticket GetTicketXID(int idTicket)
         {
            return daoTicket.TicketXID(idTicket);
+        }
+
+        public List<Usuarios> GetUsuarios()
+        {
+            return daoUsuario.GetUsuarios();
         }
 
         public int OcuparButaca(bool ocupar, int id_funcion, string fila, int columna)
