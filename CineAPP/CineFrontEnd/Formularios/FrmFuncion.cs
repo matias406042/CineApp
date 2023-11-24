@@ -40,7 +40,7 @@ namespace CineFrontEnd.Formularios
 
 
 
-        private async void AsyncCargarGeneros()
+        private async Task AsyncCargarGeneros()
         {
             string url = "https://localhost:7168/Funciones/traerGeneros";
             var result = await Cliente.GetInstance().GetAsync(url);
@@ -51,7 +51,7 @@ namespace CineFrontEnd.Formularios
             cboGenero.DisplayMember = "Descripcion";
         }
 
-        private async void AsyncCargarSalas()
+        private async Task AsyncCargarSalas()
         {
             string url = "https://localhost:7168/Funciones/traerSalas";
             var result = await Cliente.GetInstance().GetAsync(url);
@@ -80,8 +80,7 @@ namespace CineFrontEnd.Formularios
                     f.Pelicula.Director.ToString(),f.Pelicula.FechaEstreno.ToShortDateString(),f.Pelicula.Clasificacion.EdadMinima,f.Pelicula.Productora.Nombre});
 
 
-            AsyncCargarGeneros();
-            AsyncCargarSalas();
+            
         }
 
 
@@ -262,9 +261,10 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private async void FrmFuncion_Load_1(object sender, EventArgs e)
+        private async void  FrmFuncion_Load_1(object sender, EventArgs e)
         {
-            
+            await AsyncCargarGeneros();
+            await AsyncCargarSalas();
         }
     }
 }
