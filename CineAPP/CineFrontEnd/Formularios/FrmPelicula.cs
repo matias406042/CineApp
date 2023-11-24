@@ -36,30 +36,30 @@ namespace CineFrontEnd.Formularios
         IPeliculaDao dao;
         int idPelicula;
 
-        public FrmPelicula(bool aux,int id )
+        public FrmPelicula(bool aux, int id)
         {
             dao = new PeliculaDao();
             editar = aux;
             this.idPelicula = id;
-           
-           
+
+
             pelicula = new Pelicula();
             InitializeComponent();
 
         }
-         private async Task AsyncCargarPelicula(int id)
+        private async Task AsyncCargarPelicula(int id)
         {
             string url = string.Format("https://localhost:7168/Peliculas/traerXID?id_pelicula={0}", id);
-            
+
             var result = await Cliente.GetInstance().GetAsync(url);
 
             var peliculavar = JsonConvert.DeserializeObject<Pelicula>(result);
 
             pelicula = peliculavar;
 
-            
+
         }
-    
+
 
         private async Task AsyncCargarGenero()
         {
@@ -81,6 +81,7 @@ namespace CineFrontEnd.Formularios
             cboGenero.DataSource = generos;
             cboGenero.ValueMember = "Id";
             cboGenero.DisplayMember = "Descripcion";
+            cboGenero.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
 
@@ -104,6 +105,7 @@ namespace CineFrontEnd.Formularios
             cboClasificacion.DataSource = clasificaciones;
             cboClasificacion.ValueMember = "Id";
             cboClasificacion.DisplayMember = "EdadMinima";
+            cboProductora.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private async Task AsyncCargarProductora()
@@ -128,6 +130,7 @@ namespace CineFrontEnd.Formularios
             cboProductora.DataSource = productoras;
             cboProductora.ValueMember = "Id";
             cboProductora.DisplayMember = "Nombre";
+            cboProductora.DropDownStyle= ComboBoxStyle.DropDownList;
 
 
 
@@ -140,22 +143,30 @@ namespace CineFrontEnd.Formularios
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            editar =false;
+            editar = false;
             this.Close();
         }
 
         private async void FrmPelicula_Load(object sender, EventArgs e)
         {
-            
+            CargarLabel(editar);
+
             pelicula = new Pelicula();
             await AsyncCargarGenero();
             await AsyncCargarClasificacion();
             await AsyncCargarProductora();
             if (editar)
             {
-              await AsyncCargarPelicula(idPelicula);
+                await AsyncCargarPelicula(idPelicula);
             }
-                CamposIniciar(editar);
+            CamposIniciar(editar);
+        }
+
+        private void CargarLabel(bool aux)
+        {
+            if (aux) { lblPelicula.Text = "EDITAR PELICULA"; }
+            else { lblPelicula.Text = "REGISTRAR PELICULA"; }
+
         }
 
         private async void btnGuardar_Click(object sender, EventArgs e)
@@ -183,32 +194,38 @@ namespace CineFrontEnd.Formularios
 
                 }
             }
-            
+
         }
 
         private async void AsyncGuardarPelicula()
         {
-            RellenarPelicula(pelicula);
-            string url = "https://localhost:7168/Peliculas/cargar";
-            var body = JsonConvert.SerializeObject(pelicula);
-            var result2 = await Cliente.GetInstance().PostAsync(url, body);
-
-            if (result2.Equals("true"))
+            if (RellenarPelicula(pelicula))
             {
-                MessageBox.Show("Pelicula registrada", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CamposIniciar(editar);
-            }
-            else
-            {
-                MessageBox.Show("ERROR. No se pudo registrar la Pelicula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string url = "https://localhost:7168/Peliculas/cargar";
+                var body = JsonConvert.SerializeObject(pelicula);
+                var result2 = await Cliente.GetInstance().PostAsync(url, body);
 
+                if (result2.Equals("true"))
+                {
+                    MessageBox.Show("Pelicula registrada con exito", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CamposIniciar(editar);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR. No se pudo actualizar la Pelicula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
             }
+
+
+
 
         }
 
 
         private void CamposIniciar(bool aux)
-        {if (aux == false)
+        {
+            if (aux == false)
             {
                 txtTitulo.Text = string.Empty;
                 txtDuracion.Text = string.Empty;
@@ -216,9 +233,9 @@ namespace CineFrontEnd.Formularios
                 cboGenero.SelectedIndex = 0;
                 cboProductora.SelectedIndex = 0;
             }
-        if (aux==true)
+            if (aux == true)
             {
-                txtTitulo.Text =pelicula.Titulo;
+                txtTitulo.Text = pelicula.Titulo;
                 txtDuracion.Text = Convert.ToString(pelicula.Duracion);
                 cboClasificacion.SelectedValue = pelicula.Clasificacion.Id;
                 cboGenero.SelectedValue = pelicula.Genero.Id;
@@ -256,11 +273,13 @@ namespace CineFrontEnd.Formularios
             {
                 p.FechaEstreno = dtpEstreno.Value;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Fecha no Valida");
-                        return aux; }
+                return aux;
+            }
             return true;
         }
-        
+
     }
 }
