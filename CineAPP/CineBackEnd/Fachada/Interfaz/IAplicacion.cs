@@ -80,5 +80,7 @@ namespace CineBackEnd.Fachada.Interfaz
         public List<Genero> GetGenerosP();
         public DataTable GetPeliculasReporte(int selec);
 
+        public List<Usuarios> GetUsuarios();
+
     }
 }
