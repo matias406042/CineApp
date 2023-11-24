@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj": {}
+    "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj": {}
   },
   "projects": {
-    "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
+    "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
         "projectName": "CineBackEnd",
-        "projectPath": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineBackEnd\\obj\\",
+        "projectPath": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
+        "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineBackEnd\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +59,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,25 +69,29 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj": {
+    "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj",
         "projectName": "CineFrontEnd",
-        "projectPath": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\obj\\",
+        "projectPath": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\CineFrontEnd.csproj",
+        "packagesPath": "C:\\Users\\Facu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineFrontEnd\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Facu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -92,8 +101,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
-                "projectPath": "D:\\Facu\\Programacion\\TP_Finalisimo_Definitivo_deluxe\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj"
+              "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
+                "projectPath": "C:\\Users\\Facu\\OneDrive\\Escritorio\\repo 2\\23-11 mi cambio\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj"
               }
             }
           }
@@ -127,7 +136,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -139,7 +149,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

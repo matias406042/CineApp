@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection(Properties.Resources.conexionMateo);
+            cnn = new SqlConnection("Data Source = DESKTOP - 7G88VN3; Initial Catalog = TP_LABORATORIO_FINAL; Integrated Security = True");
         }
 
         public static HelperDB ObtenerInstancia()

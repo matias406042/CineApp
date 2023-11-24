@@ -109,6 +109,7 @@
             btnClose.TabIndex = 9;
             btnClose.Text = "CERRAR";
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // btnDelete
             // 

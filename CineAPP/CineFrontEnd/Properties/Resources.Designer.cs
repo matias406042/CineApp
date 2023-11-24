@@ -93,6 +93,26 @@ namespace CineFrontEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cineeditblanco {
+            get {
+                object obj = ResourceManager.GetObject("cineeditblanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cineeditFFF {
+            get {
+                object obj = ResourceManager.GetObject("cineeditFFF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap x_cierre {
             get {
                 object obj = ResourceManager.GetObject("x cierre", resourceCulture);
