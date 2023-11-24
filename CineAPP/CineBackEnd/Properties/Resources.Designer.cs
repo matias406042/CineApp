@@ -59,5 +59,17 @@ namespace CineBackEnd.Properties {
                 resourceCulture = value;
             }
         }
+<<<<<<< HEAD
+=======
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &quot;Data Source=DESKTOP-JDKTHBG\SQLEXPRESS;Initial Catalog=TP_PROGRAMACION_FINAL;Integrated Security=True&quot;.
+        /// </summary>
+        internal static string ConexionMati {
+            get {
+                return ResourceManager.GetString("ConexionMati", resourceCulture);
+            }
+        }
+>>>>>>> UltimosDetalles
     }
 }
