@@ -86,19 +86,9 @@ namespace CineFrontEnd.Formularios
 
 
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btnAGREGAR_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void FrmFuncion_Load(object sender, EventArgs e)
-        {
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -112,6 +102,7 @@ namespace CineFrontEnd.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            dgvPelis.Rows.Clear();
             //Validar Datos
             AsyncBuscar();
 
@@ -247,11 +238,6 @@ namespace CineFrontEnd.Formularios
 
             //    dtpInicio.MaxDate = dtpFecha.Value.Date.AddDays(1).AddSeconds(-1);
             //    dtpFin.MaxDate = dtpFecha.Value.Date.AddDays(1).AddSeconds(-1);
-
-        }
-
-        private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 

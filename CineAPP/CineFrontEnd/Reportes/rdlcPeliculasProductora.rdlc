@@ -202,8 +202,8 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>2.49562cm</Top>
             <Left>0.60537cm</Left>
-            <Height>1.70271cm</Height>
-            <Width>6.16417cm</Width>
+            <Height>1.7027cm</Height>
+            <Width>6.16416cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -219,12 +219,12 @@
                       <GroupExpression>=Fields!Nombre.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!Nombre.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!Nombre.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!Nombre.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -556,7 +556,7 @@
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.74937cm</Top>
-            <Left>11.45328cm</Left>
+            <Left>9.8828cm</Left>
             <Height>5cm</Height>
             <Width>7.5cm</Width>
             <ZIndex>1</ZIndex>

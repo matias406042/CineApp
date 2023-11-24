@@ -78,7 +78,7 @@ namespace CineFrontEnd.Formularios
 
         private async void asyncBuscarFunciones()
         {
-            string url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}", DateTime.MinValue.ToString("yyyy-MM-dd"));
+            string url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}",dtpFecha.Value.ToString("yyyy-MM-dd"));
             var result = await Cliente.GetInstance().GetAsync(url);
             var funciones = JsonConvert.DeserializeObject<List<Funcion>>(result);
 

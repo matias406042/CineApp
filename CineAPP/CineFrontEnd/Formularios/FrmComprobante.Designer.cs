@@ -28,273 +28,281 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cboFormaPago = new ComboBox();
-            lblFormaPago = new Label();
-            dgvTickets = new DataGridView();
-            ColPelicula = new DataGridViewTextBoxColumn();
-            ColSala = new DataGridViewTextBoxColumn();
-            ColHorario = new DataGridViewTextBoxColumn();
-            ColButaca = new DataGridViewTextBoxColumn();
-            ColPrecio = new DataGridViewTextBoxColumn();
-            ColAccion = new DataGridViewButtonColumn();
-            txtTotal = new TextBox();
-            lblTotal = new Label();
-            cboDescuento = new ComboBox();
-            lblTickets = new Label();
-            btnTicket = new Button();
-            btnGuardar = new Button();
-            cboTicket = new ComboBox();
-            lblDescuento = new Label();
-            cbxDescuento = new CheckBox();
-            btnCancelar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
-            SuspendLayout();
+            this.cboFormaPago = new System.Windows.Forms.ComboBox();
+            this.lblFormaPago = new System.Windows.Forms.Label();
+            this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColButaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.cboDescuento = new System.Windows.Forms.ComboBox();
+            this.lblTickets = new System.Windows.Forms.Label();
+            this.btnTicket = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.cboTicket = new System.Windows.Forms.ComboBox();
+            this.lblDescuento = new System.Windows.Forms.Label();
+            this.cbxDescuento = new System.Windows.Forms.CheckBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
+            this.SuspendLayout();
             // 
             // cboFormaPago
             // 
-            cboFormaPago.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboFormaPago.FormattingEnabled = true;
-            cboFormaPago.Location = new Point(12, 299);
-            cboFormaPago.Margin = new Padding(3, 2, 3, 2);
-            cboFormaPago.Name = "cboFormaPago";
-            cboFormaPago.Size = new Size(133, 23);
-            cboFormaPago.TabIndex = 0;
+            this.cboFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFormaPago.FormattingEnabled = true;
+            this.cboFormaPago.Location = new System.Drawing.Point(12, 299);
+            this.cboFormaPago.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboFormaPago.Name = "cboFormaPago";
+            this.cboFormaPago.Size = new System.Drawing.Size(133, 23);
+            this.cboFormaPago.TabIndex = 0;
             // 
             // lblFormaPago
             // 
-            lblFormaPago.AutoSize = true;
-            lblFormaPago.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblFormaPago.ForeColor = Color.LightGray;
-            lblFormaPago.Location = new Point(12, 275);
-            lblFormaPago.Name = "lblFormaPago";
-            lblFormaPago.Size = new Size(89, 15);
-            lblFormaPago.TabIndex = 1;
-            lblFormaPago.Text = "Forma de Pago";
-            lblFormaPago.Click += lblFormaPago_Click;
+            this.lblFormaPago.AutoSize = true;
+            this.lblFormaPago.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFormaPago.ForeColor = System.Drawing.Color.LightGray;
+            this.lblFormaPago.Location = new System.Drawing.Point(12, 275);
+            this.lblFormaPago.Name = "lblFormaPago";
+            this.lblFormaPago.Size = new System.Drawing.Size(89, 15);
+            this.lblFormaPago.TabIndex = 1;
+            this.lblFormaPago.Text = "Forma de Pago";
             // 
             // dgvTickets
             // 
-            dgvTickets.AllowUserToAddRows = false;
-            dgvTickets.AllowUserToDeleteRows = false;
-            dgvTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTickets.Columns.AddRange(new DataGridViewColumn[] { ColPelicula, ColSala, ColHorario, ColButaca, ColPrecio, ColAccion });
-            dgvTickets.Location = new Point(12, 55);
-            dgvTickets.Margin = new Padding(3, 2, 3, 2);
-            dgvTickets.Name = "dgvTickets";
-            dgvTickets.ReadOnly = true;
-            dgvTickets.RowHeadersWidth = 51;
-            dgvTickets.RowTemplate.Height = 29;
-            dgvTickets.Size = new Size(623, 190);
-            dgvTickets.TabIndex = 2;
-            dgvTickets.CellContentClick += dgvTickets_CellContentClick;
+            this.dgvTickets.AllowUserToAddRows = false;
+            this.dgvTickets.AllowUserToDeleteRows = false;
+            this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColPelicula,
+            this.ColSala,
+            this.ColHorario,
+            this.ColButaca,
+            this.ColPrecio,
+            this.ColAccion});
+            this.dgvTickets.Location = new System.Drawing.Point(12, 55);
+            this.dgvTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvTickets.Name = "dgvTickets";
+            this.dgvTickets.ReadOnly = true;
+            this.dgvTickets.RowHeadersWidth = 51;
+            this.dgvTickets.RowTemplate.Height = 29;
+            this.dgvTickets.Size = new System.Drawing.Size(623, 190);
+            this.dgvTickets.TabIndex = 2;
+            this.dgvTickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellContentClick);
+            this.dgvTickets.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvTickets_RowsAdded);
+            this.dgvTickets.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvTickets_RowsRemoved);
             // 
             // ColPelicula
             // 
-            ColPelicula.HeaderText = "Pelicula";
-            ColPelicula.MinimumWidth = 6;
-            ColPelicula.Name = "ColPelicula";
-            ColPelicula.ReadOnly = true;
-            ColPelicula.Width = 125;
+            this.ColPelicula.HeaderText = "Pelicula";
+            this.ColPelicula.MinimumWidth = 6;
+            this.ColPelicula.Name = "ColPelicula";
+            this.ColPelicula.ReadOnly = true;
+            this.ColPelicula.Width = 125;
             // 
             // ColSala
             // 
-            ColSala.HeaderText = "Sala";
-            ColSala.MinimumWidth = 6;
-            ColSala.Name = "ColSala";
-            ColSala.ReadOnly = true;
-            ColSala.Width = 80;
+            this.ColSala.HeaderText = "Sala";
+            this.ColSala.MinimumWidth = 6;
+            this.ColSala.Name = "ColSala";
+            this.ColSala.ReadOnly = true;
+            this.ColSala.Width = 80;
             // 
             // ColHorario
             // 
-            ColHorario.HeaderText = "Inicio-Fin";
-            ColHorario.MinimumWidth = 6;
-            ColHorario.Name = "ColHorario";
-            ColHorario.ReadOnly = true;
-            ColHorario.Width = 125;
+            this.ColHorario.HeaderText = "Inicio-Fin";
+            this.ColHorario.MinimumWidth = 6;
+            this.ColHorario.Name = "ColHorario";
+            this.ColHorario.ReadOnly = true;
+            this.ColHorario.Width = 125;
             // 
             // ColButaca
             // 
-            ColButaca.HeaderText = "Butaca F-C";
-            ColButaca.MinimumWidth = 6;
-            ColButaca.Name = "ColButaca";
-            ColButaca.ReadOnly = true;
-            ColButaca.Width = 60;
+            this.ColButaca.HeaderText = "Butaca F-C";
+            this.ColButaca.MinimumWidth = 6;
+            this.ColButaca.Name = "ColButaca";
+            this.ColButaca.ReadOnly = true;
+            this.ColButaca.Width = 60;
             // 
             // ColPrecio
             // 
-            ColPrecio.HeaderText = "PRECIO";
-            ColPrecio.MinimumWidth = 6;
-            ColPrecio.Name = "ColPrecio";
-            ColPrecio.ReadOnly = true;
-            ColPrecio.Width = 80;
+            this.ColPrecio.HeaderText = "PRECIO";
+            this.ColPrecio.MinimumWidth = 6;
+            this.ColPrecio.Name = "ColPrecio";
+            this.ColPrecio.ReadOnly = true;
+            this.ColPrecio.Width = 80;
             // 
             // ColAccion
             // 
-            ColAccion.HeaderText = "Accion";
-            ColAccion.Name = "ColAccion";
-            ColAccion.ReadOnly = true;
-            ColAccion.Resizable = DataGridViewTriState.True;
-            ColAccion.SortMode = DataGridViewColumnSortMode.Automatic;
+            this.ColAccion.HeaderText = "Accion";
+            this.ColAccion.Name = "ColAccion";
+            this.ColAccion.ReadOnly = true;
+            this.ColAccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColAccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // txtTotal
             // 
-            txtTotal.Enabled = false;
-            txtTotal.Location = new Point(458, 273);
-            txtTotal.Margin = new Padding(3, 2, 3, 2);
-            txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(110, 23);
-            txtTotal.TabIndex = 3;
-            txtTotal.Text = "0";
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(458, 273);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(110, 23);
+            this.txtTotal.TabIndex = 3;
+            this.txtTotal.Text = "0";
             // 
             // lblTotal
             // 
-            lblTotal.AutoSize = true;
-            lblTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTotal.ForeColor = Color.LightGray;
-            lblTotal.Location = new Point(401, 275);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(49, 15);
-            lblTotal.TabIndex = 4;
-            lblTotal.Text = "TOTAL :";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.ForeColor = System.Drawing.Color.LightGray;
+            this.lblTotal.Location = new System.Drawing.Point(401, 275);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(49, 15);
+            this.lblTotal.TabIndex = 4;
+            this.lblTotal.Text = "TOTAL :";
             // 
             // cboDescuento
             // 
-            cboDescuento.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboDescuento.Enabled = false;
-            cboDescuento.FormattingEnabled = true;
-            cboDescuento.Location = new Point(175, 299);
-            cboDescuento.Margin = new Padding(3, 2, 3, 2);
-            cboDescuento.Name = "cboDescuento";
-            cboDescuento.Size = new Size(133, 23);
-            cboDescuento.TabIndex = 6;
-            cboDescuento.SelectedIndexChanged += cboDescuento_SelectedIndexChanged;
+            this.cboDescuento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDescuento.Enabled = false;
+            this.cboDescuento.FormattingEnabled = true;
+            this.cboDescuento.Location = new System.Drawing.Point(175, 299);
+            this.cboDescuento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboDescuento.Name = "cboDescuento";
+            this.cboDescuento.Size = new System.Drawing.Size(133, 23);
+            this.cboDescuento.TabIndex = 6;
+            this.cboDescuento.SelectedIndexChanged += new System.EventHandler(this.cboDescuento_SelectedIndexChanged);
             // 
             // lblTickets
             // 
-            lblTickets.AutoSize = true;
-            lblTickets.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTickets.ForeColor = Color.LightGray;
-            lblTickets.Location = new Point(10, 33);
-            lblTickets.Name = "lblTickets";
-            lblTickets.Size = new Size(53, 15);
-            lblTickets.TabIndex = 7;
-            lblTickets.Text = "Tickets :";
+            this.lblTickets.AutoSize = true;
+            this.lblTickets.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTickets.ForeColor = System.Drawing.Color.LightGray;
+            this.lblTickets.Location = new System.Drawing.Point(10, 33);
+            this.lblTickets.Name = "lblTickets";
+            this.lblTickets.Size = new System.Drawing.Size(53, 15);
+            this.lblTickets.TabIndex = 7;
+            this.lblTickets.Text = "Tickets :";
             // 
             // btnTicket
             // 
-            btnTicket.BackColor = Color.FromArgb(64, 64, 64);
-            btnTicket.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
-            btnTicket.FlatAppearance.BorderSize = 3;
-            btnTicket.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
-            btnTicket.FlatStyle = FlatStyle.Flat;
-            btnTicket.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTicket.ForeColor = Color.LightGray;
-            btnTicket.Location = new Point(299, 20);
-            btnTicket.Margin = new Padding(3, 2, 3, 2);
-            btnTicket.Name = "btnTicket";
-            btnTicket.Size = new Size(82, 28);
-            btnTicket.TabIndex = 8;
-            btnTicket.Text = "New Ticket";
-            btnTicket.UseVisualStyleBackColor = false;
-            btnTicket.Click += btnTicket_Click_1;
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnTicket.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnTicket.FlatAppearance.BorderSize = 3;
+            this.btnTicket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTicket.ForeColor = System.Drawing.Color.LightGray;
+            this.btnTicket.Location = new System.Drawing.Point(299, 20);
+            this.btnTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(82, 28);
+            this.btnTicket.TabIndex = 8;
+            this.btnTicket.Text = "New Ticket";
+            this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click_1);
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(64, 64, 64);
-            btnGuardar.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
-            btnGuardar.FlatAppearance.BorderSize = 3;
-            btnGuardar.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.LightGray;
-            btnGuardar.Location = new Point(401, 326);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(124, 35);
-            btnGuardar.TabIndex = 9;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 3;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnGuardar.Location = new System.Drawing.Point(401, 326);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(124, 35);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cboTicket
             // 
-            cboTicket.Enabled = false;
-            cboTicket.FormattingEnabled = true;
-            cboTicket.Location = new Point(668, 12);
-            cboTicket.Name = "cboTicket";
-            cboTicket.Size = new Size(18, 23);
-            cboTicket.TabIndex = 10;
-            cboTicket.Visible = false;
+            this.cboTicket.Enabled = false;
+            this.cboTicket.FormattingEnabled = true;
+            this.cboTicket.Location = new System.Drawing.Point(668, 12);
+            this.cboTicket.Name = "cboTicket";
+            this.cboTicket.Size = new System.Drawing.Size(18, 23);
+            this.cboTicket.TabIndex = 10;
+            this.cboTicket.Visible = false;
             // 
             // lblDescuento
             // 
-            lblDescuento.AutoSize = true;
-            lblDescuento.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescuento.ForeColor = Color.LightGray;
-            lblDescuento.Location = new Point(224, 336);
-            lblDescuento.Name = "lblDescuento";
-            lblDescuento.Size = new Size(38, 25);
-            lblDescuento.TabIndex = 11;
-            lblDescuento.Text = "0%";
-            lblDescuento.Visible = false;
+            this.lblDescuento.AutoSize = true;
+            this.lblDescuento.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDescuento.ForeColor = System.Drawing.Color.LightGray;
+            this.lblDescuento.Location = new System.Drawing.Point(224, 336);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(38, 25);
+            this.lblDescuento.TabIndex = 11;
+            this.lblDescuento.Text = "0%";
+            this.lblDescuento.Visible = false;
             // 
             // cbxDescuento
             // 
-            cbxDescuento.AutoSize = true;
-            cbxDescuento.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            cbxDescuento.ForeColor = Color.LightGray;
-            cbxDescuento.Location = new Point(179, 275);
-            cbxDescuento.Name = "cbxDescuento";
-            cbxDescuento.Size = new Size(86, 19);
-            cbxDescuento.TabIndex = 12;
-            cbxDescuento.Text = "Descuento";
-            cbxDescuento.UseVisualStyleBackColor = true;
-            cbxDescuento.CheckedChanged += cbxDescuento_CheckedChanged;
+            this.cbxDescuento.AutoSize = true;
+            this.cbxDescuento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbxDescuento.ForeColor = System.Drawing.Color.LightGray;
+            this.cbxDescuento.Location = new System.Drawing.Point(179, 275);
+            this.cbxDescuento.Name = "cbxDescuento";
+            this.cbxDescuento.Size = new System.Drawing.Size(86, 19);
+            this.cbxDescuento.TabIndex = 12;
+            this.cbxDescuento.Text = "Descuento";
+            this.cbxDescuento.UseVisualStyleBackColor = true;
+            this.cbxDescuento.Click += new System.EventHandler(this.cbxDescuento_CheckedChanged);
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(50, 0, 0);
-            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(100, 0, 0);
-            btnCancelar.FlatAppearance.BorderSize = 3;
-            btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, 0, 0);
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.ForeColor = Color.LightGray;
-            btnCancelar.Location = new Point(561, 326);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(125, 35);
-            btnCancelar.TabIndex = 13;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 3;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.Location = new System.Drawing.Point(561, 326);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(125, 35);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FrmComprobante
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(698, 381);
-            Controls.Add(btnCancelar);
-            Controls.Add(cbxDescuento);
-            Controls.Add(cboDescuento);
-            Controls.Add(txtTotal);
-            Controls.Add(cboFormaPago);
-            Controls.Add(cboTicket);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnTicket);
-            Controls.Add(lblTickets);
-            Controls.Add(lblDescuento);
-            Controls.Add(lblTotal);
-            Controls.Add(dgvTickets);
-            Controls.Add(lblFormaPago);
-            ForeColor = Color.FromArgb(15, 15, 15);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "FrmComprobante";
-            Text = "Nuevo Comprobante";
-            ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(698, 381);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.cbxDescuento);
+            this.Controls.Add(this.cboDescuento);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.cboFormaPago);
+            this.Controls.Add(this.cboTicket);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnTicket);
+            this.Controls.Add(this.lblTickets);
+            this.Controls.Add(this.lblDescuento);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.dgvTickets);
+            this.Controls.Add(this.lblFormaPago);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FrmComprobante";
+            this.Text = "Nuevo Comprobante";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

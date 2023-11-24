@@ -204,5 +204,22 @@ namespace CineFrontEnd.Formularios
         {
 
         }
+
+        private void dgvTickets_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            txtTotal.Text = CalcularTotal().ToString() ;
+        }
+
+        private void dgvTickets_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if(dgvTickets.Rows.Count > 0)
+            {
+                txtTotal.Text = CalcularTotal().ToString();
+            }
+            else
+            {
+                txtTotal.Text = "0";
+            }
+        }
     }
 }
