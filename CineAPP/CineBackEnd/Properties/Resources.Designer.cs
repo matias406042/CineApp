@@ -59,23 +59,5 @@ namespace CineBackEnd.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=COMPU-DE-ZZZ\SQLEXPRESS;Initial Catalog=TP_LABORATORIO22;Integrated Security=True.
-        /// </summary>
-        internal static string conexionMateo {
-            get {
-                return ResourceManager.GetString("conexionMateo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-UUMMIAU\SQLEXPRESS;Initial Catalog=TP_LABORATORIO_FINAL;Integrated Security=True.
-        /// </summary>
-        internal static string conexionTomi {
-            get {
-                return ResourceManager.GetString("conexionTomi", resourceCulture);
-            }
-        }
     }
 }
