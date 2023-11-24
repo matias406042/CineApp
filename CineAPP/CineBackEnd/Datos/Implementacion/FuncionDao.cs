@@ -107,7 +107,7 @@ namespace CineBackEnd.Datos.Implementacion
             if (titulo != "12365448632163s6sd6f")
                 listParametros.Add(new SqlParameter("@titulo", titulo));
             else
-                listParametros.Add(new SqlParameter("@titulo", null));
+                listParametros.Add(new SqlParameter("@titulo", DBNull.Value));
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, listParametros);
             foreach (DataRow fila in tabla.Rows)
             {   

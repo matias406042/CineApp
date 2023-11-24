@@ -253,10 +253,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(64, 64, 64);
-            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnCancelar.BackColor = Color.FromArgb(50, 0, 0);
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(100, 0, 0);
             btnCancelar.FlatAppearance.BorderSize = 3;
-            btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(100, 0, 0);
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.ForeColor = Color.LightGray;

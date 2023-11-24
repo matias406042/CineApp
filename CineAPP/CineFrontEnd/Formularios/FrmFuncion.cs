@@ -80,7 +80,7 @@ namespace CineFrontEnd.Formularios
                     f.Pelicula.Director.ToString(),f.Pelicula.FechaEstreno.ToShortDateString(),f.Pelicula.Clasificacion.EdadMinima,f.Pelicula.Productora.Nombre});
 
 
-            
+
         }
 
 
@@ -114,7 +114,7 @@ namespace CineFrontEnd.Formularios
         {
             //Validar Datos
             AsyncBuscar();
-            
+
 
         }
 
@@ -124,7 +124,7 @@ namespace CineFrontEnd.Formularios
 
             if (txtTitulo.Text == string.Empty)
             {
-               tit  = "shrek 7: mas shrek que nunca";
+                tit = "shrek 7: mas shrek que nunca";
             }
             else
             {
@@ -147,7 +147,7 @@ namespace CineFrontEnd.Formularios
             }
 
 
-        
+
         }
 
         private async void btnInsert_Click(object sender, EventArgs e)
@@ -262,7 +262,7 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private async void  FrmFuncion_Load_1(object sender, EventArgs e)
+        private async void FrmFuncion_Load_1(object sender, EventArgs e)
         {
 
             await AsyncCargarGeneros();

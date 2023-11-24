@@ -28,85 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.btnGenerar = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            dtpDesde = new DateTimePicker();
+            dtpHasta = new DateTimePicker();
+            btnGenerar = new Button();
+            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Fecha desde:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.LightGray;
+            label1.Location = new Point(12, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(107, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Fecha desde:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(259, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fecha hasta:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.LightGray;
+            label2.Location = new Point(259, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 21);
+            label2.TabIndex = 1;
+            label2.Text = "Fecha hasta:";
             // 
             // dtpDesde
             // 
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(141, 18);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(87, 23);
-            this.dtpDesde.TabIndex = 2;
+            dtpDesde.Format = DateTimePickerFormat.Short;
+            dtpDesde.Location = new Point(141, 18);
+            dtpDesde.Name = "dtpDesde";
+            dtpDesde.Size = new Size(87, 23);
+            dtpDesde.TabIndex = 2;
             // 
             // dtpHasta
             // 
-            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(384, 18);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(87, 23);
-            this.dtpHasta.TabIndex = 3;
+            dtpHasta.Format = DateTimePickerFormat.Short;
+            dtpHasta.Location = new Point(384, 18);
+            dtpHasta.Name = "dtpHasta";
+            dtpHasta.Size = new Size(87, 23);
+            dtpHasta.TabIndex = 3;
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(502, 17);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(92, 24);
-            this.btnGenerar.TabIndex = 4;
-            this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = true;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            btnGenerar.BackColor = Color.FromArgb(64, 64, 64);
+            btnGenerar.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnGenerar.FlatAppearance.BorderSize = 3;
+            btnGenerar.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnGenerar.FlatStyle = FlatStyle.Flat;
+            btnGenerar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGenerar.ForeColor = Color.LightGray;
+            btnGenerar.Location = new Point(502, 12);
+            btnGenerar.Name = "btnGenerar";
+            btnGenerar.Size = new Size(92, 29);
+            btnGenerar.TabIndex = 4;
+            btnGenerar.Text = "Generar";
+            btnGenerar.UseVisualStyleBackColor = false;
+            btnGenerar.Click += btnGenerar_Click;
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(5, 45);
-            this.reportViewer1.Name = "ReportViewer";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(750, 400);
-            this.reportViewer1.TabIndex = 0;
+            reportViewer1.BackColor = Color.FromArgb(51, 51, 51);
+            reportViewer1.ForeColor = Color.LightGray;
+            reportViewer1.Location = new Point(5, 45);
+            reportViewer1.Name = "ReportViewer";
+            reportViewer1.ServerReport.BearerToken = null;
+            reportViewer1.Size = new Size(750, 400);
+            reportViewer1.TabIndex = 0;
             // 
             // frmReporteComprobantes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
-            this.Controls.Add(this.reportViewer1);
-            this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.dtpHasta);
-            this.Controls.Add(this.dtpDesde);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "frmReporteComprobantes";
-            this.Text = "frmReporteComprobantes";
-            this.Load += new System.EventHandler(this.frmReporteComprobantes_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 15, 15);
+            ClientSize = new Size(764, 450);
+            Controls.Add(reportViewer1);
+            Controls.Add(btnGenerar);
+            Controls.Add(dtpHasta);
+            Controls.Add(dtpDesde);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "frmReporteComprobantes";
+            Text = "frmReporteComprobantes";
+            Load += frmReporteComprobantes_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

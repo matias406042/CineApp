@@ -27,7 +27,7 @@ namespace CineFrontEnd.Reportes
 
         private async void btnGenerar_Click(object sender, EventArgs e)
         {
-            if(cboSeleccion.SelectedIndex == 0)
+            if (cboSeleccion.SelectedIndex == 0)
             {
                 string url = "https://localhost:7168/PeliculasRep?selec=" + 1;
                 var result = await Cliente.GetInstance().GetAsync(url);
@@ -37,7 +37,7 @@ namespace CineFrontEnd.Reportes
                 reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dt));
                 reportViewer1.RefreshReport();
             }
-            else if(cboSeleccion.SelectedIndex == 1)
+            else if (cboSeleccion.SelectedIndex == 1)
             {
                 string url = "https://localhost:7168/PeliculasRep?selec=" + 2;
                 var result = await Cliente.GetInstance().GetAsync(url);

@@ -203,12 +203,13 @@ namespace CineFrontEnd.Formularios
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-          DialogResult result = MessageBox.Show("¿Seguro desea eliminar la pelicula?","Advertencia",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes) {
+            DialogResult result = MessageBox.Show("¿Seguro desea eliminar la pelicula?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
                 DialogResult restult2 = MessageBox.Show("Esto podria eliminar las funciones /n registradas que no emitieron " +
-                "tickets", "Advertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                "tickets", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if(restult2 == DialogResult.Yes)
+                if (restult2 == DialogResult.Yes)
                 {
 
                     AsyncBorrarPelicula(seleccionada);
@@ -227,7 +228,7 @@ namespace CineFrontEnd.Formularios
             if (result2.Equals("true"))
             {
                 MessageBox.Show("Pelicula Eliminada", "INF+", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               if(dgvPelicula.Rows.Count > 0) { dgvPelicula.Rows.Clear(); }
+                if (dgvPelicula.Rows.Count > 0) { dgvPelicula.Rows.Clear(); }
             }
             else
             {
@@ -238,8 +239,8 @@ namespace CineFrontEnd.Formularios
 
 
         }
-        
-       
+
+
 
     }
 }

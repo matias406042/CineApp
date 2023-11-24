@@ -184,7 +184,6 @@
             Controls.Add(txtUsuario);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmLogin";
-            Opacity = 0.8D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += frnPrincipal_Load;
