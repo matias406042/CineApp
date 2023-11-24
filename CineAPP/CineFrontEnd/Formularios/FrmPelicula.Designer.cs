@@ -47,125 +47,118 @@
             // cboGenero
             // 
             cboGenero.FormattingEnabled = true;
-            cboGenero.Location = new Point(30, 179);
-            cboGenero.Margin = new Padding(3, 2, 3, 2);
+            cboGenero.Location = new Point(34, 239);
             cboGenero.Name = "cboGenero";
-            cboGenero.Size = new Size(133, 23);
-            cboGenero.TabIndex = 0;
+            cboGenero.Size = new Size(151, 28);
+            cboGenero.TabIndex = 3;
             // 
             // cboClasificacion
             // 
             cboClasificacion.FormattingEnabled = true;
-            cboClasificacion.Location = new Point(192, 179);
-            cboClasificacion.Margin = new Padding(3, 2, 3, 2);
+            cboClasificacion.Location = new Point(219, 239);
             cboClasificacion.Name = "cboClasificacion";
-            cboClasificacion.Size = new Size(133, 23);
-            cboClasificacion.TabIndex = 1;
+            cboClasificacion.Size = new Size(151, 28);
+            cboClasificacion.TabIndex = 4;
             // 
             // cboProductora
             // 
             cboProductora.FormattingEnabled = true;
-            cboProductora.Location = new Point(360, 179);
-            cboProductora.Margin = new Padding(3, 2, 3, 2);
+            cboProductora.Location = new Point(411, 239);
             cboProductora.Name = "cboProductora";
-            cboProductora.Size = new Size(133, 23);
-            cboProductora.TabIndex = 2;
+            cboProductora.Size = new Size(151, 28);
+            cboProductora.TabIndex = 5;
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(30, 68);
-            txtTitulo.Margin = new Padding(3, 2, 3, 2);
+            txtTitulo.Location = new Point(34, 91);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(110, 23);
-            txtTitulo.TabIndex = 3;
+            txtTitulo.Size = new Size(125, 27);
+            txtTitulo.TabIndex = 0;
             txtTitulo.TextChanged += textBox1_TextChanged;
             // 
             // txtDuracion
             // 
-            txtDuracion.Location = new Point(192, 68);
-            txtDuracion.Margin = new Padding(3, 2, 3, 2);
+            txtDuracion.Location = new Point(219, 91);
             txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(110, 23);
-            txtDuracion.TabIndex = 4;
+            txtDuracion.Size = new Size(125, 27);
+            txtDuracion.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 50);
+            label1.Location = new Point(34, 67);
             label1.Name = "label1";
-            label1.Size = new Size(45, 15);
+            label1.Size = new Size(56, 20);
             label1.TabIndex = 5;
             label1.Text = "TITULO";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(192, 50);
+            label2.Location = new Point(219, 67);
             label2.Name = "label2";
-            label2.Size = new Size(67, 15);
+            label2.Size = new Size(84, 20);
             label2.TabIndex = 6;
             label2.Text = "DURACION";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(192, 162);
+            label3.Location = new Point(219, 216);
             label3.Name = "label3";
-            label3.Size = new Size(92, 15);
+            label3.Size = new Size(112, 20);
             label3.TabIndex = 7;
             label3.Text = "CLASIFICACION";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 162);
+            label4.Location = new Point(34, 216);
             label4.Name = "label4";
-            label4.Size = new Size(52, 15);
+            label4.Size = new Size(66, 20);
             label4.TabIndex = 8;
             label4.Text = "GENERO";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(360, 162);
+            label5.Location = new Point(411, 216);
             label5.Name = "label5";
-            label5.Size = new Size(83, 15);
+            label5.Size = new Size(104, 20);
             label5.TabIndex = 9;
             label5.Text = "PRODUCTORA";
             // 
             // dtpEstreno
             // 
-            dtpEstreno.Location = new Point(360, 66);
-            dtpEstreno.Margin = new Padding(3, 2, 3, 2);
+            dtpEstreno.Location = new Point(411, 88);
             dtpEstreno.Name = "dtpEstreno";
-            dtpEstreno.Size = new Size(275, 23);
-            dtpEstreno.TabIndex = 10;
+            dtpEstreno.Size = new Size(314, 27);
+            dtpEstreno.TabIndex = 2;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(360, 49);
+            label6.Location = new Point(411, 65);
             label6.Name = "label6";
-            label6.Size = new Size(56, 15);
+            label6.Size = new Size(72, 20);
             label6.TabIndex = 11;
             label6.Text = "ESTRENO";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(531, 176);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
+            btnGuardar.Location = new Point(607, 235);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(104, 27);
-            btnGuardar.TabIndex = 13;
+            btnGuardar.Size = new Size(119, 36);
+            btnGuardar.TabIndex = 6;
             btnGuardar.Text = "Save";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(616, 293);
-            btnClose.Margin = new Padding(3, 2, 3, 2);
+            btnClose.Location = new Point(704, 391);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(63, 28);
+            btnClose.Size = new Size(72, 37);
             btnClose.TabIndex = 14;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
@@ -173,9 +166,9 @@
             // 
             // FrmPelicula
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
             Controls.Add(btnClose);
             Controls.Add(btnGuardar);
             Controls.Add(label6);
@@ -190,9 +183,9 @@
             Controls.Add(cboProductora);
             Controls.Add(cboClasificacion);
             Controls.Add(cboGenero);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmPelicula";
             Text = "Pelicula";
+            Load += FrmPelicula_Load;
             ResumeLayout(false);
             PerformLayout();
         }

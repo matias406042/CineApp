@@ -255,6 +255,7 @@ namespace CineFrontEnd.Formularios
 
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
             cboSala.SelectedIndex = funcion.Sala.Tipo.Id - 1;
@@ -266,5 +267,6 @@ namespace CineFrontEnd.Formularios
             await AsyncCargarGeneros();
             await AsyncCargarSalas();
         }
+
     }
 }

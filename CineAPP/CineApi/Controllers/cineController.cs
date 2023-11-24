@@ -21,8 +21,7 @@ namespace CineApi.Controllers
         }
 
 
-        // GET: api/<cineController>
-        // [HttpGet]
+
         [HttpGet("/Uuario/loguear")]
         public IActionResult GetLogin()
         {
@@ -40,7 +39,10 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno");
             }
         }
-        [HttpGet("/Peliculas/traer{id}")]
+    
+     
+        [HttpGet("/Peliculas/traerXID")]
+
         public IActionResult GetPeliculaxID(int id_pelicula)
         {
             Pelicula peli = null;
@@ -65,14 +67,12 @@ namespace CineApi.Controllers
             {
                 if (oPelicula == null)
                     return BadRequest("pelicula inválida!!!");
-                if (app.SavePelicula(oPelicula))
-                    return Ok(oPelicula);
-                else
-                    return NotFound("No se pudo guardar la pelicula!!!");
+                return Ok(app.SavePelicula(oPelicula));
+                 
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error interno!!! Intente luego...");
+                return StatusCode(500);
             }
 
         }
@@ -101,10 +101,9 @@ namespace CineApi.Controllers
             try
             {
 
-                if (app.UpdatePelicula(oPelicula))
-                    return Ok("se actualizo la pelicula con exito");
-                else
-                    return NotFound("NO se encontradola pelicula: ");
+              
+                    return Ok(app.UpdatePelicula(oPelicula));
+                
             }
             catch (Exception)
             {
@@ -113,15 +112,14 @@ namespace CineApi.Controllers
         }
 
 
-        [HttpDelete("/Peliculas/borrar{id}")]
+        [HttpDelete("/Peliculas/borrar")]
         public IActionResult Delete(int id)
         {
             try
             {
-                if (app.DeletePelicula(id))
-                    return Ok("se borro exitosamente");
-                else
-                    return NotFound("No se pudo borrar la pelicula!!!");
+                
+                    return Ok(app.DeletePelicula(id));
+                
             }
             catch (Exception ex)
             {
@@ -184,24 +182,7 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        //[HttpDelete("/Butacas/borrar{id}")]
-        //public IActionResult DeleteButaca(int id)
-        //{
-        //    try
-        //    {
-        //        if (app.DeleteButaca(id))
-        //            return Ok("se borro exitosamente");
-        //        else
-        //            return NotFound("No se pudo borrar la butaca!!!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error interno!!! Intente luego...");
-        //    }
-
-        //}
-        ///////////////////////////
-        ////
+      
 
         [HttpGet("/Funciones/traerFunciones")]
         public IActionResult GetFunciones(DateTime fecha, string titulo = null)
@@ -497,13 +478,14 @@ namespace CineApi.Controllers
             }
 
         }
+        
 
         [HttpGet("/Peliculas/traerGeneros")]
         public IActionResult GetGenerosP()
         {
             try
             {
-                List<Genero> lst = app.GetGenerosP();
+                List<Genero> lst = app.GetGeneros();
                 if (lst != null)
                     return Ok(lst);
                 else

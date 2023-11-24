@@ -2,6 +2,7 @@
 using CineBackEnd.Entidades;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -23,23 +24,48 @@ namespace CineBackEnd.Datos.Implementacion
 
         public bool Actualizar(Pelicula p)
         {
-            throw new NotImplementedException();
+            List<SqlParameter>prms = new List<SqlParameter>();
+            prms.Add(new SqlParameter("@Id", p.Id));
+            prms.Add(new SqlParameter("@IdGenero", p.Genero.Id));
+            prms.Add(new SqlParameter("@IdClasificacion",p.Clasificacion.Id));
+            prms.Add(new SqlParameter("@IdProductora",p.Productora.Id));
+            prms.Add(new SqlParameter("@Titulo", p.Titulo));
+            prms.Add(new SqlParameter("@DuracionMinutos", p.Duracion));
+            prms.Add(new SqlParameter("@Fecha", p.FechaEstreno.ToString("dd/MM/yyyy")));
+            string sp = "SP_PELICULA_ACTUALIZAR";
+
+            if (HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp, prms) > 0)
+            {
+                return true;
+            }
+            else return false;
+
+
         }
 
         public bool BorrarPelicula(int id)
         {
-            throw new NotImplementedException();
+            string sp = "SP_PELICULA_DELETE";
+            List<SqlParameter>prms =new List<SqlParameter>();
+            prms.Add(new SqlParameter("@id", id));
+            if(
+            HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp, prms)>0
+            )return true;
+            else return false;
+
         }
 
         public bool Crear(Pelicula p)
         {
-           List<SqlParameter> parameters = new List<SqlParameter>();
+            List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@IdGenero", p.Genero.Id));
-            parameters.Add(new SqlParameter("@IdClasificacion",p.Clasificacion.Id));
+            parameters.Add(new SqlParameter("@IdClasificacion", p.Clasificacion.Id));
             parameters.Add(new SqlParameter("@IdProductora", p.Productora.Id));
-            parameters.Add(new SqlParameter("@IdDirecto", p.Director.ID));
+            parameters.Add(new SqlParameter("@Titulo", p.Titulo));
+            parameters.Add(new SqlParameter("@DuracionMinutos", p.Duracion));
+            parameters.Add(new SqlParameter("@Fecha", p.FechaEstreno));
 
-            if (HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL("SP_Insertar_Peliculas", parameters) <= 0)
+            if (HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL("SP_Insertar_Pelicula", parameters) <= 0)
             {
                 return false;
             }
@@ -52,7 +78,7 @@ namespace CineBackEnd.Datos.Implementacion
 
             List<SqlParameter> prms = new List<SqlParameter>();
 
-            prms.Add( new SqlParameter("@id", id));
+            prms.Add( new SqlParameter("@ID", id));
 
             DataTable dt = HelperDB.ObtenerInstancia().ConsultaSQL("SP_PELICULIA_X_ID", prms);
             Pelicula p = new Pelicula();
@@ -79,12 +105,16 @@ namespace CineBackEnd.Datos.Implementacion
         public List<Pelicula> GetPeliculas(string titulo, int Id_genero, int AñoEstreno)
         {
            List<SqlParameter> prms = new List<SqlParameter>();
-            
-            SqlParameter p0 = new SqlParameter("@Titulo",titulo);
-            SqlParameter p1 = new SqlParameter("@id_Genero", Id_genero);
-            SqlParameter p2 = new SqlParameter("@AñoEstreno",AñoEstreno);
+           
+            if (titulo== "Nulo") { prms.Add(new SqlParameter("@Titulo", null)); }
+            else { prms.Add(new SqlParameter("@Titulo", titulo)); }
 
-            prms.Add(p0); prms.Add(p1);prms.Add(p2);
+            if (Id_genero == -1) { prms.Add(new SqlParameter("@id_Genero", null)); }
+            else { prms.Add(new SqlParameter("@id_Genero", Id_genero)); }
+
+            if(AñoEstreno == -1) { prms.Add( new SqlParameter("@AñoEstreno", null)); }
+            else { prms.Add( new SqlParameter("@AñoEstreno", AñoEstreno)); }
+           
 
             string sp = "SP_BUSCAR_PELICULAS";
            DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, prms);
@@ -121,9 +151,14 @@ namespace CineBackEnd.Datos.Implementacion
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultaSQL(sp, null);
             foreach (DataRow fila in tabla.Rows)
             {
-                Productora p = new Productora(fila["nombre"].ToString(), 
-                               new Pais(Convert.ToInt32(fila["id_pais"]), fila["pais"].ToString()));
+                Productora p = new Productora();
                 p.Id = Convert.ToInt32(fila["id_productora"]);
+                p.Nombre = Convert.ToString(fila["nombre"]);
+                p.Pais.Id = Convert.ToInt32(fila["id_pais"]);
+                p.Pais.Nombre = Convert.ToString(fila["pais"]);
+                           
+
+                      
                 lstProductora.Add(p);
             }
             return lstProductora;
