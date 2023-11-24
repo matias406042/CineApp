@@ -33,6 +33,10 @@ namespace CineBackEnd.Entidades
             Productora = new Productora();        
             Reparto = new List<Actores>();
             Director = new Director();
+            Titulo = string.Empty;
+            FechaEstreno = DateTime.Now;
+            Duracion = 0; 
+            Id = 0; 
         }
 
     }

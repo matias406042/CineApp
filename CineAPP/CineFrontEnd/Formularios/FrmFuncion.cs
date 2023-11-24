@@ -13,6 +13,7 @@ using CineBackEnd.Datos.Interfaz;
 using System.Diagnostics.Eventing.Reader;
 using CineFrontEnd.Http;
 using Newtonsoft.Json;
+using Microsoft.Reporting.WinForms;
 
 namespace CineFrontEnd.Formularios
 {
@@ -113,10 +114,28 @@ namespace CineFrontEnd.Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Validar Datos
+            AsyncBuscar();
+            
 
-            pelis = dao.GetPeliculas(txtTitulo.Text, DateTime.MinValue, int.Parse(cboGenero.SelectedValue.ToString()));
-            dgvPelis.Rows.Clear();
-            foreach (Pelicula p in pelis)
+        }
+
+        private async void AsyncBuscar()
+        {
+            string tit;
+
+            if (txtTitulo.Text == string.Empty)
+            {
+               tit  = "shrek 7: mas shrek que nunca";
+            }
+            else
+            {
+                tit = txtTitulo.Text;
+            }
+            string url = string.Format("https://localhost:7168/Funciones/traerPeliculas?titulo={0}&estreno={1}&genero={2}", tit, DateTime.MinValue.ToString("yyyy-MM-dd"), int.Parse(cboGenero.SelectedValue.ToString()));
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var peliculas = JsonConvert.DeserializeObject<List<Pelicula>>(result);
+
+            foreach (Pelicula p in peliculas)
             {
                 dgvPelis.Rows.Add(new object[] {p.Id,p.Titulo,p.Genero.Descripcion,p.Duracion,
                     p.Director.ToString(),p.FechaEstreno.ToShortDateString(),p.Clasificacion.EdadMinima,p.Productora.Nombre});
@@ -128,14 +147,9 @@ namespace CineFrontEnd.Formularios
 
             }
 
+
+        
         }
-
-        private async void AsyncBtnBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private async void btnInsert_Click(object sender, EventArgs e)
         {
@@ -175,14 +189,7 @@ namespace CineFrontEnd.Formularios
                 }
                 ff.Fecha = dtpFecha.Value;
                 funcion = ff;
-                //if (dao.Crear(ff))
-                //{
-                //    MessageBox.Show("Se creo la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No se puedo crear la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+
 
                 await GuardarFuncionAsync();
             }
@@ -204,7 +211,7 @@ namespace CineFrontEnd.Formularios
                 ff.Fecha = dtpFecha.Value;
                 if (dao.Actualizar(ff))
                 {
-                    MessageBox.Show("Se Edito la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se editó la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
