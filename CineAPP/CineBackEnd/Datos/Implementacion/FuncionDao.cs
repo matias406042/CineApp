@@ -150,7 +150,7 @@ namespace CineBackEnd.Datos.Implementacion
             List<Pelicula> lstPeliculas = new List<Pelicula>();
             string sp = "SP_BUSCAR_PELICULAS";
             List<SqlParameter> parametros = new List<SqlParameter>();
-            if (titulo != null)
+            if (titulo != null && titulo != "shrek 7: mas shrek que nunca")
                 parametros.Add(new SqlParameter("@titulo", titulo));
             else
                 parametros.Add(new SqlParameter("@titulo", null));

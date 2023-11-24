@@ -13,6 +13,7 @@ using CineBackEnd.Datos.Interfaz;
 using System.Diagnostics.Eventing.Reader;
 using CineFrontEnd.Http;
 using Newtonsoft.Json;
+using Microsoft.Reporting.WinForms;
 
 namespace CineFrontEnd.Formularios
 {
@@ -120,9 +121,17 @@ namespace CineFrontEnd.Formularios
 
         private async void AsyncBuscar()
         {
-            
+            string tit;
 
-            string url = "https://localhost:7168/Funciones/traerPeliculas";
+            if (txtTitulo.Text == string.Empty)
+            {
+               tit  = "shrek 7: mas shrek que nunca";
+            }
+            else
+            {
+                tit = txtTitulo.Text;
+            }
+            string url = string.Format("https://localhost:7168/Funciones/traerPeliculas?titulo={0}&estreno={1}&genero={2}", tit, DateTime.MinValue.ToString("yyyy-MM-dd"), int.Parse(cboGenero.SelectedValue.ToString()));
             var result = await Cliente.GetInstance().GetAsync(url);
             var peliculas = JsonConvert.DeserializeObject<List<Pelicula>>(result);
 
@@ -139,6 +148,7 @@ namespace CineFrontEnd.Formularios
             }
 
 
+        
         }
 
         private async void btnInsert_Click(object sender, EventArgs e)
@@ -179,14 +189,7 @@ namespace CineFrontEnd.Formularios
                 }
                 ff.Fecha = dtpFecha.Value;
                 funcion = ff;
-                //if (dao.Crear(ff))
-                //{
-                //    MessageBox.Show("Se creo la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No se puedo crear la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+
 
                 await GuardarFuncionAsync();
             }
