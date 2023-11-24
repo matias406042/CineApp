@@ -274,25 +274,21 @@ namespace CineApi.Controllers
             try
             {
 
-                if (app.UpdateFuncion(f))
-                    return Ok("se actualizo la funcion con exito");
-                else
-                    return NotFound("NO se encontradola funcion");
+                return Ok(app.UpdateFuncion(f));
+                
             }
             catch (Exception)
             {
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
-        [HttpDelete("/Funciones/borrar{id}")]
-        public IActionResult DeleteFuncion(Funcion f)
+        [HttpDelete("/Funciones/borrar")]
+        public IActionResult DeleteFuncion(int id)
         {
             try
             {
-                if (app.DeleteFuncion(f))
-                    return Ok("se borro exitosamente");
-                else
-                    return NotFound("No se pudo borrar la funcion!!!");
+                    return Ok(app.DeleteFuncion(id));
+                
             }
             catch (Exception ex)
             {
@@ -387,8 +383,10 @@ namespace CineApi.Controllers
                     return BadRequest(ModelState);
                 if (comprobante == null)
                     return BadRequest("Comprobante Invalido!");
+                else { 
                 return Ok(app.SaveComprobante(comprobante));
-                //else
+                }
+                //else}
                 //    return NotFound("No se pudo guardar el comprobante");
             }
             catch (Exception ex)

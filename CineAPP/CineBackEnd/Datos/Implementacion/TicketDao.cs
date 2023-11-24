@@ -18,7 +18,22 @@ namespace CineBackEnd.Datos.Implementacion
             return ButacaDao.ObtenerInstancia().ObtenerButacasXFuncion(id_Funciom);
         }
 
-        
+        public List<Ticket> GetTicketPorFuncion(int idFuncion)
+        {
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@id", idFuncion));
+            DataTable dataTable = HelperDB.ObtenerInstancia().ConsultaSQL("SP_TICKET_X_FUNCION", parameters);
+
+
+            List<Ticket> tickets = new List<Ticket>();
+            foreach (DataRow f in dataTable.Rows)
+            {
+                int idTicket = Convert.ToInt32(f["id_ticket"]);
+                Ticket t = TicketXID(idTicket);
+                tickets.Add(t);
+            }
+            return tickets;
+        }
 
         public List<Ticket> GetTicketsXComprobante(int idComprobante)
         {
@@ -52,12 +67,10 @@ namespace CineBackEnd.Datos.Implementacion
                 t.Precio = Convert.ToDouble(f["pre_unit"]);
 
 
-                int idFuncion = Convert.ToInt32(f["id_funcion"]);
-                t.Funcion = FuncionDao.ObtenerInstancia().FuncionXID(idFuncion);
+              
 
 
                 int idButaca = Convert.ToInt32(f["id_butaca"]);
-                t.Butaca = ButacaDao.ObtenerInstancia().ButacaXID(idButaca);
 
             }
 

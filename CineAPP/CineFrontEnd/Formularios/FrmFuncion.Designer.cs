@@ -39,14 +39,6 @@
             lblNombre = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             dgvPelis = new DataGridView();
-            colId = new DataGridViewTextBoxColumn();
-            ColTitulo = new DataGridViewTextBoxColumn();
-            ColGenero = new DataGridViewTextBoxColumn();
-            ColDuracion = new DataGridViewTextBoxColumn();
-            ColDirector = new DataGridViewTextBoxColumn();
-            ColEstreno = new DataGridViewTextBoxColumn();
-            ColClasif = new DataGridViewTextBoxColumn();
-            colProd = new DataGridViewTextBoxColumn();
             btnSalir = new Button();
             lblSALA = new Label();
             cboSala = new ComboBox();
@@ -56,6 +48,14 @@
             txtDimension = new TextBox();
             dtpFin = new DateTimePicker();
             dtpInicio = new DateTimePicker();
+            colId = new DataGridViewTextBoxColumn();
+            ColTitulo = new DataGridViewTextBoxColumn();
+            ColGenero = new DataGridViewTextBoxColumn();
+            ColDuracion = new DataGridViewTextBoxColumn();
+            ColDirector = new DataGridViewTextBoxColumn();
+            ColEstreno = new DataGridViewTextBoxColumn();
+            ColClasif = new DataGridViewTextBoxColumn();
+            colProd = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPelis).BeginInit();
             SuspendLayout();
             // 
@@ -157,57 +157,8 @@
             dgvPelis.ReadOnly = true;
             dgvPelis.RowHeadersWidth = 51;
             dgvPelis.RowTemplate.Height = 29;
-            dgvPelis.Size = new Size(756, 133);
+            dgvPelis.Size = new Size(741, 133);
             dgvPelis.TabIndex = 10;
-            // 
-            // colId
-            // 
-            colId.HeaderText = "IdPeli";
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            colId.Visible = false;
-            // 
-            // ColTitulo
-            // 
-            ColTitulo.HeaderText = "Titulo";
-            ColTitulo.Name = "ColTitulo";
-            ColTitulo.ReadOnly = true;
-            // 
-            // ColGenero
-            // 
-            ColGenero.HeaderText = "Genero";
-            ColGenero.Name = "ColGenero";
-            ColGenero.ReadOnly = true;
-            // 
-            // ColDuracion
-            // 
-            ColDuracion.HeaderText = "Duracion";
-            ColDuracion.Name = "ColDuracion";
-            ColDuracion.ReadOnly = true;
-            // 
-            // ColDirector
-            // 
-            ColDirector.HeaderText = "Director";
-            ColDirector.Name = "ColDirector";
-            ColDirector.ReadOnly = true;
-            // 
-            // ColEstreno
-            // 
-            ColEstreno.HeaderText = "Año de estreno";
-            ColEstreno.Name = "ColEstreno";
-            ColEstreno.ReadOnly = true;
-            // 
-            // ColClasif
-            // 
-            ColClasif.HeaderText = "Clasificacion";
-            ColClasif.Name = "ColClasif";
-            ColClasif.ReadOnly = true;
-            // 
-            // colProd
-            // 
-            colProd.HeaderText = "Productora";
-            colProd.Name = "colProd";
-            colProd.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -296,6 +247,63 @@
             dtpInicio.Size = new Size(82, 23);
             dtpInicio.TabIndex = 21;
             dtpInicio.Value = new DateTime(2023, 11, 18, 0, 0, 0, 0);
+            // 
+            // colId
+            // 
+            colId.HeaderText = "IdPeli";
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Visible = false;
+            // 
+            // ColTitulo
+            // 
+            ColTitulo.HeaderText = "Titulo";
+            ColTitulo.Name = "ColTitulo";
+            ColTitulo.ReadOnly = true;
+            ColTitulo.Width = 120;
+            // 
+            // ColGenero
+            // 
+            ColGenero.HeaderText = "Genero";
+            ColGenero.Name = "ColGenero";
+            ColGenero.ReadOnly = true;
+            ColGenero.Width = 112;
+            // 
+            // ColDuracion
+            // 
+            ColDuracion.HeaderText = "Duracion";
+            ColDuracion.Name = "ColDuracion";
+            ColDuracion.ReadOnly = true;
+            ColDuracion.Width = 112;
+            // 
+            // ColDirector
+            // 
+            ColDirector.HeaderText = "Director";
+            ColDirector.Name = "ColDirector";
+            ColDirector.ReadOnly = true;
+            ColDirector.Visible = false;
+            ColDirector.Width = 112;
+            // 
+            // ColEstreno
+            // 
+            ColEstreno.HeaderText = "Año de estreno";
+            ColEstreno.Name = "ColEstreno";
+            ColEstreno.ReadOnly = true;
+            ColEstreno.Width = 112;
+            // 
+            // ColClasif
+            // 
+            ColClasif.HeaderText = "Clasificacion";
+            ColClasif.Name = "ColClasif";
+            ColClasif.ReadOnly = true;
+            ColClasif.Width = 112;
+            // 
+            // colProd
+            // 
+            colProd.HeaderText = "Productora";
+            colProd.Name = "colProd";
+            colProd.ReadOnly = true;
+            colProd.Width = 120;
             // 
             // FrmFuncion
             // 

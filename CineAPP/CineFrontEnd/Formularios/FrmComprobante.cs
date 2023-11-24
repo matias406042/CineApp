@@ -130,7 +130,7 @@ namespace CineFrontEnd.Formularios
             if (cbxDescuento.Checked)
             {
                 cboDescuento.Enabled = true;
-                cboDescuento.SelectedIndex = 0;
+                cboDescuento.SelectedIndex = -1;
             }
             else
             {

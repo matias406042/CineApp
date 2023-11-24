@@ -18,7 +18,7 @@ namespace CineBackEnd.Datos.Interfaz
         List<Genero> GetGeneros();
         List<Sala> GetSalas();        
         bool Crear(Funcion f);
-        bool Borrar(Funcion f);
+        bool Borrar(int id);
         bool Actualizar(Funcion f);
         public int OcuparButaca(bool ocupar,int id_funcion, string fila, int columna);
         public List<Butaca> BuscarButacas(Funcion f);

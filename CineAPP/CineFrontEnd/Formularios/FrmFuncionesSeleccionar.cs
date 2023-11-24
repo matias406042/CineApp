@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
 using CineBackEnd.Entidades;
+using CineFrontEnd.Http;
+using Newtonsoft.Json;
 
 namespace CineFrontEnd.Formularios
 {
@@ -18,10 +20,12 @@ namespace CineFrontEnd.Formularios
         int id = -1;
         IFuncionDao funcionDao;
         List<Funcion> listaFunciones;
+        ITicketDao ticketDao;
         public FrmFuncionesSeleccionar()
         {
             InitializeComponent();
             funcionDao = new FuncionDao();
+            ticketDao = new TicketDao();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,17 +68,31 @@ namespace CineFrontEnd.Formularios
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            asyncBuscarFunciones();
+
+
             listaFunciones = funcionDao.GetFunciones(dtpFecha.Value,string.Empty);
+            
+        }
+
+        private async void asyncBuscarFunciones()
+        {
+            string url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}", DateTime.MinValue.ToString("yyyy-MM-dd"));
+            var result = await Cliente.GetInstance().GetAsync(url);
+            var funciones = JsonConvert.DeserializeObject<List<Funcion>>(result);
+
             dgvFunciones.Rows.Clear();
             foreach (Funcion f in listaFunciones)
             {
-                dgvFunciones.Rows.Add(new object[] {f.Id,f.Pelicula.Titulo,f.Pelicula.Genero.Descripcion,f.HorarioInicio,f.HorarioFin,f.Sala.Descripcion });
+                dgvFunciones.Rows.Add(new object[] { f.Id, f.Pelicula.Titulo, f.Pelicula.Genero.Descripcion, f.HorarioInicio, f.HorarioFin, f.Sala.Descripcion });
             }
+
             if (dgvFunciones.Rows.Count == 0)
             {
-                MessageBox.Show("No se han encontrado películas", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se han encontrado funciones.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -119,20 +137,57 @@ namespace CineFrontEnd.Formularios
                         break;
                     }
                 }
-                if (funcionDao.Borrar(ff))
+
+                if(existeTicket(ff))
                 {
-                    MessageBox.Show("Se elimino la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se puede eliminar una función que haya vendido tickets.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("No se pudo eliminar la funcion :(", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
+
+                asyncBorrarFuncion(ff);
+
+
             }
             else
             {
                 MessageBox.Show("Eliminacion cancelada","Cancelar",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
            
+        }
+
+        private bool existeTicket(Funcion f)
+        {
+            bool existe = false;
+
+            foreach (Ticket ticket in ticketDao.GetTicketPorFuncion(f.Id))
+            {
+                if(ticket.Funcion.Id == f.Id)
+                {
+                    existe = true;
+                    break;
+                }
+                else { existe = false; }
+            }
+
+            return existe;
+        }
+
+        private async void asyncBorrarFuncion(Funcion ff)
+        {
+            string url = string.Format("https://localhost:7168/Funciones/borrar?id={0}", ff.Id);
+            var result = await Cliente.GetInstance().DeleteAsync(url);
+            var funcion = JsonConvert.DeserializeObject<bool>(result);
+
+            if (funcion)
+            {
+                MessageBox.Show("Se elimino la funcion con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //soy muy bueno
+            else
+            {
+                MessageBox.Show("No se puede eliminar una función que haya vendido tickets.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -70,7 +70,13 @@ namespace CineFrontEnd.Http
             var response = "";
             if (result.IsSuccessStatusCode)
                 response = await result.Content.ReadAsStringAsync();
+            if (!result.IsSuccessStatusCode)
+            {
+                var errorDetails = await result.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error: {errorDetails}");
+            }
             return response;
+
         }
         public async Task<string> PostAsync(string urlPost)
         {

@@ -37,11 +37,11 @@ namespace CineBackEnd.Datos.Implementacion
             else
                 return true;
         }
-        public bool Borrar(Funcion f)
+        public bool Borrar(int id)
         {
             string sp = "SP_BORRAR_FUNCION";
             List<SqlParameter> parametros = new List<SqlParameter>();
-            parametros.Add(new SqlParameter("@id_funcion",f.Id));
+            parametros.Add(new SqlParameter("@id_funcion",id));
             if(HelperDB.ObtenerInstancia().SPTransaccionSimpleSQL(sp,parametros) <= 0)
                 return false;
             else

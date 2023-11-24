@@ -10,7 +10,7 @@ namespace CineBackEnd.Datos.Interfaz
     public interface ITicketDao
     {
 
-
+        List<Ticket> GetTicketPorFuncion(int id_Funcion);
 
         List<Butaca> GetButacasXFuncion(int id_Funciom);
 

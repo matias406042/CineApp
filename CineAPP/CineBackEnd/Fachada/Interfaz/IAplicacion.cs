@@ -10,7 +10,7 @@ namespace CineBackEnd.Fachada.Interfaz
 {
     public interface IAplicacion
     {
-        public bool DeleteFuncion(Funcion f);
+        public bool DeleteFuncion(int id);
 
         public bool DeletePelicula(int id);
 

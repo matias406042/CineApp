@@ -133,9 +133,9 @@ namespace CineFrontEnd.Formularios
             }
             string url = string.Format("https://localhost:7168/Funciones/traerPeliculas?titulo={0}&estreno={1}&genero={2}", tit, DateTime.MinValue.ToString("yyyy-MM-dd"), int.Parse(cboGenero.SelectedValue.ToString()));
             var result = await Cliente.GetInstance().GetAsync(url);
-            var peliculas = JsonConvert.DeserializeObject<List<Pelicula>>(result);
+            pelis = JsonConvert.DeserializeObject<List<Pelicula>>(result);
 
-            foreach (Pelicula p in peliculas)
+            foreach (Pelicula p in pelis)
             {
                 dgvPelis.Rows.Add(new object[] {p.Id,p.Titulo,p.Genero.Descripcion,p.Duracion,
                     p.Director.ToString(),p.FechaEstreno.ToShortDateString(),p.Clasificacion.EdadMinima,p.Productora.Nombre});

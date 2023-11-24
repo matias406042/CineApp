@@ -25,9 +25,9 @@ namespace CineBackEnd.Fachada.Implementacion
             daoTicket = new TicketDao();           daoPelicula = new PeliculaDao();
         }
 
-        public bool DeleteFuncion(Funcion f)
+        public bool DeleteFuncion(int id)
         {
-            return daoFuncion.Borrar(f); 
+            return daoFuncion.Borrar(id); 
         }
 
         public bool DeletePelicula(int id)
