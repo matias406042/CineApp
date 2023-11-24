@@ -216,5 +216,10 @@ namespace CineFrontEnd.Formularios
         {
 
         }
+
+        private void FrmFuncion_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

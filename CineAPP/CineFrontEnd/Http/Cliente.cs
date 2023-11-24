@@ -21,6 +21,7 @@ namespace CineFrontEnd.Http
                 instancia = new Cliente();
             return instancia;
         }
+        
         public async Task<string> GetAsync(string url)
         {
             var result = await client.GetAsync(url);

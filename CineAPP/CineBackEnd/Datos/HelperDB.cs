@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection(Properties.Resources.conexionTomi);
+            cnn = new SqlConnection(Properties.Resources.conexionMati);
         }
 
         public static HelperDB ObtenerInstancia()
@@ -31,13 +31,13 @@ namespace CineBackEnd.Datos
 
             cnn.Open();
             SqlCommand cmd = new SqlCommand(spNombre, cnn);
+            
             cmd.CommandType = CommandType.StoredProcedure;
             if (values != null)
             {
                 foreach (SqlParameter oParametro in values)
                 {
-                    if (oParametro.Value == null)
-                        oParametro.Value = DBNull.Value;
+                  
                     cmd.Parameters.Add(oParametro);
                 }
             }
@@ -78,7 +78,8 @@ namespace CineBackEnd.Datos
                 afectadas = cmd.ExecuteNonQuery();
                 t.Commit();
             }
-            catch (SqlException)
+           
+catch (SqlException)
             {
                 if (t != null) { t.Rollback(); }
             }

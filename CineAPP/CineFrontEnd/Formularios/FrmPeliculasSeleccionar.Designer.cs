@@ -40,7 +40,7 @@
             btnSerch = new Button();
             cbxTitulo = new CheckBox();
             cbxGenero = new CheckBox();
-            cbxFecha = new CheckBox();
+            cbxAñoEstreno = new CheckBox();
             txbTitulo = new TextBox();
             groupBox1 = new GroupBox();
             txbAño = new TextBox();
@@ -51,21 +51,25 @@
             // 
             // dgvPelicula
             // 
+            dgvPelicula.AllowUserToAddRows = false;
+            dgvPelicula.AllowUserToDeleteRows = false;
             dgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPelicula.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dgvPelicula.Location = new Point(273, 9);
-            dgvPelicula.Margin = new Padding(3, 2, 3, 2);
+            dgvPelicula.Location = new Point(312, 12);
             dgvPelicula.Name = "dgvPelicula";
+            dgvPelicula.ReadOnly = true;
             dgvPelicula.RowHeadersWidth = 51;
             dgvPelicula.RowTemplate.Height = 29;
-            dgvPelicula.Size = new Size(416, 320);
+            dgvPelicula.Size = new Size(475, 427);
             dgvPelicula.TabIndex = 4;
+            dgvPelicula.CellContentClick += dgvPelicula_CellContentClick;
             // 
             // Column1
             // 
             Column1.HeaderText = "ID";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             Column1.Visible = false;
             Column1.Width = 125;
             // 
@@ -74,6 +78,7 @@
             Column2.HeaderText = "TITULO";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             Column2.Width = 125;
             // 
             // Column3
@@ -81,6 +86,7 @@
             Column3.HeaderText = "GENERO";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             Column3.Width = 125;
             // 
             // Column4
@@ -88,44 +94,43 @@
             Column4.HeaderText = "FECHA ESTRENO";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             Column4.Width = 125;
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(22, 218);
-            btnUpdate.Margin = new Padding(3, 2, 3, 2);
+            btnUpdate.Location = new Point(25, 291);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(89, 22);
-            btnUpdate.TabIndex = 8;
+            btnUpdate.Size = new Size(110, 29);
+            btnUpdate.TabIndex = 0;
             btnUpdate.Text = "ACTUALIZAR";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(145, 296);
-            btnClose.Margin = new Padding(3, 2, 3, 2);
+            btnClose.Location = new Point(166, 395);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(95, 22);
+            btnClose.Size = new Size(109, 29);
             btnClose.TabIndex = 9;
             btnClose.Text = "CERRAR";
             btnClose.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(145, 218);
-            btnDelete.Margin = new Padding(3, 2, 3, 2);
+            btnDelete.Location = new Point(166, 291);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(95, 22);
-            btnDelete.TabIndex = 10;
+            btnDelete.Size = new Size(109, 29);
+            btnDelete.TabIndex = 3;
             btnDelete.Text = "ELIMINAR";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(22, 296);
-            btnAdd.Margin = new Padding(3, 2, 3, 2);
+            btnAdd.Location = new Point(25, 395);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(89, 22);
+            btnAdd.Size = new Size(102, 29);
             btnAdd.TabIndex = 11;
             btnAdd.Text = "AÑADIR NUEVO";
             btnAdd.UseVisualStyleBackColor = true;
@@ -133,11 +138,10 @@
             // 
             // btnSerch
             // 
-            btnSerch.Location = new Point(12, 139);
-            btnSerch.Margin = new Padding(3, 2, 3, 2);
+            btnSerch.Location = new Point(14, 185);
             btnSerch.Name = "btnSerch";
-            btnSerch.Size = new Size(218, 22);
-            btnSerch.TabIndex = 0;
+            btnSerch.Size = new Size(249, 29);
+            btnSerch.TabIndex = 1;
             btnSerch.Text = "Buscar";
             btnSerch.UseVisualStyleBackColor = true;
             btnSerch.Click += btnSerch_Click;
@@ -145,10 +149,9 @@
             // cbxTitulo
             // 
             cbxTitulo.AutoSize = true;
-            cbxTitulo.Location = new Point(11, 20);
-            cbxTitulo.Margin = new Padding(3, 2, 3, 2);
+            cbxTitulo.Location = new Point(13, 27);
             cbxTitulo.Name = "cbxTitulo";
-            cbxTitulo.Size = new Size(56, 19);
+            cbxTitulo.Size = new Size(69, 24);
             cbxTitulo.TabIndex = 1;
             cbxTitulo.Text = "Titulo";
             cbxTitulo.UseVisualStyleBackColor = true;
@@ -157,83 +160,75 @@
             // cbxGenero
             // 
             cbxGenero.AutoSize = true;
-            cbxGenero.Location = new Point(11, 53);
-            cbxGenero.Margin = new Padding(3, 2, 3, 2);
+            cbxGenero.Location = new Point(13, 71);
             cbxGenero.Name = "cbxGenero";
-            cbxGenero.Size = new Size(64, 19);
+            cbxGenero.Size = new Size(79, 24);
             cbxGenero.TabIndex = 2;
             cbxGenero.Text = "Genero";
             cbxGenero.UseVisualStyleBackColor = true;
             cbxGenero.CheckedChanged += cbxGenero_CheckedChanged;
             // 
-            // cbxFecha
+            // cbxAñoEstreno
             // 
-            cbxFecha.AutoSize = true;
-            cbxFecha.Location = new Point(11, 89);
-            cbxFecha.Margin = new Padding(3, 2, 3, 2);
-            cbxFecha.Name = "cbxFecha";
-            cbxFecha.Size = new Size(90, 19);
-            cbxFecha.TabIndex = 3;
-            cbxFecha.Text = "Año Estreno";
-            cbxFecha.UseVisualStyleBackColor = true;
-            cbxFecha.CheckedChanged += cbxFecha_CheckedChanged;
+            cbxAñoEstreno.AutoSize = true;
+            cbxAñoEstreno.Location = new Point(13, 119);
+            cbxAñoEstreno.Name = "cbxAñoEstreno";
+            cbxAñoEstreno.Size = new Size(111, 24);
+            cbxAñoEstreno.TabIndex = 1;
+            cbxAñoEstreno.Text = "Año Estreno";
+            cbxAñoEstreno.UseVisualStyleBackColor = true;
+            cbxAñoEstreno.CheckedChanged += cbxFecha_CheckedChanged;
             // 
             // txbTitulo
             // 
-            txbTitulo.Location = new Point(122, 17);
-            txbTitulo.Margin = new Padding(3, 2, 3, 2);
+            txbTitulo.Location = new Point(139, 23);
             txbTitulo.Name = "txbTitulo";
-            txbTitulo.Size = new Size(110, 23);
-            txbTitulo.TabIndex = 5;
+            txbTitulo.Size = new Size(125, 27);
+            txbTitulo.TabIndex = 1;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(txbAño);
             groupBox1.Controls.Add(cmbGenero);
             groupBox1.Controls.Add(txbTitulo);
-            groupBox1.Controls.Add(cbxFecha);
+            groupBox1.Controls.Add(cbxAñoEstreno);
             groupBox1.Controls.Add(cbxGenero);
             groupBox1.Controls.Add(cbxTitulo);
             groupBox1.Controls.Add(btnSerch);
-            groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(11, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(247, 180);
-            groupBox1.TabIndex = 12;
+            groupBox1.Size = new Size(282, 240);
+            groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Busqueda";
             groupBox1.Enter += groupBox1_Enter;
             // 
             // txbAño
             // 
-            txbAño.Location = new Point(122, 88);
-            txbAño.Margin = new Padding(3, 2, 3, 2);
+            txbAño.Location = new Point(139, 117);
             txbAño.Name = "txbAño";
-            txbAño.Size = new Size(110, 23);
-            txbAño.TabIndex = 9;
+            txbAño.Size = new Size(125, 27);
+            txbAño.TabIndex = 4;
             // 
             // cmbGenero
             // 
             cmbGenero.FormattingEnabled = true;
-            cmbGenero.Location = new Point(122, 52);
-            cmbGenero.Margin = new Padding(3, 2, 3, 2);
+            cmbGenero.Location = new Point(139, 69);
             cmbGenero.Name = "cmbGenero";
-            cmbGenero.Size = new Size(110, 23);
-            cmbGenero.TabIndex = 8;
+            cmbGenero.Size = new Size(125, 28);
+            cmbGenero.TabIndex = 2;
             // 
             // FrmPeliculasSeleccionar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
             Controls.Add(groupBox1);
             Controls.Add(btnAdd);
             Controls.Add(btnDelete);
             Controls.Add(btnClose);
             Controls.Add(btnUpdate);
             Controls.Add(dgvPelicula);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmPeliculasSeleccionar";
             Text = "Seleccion de Peliculas";
             Load += FrmPeliculasSeleccionar_Load;
@@ -252,7 +247,7 @@
         private Button btnSerch;
         private CheckBox cbxTitulo;
         private CheckBox cbxGenero;
-        private CheckBox cbxFecha;
+        private CheckBox cmbAñoEstreno;
         private TextBox txbTitulo;
         private GroupBox groupBox1;
         private DataGridViewTextBoxColumn Column1;
@@ -261,5 +256,6 @@
         private DataGridViewTextBoxColumn Column4;
         private ComboBox cmbGenero;
         private TextBox txbAño;
+        private CheckBox cbxAñoEstreno;
     }
 }

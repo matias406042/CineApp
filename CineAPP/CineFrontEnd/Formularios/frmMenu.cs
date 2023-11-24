@@ -36,6 +36,10 @@ namespace CineFrontEnd.Formularios
         {
             FrmPeliculasSeleccionar frmPeliculaSeleccionar = new FrmPeliculasSeleccionar();
             frmPeliculaSeleccionar.ShowDialog();
+           
+
+
+
         }
 
         private void btnTickets_Click(object sender, EventArgs e)
@@ -62,7 +66,7 @@ namespace CineFrontEnd.Formularios
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }

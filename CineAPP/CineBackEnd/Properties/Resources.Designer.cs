@@ -61,6 +61,15 @@ namespace CineBackEnd.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Data Source=DESKTOP-JDKTHBG\SQLEXPRESS;Initial Catalog=TP_LABORATORIO_FINAL;Integrated Security=True.
+        /// </summary>
+        internal static string conexionMati {
+            get {
+                return ResourceManager.GetString("conexionMati", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Data Source=DESKTOP-UUMMIAU\SQLEXPRESS;Initial Catalog=TP_LABORATORIO_FINAL;Integrated Security=True.
         /// </summary>
         internal static string conexionTomi {
