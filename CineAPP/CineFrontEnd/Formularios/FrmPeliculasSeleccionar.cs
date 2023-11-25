@@ -206,14 +206,16 @@ namespace CineFrontEnd.Formularios
             DialogResult result = MessageBox.Show("¿Seguro desea eliminar la pelicula?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                DialogResult restult2 = MessageBox.Show("Esto podria eliminar las funciones /n registradas que no emitieron " +
+                DialogResult restult2 = MessageBox.Show("Esto podria eliminar las funciones  registradas que no emitieron " +
                 "tickets", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (restult2 == DialogResult.Yes)
                 {
-
-                    AsyncBorrarPelicula(seleccionada);
-
+                    if (seleccionada != -1)
+                    {
+                        AsyncBorrarPelicula(seleccionada);
+                    }
+                    else { MessageBox.Show("Seleccione una pelicula (se recomienda hacer doble click)"); }
 
                 }
             }

@@ -12,6 +12,7 @@ using CineBackEnd.Datos.Implementacion;
 using CineBackEnd.Datos.Interfaz;
 using Newtonsoft.Json;
 using CineFrontEnd.Http;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace CineFrontEnd.Formularios
 {
@@ -39,10 +40,30 @@ namespace CineFrontEnd.Formularios
             {
                 total += Convert.ToDouble(r.Cells["ColPrecio"].Value);
             }
+
             if (cbxDescuento.Checked)
-                return total - (total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0, 2));
+            {
+                try
+                {
+                    if (Convert.ToDouble(lblDescuento.Text.Substring(0, 2)) != 0)
+                    {
+                        return total - ((total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0, 2)));
+                    }
+
+                    else { return total; }
+                }
+                catch (Exception)
+                {
+
+                    return 0;
+                }
+
+
+            }
             else return total;
         }
+
+
 
 
         private async void AsyncCargarDecuento()
@@ -74,6 +95,12 @@ namespace CineFrontEnd.Formularios
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             //Validaciones
+
+            if (cboDescuento.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe SELECCIONAR UN DESCUENTO");
+                return;
+            }
             comprobante.FormaPago = (FormaPago)cboFormaPago.SelectedItem;
             comprobante.Total = CalcularTotal();
             if (cbxDescuento.Checked)
@@ -141,7 +168,7 @@ namespace CineFrontEnd.Formularios
 
         private void cboDescuento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboDescuento.SelectedIndex == -1)
+            if (cboDescuento.SelectedIndex == -1 || cboDescuento.SelectedItem.ToString() == "SIN DESCUENTO")
             {
                 lblDescuento.Visible = false;
                 txtTotal.Text = CalcularTotal().ToString();
@@ -193,7 +220,8 @@ namespace CineFrontEnd.Formularios
         {
             foreach (Ticket t in comprobante.Tickets)
             {
-                string url = "https://localhost:7168//Butaca/desocupar";
+                string url = "https://localhost:7168/Butaca/desocupar";
+
                 string bodycontent = JsonConvert.SerializeObject(t);
                 var result = await Cliente.GetInstance().PutAsync(url, bodycontent);
             }
@@ -207,12 +235,12 @@ namespace CineFrontEnd.Formularios
 
         private void dgvTickets_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            txtTotal.Text = CalcularTotal().ToString() ;
+            txtTotal.Text = CalcularTotal().ToString();
         }
 
         private void dgvTickets_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            if(dgvTickets.Rows.Count > 0)
+            if (dgvTickets.Rows.Count > 0)
             {
                 txtTotal.Text = CalcularTotal().ToString();
             }
@@ -220,6 +248,11 @@ namespace CineFrontEnd.Formularios
             {
                 txtTotal.Text = "0";
             }
+        }
+
+        private void cbxDescuento_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

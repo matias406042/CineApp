@@ -55,13 +55,12 @@
             dgvPelicula.AllowUserToDeleteRows = false;
             dgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPelicula.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dgvPelicula.Location = new Point(273, 9);
-            dgvPelicula.Margin = new Padding(3, 2, 3, 2);
+            dgvPelicula.Location = new Point(335, 12);
             dgvPelicula.Name = "dgvPelicula";
             dgvPelicula.ReadOnly = true;
             dgvPelicula.RowHeadersWidth = 51;
             dgvPelicula.RowTemplate.Height = 29;
-            dgvPelicula.Size = new Size(416, 320);
+            dgvPelicula.Size = new Size(430, 427);
             dgvPelicula.TabIndex = 4;
             dgvPelicula.CellContentClick += dgvPelicula_CellContentClick;
             // 
@@ -106,10 +105,9 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.LightGray;
-            btnUpdate.Location = new Point(22, 218);
-            btnUpdate.Margin = new Padding(3, 2, 3, 2);
+            btnUpdate.Location = new Point(25, 291);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(96, 22);
+            btnUpdate.Size = new Size(123, 29);
             btnUpdate.TabIndex = 0;
             btnUpdate.Text = "ACTUALIZAR";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -123,10 +121,9 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnClose.ForeColor = Color.LightGray;
-            btnClose.Location = new Point(145, 296);
-            btnClose.Margin = new Padding(3, 2, 3, 2);
+            btnClose.Location = new Point(166, 395);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(95, 22);
+            btnClose.Size = new Size(109, 29);
             btnClose.TabIndex = 9;
             btnClose.Text = "CERRAR";
             btnClose.UseVisualStyleBackColor = false;
@@ -140,10 +137,9 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.LightGray;
-            btnDelete.Location = new Point(145, 218);
-            btnDelete.Margin = new Padding(3, 2, 3, 2);
+            btnDelete.Location = new Point(166, 291);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(95, 22);
+            btnDelete.Size = new Size(109, 29);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "ELIMINAR";
             btnDelete.UseVisualStyleBackColor = false;
@@ -157,10 +153,9 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.LightGray;
-            btnAdd.Location = new Point(22, 296);
-            btnAdd.Margin = new Padding(3, 2, 3, 2);
+            btnAdd.Location = new Point(25, 395);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(89, 22);
+            btnAdd.Size = new Size(123, 29);
             btnAdd.TabIndex = 11;
             btnAdd.Text = "AÑADIR NUEVO";
             btnAdd.UseVisualStyleBackColor = false;
@@ -174,10 +169,9 @@
             btnSerch.FlatStyle = FlatStyle.Flat;
             btnSerch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSerch.ForeColor = Color.LightGray;
-            btnSerch.Location = new Point(12, 139);
-            btnSerch.Margin = new Padding(3, 2, 3, 2);
+            btnSerch.Location = new Point(14, 185);
             btnSerch.Name = "btnSerch";
-            btnSerch.Size = new Size(218, 22);
+            btnSerch.Size = new Size(249, 29);
             btnSerch.TabIndex = 1;
             btnSerch.Text = "Buscar";
             btnSerch.UseVisualStyleBackColor = false;
@@ -188,10 +182,9 @@
             cbxTitulo.AutoSize = true;
             cbxTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbxTitulo.ForeColor = Color.LightGray;
-            cbxTitulo.Location = new Point(11, 20);
-            cbxTitulo.Margin = new Padding(3, 2, 3, 2);
+            cbxTitulo.Location = new Point(13, 27);
             cbxTitulo.Name = "cbxTitulo";
-            cbxTitulo.Size = new Size(58, 19);
+            cbxTitulo.Size = new Size(72, 24);
             cbxTitulo.TabIndex = 1;
             cbxTitulo.Text = "Titulo";
             cbxTitulo.UseVisualStyleBackColor = true;
@@ -202,10 +195,9 @@
             cbxGenero.AutoSize = true;
             cbxGenero.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbxGenero.ForeColor = Color.LightGray;
-            cbxGenero.Location = new Point(11, 53);
-            cbxGenero.Margin = new Padding(3, 2, 3, 2);
+            cbxGenero.Location = new Point(13, 71);
             cbxGenero.Name = "cbxGenero";
-            cbxGenero.Size = new Size(68, 19);
+            cbxGenero.Size = new Size(82, 24);
             cbxGenero.TabIndex = 2;
             cbxGenero.Text = "Genero";
             cbxGenero.UseVisualStyleBackColor = true;
@@ -216,10 +208,9 @@
             cbxAñoEstreno.AutoSize = true;
             cbxAñoEstreno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbxAñoEstreno.ForeColor = Color.LightGray;
-            cbxAñoEstreno.Location = new Point(11, 89);
-            cbxAñoEstreno.Margin = new Padding(3, 2, 3, 2);
+            cbxAñoEstreno.Location = new Point(13, 119);
             cbxAñoEstreno.Name = "cbxAñoEstreno";
-            cbxAñoEstreno.Size = new Size(93, 19);
+            cbxAñoEstreno.Size = new Size(117, 24);
             cbxAñoEstreno.TabIndex = 1;
             cbxAñoEstreno.Text = "Año Estreno";
             cbxAñoEstreno.UseVisualStyleBackColor = true;
@@ -227,10 +218,9 @@
             // 
             // txbTitulo
             // 
-            txbTitulo.Location = new Point(122, 17);
-            txbTitulo.Margin = new Padding(3, 2, 3, 2);
+            txbTitulo.Location = new Point(139, 23);
             txbTitulo.Name = "txbTitulo";
-            txbTitulo.Size = new Size(110, 23);
+            txbTitulo.Size = new Size(125, 27);
             txbTitulo.TabIndex = 1;
             // 
             // groupBox1
@@ -243,11 +233,9 @@
             groupBox1.Controls.Add(cbxTitulo);
             groupBox1.Controls.Add(btnSerch);
             groupBox1.ForeColor = Color.LightGray;
-            groupBox1.Location = new Point(10, 9);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(11, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(247, 180);
+            groupBox1.Size = new Size(282, 240);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Busqueda";
@@ -255,27 +243,25 @@
             // 
             // txbAño
             // 
-            txbAño.Location = new Point(122, 88);
-            txbAño.Margin = new Padding(3, 2, 3, 2);
+            txbAño.Location = new Point(139, 117);
             txbAño.Name = "txbAño";
-            txbAño.Size = new Size(110, 23);
+            txbAño.Size = new Size(125, 27);
             txbAño.TabIndex = 4;
             // 
             // cmbGenero
             // 
             cmbGenero.FormattingEnabled = true;
-            cmbGenero.Location = new Point(122, 52);
-            cmbGenero.Margin = new Padding(3, 2, 3, 2);
+            cmbGenero.Location = new Point(139, 69);
             cmbGenero.Name = "cmbGenero";
-            cmbGenero.Size = new Size(110, 23);
+            cmbGenero.Size = new Size(125, 28);
             cmbGenero.TabIndex = 2;
             // 
             // FrmPeliculasSeleccionar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(698, 381);
+            ClientSize = new Size(798, 508);
             Controls.Add(groupBox1);
             Controls.Add(btnAdd);
             Controls.Add(btnDelete);
@@ -283,7 +269,6 @@
             Controls.Add(btnUpdate);
             Controls.Add(dgvPelicula);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmPeliculasSeleccionar";
             Text = "Seleccion de Peliculas";
             Load += FrmPeliculasSeleccionar_Load;

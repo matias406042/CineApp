@@ -60,7 +60,7 @@
             // cboClasificacion
             // 
             cboClasificacion.FormattingEnabled = true;
-            cboClasificacion.Location = new Point(112, 309);
+            cboClasificacion.Location = new Point(112, 285);
             cboClasificacion.Name = "cboClasificacion";
             cboClasificacion.Size = new Size(125, 28);
             cboClasificacion.TabIndex = 4;
@@ -68,9 +68,9 @@
             // cboProductora
             // 
             cboProductora.FormattingEnabled = true;
-            cboProductora.Location = new Point(276, 309);
+            cboProductora.Location = new Point(276, 285);
             cboProductora.Name = "cboProductora";
-            cboProductora.Size = new Size(151, 28);
+            cboProductora.Size = new Size(132, 28);
             cboProductora.TabIndex = 5;
             // 
             // txtTitulo
@@ -83,9 +83,9 @@
             // 
             // txtDuracion
             // 
-            txtDuracion.Location = new Point(528, 310);
+            txtDuracion.Location = new Point(562, 286);
             txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(127, 27);
+            txtDuracion.Size = new Size(72, 27);
             txtDuracion.TabIndex = 1;
             // 
             // label1
@@ -104,7 +104,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.LightGray;
-            label2.Location = new Point(502, 287);
+            label2.Location = new Point(510, 262);
             label2.Name = "label2";
             label2.Size = new Size(186, 20);
             label2.TabIndex = 6;
@@ -115,7 +115,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.LightGray;
-            label3.Location = new Point(117, 287);
+            label3.Location = new Point(117, 263);
             label3.Name = "label3";
             label3.Size = new Size(120, 20);
             label3.TabIndex = 7;
@@ -137,11 +137,12 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.LightGray;
-            label5.Location = new Point(296, 287);
+            label5.Location = new Point(291, 262);
             label5.Name = "label5";
             label5.Size = new Size(110, 20);
             label5.TabIndex = 9;
             label5.Text = "PRODUCTORA";
+            label5.Click += label5_Click;
             // 
             // dtpEstreno
             // 
@@ -170,7 +171,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardar.ForeColor = Color.LightGray;
-            btnGuardar.Location = new Point(23, 403);
+            btnGuardar.Location = new Point(12, 404);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(115, 36);
             btnGuardar.TabIndex = 6;
@@ -234,7 +235,7 @@
             label7.BackColor = Color.FromArgb(15, 15, 15);
             label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.Transparent;
-            label7.Location = new Point(72, 296);
+            label7.Location = new Point(72, 272);
             label7.Name = "label7";
             label7.Size = new Size(39, 41);
             label7.TabIndex = 17;

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineApi\\CineApi.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineApi\\CineApi.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineApi\\CineApi.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineApi\\CineApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineApi\\CineApi.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineApi\\CineApi.csproj",
         "projectName": "CineApi",
-        "projectPath": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineApi\\CineApi.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineApi\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineApi\\CineApi.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
-                "projectPath": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj"
+              "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
+                "projectPath": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineBackEnd\\CineBackEnd.csproj"
               }
             }
           }
@@ -63,7 +68,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,21 +81,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineBackEnd\\CineBackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
         "projectName": "CineBackEnd",
-        "projectPath": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\Prueba\\TpIntegradorCine\\CineAPP\\CineBackEnd\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineBackEnd\\CineBackEnd.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\TOP_FILMS\\CineAPP\\CineBackEnd\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,6 +107,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -130,7 +141,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -139,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

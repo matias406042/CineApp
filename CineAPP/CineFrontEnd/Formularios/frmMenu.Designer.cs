@@ -67,9 +67,8 @@
             panelMenuLateral.Controls.Add(panelLogo);
             panelMenuLateral.Dock = DockStyle.Left;
             panelMenuLateral.Location = new Point(0, 0);
-            panelMenuLateral.Margin = new Padding(3, 2, 3, 2);
             panelMenuLateral.Name = "panelMenuLateral";
-            panelMenuLateral.Size = new Size(221, 514);
+            panelMenuLateral.Size = new Size(253, 685);
             panelMenuLateral.TabIndex = 0;
             // 
             // btnVentas
@@ -81,9 +80,10 @@
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnVentas.ForeColor = Color.LightGray;
-            btnVentas.Location = new Point(0, 374);
+            btnVentas.Location = new Point(0, 497);
+            btnVentas.Margin = new Padding(3, 4, 3, 4);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(221, 70);
+            btnVentas.Size = new Size(253, 93);
             btnVentas.TabIndex = 11;
             btnVentas.Text = "VENTAS";
             btnVentas.UseVisualStyleBackColor = true;
@@ -94,9 +94,10 @@
             panelReportes.Controls.Add(btnRep_Peliculas);
             panelReportes.Controls.Add(btnRep_Comprobantes);
             panelReportes.Dock = DockStyle.Top;
-            panelReportes.Location = new Point(0, 304);
+            panelReportes.Location = new Point(0, 404);
+            panelReportes.Margin = new Padding(3, 4, 3, 4);
             panelReportes.Name = "panelReportes";
-            panelReportes.Size = new Size(221, 70);
+            panelReportes.Size = new Size(253, 93);
             panelReportes.TabIndex = 10;
             panelReportes.Visible = false;
             // 
@@ -109,9 +110,10 @@
             btnRep_Peliculas.FlatStyle = FlatStyle.Flat;
             btnRep_Peliculas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRep_Peliculas.ForeColor = Color.LightGray;
-            btnRep_Peliculas.Location = new Point(111, 0);
+            btnRep_Peliculas.Location = new Point(127, 0);
+            btnRep_Peliculas.Margin = new Padding(3, 4, 3, 4);
             btnRep_Peliculas.Name = "btnRep_Peliculas";
-            btnRep_Peliculas.Size = new Size(110, 70);
+            btnRep_Peliculas.Size = new Size(126, 93);
             btnRep_Peliculas.TabIndex = 1;
             btnRep_Peliculas.Text = "PELICULAS";
             btnRep_Peliculas.UseVisualStyleBackColor = true;
@@ -127,8 +129,9 @@
             btnRep_Comprobantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRep_Comprobantes.ForeColor = Color.LightGray;
             btnRep_Comprobantes.Location = new Point(0, 0);
+            btnRep_Comprobantes.Margin = new Padding(3, 4, 3, 4);
             btnRep_Comprobantes.Name = "btnRep_Comprobantes";
-            btnRep_Comprobantes.Size = new Size(111, 70);
+            btnRep_Comprobantes.Size = new Size(127, 93);
             btnRep_Comprobantes.TabIndex = 0;
             btnRep_Comprobantes.Text = "COMPROBANTES";
             btnRep_Comprobantes.UseVisualStyleBackColor = true;
@@ -144,10 +147,9 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.LightGray;
-            btnSalir.Location = new Point(0, 480);
-            btnSalir.Margin = new Padding(3, 2, 3, 2);
+            btnSalir.Location = new Point(0, 640);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(221, 34);
+            btnSalir.Size = new Size(253, 45);
             btnSalir.TabIndex = 9;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = false;
@@ -163,9 +165,10 @@
             btnTickets.FlatStyle = FlatStyle.Flat;
             btnTickets.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnTickets.ForeColor = Color.LightGray;
-            btnTickets.Location = new Point(0, 234);
+            btnTickets.Location = new Point(0, 311);
+            btnTickets.Margin = new Padding(3, 4, 3, 4);
             btnTickets.Name = "btnTickets";
-            btnTickets.Size = new Size(221, 70);
+            btnTickets.Size = new Size(253, 93);
             btnTickets.TabIndex = 7;
             btnTickets.Text = "REPORTES";
             btnTickets.UseVisualStyleBackColor = false;
@@ -181,9 +184,10 @@
             btnPeliculas.FlatStyle = FlatStyle.Flat;
             btnPeliculas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnPeliculas.ForeColor = Color.LightGray;
-            btnPeliculas.Location = new Point(0, 164);
+            btnPeliculas.Location = new Point(0, 218);
+            btnPeliculas.Margin = new Padding(3, 4, 3, 4);
             btnPeliculas.Name = "btnPeliculas";
-            btnPeliculas.Size = new Size(221, 70);
+            btnPeliculas.Size = new Size(253, 93);
             btnPeliculas.TabIndex = 6;
             btnPeliculas.Text = "PELICULAS";
             btnPeliculas.UseVisualStyleBackColor = false;
@@ -199,9 +203,10 @@
             btnFunciones.FlatStyle = FlatStyle.Flat;
             btnFunciones.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnFunciones.ForeColor = Color.LightGray;
-            btnFunciones.Location = new Point(0, 94);
+            btnFunciones.Location = new Point(0, 125);
+            btnFunciones.Margin = new Padding(3, 4, 3, 4);
             btnFunciones.Name = "btnFunciones";
-            btnFunciones.Size = new Size(221, 70);
+            btnFunciones.Size = new Size(253, 93);
             btnFunciones.TabIndex = 5;
             btnFunciones.Text = "FUNCIONES";
             btnFunciones.UseVisualStyleBackColor = false;
@@ -214,33 +219,33 @@
             panelLogo.Controls.Add(pictureBox2);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
-            panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(221, 94);
+            panelLogo.Size = new Size(253, 125);
             panelLogo.TabIndex = 0;
             // 
             // panel3
             // 
-            panel3.Location = new Point(221, 0);
+            panel3.Location = new Point(253, 0);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(714, 472);
+            panel3.Size = new Size(816, 629);
             panel3.TabIndex = 3;
             // 
             // panel2
             // 
-            panel2.Location = new Point(221, 0);
+            panel2.Location = new Point(253, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(714, 472);
+            panel2.Size = new Size(816, 629);
             panel2.TabIndex = 3;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.FromArgb(50, 0, 0);
             pictureBox2.Image = Properties.Resources.cineedit;
-            pictureBox2.Location = new Point(-18, -10);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Location = new Point(-21, -13);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(254, 116);
+            pictureBox2.Size = new Size(290, 155);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -253,9 +258,8 @@
             // 
             pictureBox1.Image = Properties.Resources.cineedit;
             pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(714, 420);
+            pictureBox1.Size = new Size(816, 560);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -265,10 +269,9 @@
             panel1.BackColor = Color.FromArgb(50, 0, 0);
             panel1.Controls.Add(lblMenu);
             panel1.ForeColor = Color.FromArgb(149, 1, 1);
-            panel1.Location = new Point(221, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(253, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(711, 94);
+            panel1.Size = new Size(813, 125);
             panel1.TabIndex = 1;
             // 
             // lblMenu
@@ -276,9 +279,9 @@
             lblMenu.AutoSize = true;
             lblMenu.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             lblMenu.ForeColor = Color.LightGray;
-            lblMenu.Location = new Point(21, 23);
+            lblMenu.Location = new Point(199, 32);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(420, 45);
+            lblMenu.Size = new Size(521, 54);
             lblMenu.TabIndex = 0;
             lblMenu.Text = "Top Films - Menú Principal";
             lblMenu.TextAlign = ContentAlignment.MiddleCenter;
@@ -288,22 +291,22 @@
             // 
             panelFrms.BackColor = Color.Transparent;
             panelFrms.Controls.Add(pictureBox1);
-            panelFrms.Location = new Point(221, 94);
+            panelFrms.Location = new Point(253, 125);
+            panelFrms.Margin = new Padding(3, 4, 3, 4);
             panelFrms.Name = "panelFrms";
-            panelFrms.Size = new Size(711, 420);
+            panelFrms.Size = new Size(813, 560);
             panelFrms.TabIndex = 4;
             // 
             // FrmMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(51, 51, 51);
-            ClientSize = new Size(932, 514);
+            ClientSize = new Size(1065, 685);
             Controls.Add(panel1);
             Controls.Add(panelFrms);
             Controls.Add(panelMenuLateral);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MENU";

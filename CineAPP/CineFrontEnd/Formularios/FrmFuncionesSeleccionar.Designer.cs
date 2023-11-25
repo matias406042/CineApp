@@ -58,10 +58,9 @@
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = Color.LightGray;
-            btnBuscar.Location = new Point(143, 10);
-            btnBuscar.Margin = new Padding(3, 2, 3, 2);
+            btnBuscar.Location = new Point(163, 13);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(123, 33);
+            btnBuscar.Size = new Size(141, 44);
             btnBuscar.TabIndex = 0;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -76,10 +75,9 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.LightGray;
-            btnUpdate.Location = new Point(12, 349);
-            btnUpdate.Margin = new Padding(3, 2, 3, 2);
+            btnUpdate.Location = new Point(14, 494);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(123, 60);
+            btnUpdate.Size = new Size(141, 51);
             btnUpdate.TabIndex = 2;
             btnUpdate.Text = "ACTUALIZAR";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -94,10 +92,9 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnDelete.ForeColor = Color.LightGray;
-            btnDelete.Location = new Point(143, 349);
-            btnDelete.Margin = new Padding(3, 2, 3, 2);
+            btnDelete.Location = new Point(163, 494);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(123, 60);
+            btnDelete.Size = new Size(141, 51);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "ELIMINAR";
             btnDelete.UseVisualStyleBackColor = false;
@@ -107,10 +104,9 @@
             // 
             dtpFecha.CalendarMonthBackground = Color.FromArgb(40, 40, 40);
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(12, 13);
-            dtpFecha.Margin = new Padding(3, 2, 3, 2);
+            dtpFecha.Location = new Point(14, 17);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(105, 23);
+            dtpFecha.Size = new Size(119, 27);
             dtpFecha.TabIndex = 4;
             // 
             // btnExit
@@ -123,10 +119,9 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnExit.ForeColor = Color.LightGray;
-            btnExit.Location = new Point(567, 349);
-            btnExit.Margin = new Padding(3, 2, 3, 2);
+            btnExit.Location = new Point(716, 508);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(123, 60);
+            btnExit.Size = new Size(88, 40);
             btnExit.TabIndex = 5;
             btnExit.Text = "CERRAR";
             btnExit.UseVisualStyleBackColor = false;
@@ -178,25 +173,27 @@
             dgvFunciones.AllowUserToDeleteRows = false;
             dgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFunciones.Columns.AddRange(new DataGridViewColumn[] { colIdFuncion, colTitulo, colGenero, colInicio, colFin, colSala });
-            dgvFunciones.Location = new Point(12, 50);
-            dgvFunciones.Margin = new Padding(3, 2, 3, 2);
+            dgvFunciones.Location = new Point(14, 67);
             dgvFunciones.Name = "dgvFunciones";
             dgvFunciones.ReadOnly = true;
             dgvFunciones.RowHeadersWidth = 51;
             dgvFunciones.RowTemplate.Height = 29;
-            dgvFunciones.Size = new Size(678, 259);
+            dgvFunciones.Size = new Size(678, 345);
             dgvFunciones.TabIndex = 1;
             // 
             // colIdFuncion
             // 
             colIdFuncion.HeaderText = "ID";
+            colIdFuncion.MinimumWidth = 6;
             colIdFuncion.Name = "colIdFuncion";
             colIdFuncion.ReadOnly = true;
             colIdFuncion.Visible = false;
+            colIdFuncion.Width = 125;
             // 
             // colTitulo
             // 
             colTitulo.HeaderText = "Titulo";
+            colTitulo.MinimumWidth = 6;
             colTitulo.Name = "colTitulo";
             colTitulo.ReadOnly = true;
             colTitulo.Width = 175;
@@ -204,6 +201,7 @@
             // colGenero
             // 
             colGenero.HeaderText = "Genero";
+            colGenero.MinimumWidth = 6;
             colGenero.Name = "colGenero";
             colGenero.ReadOnly = true;
             colGenero.Width = 120;
@@ -211,6 +209,7 @@
             // colInicio
             // 
             colInicio.HeaderText = "Inicio";
+            colInicio.MinimumWidth = 6;
             colInicio.Name = "colInicio";
             colInicio.ReadOnly = true;
             colInicio.Width = 120;
@@ -218,6 +217,7 @@
             // colFin
             // 
             colFin.HeaderText = "Fin";
+            colFin.MinimumWidth = 6;
             colFin.Name = "colFin";
             colFin.ReadOnly = true;
             colFin.Width = 120;
@@ -225,6 +225,7 @@
             // colSala
             // 
             colSala.HeaderText = "Sala";
+            colSala.MinimumWidth = 6;
             colSala.Name = "colSala";
             colSala.ReadOnly = true;
             colSala.Width = 90;
@@ -238,10 +239,9 @@
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.LightGray;
-            btnAdd.Location = new Point(272, 349);
-            btnAdd.Margin = new Padding(3, 2, 3, 2);
+            btnAdd.Location = new Point(311, 494);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(123, 60);
+            btnAdd.Size = new Size(141, 51);
             btnAdd.TabIndex = 7;
             btnAdd.Text = "AÑADIR NUEVA";
             btnAdd.UseVisualStyleBackColor = false;
@@ -249,10 +249,10 @@
             // 
             // FrmFuncionesSeleccionar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(714, 420);
+            ClientSize = new Size(816, 560);
             Controls.Add(btnExit);
             Controls.Add(btnBuscar);
             Controls.Add(dtpFecha);
@@ -261,7 +261,6 @@
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmFuncionesSeleccionar";
             Text = "Funciones";
             Load += FrmFuncionesSeleccionar_Load_1;

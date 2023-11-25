@@ -130,7 +130,7 @@ namespace CineFrontEnd.Formularios
             cboProductora.DataSource = productoras;
             cboProductora.ValueMember = "Id";
             cboProductora.DisplayMember = "Nombre";
-            cboProductora.DropDownStyle= ComboBoxStyle.DropDownList;
+            cboProductora.DropDownStyle = ComboBoxStyle.DropDownList;
 
 
 
@@ -281,5 +281,9 @@ namespace CineFrontEnd.Formularios
             return true;
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

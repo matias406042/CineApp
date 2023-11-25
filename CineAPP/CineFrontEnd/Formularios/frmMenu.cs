@@ -48,7 +48,7 @@ namespace CineFrontEnd.Formularios
 
             //FrmPeliculasSeleccionar frmPeliculaSeleccionar = new FrmPeliculasSeleccionar();
             //frmPeliculaSeleccionar.ShowDialog();
-           
+
 
 
 

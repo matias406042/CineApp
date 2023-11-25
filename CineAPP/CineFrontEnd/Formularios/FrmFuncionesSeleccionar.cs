@@ -72,13 +72,13 @@ namespace CineFrontEnd.Formularios
             asyncBuscarFunciones();
 
 
-            listaFunciones = funcionDao.GetFunciones(dtpFecha.Value,string.Empty);
-            
+            listaFunciones = funcionDao.GetFunciones(dtpFecha.Value, string.Empty);
+
         }
 
         private async void asyncBuscarFunciones()
         {
-            string url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}",dtpFecha.Value.ToString("yyyy-MM-dd"));
+            string url = string.Format("https://localhost:7168/Funciones/traerFunciones?fecha={0}", dtpFecha.Value.ToString("yyyy-MM-dd"));
             var result = await Cliente.GetInstance().GetAsync(url);
             var funciones = JsonConvert.DeserializeObject<List<Funcion>>(result);
 
@@ -142,7 +142,7 @@ namespace CineFrontEnd.Formularios
                     }
                 }
 
-                if(existeTicket(ff))
+                if (existeTicket(ff))
                 {
                     MessageBox.Show("No se puede eliminar una función que haya vendido tickets.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -176,7 +176,7 @@ namespace CineFrontEnd.Formularios
 
             foreach (Ticket ticket in ticketDao.GetTicketPorFuncion(f.Id))
             {
-                if(ticket.Funcion.Id == f.Id)
+                if (ticket.Funcion.Id == f.Id)
                 {
                     existe = true;
                     break;

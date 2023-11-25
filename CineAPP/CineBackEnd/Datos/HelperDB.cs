@@ -16,7 +16,7 @@ namespace CineBackEnd.Datos
 
         private HelperDB() { 
     
-            cnn = new SqlConnection(@"Data Source=DESKTOP-UUMMIAU\SQLEXPRESS;Initial Catalog=TP_LABORATORIO_FINAL3;Integrated Security=True");
+            cnn = new SqlConnection(@"Data Source=DESKTOP-JDKTHBG\SQLEXPRESS;Initial Catalog=TOP_FILMS;Integrated Security=True");
 
         }
 
