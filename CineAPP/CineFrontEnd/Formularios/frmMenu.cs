@@ -21,7 +21,7 @@ namespace CineFrontEnd.Formularios
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            esconderSubMenu();
         }
 
 
@@ -55,9 +55,9 @@ namespace CineFrontEnd.Formularios
 
         }
 
-        private void btnTickets_Click(object sender, EventArgs e)
+        private void btnTickets_Click(object sender, EventArgs e)///ESTE ES EL BOTON REPORTES
         {
-            mostrarSubMenu(panelReportes);
+            mostrarSubMenu(subPanelReportes);
             //if (MessageBox.Show("Que reporte desea consultar?", "Seleccionar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             //{
             //    frmReporteComprobantes frmReporteComprobantes = new frmReporteComprobantes();
@@ -109,8 +109,8 @@ namespace CineFrontEnd.Formularios
         }
         private void esconderSubMenu()
         {
-            if (panelReportes.Visible == true)
-                panelReportes.Visible = false;
+            if (subPanelReportes.Visible == true)
+                subPanelReportes.Visible = false;
         }
 
         private void mostrarSubMenu(Panel submenu)
@@ -136,28 +136,22 @@ namespace CineFrontEnd.Formularios
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            lblMenu.Text = "Comprobantes";
-            esconderSubMenu();
-            abrirFormHijo(new FrmComprobante());
+
         }
 
         private void btnRep_Comprobantes_Click(object sender, EventArgs e)
         {
-            lblMenu.Text = "Reporte: Comprobantes";
-            esconderSubMenu();
-            abrirFormHijo(new frmReporteComprobantes());
+
         }
 
         private void btnRep_Peliculas_Click(object sender, EventArgs e)
         {
-            lblMenu.Text = "Reporte: Películas";
-            esconderSubMenu();
-            abrirFormHijo(new frmReportePeliculas());
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            lblMenu.Text = "Top Films - Menú Principal";
+            lblMenu.Text = "Menú Principal";
             if (formActivo != null)
                 formActivo.Close();
         }
@@ -181,6 +175,28 @@ namespace CineFrontEnd.Formularios
         private void pictureBox2_DoubleClick(object sender, EventArgs e)
         {
             MessageBox.Show("Argüello Grachot Facundo \nBon Matías Nicolás\nColazo Federico Tomás \nLópez Juan Martín \nTabares Iván \nZarza Mateo", "Integrantes");
+        }
+
+        private void button1_Click(object sender, EventArgs e)// BOTON REPORTES COMPROBANTE
+        {
+            lblMenu.Text = "Reporte: Comprobantes";
+            esconderSubMenu();
+            abrirFormHijo(new frmReporteComprobantes());
+
+        }
+
+        private void btnVentas_Click_1(object sender, EventArgs e)
+        {
+            lblMenu.Text = "Comprobantes";
+            esconderSubMenu();
+            abrirFormHijo(new FrmComprobante());
+        }
+
+        private void button2_Click(object sender, EventArgs e)// BOTON REPORTE PELICULAS
+        {
+            lblMenu.Text = "Reporte: Películas";
+            esconderSubMenu();
+            abrirFormHijo(new frmReportePeliculas());
         }
     }
 }

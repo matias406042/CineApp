@@ -47,6 +47,7 @@
             lblDescuento = new Label();
             cbxDescuento = new CheckBox();
             btnCancelar = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
             SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             lblFormaPago.AutoSize = true;
             lblFormaPago.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblFormaPago.ForeColor = Color.LightGray;
-            lblFormaPago.Location = new Point(14, 367);
+            lblFormaPago.Location = new Point(29, 367);
             lblFormaPago.Name = "lblFormaPago";
             lblFormaPago.Size = new Size(114, 20);
             lblFormaPago.TabIndex = 1;
@@ -242,7 +243,7 @@
             cbxDescuento.CheckState = CheckState.Checked;
             cbxDescuento.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             cbxDescuento.ForeColor = Color.LightGray;
-            cbxDescuento.Location = new Point(228, 366);
+            cbxDescuento.Location = new Point(223, 333);
             cbxDescuento.Margin = new Padding(3, 4, 3, 4);
             cbxDescuento.Name = "cbxDescuento";
             cbxDescuento.Size = new Size(105, 24);
@@ -271,12 +272,24 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.LightGray;
+            label1.Location = new Point(235, 367);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 20);
+            label1.TabIndex = 14;
+            label1.Text = "Descuento";
+            // 
             // FrmComprobante
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(798, 508);
+            Controls.Add(label1);
             Controls.Add(btnCancelar);
             Controls.Add(cbxDescuento);
             Controls.Add(cboDescuento);
@@ -320,5 +333,6 @@
         private DataGridViewTextBoxColumn ColButaca;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
+        private Label label1;
     }
 }

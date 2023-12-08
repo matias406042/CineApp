@@ -30,7 +30,7 @@ namespace CineFrontEnd.Formularios
             //fdao = new FuncionDao();
             AsyncCargarPagos();
             AsyncCargarDecuento();
-            txtTotal.Text = CalcularTotal().ToString();
+            txtTotal.Text = "0";
             ticketList = new List<Ticket>();
         }
         private double CalcularTotal()
@@ -41,26 +41,32 @@ namespace CineFrontEnd.Formularios
                 total += Convert.ToDouble(r.Cells["ColPrecio"].Value);
             }
 
-            if (cbxDescuento.Checked)
+            if (cbxDescuento.Checked && cboDescuento!=null &&cboDescuento.SelectedValue !=  null)
             {
+               
+               
                 try
                 {
-                    if (Convert.ToDouble(lblDescuento.Text.Substring(0, 2)) != 0)
+
+
+                    if (cboDescuento.SelectedItem.ToString() != "0%" && cboDescuento.SelectedValue != null)
                     {
                         return total - ((total / 100) * Convert.ToDouble(lblDescuento.Text.Substring(0, 2)));
                     }
 
                     else { return total; }
+
                 }
                 catch (Exception)
                 {
 
                     return 0;
                 }
+                
 
 
             }
-            else return total;
+            else return 0;
         }
 
 

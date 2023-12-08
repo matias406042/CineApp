@@ -60,7 +60,7 @@
             dgvPelicula.ReadOnly = true;
             dgvPelicula.RowHeadersWidth = 51;
             dgvPelicula.RowTemplate.Height = 29;
-            dgvPelicula.Size = new Size(430, 427);
+            dgvPelicula.Size = new Size(429, 427);
             dgvPelicula.TabIndex = 4;
             dgvPelicula.CellContentClick += dgvPelicula_CellContentClick;
             // 
@@ -261,7 +261,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(798, 508);
+            ClientSize = new Size(796, 508);
             Controls.Add(groupBox1);
             Controls.Add(btnAdd);
             Controls.Add(btnDelete);

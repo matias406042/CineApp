@@ -113,6 +113,46 @@ namespace CineFrontEnd.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imagen_menu_top_films {
+            get {
+                object obj = ResourceManager.GetObject("imagen-menu-top-films", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_films_menu_2 {
+            get {
+                object obj = ResourceManager.GetObject("top-films-menu-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_films_menu3 {
+            get {
+                object obj = ResourceManager.GetObject("top-films-menu3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2023_11_29_at_00_25_11 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2023-11-29 at 00.25.11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap x_cierre {
             get {
                 object obj = ResourceManager.GetObject("x cierre", resourceCulture);

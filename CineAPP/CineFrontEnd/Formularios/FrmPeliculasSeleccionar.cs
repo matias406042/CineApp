@@ -184,6 +184,7 @@ namespace CineFrontEnd.Formularios
             cmbGenero.DataSource = generos;
             cmbGenero.ValueMember = "Id";
             cmbGenero.DisplayMember = "Descripcion";
+            cmbGenero.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
 

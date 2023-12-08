@@ -30,9 +30,9 @@
         {
             panelMenuLateral = new Panel();
             btnVentas = new Button();
-            panelReportes = new Panel();
-            btnRep_Peliculas = new Button();
-            btnRep_Comprobantes = new Button();
+            subPanelReportes = new Panel();
+            button2 = new Button();
+            btnReporteComprobante = new Button();
             btnSalir = new Button();
             btnTickets = new Button();
             btnPeliculas = new Button();
@@ -41,17 +41,17 @@
             panel3 = new Panel();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             panel1 = new Panel();
             lblMenu = new Label();
             panelFrms = new Panel();
+            pictureBox3 = new PictureBox();
             panelMenuLateral.SuspendLayout();
-            panelReportes.SuspendLayout();
+            subPanelReportes.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panelFrms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panelMenuLateral
@@ -59,7 +59,7 @@
             panelMenuLateral.AutoScroll = true;
             panelMenuLateral.BackColor = Color.FromArgb(15, 15, 15);
             panelMenuLateral.Controls.Add(btnVentas);
-            panelMenuLateral.Controls.Add(panelReportes);
+            panelMenuLateral.Controls.Add(subPanelReportes);
             panelMenuLateral.Controls.Add(btnSalir);
             panelMenuLateral.Controls.Add(btnTickets);
             panelMenuLateral.Controls.Add(btnPeliculas);
@@ -68,11 +68,12 @@
             panelMenuLateral.Dock = DockStyle.Left;
             panelMenuLateral.Location = new Point(0, 0);
             panelMenuLateral.Name = "panelMenuLateral";
-            panelMenuLateral.Size = new Size(253, 685);
+            panelMenuLateral.Size = new Size(253, 699);
             panelMenuLateral.TabIndex = 0;
             // 
             // btnVentas
             // 
+            btnVentas.BackColor = Color.FromArgb(15, 15, 15);
             btnVentas.Dock = DockStyle.Top;
             btnVentas.FlatAppearance.BorderSize = 0;
             btnVentas.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
@@ -80,62 +81,63 @@
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnVentas.ForeColor = Color.LightGray;
-            btnVentas.Location = new Point(0, 497);
+            btnVentas.Location = new Point(0, 525);
             btnVentas.Margin = new Padding(3, 4, 3, 4);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(253, 93);
-            btnVentas.TabIndex = 11;
+            btnVentas.Size = new Size(253, 86);
+            btnVentas.TabIndex = 13;
             btnVentas.Text = "VENTAS";
-            btnVentas.UseVisualStyleBackColor = true;
-            btnVentas.Click += btnVentas_Click;
+            btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click_1;
             // 
-            // panelReportes
+            // subPanelReportes
             // 
-            panelReportes.Controls.Add(btnRep_Peliculas);
-            panelReportes.Controls.Add(btnRep_Comprobantes);
-            panelReportes.Dock = DockStyle.Top;
-            panelReportes.Location = new Point(0, 404);
-            panelReportes.Margin = new Padding(3, 4, 3, 4);
-            panelReportes.Name = "panelReportes";
-            panelReportes.Size = new Size(253, 93);
-            panelReportes.TabIndex = 10;
-            panelReportes.Visible = false;
+            subPanelReportes.BorderStyle = BorderStyle.FixedSingle;
+            subPanelReportes.Controls.Add(button2);
+            subPanelReportes.Controls.Add(btnReporteComprobante);
+            subPanelReportes.Dock = DockStyle.Top;
+            subPanelReportes.Location = new Point(0, 404);
+            subPanelReportes.Name = "subPanelReportes";
+            subPanelReportes.Size = new Size(253, 121);
+            subPanelReportes.TabIndex = 12;
             // 
-            // btnRep_Peliculas
+            // button2
             // 
-            btnRep_Peliculas.Dock = DockStyle.Right;
-            btnRep_Peliculas.FlatAppearance.BorderSize = 0;
-            btnRep_Peliculas.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnRep_Peliculas.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btnRep_Peliculas.FlatStyle = FlatStyle.Flat;
-            btnRep_Peliculas.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRep_Peliculas.ForeColor = Color.LightGray;
-            btnRep_Peliculas.Location = new Point(127, 0);
-            btnRep_Peliculas.Margin = new Padding(3, 4, 3, 4);
-            btnRep_Peliculas.Name = "btnRep_Peliculas";
-            btnRep_Peliculas.Size = new Size(126, 93);
-            btnRep_Peliculas.TabIndex = 1;
-            btnRep_Peliculas.Text = "PELICULAS";
-            btnRep_Peliculas.UseVisualStyleBackColor = true;
-            btnRep_Peliculas.Click += btnRep_Peliculas_Click;
+            button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.Dock = DockStyle.Top;
+            button2.FlatAppearance.BorderColor = Color.DarkGray;
+            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.LightGray;
+            button2.Location = new Point(0, 58);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(251, 62);
+            button2.TabIndex = 2;
+            button2.Text = "PELICULAS";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
-            // btnRep_Comprobantes
+            // btnReporteComprobante
             // 
-            btnRep_Comprobantes.Dock = DockStyle.Left;
-            btnRep_Comprobantes.FlatAppearance.BorderSize = 0;
-            btnRep_Comprobantes.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
-            btnRep_Comprobantes.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            btnRep_Comprobantes.FlatStyle = FlatStyle.Flat;
-            btnRep_Comprobantes.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRep_Comprobantes.ForeColor = Color.LightGray;
-            btnRep_Comprobantes.Location = new Point(0, 0);
-            btnRep_Comprobantes.Margin = new Padding(3, 4, 3, 4);
-            btnRep_Comprobantes.Name = "btnRep_Comprobantes";
-            btnRep_Comprobantes.Size = new Size(127, 93);
-            btnRep_Comprobantes.TabIndex = 0;
-            btnRep_Comprobantes.Text = "COMPROBANTES";
-            btnRep_Comprobantes.UseVisualStyleBackColor = true;
-            btnRep_Comprobantes.Click += btnRep_Comprobantes_Click;
+            btnReporteComprobante.BackColor = Color.FromArgb(192, 0, 0);
+            btnReporteComprobante.Dock = DockStyle.Top;
+            btnReporteComprobante.FlatAppearance.BorderColor = Color.DarkGray;
+            btnReporteComprobante.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnReporteComprobante.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnReporteComprobante.FlatStyle = FlatStyle.Flat;
+            btnReporteComprobante.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReporteComprobante.ForeColor = Color.LightGray;
+            btnReporteComprobante.Location = new Point(0, 0);
+            btnReporteComprobante.Margin = new Padding(3, 4, 3, 4);
+            btnReporteComprobante.Name = "btnReporteComprobante";
+            btnReporteComprobante.Size = new Size(251, 58);
+            btnReporteComprobante.TabIndex = 1;
+            btnReporteComprobante.Text = "COMPROBANTES";
+            btnReporteComprobante.UseVisualStyleBackColor = false;
+            btnReporteComprobante.Click += button1_Click;
             // 
             // btnSalir
             // 
@@ -147,7 +149,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.LightGray;
-            btnSalir.Location = new Point(0, 640);
+            btnSalir.Location = new Point(0, 654);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(253, 45);
             btnSalir.TabIndex = 9;
@@ -169,7 +171,7 @@
             btnTickets.Margin = new Padding(3, 4, 3, 4);
             btnTickets.Name = "btnTickets";
             btnTickets.Size = new Size(253, 93);
-            btnTickets.TabIndex = 7;
+            btnTickets.TabIndex = 0;
             btnTickets.Text = "REPORTES";
             btnTickets.UseVisualStyleBackColor = false;
             btnTickets.Click += btnTickets_Click;
@@ -188,7 +190,7 @@
             btnPeliculas.Margin = new Padding(3, 4, 3, 4);
             btnPeliculas.Name = "btnPeliculas";
             btnPeliculas.Size = new Size(253, 93);
-            btnPeliculas.TabIndex = 6;
+            btnPeliculas.TabIndex = 4;
             btnPeliculas.Text = "PELICULAS";
             btnPeliculas.UseVisualStyleBackColor = false;
             btnPeliculas.Click += btnPeliculas_Click;
@@ -207,7 +209,7 @@
             btnFunciones.Margin = new Padding(3, 4, 3, 4);
             btnFunciones.Name = "btnFunciones";
             btnFunciones.Size = new Size(253, 93);
-            btnFunciones.TabIndex = 5;
+            btnFunciones.TabIndex = 1;
             btnFunciones.Text = "FUNCIONES";
             btnFunciones.UseVisualStyleBackColor = false;
             btnFunciones.Click += btnFunciones_Click;
@@ -241,7 +243,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.FromArgb(50, 0, 0);
+            pictureBox2.BackColor = Color.FromArgb(15, 15, 15);
             pictureBox2.Image = Properties.Resources.cineedit;
             pictureBox2.Location = new Point(-21, -13);
             pictureBox2.Name = "pictureBox2";
@@ -254,55 +256,56 @@
             pictureBox2.MouseEnter += pictureBox2_MouseEnter;
             pictureBox2.MouseLeave += pictureBox2_MouseLeave;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.cineedit;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(816, 560);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(50, 0, 0);
+            panel1.BackColor = Color.Red;
             panel1.Controls.Add(lblMenu);
-            panel1.ForeColor = Color.FromArgb(149, 1, 1);
+            panel1.ForeColor = Color.Transparent;
             panel1.Location = new Point(253, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(813, 125);
+            panel1.Size = new Size(816, 125);
             panel1.TabIndex = 1;
             // 
             // lblMenu
             // 
             lblMenu.AutoSize = true;
-            lblMenu.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            lblMenu.ForeColor = Color.LightGray;
-            lblMenu.Location = new Point(199, 32);
+            lblMenu.BorderStyle = BorderStyle.Fixed3D;
+            lblMenu.Font = new Font("Palatino Linotype", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblMenu.ForeColor = Color.Silver;
+            lblMenu.Location = new Point(194, 28);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(521, 54);
+            lblMenu.Size = new Size(368, 65);
             lblMenu.TabIndex = 0;
-            lblMenu.Text = "Top Films - Menú Principal";
+            lblMenu.Text = "Menú Principal";
             lblMenu.TextAlign = ContentAlignment.MiddleCenter;
             lblMenu.Click += lblMenu_Click;
             // 
             // panelFrms
             // 
             panelFrms.BackColor = Color.Transparent;
-            panelFrms.Controls.Add(pictureBox1);
+            panelFrms.Controls.Add(pictureBox3);
             panelFrms.Location = new Point(253, 125);
             panelFrms.Margin = new Padding(3, 4, 3, 4);
             panelFrms.Name = "panelFrms";
-            panelFrms.Size = new Size(813, 560);
+            panelFrms.Size = new Size(816, 574);
             panelFrms.TabIndex = 4;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.imagen_menu_top_films;
+            pictureBox3.Location = new Point(-3, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(816, 578);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 3;
+            pictureBox3.TabStop = false;
             // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(51, 51, 51);
-            ClientSize = new Size(1065, 685);
+            ClientSize = new Size(1068, 699);
             Controls.Add(panel1);
             Controls.Add(panelFrms);
             Controls.Add(panelMenuLateral);
@@ -312,13 +315,13 @@
             Text = "MENU";
             Load += Form1_Load;
             panelMenuLateral.ResumeLayout(false);
-            panelReportes.ResumeLayout(false);
+            subPanelReportes.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelFrms.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -334,14 +337,17 @@
         private Panel panel1;
         private Label lblMenu;
         private Button btnSalir;
-        private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Panel panel2;
         private Panel panel3;
         public Panel panelFrms;
         private Panel panelReportes;
-        private Button btnVentas;
         private Button btnRep_Peliculas;
         private Button btnRep_Comprobantes;
+        private Button btnVentas;
+        private Button button2;
+        private Button btnReporteComprobante;
+        private Panel subPanelReportes;
+        private PictureBox pictureBox3;
     }
 }

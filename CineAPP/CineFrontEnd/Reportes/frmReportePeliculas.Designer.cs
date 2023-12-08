@@ -28,78 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboSeleccion = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnGenerar = new System.Windows.Forms.Button();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SuspendLayout();
+            cboSeleccion = new ComboBox();
+            label1 = new Label();
+            btnGenerar = new Button();
+            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            SuspendLayout();
             // 
             // cboSeleccion
             // 
-            this.cboSeleccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cboSeleccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSeleccion.FormattingEnabled = true;
-            this.cboSeleccion.Items.AddRange(new object[] {
-            "GENERO",
-            "CLASIFICACION",
-            "PRODUCTORA"});
-            this.cboSeleccion.Location = new System.Drawing.Point(153, 12);
-            this.cboSeleccion.Name = "cboSeleccion";
-            this.cboSeleccion.Size = new System.Drawing.Size(160, 23);
-            this.cboSeleccion.TabIndex = 0;
+            cboSeleccion.BackColor = Color.FromArgb(64, 64, 64);
+            cboSeleccion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboSeleccion.FormattingEnabled = true;
+            cboSeleccion.Items.AddRange(new object[] { "GENERO", "CLASIFICACION", "PRODUCTORA" });
+            cboSeleccion.Location = new Point(175, 16);
+            cboSeleccion.Margin = new Padding(3, 4, 3, 4);
+            cboSeleccion.Name = "cboSeleccion";
+            cboSeleccion.Size = new Size(182, 28);
+            cboSeleccion.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(29, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Reporte de";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.LightGray;
+            label1.Location = new Point(33, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Reporte de";
             // 
             // btnGenerar
             // 
-            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGenerar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnGenerar.FlatAppearance.BorderSize = 3;
-            this.btnGenerar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGenerar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnGenerar.Location = new System.Drawing.Point(408, 8);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(129, 27);
-            this.btnGenerar.TabIndex = 2;
-            this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = false;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            btnGenerar.BackColor = Color.FromArgb(64, 64, 64);
+            btnGenerar.FlatAppearance.BorderColor = Color.FromArgb(40, 40, 40);
+            btnGenerar.FlatAppearance.BorderSize = 3;
+            btnGenerar.FlatAppearance.MouseOverBackColor = Color.FromArgb(40, 40, 40);
+            btnGenerar.FlatStyle = FlatStyle.Flat;
+            btnGenerar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGenerar.ForeColor = Color.LightGray;
+            btnGenerar.Location = new Point(466, 11);
+            btnGenerar.Margin = new Padding(3, 4, 3, 4);
+            btnGenerar.Name = "btnGenerar";
+            btnGenerar.Size = new Size(147, 36);
+            btnGenerar.TabIndex = 2;
+            btnGenerar.Text = "Generar";
+            btnGenerar.UseVisualStyleBackColor = false;
+            btnGenerar.Click += btnGenerar_Click;
             // 
             // reportViewer1
             // 
-            this.reportViewer1.ForeColor = System.Drawing.Color.LightGray;
-            this.reportViewer1.Location = new System.Drawing.Point(10, 45);
-            this.reportViewer1.Name = "ReportViewer";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(700, 400);
-            this.reportViewer1.TabIndex = 0;
+            reportViewer1.ForeColor = Color.LightGray;
+            reportViewer1.Location = new Point(11, 60);
+            reportViewer1.Margin = new Padding(3, 4, 3, 4);
+            reportViewer1.Name = "ReportViewer";
+            reportViewer1.ServerReport.BearerToken = null;
+            reportViewer1.Size = new Size(800, 533);
+            reportViewer1.TabIndex = 0;
             // 
             // frmReportePeliculas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(719, 450);
-            this.Controls.Add(this.reportViewer1);
-            this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboSeleccion);
-            this.Name = "frmReportePeliculas";
-            this.Text = "frmReportePeliculas";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 15, 15);
+            ClientSize = new Size(820, 601);
+            Controls.Add(reportViewer1);
+            Controls.Add(btnGenerar);
+            Controls.Add(label1);
+            Controls.Add(cboSeleccion);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "frmReportePeliculas";
+            Text = "frmReportePeliculas";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
