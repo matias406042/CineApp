@@ -22,16 +22,13 @@ namespace CineApi.Controllers
 
 
 
-        [HttpGet("/Uuario/loguear")]
-        public IActionResult GetLogin()
+        [HttpPut("/Usuario/loguear")]
+        public IActionResult PutLogin(Usuarios credenciales)
         {
             try
             {
-                List<Usuarios> lst = app.GetUsuarios();
-                if (lst != null)
-                    return Ok(lst);
-                else
-                    return NotFound("Usuarios no encontrados");
+                bool aux = app.UsuarioLoguear(credenciales);
+               return Ok(aux);
             }
             catch (Exception)
             {

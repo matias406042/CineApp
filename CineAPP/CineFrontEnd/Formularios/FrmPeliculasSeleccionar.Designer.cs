@@ -53,8 +53,11 @@
             // 
             dgvPelicula.AllowUserToAddRows = false;
             dgvPelicula.AllowUserToDeleteRows = false;
+            dgvPelicula.BackgroundColor = Color.FromArgb(15, 15, 15);
+            dgvPelicula.BorderStyle = BorderStyle.None;
             dgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPelicula.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvPelicula.GridColor = SystemColors.ActiveCaptionText;
             dgvPelicula.Location = new Point(335, 12);
             dgvPelicula.Name = "dgvPelicula";
             dgvPelicula.ReadOnly = true;

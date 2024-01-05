@@ -1,0 +1,6 @@
+
+LOGIN: modificar DB tabla usuario contraseña  a encrypt ,crear funcion  bool de comprobacion de contraseña utilizar encrypt del lado del front  
+
+DAOS implementar patrones singledon
+
+resolver problema async task 

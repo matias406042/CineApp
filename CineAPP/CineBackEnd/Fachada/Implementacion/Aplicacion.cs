@@ -162,5 +162,12 @@ namespace CineBackEnd.Fachada.Implementacion
         {
             return daoPelicula.Actualizar(p);
         }
+
+    
+        public bool UsuarioLoguear(Usuarios u)
+        {
+           return daoUsuario.ConectarUsuario(u);
+           
+        }
     }
 }

@@ -7,20 +7,17 @@ namespace CineFrontEnd
 {
     public partial class frmLogin : Form
     {
-        List<Usuarios> usuarios;
+       
 
         public frmLogin()
         {
             InitializeComponent();
-            usuarios = new List<Usuarios>();
+           
         }
 
         private async void frnPrincipal_Load(object sender, EventArgs e)
         {
-            string url = "https://localhost:7168/Uuario/loguear";
-            var result = await Cliente.GetInstance().GetAsync(url);
-            var lst = JsonConvert.DeserializeObject<List<Usuarios>>(result);
-            usuarios = lst;
+          
 
         }
 
@@ -40,19 +37,30 @@ namespace CineFrontEnd
         {
 
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            foreach (Usuarios u in usuarios)
-            {
-                if (u.User == txtUsuario.Text && u.Contra == txtContrasenia.Text)
-                {
-                    FrmMenu frm = new FrmMenu();
-                    frm.ShowDialog();
-                    this.Dispose();
-                }
 
+            var u = new Usuarios(txtUsuario.Text,txtContrasenia.Text);
+
+            await AsyncLoguearUsuario(u);
+
+
+        }
+
+
+        private async Task AsyncLoguearUsuario(Usuarios u)
+        {
+            string url = "https://localhost:7168/Usuario/loguear";
+            var body = JsonConvert.SerializeObject(u);
+            var result2 = await Cliente.GetInstance().PutAsync(url, body);
+            if (result2.Equals("true"))
+            {
+                MessageBox.Show("acceso confirmado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var menu = new FrmMenu();
+                menu.ShowDialog();
+                this.Close();
             }
-            MessageBox.Show("Ha ingresado crecenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("Ha ingresado crecenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void label1_Click(object sender, EventArgs e)

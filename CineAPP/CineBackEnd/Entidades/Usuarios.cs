@@ -10,10 +10,12 @@ namespace CineBackEnd.Entidades
     {
         public string User { get; set; }
         public string Contra { get; set; }
+        public int Credencial { get; set; }
         public Usuarios(string user, string contra)
         {
             User = user;
             Contra = contra;
+            
         }
     }
 }

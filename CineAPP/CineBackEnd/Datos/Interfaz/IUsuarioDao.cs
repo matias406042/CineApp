@@ -9,6 +9,8 @@ namespace CineBackEnd.Datos.Interfaz
 {
     public interface IUsuarioDao
     {
-        public List<Usuarios> GetUsuarios();
+        List<Usuarios> GetUsuarios();
+
+        bool ConectarUsuario(Usuarios u);
     }
 }

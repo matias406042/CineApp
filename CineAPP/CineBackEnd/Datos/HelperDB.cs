@@ -48,11 +48,6 @@ namespace CineBackEnd.Datos
             return tabla;
         }
 
-  
-        
-
-       
-
         public int SPTransaccionSimpleSQL(string strSql, List<SqlParameter> parametros)
         {
             int afectadas = 0;
